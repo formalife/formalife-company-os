@@ -3,7 +3,7 @@
 Status: CURRENT — operating baseline
 Date: 2026-09-21
 
-This file records founder-reported current facts, historical results, explicit founder decisions and the current strategic direction. Detailed target-company architecture is canonical in `FORMALIFE_TARGET_MODEL.md`.
+This file records founder-reported current facts, historical results, explicit founder decisions and the current strategic direction. Detailed target-company architecture is canonical in `FORMALIFE_TARGET_MODEL.md`. The current order of construction is canonical in `FORMALIFE_BUILD_SEQUENCE.md`.
 
 ## 1. B2C pediatric emergency course — current economics
 
@@ -161,32 +161,25 @@ Current accreditation/instructor/provider details still require documentary reco
 
 The two products must remain clearly distinct in purpose and communication.
 
-## 7. Strategic implications now in force
+## 7. CURRENT CONSTRUCTION SEQUENCE
 
-### Current company question
+Status: CURRENT.
 
-The governing question is no longer:
+The governing question is:
 
-**"How do we differentiate the current choking course?"**
+**"How do we build the parent-first pediatric-safety company described in `FORMALIFE_TARGET_MODEL.md` without introducing more variables than the current business can economically and operationally support?"**
 
-It is:
+The current causal sequence is:
 
-**"How do we build the parent-first pediatric-safety company described in `FORMALIFE_TARGET_MODEL.md`, using the current choking/weaning wedge and existing assets as the strongest starting point?"**
+1. **Flagship commercial proof** — make the choking/Guide/live system a coherent, measurable parent-first commercial engine.
+2. **Trusted distribution** — reproduce the pediatrician mechanism across multiple relevant partners instead of depending on one relationship or jumping prematurely to cold paid acquisition.
+3. **Scalable digital flagship** — create one strong nationally sellable digital product around the same proven core before building a large digital catalog.
+4. **Owned demand + lifecycle** — add recurring free utility/value and lifecycle CRM only once working paid products exist to monetize and serve the audience.
+5. **Adjacent expansion** — use specialist partnership first where another operator already owns the competence; develop proprietary BLSD and broader safety depth after the initial engine proves repeatable.
 
-### Current construction priorities
+Detailed gates, metrics and revision conditions are in `FORMALIFE_BUILD_SEQUENCE.md`.
 
-The current target requires, in sequence:
-
-1. strengthen human authority / scientific brand presentation;
-2. strengthen the choking flagship without treating it as the whole company;
-3. build a coherent digital safety-course layer;
-4. turn publishing into a repeatable product engine;
-5. build free recurring value / owned demand;
-6. build lifecycle CRM/account logic;
-7. develop specialist partnerships rather than duplicating every adjacent competence;
-8. build the two-track BLSD architecture;
-9. systematize partner/healthcare distribution;
-10. prove customer-level economics beyond a single classroom transaction.
+This sequence supersedes the previous undifferentiated list of ten parallel construction priorities.
 
 ## 8. Partnership direction
 
@@ -213,5 +206,7 @@ Relevant current doctrine:
 - `REASONING_KERNEL.md`
 - `merenda/02_posizionamento/differenziazione-operativa.md`
 - `merenda/02_posizionamento/estensioni-di-linea-e-architettura-brand.md`
+- `merenda/03_offerta/front-end-e-back-end.md`
+- `merenda/04_marketing/complessita-e-riduzione-variabili.md`
 - `merenda/05_acquisizione/partnership-distribuzione-e-combinazioni.md`
-- current doctrine on offer architecture, second transaction, economics, cash and transferability.
+- `merenda/09_business/numeri-cassa-e-crescita.md`.
