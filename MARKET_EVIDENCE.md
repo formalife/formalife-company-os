@@ -24,19 +24,32 @@ This suggests that the transition to solid foods may be a recurring life-stage t
 
 The percentage is an informed founder estimate and should not be treated as audited cohort data.
 
+### EXTERNAL OBSERVATION — weaning/choking connection is visible in the Italian market
+
+Public Italian market evidence independently corroborates the relevance of the weaning window, without proving Formalife demand by itself:
+
+- Croce Verde Reggio Emilia's 2026 pediatric choking courses explicitly target, in particular, parents and grandparents of children in weaning age;
+- ASU Friuli Centrale runs recurring 2026 parent courses combining pediatric choking maneuvers with complementary feeding, safe food preparation and primary prevention;
+- ASL Alessandria framed 2025 sessions as "E dopo il latte? Per uno svezzamento in sicurezza", combining weaning and pediatric choking maneuvers;
+- private operators also package pediatric choking training with weaning education;
+- spontaneous Italian parent-forum discussions repeatedly show choking anxiety emerging when parents begin solids/pieces and often mention a pediatric choking course as a possible response.
+
+These sources corroborate **trigger relevance and category convention**. They do not establish whether the dominant demand state is active search, problem-aware latent demand, or a mixture.
+
 ### HYPOTHESIS — initial beachhead customer
 
 A potentially stronger initial customer definition than generic "parents of children 0-6" is:
 
 **parents entering or currently in weaning/complementary feeding who are materially concerned about pediatric choking and want to feel capable of recognizing and responding correctly.**
 
-This is not yet a target decision. It must still be tested against:
+This is not yet a final target decision. It must still be tested against:
 
 1. reachability / identifiability;
 2. propensity and capacity to pay;
-3. actual alternative behavior before purchase;
-4. whether demand is already active or becomes actionable mainly after trusted recommendation/education;
-5. customer economics and conversion at the intended offer architecture.
+3. response to Formalife's differentiated offer architecture;
+4. customer economics and conversion at the intended price architecture.
+
+The previously desired historical reconstruction of pre-purchase alternatives is no longer treated as a prerequisite because that evidence is not practically recoverable.
 
 ### OBSERVATION — timing may matter more than broad demographics
 
@@ -44,43 +57,54 @@ The current evidence suggests that life-stage timing may explain purchase propen
 
 If confirmed, Formalife should treat the market as recurring cohorts entering a high-salience window rather than as one static undifferentiated parent audience.
 
-## OPEN QUESTION — pre-purchase behavior currently unknown
+## OPEN QUESTION — demand state remains unknown
 
-Founder reports that Formalife does **not currently have reliable information** on what historical participants were doing before the Formalife invitation became available.
+Formalife does **not currently have reliable historical evidence** establishing whether prior customers were already actively searching for a course or whether trusted recommendation converted an existing fear into action.
 
 Unknowns include whether they were already:
 
 - actively searching for a choking / pediatric first-aid course;
 - consuming videos or written material;
-- asking the pediatrician or another professional;
+- asking a pediatrician or another professional;
 - considering Red Cross / hospital / other courses;
 - reacting to a prior choking episode;
-- or simply carrying an unresolved fear until the trusted pediatrician invitation converted that fear into action.
+- or carrying an unresolved fear until a trusted invitation made the issue actionable.
 
-No inference should be made from the existing acquisition channel alone. The fact that most participants arrived through the pediatrician does not establish whether the underlying demand was active or latent.
+No inference should be made from the pediatrician acquisition channel alone.
 
-## TEST — historical-customer trigger / alternative reconstruction
+## CONSTRAINT — historical interviews unavailable
 
-Objective: determine the dominant pre-purchase state and trigger among prior B2C customers before choosing Formalife.
+Founder reports that customer interviews capable of reconstructing these historical pre-purchase states cannot practically be obtained.
 
-Minimum useful test:
+Therefore the previously proposed 10-15 customer interview test is **NOT EXECUTABLE** and is superseded as the next step.
 
-- contact a small but meaningful sample of historical participants, targeting at least 10-15 usable responses;
-- ask about the period **before** they received or acted on the Formalife invitation;
-- reconstruct (a) problem salience, (b) whether they were already looking for a solution, (c) alternatives considered/used, and (d) what specifically caused them to act when they did;
-- preserve open-text answers where possible instead of forcing only predefined categories.
+This uncertainty must remain explicit rather than being filled with assumptions.
 
-Decision use:
+## REPLACEMENT EVIDENCE PLAN
 
-- predominantly already searching / comparing solutions → treat the beachhead as meaningful active demand and study intent capture / competitive substitution;
-- predominantly afraid but not searching until trusted recommendation → treat it as problem-aware latent demand where trusted distribution and trigger replication may be structurally important;
-- mixed population → separate paths rather than forcing one funnel/message onto both states.
+Use triangulation rather than historical recall:
 
-This test is intended to inform market/positioning architecture, not to produce customer-satisfaction scores.
+1. **Founder evidence** — observed choking fear + estimated 50-60% weaning-stage incidence among historical customers.
+2. **External market evidence** — category offers and spontaneous parent language to test whether weaning is independently associated with choking anxiety and training demand.
+3. **Competitive architecture** — identify what institutional/private alternatives already promise around weaning, prevention, choking response, practice, authority and price.
+4. **Prospective Formalife test** — structure the next real commercial experiment so source, life-stage/trigger and response are captured at the time of conversion rather than reconstructed later.
+
+The missing active-vs-latent distinction is therefore **not a blocker to positioning work**. It becomes a variable to measure prospectively in future acquisition tests.
+
+## CURRENT STRATEGIC IMPLICATION — provisional
+
+The evidence is now strong enough to continue evaluating the weaning/choking segment as the initial beachhead **working hypothesis**, while keeping demand-state uncertainty open.
+
+The next upstream work is:
+
+**beachhead customer -> credible alternatives/category conventions -> operational difference -> positioning -> offer architecture -> prospective demand test.**
+
+Do not jump directly to channel scaling or broad 0-6 messaging.
 
 ## Layer 1 references
 
 - `merenda/01_mercato/clienti-identificabili-e-target.md`
 - `merenda/04_marketing/gerarchia-domanda-e-canali.md`
 - `merenda/07_copy_comunicazione/priorita-azione-e-inerzia.md`
+- `merenda/02_posizionamento/differenziazione-operativa.md`
 - `REASONING_KERNEL.md`
