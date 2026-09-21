@@ -3,7 +3,7 @@
 Status: CURRENT — founder-approved flagship architecture
 Date: 2026-09-21
 
-Purpose: define the role of the first Formalife flagship and the relationship among Guide, Light, Full Course and the later BLSD products. Detailed curriculum scope is current in `FLAGSHIP_SCOPE_V1.md`.
+Purpose: define the role of the first Formalife flagship and the relationship among Guide, Full Course, future Digital Core and later BLSD products. Detailed curriculum scope is current in `FLAGSHIP_SCOPE_V1.md`.
 
 ## 1. Founder decision
 
@@ -12,9 +12,10 @@ Formalife will **not** keep the Full Course exclusively about pediatric choking.
 Current architecture:
 
 - **choking / weaning = primary acquisition wedge and high-salience entry problem**;
-- **Guide = focused choking reference product**;
-- **Light = focused choking/prevention/practice product, especially useful in partner-hosted distribution**;
-- **Full Course = broader parent-first pediatric safety / emergency-preparedness flagship**;
+- **Guide = focused choking reference product and optional B2C paid front-end**;
+- **Light / Serata Anti-Panico = B2B / B2B2C partner-hosted product, not a direct B2C funnel step**;
+- **Full Course = broader parent-first pediatric safety / emergency-preparedness live flagship**;
+- **Digital Emergency-Preparedness Flagship = future substantial standalone B2C core product**;
 - **BLSD Formalife non-certified = later deep proprietary resuscitation/practice product**;
 - **BLSD certified = separate credential product**.
 
@@ -49,35 +50,56 @@ Formalife therefore should not confuse marketing focus with topic count.
 
 **Guida Anti-Panico al Soffocamento Pediatrico** remains specific to choking.
 
-Job:
+B2C job:
 
 - solve one urgent problem well;
-- create a first paid relationship;
+- create an optional first paid relationship;
 - provide durable home reference;
-- create Training Credit toward the Full Course where economically appropriate.
+- create a bridge toward a deeper core product when economically appropriate.
 
-### Light
+The Guide is **not** mandatory before Digital or Live.
 
-The Light format remains choking-specific rather than becoming a compressed general first-aid course.
+### Light / Serata Anti-Panico
+
+Founder decision: Light belongs to the **B2B / B2B2C partner-hosted lane**, not the direct B2C funnel.
 
 Job:
 
-- provide prevention/recognition education and first supervised practical exposure;
-- work well inside pediatrician/nursery/partner-hosted distribution;
-- lower friction into the Formalife experience;
-- preserve a clear reason to progress into the broader Full Course.
+- give a partner a concrete hosted educational initiative for its audience/community;
+- provide focused choking prevention/recognition education and first supervised practical exposure;
+- transfer trust from the host into a real Formalife experience;
+- where commercially appropriate, allow participants to enter the broader Formalife customer relationship afterward.
+
+Its economics, offer and follow-up belong to partner-channel architecture and should not dictate the direct B2C funnel.
 
 ### Full Course
 
-The Full Course becomes the first true representation of the target Formalife company: broader **pediatric safety and emergency preparedness for parents/caregivers**, with substantial practical depth concentrated on choking and introductory pediatric resuscitation.
+The Full Course becomes the first true live representation of the target Formalife company: broader **pediatric safety and emergency preparedness for parents/caregivers**, with substantial practical depth concentrated on choking and introductory pediatric resuscitation.
 
 The current curriculum boundary is defined in `FLAGSHIP_SCOPE_V1.md`.
+
+A high-intent B2C prospect may buy the Full Course directly as the first transaction.
+
+### Digital Emergency-Preparedness Flagship
+
+The future Digital Core is a substantial standalone consumer product, not a lead magnet and not a deliberately incomplete recording of the live course.
+
+Job:
+
+- serve the national B2C market without proportional classroom capacity;
+- provide durable learning/reference value;
+- serve customers who cannot attend live;
+- create a bridge to supervised practical learning when that adds material value.
+
+Digital and Live may later be packaged into a validated Hybrid offer without making either standalone product artificially incomplete.
 
 ### BLSD Formalife non-certified
 
 The proprietary non-certified BLSD remains a later deeper product for people whose job is learning/preparedness rather than obtaining a credential.
 
 Its differentiation can come from intensive deliberate practice, scenarios, AED depth, individual correction, refresh and household-sharing logic.
+
+It is specialist depth, not the mandatory next step after every Full Course.
 
 ### BLSD certified
 
@@ -93,17 +115,17 @@ The coherent job is:
 
 Broad does not mean encyclopedic. The course must preserve practical depth by excluding or moving lower-priority, diagnosis-heavy or reference-friendly topics into digital/editorial products.
 
-## 6. Commercial progression
+## 6. B2C commercial progression
 
-Current intended progression:
+The direct-to-consumer architecture is now defined in `B2C_COMMERCIAL_FUNNEL_V2.md`.
 
-**choking concern / weaning trigger**
--> free content or Guide
--> Light where a lower-friction live entry is useful
--> Full Course: broader pediatric safety/emergency preparedness
--> later relevant second purchase: digital reference / specialist adjacency / BLSD Formalife / refresh.
+Core principle:
 
-This uses a specific problem to acquire the customer while widening lifetime value inside one coherent safety territory.
+**choking concern / weaning trigger -> state-appropriate free or paid entry -> Guide OR Digital Core OR direct Live Full Course -> relevant specialist/lifecycle second purchase.**
+
+There is no mandatory Guide-before-core sequence.
+
+Light is excluded from this direct B2C progression and remains a partner-hosted B2B/B2B2C product.
 
 ## 7. Current next product task
 
@@ -113,9 +135,11 @@ The strategic scope decision is closed. The next product work is execution of `F
 - detailed practical-vs-theory allocation;
 - exact duration and session design;
 - materials/reference layer;
-- Light-to-Full upgrade design without redundant repetition;
+- boundary between Full Course and future Digital Core;
 - boundary between Full Course and BLSD Formalife;
 - implications for pricing/economics once delivery design is known.
+
+Separate partner-channel work should define Light economics, host proposition and post-event routing without using Light as a mandatory B2C front-end.
 
 No customer-facing clinical claim or procedure is authorized by this architecture document.
 
