@@ -44,20 +44,39 @@ The current evidence suggests that life-stage timing may explain purchase propen
 
 If confirmed, Formalife should treat the market as recurring cohorts entering a high-salience window rather than as one static undifferentiated parent audience.
 
-## OPEN QUESTION — current next evidence
+## OPEN QUESTION — pre-purchase behavior currently unknown
 
-The next causal question is the customer's **current alternative / pre-purchase behavior**.
+Founder reports that Formalife does **not currently have reliable information** on what historical participants were doing before the Formalife invitation became available.
 
-Need founder evidence on what participants typically did before Formalife became an option:
+Unknowns include whether they were already:
 
-- were they already actively searching for a choking / pediatric first-aid course;
-- had they watched videos or read online material;
-- had they asked the pediatrician or another professional;
-- had they considered Red Cross / hospital / other courses;
-- had they experienced or witnessed a choking episode;
-- or did the trusted pediatrician invitation itself convert an existing fear into action for people who were not searching.
+- actively searching for a choking / pediatric first-aid course;
+- consuming videos or written material;
+- asking the pediatrician or another professional;
+- considering Red Cross / hospital / other courses;
+- reacting to a prior choking episode;
+- or simply carrying an unresolved fear until the trusted pediatrician invitation converted that fear into action.
 
-This distinction is material because it determines whether the beachhead contains primarily active demand, problem-aware latent demand, or a mixture requiring different paths.
+No inference should be made from the existing acquisition channel alone. The fact that most participants arrived through the pediatrician does not establish whether the underlying demand was active or latent.
+
+## TEST — historical-customer trigger / alternative reconstruction
+
+Objective: determine the dominant pre-purchase state and trigger among prior B2C customers before choosing Formalife.
+
+Minimum useful test:
+
+- contact a small but meaningful sample of historical participants, targeting at least 10-15 usable responses;
+- ask about the period **before** they received or acted on the Formalife invitation;
+- reconstruct (a) problem salience, (b) whether they were already looking for a solution, (c) alternatives considered/used, and (d) what specifically caused them to act when they did;
+- preserve open-text answers where possible instead of forcing only predefined categories.
+
+Decision use:
+
+- predominantly already searching / comparing solutions → treat the beachhead as meaningful active demand and study intent capture / competitive substitution;
+- predominantly afraid but not searching until trusted recommendation → treat it as problem-aware latent demand where trusted distribution and trigger replication may be structurally important;
+- mixed population → separate paths rather than forcing one funnel/message onto both states.
+
+This test is intended to inform market/positioning architecture, not to produce customer-satisfaction scores.
 
 ## Layer 1 references
 
