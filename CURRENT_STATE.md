@@ -161,7 +161,36 @@ Current accreditation/instructor/provider details still require documentary reco
 
 The two products must remain clearly distinct in purpose and communication.
 
-## 7. CURRENT CONSTRUCTION SEQUENCE
+## 7. FOUNDER DECISION — flagship scope
+
+Status: CURRENT.
+
+The Full Course will **not** remain exclusively about pediatric choking.
+
+Current product ladder:
+
+- **choking/weaning** remains the primary acquisition wedge;
+- **Guide** remains choking-specific;
+- **Light** remains choking-specific and particularly suitable for partner-hosted entry;
+- **Full Course** becomes the broader parent-first pediatric safety/emergency-preparedness flagship;
+- **BLSD Formalife non-certified** later provides much deeper proprietary resuscitation practice;
+- **BLSD certified** remains the separate credential path.
+
+The Full Course must remain curated rather than encyclopedic. Live time is prioritized for situations where physical practice, decision feedback and immediate first-response education have the highest value.
+
+Current scope V1 is defined in `FLAGSHIP_SCOPE_V1.md` and includes, subject to scientific validation:
+
+- emergency recognition / red flags / escalation framework;
+- high-depth pediatric choking prevention, recognition and practical disobstruction;
+- meaningful hands-on introduction to pediatric basic resuscitation and AED awareness;
+- respiratory distress / severe allergic emergencies;
+- seizures / febrile convulsions;
+- curated high-consequence injury/exposure topics such as serious bleeding, burns, head injury, poisoning and drowning context;
+- prevention integrated into the relevant emergency topics rather than a broad standalone babyproofing module.
+
+Routine illness management, detailed babyproofing, long-tail first-aid topics and deep BLSD remain outside the live flagship and belong primarily to future digital/reference/specialist products.
+
+## 8. CURRENT CONSTRUCTION SEQUENCE
 
 Status: CURRENT.
 
@@ -171,7 +200,7 @@ The governing question is:
 
 The current causal sequence is:
 
-1. **Flagship commercial proof** — make the choking/Guide/live system a coherent, measurable parent-first commercial engine.
+1. **Flagship commercial proof** — make the Guide/Light/Full system a coherent, measurable parent-first commercial engine using choking/weaning as the acquisition wedge.
 2. **Trusted distribution** — reproduce the pediatrician mechanism across multiple relevant partners instead of depending on one relationship or jumping prematurely to cold paid acquisition.
 3. **Scalable digital flagship** — create one strong nationally sellable digital product around the same proven core before building a large digital catalog.
 4. **Owned demand + lifecycle** — add recurring free utility/value and lifecycle CRM only once working paid products exist to monetize and serve the audience.
@@ -179,9 +208,7 @@ The current causal sequence is:
 
 Detailed gates, metrics and revision conditions are in `FORMALIFE_BUILD_SEQUENCE.md`.
 
-This sequence supersedes the previous undifferentiated list of ten parallel construction priorities.
-
-## 8. Partnership direction
+## 9. Partnership direction
 
 The current model explicitly favors structural combinations with specialists when Formalife and the partner possess complementary assets.
 
@@ -189,7 +216,7 @@ Svezzy is a current natural candidate for the weaning vertical because it alread
 
 Potential target products include co-created publishing and digital education, with real specialist provenance and explicit economics/IP/data terms. No partnership is assumed closed until mutually agreed.
 
-## 9. Boundaries of the target model
+## 10. Boundaries of the target model
 
 Formalife's current target territory is:
 
