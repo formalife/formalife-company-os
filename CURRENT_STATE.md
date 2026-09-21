@@ -80,39 +80,89 @@ The pediatrician relationship currently provides access, trust transfer and dist
 
 Cash CAC of approximately zero for the current source does not establish that acquisition is economically free or scalable. The current system is highly dependent on borrowed distribution/trust from one relationship and has not yet demonstrated what CAC would be outside that channel.
 
-## PROVISIONAL DIAGNOSIS — not a decision
+## MARKET / CATEGORY / POSITIONING — current decision block
 
-The historical economics do not determine the attractiveness of the rebuilt B2C model because both price realization and target attendance have changed by founder decision.
+### EXTERNAL OBSERVATION — category alternatives, 2026-09-21
 
-The key unresolved question is now narrower:
+Current market scan shows that the direct category already contains multiple offers with theory + hands-on pediatric first-aid / choking training, often at EUR 35-80 and sometimes free at introductory level. Examples include:
 
-**Can Formalife reliably fill 10-12 paying seats per edition at EUR 80 single / EUR 120 couple, with acquisition economics that preserve an attractive contribution after normalized instructor cost?**
+- Fondazione Poliambulanza Brescia: theoretical/practical pediatric first-aid course for parents/educators, 4 hours, EUR 80;
+- Salvagente Italia: pediatric first-aid course, theory + practice, 3 hours, EUR 50, including Brescia dates;
+- Associazione Lea / Croce Rossa collaboration: pediatric lifesaving courses from free introductory sessions to EUR 35 executor courses;
+- GeA in Brescia: pediatric first-aid course, 4 hours, EUR 50 plus VAT, including manual/poster/kit and attendance certificate;
+- Futura Formazione Brescia: pediatric first-aid course, practical component, EUR 80 and accredited-provider positioning.
 
-If yes, the target per-edition economics are materially stronger than the survival-phase history. If no, the target remains an aspiration rather than a functioning operating model.
+Therefore "4 hours + theory + mannequins/practice + competent instructor" is not, by itself, a defensible market difference. EUR 80 is also not inherently a premium position because comparable institutional/accredited offers exist at the same price and lower-priced alternatives are widely available.
 
-The first bottleneck to validate is therefore seat-fill capacity at the new price architecture, starting with the existing pediatrician/referral asset before buying colder demand.
+### ASSET / OBSERVATION — Formalife public differentiation material already exists
 
-## OPEN QUESTIONS — next decision block
+Formalife's current public communication contains elements that may support a more specific position than generic pediatric first aid:
 
-Need to determine the real capacity of the current high-trust distribution asset:
+- focus on parents of children 0-6 rather than an undifferentiated lay audience;
+- prevention before emergency intervention;
+- recognition of partial vs total obstruction and emphasis on knowing when **not** to intervene;
+- "Ferma, Valuta, Agisci" as a simple anti-panic decision sequence;
+- pediatrician scientific direction and explicit line-guideline verification;
+- proprietary book / reference material designed to remain available at home;
+- explicit separation between understanding (book) and hands-on motor training (course);
+- feedback 1-to-1 during practical training;
+- couple offer framed around protecting the family system rather than merely discounting a second seat.
 
-- approximate number of parents currently reachable through the pediatrician channel;
-- how many new relevant parents enter that reachable audience over time;
-- historical response to a single course invitation (emails sent / registrations where known);
-- practical frequency with which the pediatrician is willing to promote the course;
-- whether other pediatricians or comparable trusted distribution partners are realistically replicable.
+These are **assets and candidate positioning ingredients**, not yet proof of a defensible position.
 
-Secondary later questions:
+### HYPOTHESIS — category frame to test
 
-- actual single/couple mix at the new price architecture;
-- second purchase / downstream revenue from B2C customers;
-- acquisition economics outside borrowed-trust channels.
+Formalife may be stronger if it does not compete primarily as "another pediatric first-aid course" but as a **preparation system for parents/caregivers designed to reduce panic, improve recognition and produce correct action before and during pediatric emergencies**.
+
+Working shorthand: **Anti-Panico preparation system for parents of young children**.
+
+This remains a hypothesis until we verify that the difference is:
+
+1. operationally real in product/delivery, not only copy;
+2. relevant enough to change customer preference;
+3. sufficiently distinct from direct and indirect alternatives;
+4. economically compatible with the intended offer architecture;
+5. transferable beyond the founders.
+
+### SUPERSEDED PROVISIONAL DIAGNOSIS
+
+The previous provisional diagnosis treated "reliably fill 10-12 seats at the new price" as the first bottleneck.
+
+Status: **SUPERSEDED AS FIRST BOTTLENECK**.
+
+Seat-fill remains an important later test, but it is downstream of a missing prerequisite: Formalife first needs a validated market/category/positioning frame and an offer architecture that embodies it. Optimizing acquisition before that would risk scaling an undifferentiated or incorrectly framed offer.
+
+## OPEN QUESTIONS — current block
+
+The current priority is to reconstruct the business zero-based before returning to acquisition.
+
+First founder input needed: **complete inventory of what Formalife can currently sell, deliver or credibly build from existing assets** — not only the 4-hour course.
+
+This inventory should include existing or near-ready:
+
+- B2C products/services;
+- B2B products/services;
+- books / intellectual property / proprietary materials;
+- instructors and specialist competencies;
+- certifications/accreditations/partnerships that materially affect what can be sold;
+- audiences/distribution relationships;
+- delivery formats already possible (classroom, company on-site, online, etc.);
+- assets already built but not yet monetized.
+
+After this inventory, the next work is:
+
+**category/alternatives → desirable customer → operational difference → positioning → offer architecture → economics → acquisition.**
 
 ## Layer 1 references
 
 Relevant current doctrine:
 
+- `merenda/01_mercato/clienti-identificabili-e-target.md`
 - `merenda/01_mercato/appropriatezza-clienti.md`
+- `merenda/02_posizionamento/differenziazione-operativa.md`
+- `merenda/02_posizionamento/estensioni-di-linea-e-architettura-brand.md`
+- `merenda/03_offerta/front-end-e-back-end.md`
+- `merenda/03_offerta/prezzo-premium-e-percezione-del-valore.md`
 - `merenda/05_acquisizione/partnership-distribuzione-e-combinazioni.md`
 - `merenda/09_business/numeri-cassa-e-crescita.md`
 - `REASONING_KERNEL.md`
