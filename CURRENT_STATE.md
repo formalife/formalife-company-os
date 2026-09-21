@@ -1,13 +1,13 @@
 # Formalife Current State
 
-Status: CURRENT — initial Layer 2 operating baseline
+Status: CURRENT — operating baseline
 Date: 2026-09-21
 
-This file records founder-reported facts, founder decisions, derived calculations, observations and open questions. Historical results are preserved as evidence but do not automatically become forward-looking benchmarks.
+This file records founder-reported current facts, historical results, explicit founder decisions and the current strategic direction. Detailed target-company architecture is canonical in `FORMALIFE_TARGET_MODEL.md`.
 
-## B2C pediatric emergency course
+## 1. B2C pediatric emergency course — current economics
 
-### FACT — current offer architecture
+### FACT — current offer
 
 Founder-reported current offer:
 
@@ -22,34 +22,29 @@ Founder-reported direct costs:
 - room: EUR 60 per edition;
 - book/materials: approximately EUR 9 per participant;
 - instructors are currently company partners and are not paid separately;
-- planned replacement/delivery cost when instructors are paid: EUR 120 primary instructor + EUR 80 secondary instructor = EUR 200 per edition.
+- planned normalized instructor cost: EUR 120 primary + EUR 80 secondary = EUR 200 per edition.
 
-### HISTORICAL RESULT — prior survival phase, not current benchmark
+### HISTORICAL RESULT — survival phase, not forward benchmark
 
 Founder-reported last approximately 12 months:
 
-- approximately 12 B2C editions delivered;
+- approximately 12 B2C editions;
 - approximately 70 total participants;
-- approximately 70% of that historical audience bought at about EUR 50 per participant;
-- historical contribution/margin was therefore very low, approximately around break-even after considering the economics of delivery;
-- this pricing/volume configuration was used as a survival mechanism, not as the intended forward operating model.
+- approximately 70% of that audience bought around EUR 50 per participant;
+- historical margin was approximately around break-even once delivery economics are considered;
+- attendance was commonly 4-8 participants, averaging around 6.
 
-Historical attendance was commonly around 4-8 participants per edition, averaging about 6. This is retained as historical evidence only and is explicitly **not** the benchmark for the rebuilt business.
+This configuration is historical evidence only. It was used to survive and is not the benchmark for the rebuilt business.
 
-### FOUNDER DECISION — current B2C operating target
+### FOUNDER DECISION — current live-course target
 
-Current target for the rebuilt B2C model:
+The rebuilt B2C target remains:
 
-- standard price remains EUR 80 single / EUR 120 couple;
-- target attendance is 10-12 paying participants per edition;
-- prior EUR 50 pricing and prior average attendance are not to be used as forward benchmarks;
-- the business is to be evaluated zero-based against the economics and achievability of this new target configuration.
+- EUR 80 Single / EUR 120 Couple;
+- 10-12 paying participants per edition;
+- no use of the historical EUR 50 price or 6-person average as forward benchmarks.
 
-Status: CURRENT.
-
-### DERIVED — target edition economics before acquisition/overhead
-
-Because the mix between singles and couples is not yet fixed, collected revenue per participant under the current price architecture can range from approximately EUR 60 (all participants buying as couples) to EUR 80 (all buying singly).
+### DERIVED — normalized contribution before acquisition/overhead
 
 Using room EUR 60, materials EUR 9/person and normalized instructor cost EUR 200:
 
@@ -58,111 +53,165 @@ Using room EUR 60, materials EUR 9/person and normalized instructor cost EUR 200
 | 10 | EUR 600-800 | EUR 350 | EUR 250-450 |
 | 12 | EUR 720-960 | EUR 368 | EUR 352-592 |
 
-These figures are before payment fees, travel/setup, administrative time, taxes, general overhead and acquisition cost.
+These figures exclude payment fees, travel/setup, administrative time, taxes, general overhead and acquisition cost.
 
-The rebuilt target therefore has materially different direct economics from the historical survival configuration if 10-12 seats can be filled consistently at the current price architecture.
+The 10-12 participant target remains an important operating objective for the flagship, but it is no longer treated as the entire Formalife business model.
 
-## B2C acquisition
+## 2. B2C acquisition — observed reality
 
-### FACT — observed source mix
+### FACT — historical/current source mix
 
-Founder-reported historical/current source mix:
+Founder-reported source mix:
 
-- approximately 90% of participants are parents of patients of a pediatrician and are contacted through an email sent via the pediatrician relationship;
-- approximately 10% arrive through word of mouth;
-- direct cash media spend/CAC for these observed sources is currently approximately EUR 0.
+- approximately 90% of participants are parents of patients of a pediatrician and were reached through the pediatrician relationship;
+- approximately 10% arrived through word of mouth;
+- direct cash media spend for these observed sources was approximately EUR 0.
 
 ### ASSET
 
-The pediatrician relationship currently provides access, trust transfer and distribution to a highly relevant parent audience without direct media spend.
+The pediatrician relationship demonstrates real trust-transfer and distribution into a relevant parent audience.
 
 ### OBSERVATION
 
-Cash CAC of approximately zero for the current source does not establish that acquisition is economically free or scalable. The current system is highly dependent on borrowed distribution/trust from one relationship and has not yet demonstrated what CAC would be outside that channel.
+This does not prove scalable zero-CAC acquisition. The historical mechanism depends heavily on one relationship and must evolve into a broader repeatable partner/healthcare distribution system.
 
-## MARKET / CATEGORY / POSITIONING — current decision block
+## 3. Market evidence retained
 
-### EXTERNAL OBSERVATION — category alternatives, 2026-09-21
+### OBSERVATION — initial wedge
 
-Current market scan shows that the direct category already contains multiple offers with theory + hands-on pediatric first-aid / choking training, often at EUR 35-80 and sometimes free at introductory level. Examples include:
+Founder-reported historical evidence indicates:
 
-- Fondazione Poliambulanza Brescia: theoretical/practical pediatric first-aid course for parents/educators, 4 hours, EUR 80;
-- Salvagente Italia: pediatric first-aid course, theory + practice, 3 hours, EUR 50, including Brescia dates;
-- Associazione Lea / Croce Rossa collaboration: pediatric lifesaving courses from free introductory sessions to EUR 35 executor courses;
-- GeA in Brescia: pediatric first-aid course, 4 hours, EUR 50 plus VAT, including manual/poster/kit and attendance certificate;
-- Futura Formazione Brescia: pediatric first-aid course, practical component, EUR 80 and accredited-provider positioning.
+- choking fear/concern was common among prior B2C participants;
+- approximately 50-60% were in the weaning/complementary-feeding phase.
 
-Therefore "4 hours + theory + mannequins/practice + competent instructor" is not, by itself, a defensible market difference. EUR 80 is also not inherently a premium position because comparable institutional/accredited offers exist at the same price and lower-priced alternatives are widely available.
+Weaning/choking therefore remains a credible initial high-salience entry window into the broader Formalife model.
 
-### ASSET / OBSERVATION — Formalife public differentiation material already exists
+The historical active-demand vs latent-demand split remains unknown and should be measured prospectively rather than inferred.
 
-Formalife's current public communication contains elements that may support a more specific position than generic pediatric first aid:
+### EXTERNAL OBSERVATION — category comparability
 
-- focus on parents of children 0-6 rather than an undifferentiated lay audience;
-- prevention before emergency intervention;
-- recognition of partial vs total obstruction and emphasis on knowing when **not** to intervene;
-- "Ferma, Valuta, Agisci" as a simple anti-panic decision sequence;
-- pediatrician scientific direction and explicit line-guideline verification;
-- proprietary book / reference material designed to remain available at home;
-- explicit separation between understanding (book) and hands-on motor training (course);
-- feedback 1-to-1 during practical training;
-- couple offer framed around protecting the family system rather than merely discounting a second seat.
+The Italian category already contains many theory + practice pediatric first-aid/choking offers, often at similar or lower prices and sometimes free.
 
-These are **assets and candidate positioning ingredients**, not yet proof of a defensible position.
+Therefore the company is not being rebuilt around the assumption that "4 hours + mannequins + competent instructor" is itself a defensible difference.
 
-### HYPOTHESIS — category frame to test
+Detailed category work is retained in `MARKET_EVIDENCE.md` and `POSITIONING_DIAGNOSIS.md`.
 
-Formalife may be stronger if it does not compete primarily as "another pediatric first-aid course" but as a **preparation system for parents/caregivers designed to reduce panic, improve recognition and produce correct action before and during pediatric emergencies**.
+## 4. Current asset base
 
-Working shorthand: **Anti-Panico preparation system for parents of young children**.
+Current assets include:
 
-This remains a hypothesis until we verify that the difference is:
+- Guida Anti-Panico al Soffocamento Pediatrico;
+- full in-person choking course;
+- Light/Serata pilot;
+- Training Credit;
+- practical teaching/delivery capability;
+- proprietary educational materials and Ferma. Valuta. Agisci.;
+- scientific/pediatric authority asset, subject to credential/wording reconciliation;
+- partner/referral/partner-hosted distribution capability;
+- existing customer/proof base;
+- website/payment/tracking/email infrastructure;
+- founder-reported publishing-house / publishing capability;
+- editorial production capability and the ability to create books/guides as products, not only course support material.
 
-1. operationally real in product/delivery, not only copy;
-2. relevant enough to change customer preference;
-3. sufficiently distinct from direct and indirect alternatives;
-4. economically compatible with the intended offer architecture;
-5. transferable beyond the founders.
+Detailed inventory is in `ASSET_INVENTORY.md`.
 
-### SUPERSEDED PROVISIONAL DIAGNOSIS
+## 5. CURRENT STRATEGIC DIRECTION — target company
 
-The previous provisional diagnosis treated "reliably fill 10-12 seats at the new price" as the first bottleneck.
+Status: CURRENT FOUNDER-ALIGNED TARGET.
 
-Status: **SUPERSEDED AS FIRST BOTTLENECK**.
+Formalife is being built as a **parent-first consumer company focused on pediatric safety, prevention and emergency preparedness for parents and caregivers**.
 
-Seat-fill remains an important later test, but it is downstream of a missing prerequisite: Formalife first needs a validated market/category/positioning frame and an offer architecture that embodies it. Optimizing acquisition before that would risk scaling an undifferentiated or incorrectly framed offer.
+The company target is broader than one course and narrower than a generic parenting platform.
 
-## OPEN QUESTIONS — current block
+The intended system combines:
 
-The current priority is to reconstruct the business zero-based before returning to acquisition.
+- recognizable human experts and scientific responsibility;
+- live practical education;
+- digital courses and long-lived reference products;
+- proprietary publishing;
+- useful free resources/tools;
+- physical products where they strengthen preparedness;
+- specialist partnerships;
+- healthcare/family distribution;
+- customer lifecycle and second-purchase architecture;
+- later geographic scale through a standardized instructor/delivery system.
 
-First founder input needed: **complete inventory of what Formalife can currently sell, deliver or credibly build from existing assets** — not only the 4-hour course.
+Tiny Hearts is the primary international business reference for the type of company Formalife intends to become. The current target architecture is defined in `FORMALIFE_TARGET_MODEL.md`; international precedent research is in `INTERNATIONAL_BENCHMARKS.md`.
 
-This inventory should include existing or near-ready:
+## 6. FOUNDER DECISION — BLSD architecture
 
-- B2C products/services;
-- B2B products/services;
-- books / intellectual property / proprietary materials;
-- instructors and specialist competencies;
-- certifications/accreditations/partnerships that materially affect what can be sold;
-- audiences/distribution relationships;
-- delivery formats already possible (classroom, company on-site, online, etc.);
-- assets already built but not yet monetized.
+Formalife intends to develop two distinct BLSD products serving different jobs.
 
-After this inventory, the next work is:
+### BLSD certificato
 
-**category/alternatives → desirable customer → operational difference → positioning → offer architecture → economics → acquisition.**
+- standard certified course;
+- follows the competent accreditation/certification rules;
+- Formalife does not attempt to differentiate it by changing what cannot legitimately be changed;
+- commercial job: provide the credential professionally and reliably.
+
+Current accreditation/instructor/provider details still require documentary reconciliation before customer-facing claims.
+
+### BLSD Formalife — non certificato
+
+- separate proprietary consumer product;
+- customer job: real learning/preparedness rather than credential acquisition;
+- non-certification is part of the product rationale, because the curriculum can be optimized for learning rather than for a fixed certification syllabus;
+- Formalife may design practice, scenarios, repetition, home reference, digital preparation/refresh and family/caregiver sharing subject to scientific validation;
+- the product can use a `Learn -> Practice -> Share`-type logic where appropriate without being constrained to the standard certified-course architecture.
+
+The two products must remain clearly distinct in purpose and communication.
+
+## 7. Strategic implications now in force
+
+### Current company question
+
+The governing question is no longer:
+
+**"How do we differentiate the current choking course?"**
+
+It is:
+
+**"How do we build the parent-first pediatric-safety company described in `FORMALIFE_TARGET_MODEL.md`, using the current choking/weaning wedge and existing assets as the strongest starting point?"**
+
+### Current construction priorities
+
+The current target requires, in sequence:
+
+1. strengthen human authority / scientific brand presentation;
+2. strengthen the choking flagship without treating it as the whole company;
+3. build a coherent digital safety-course layer;
+4. turn publishing into a repeatable product engine;
+5. build free recurring value / owned demand;
+6. build lifecycle CRM/account logic;
+7. develop specialist partnerships rather than duplicating every adjacent competence;
+8. build the two-track BLSD architecture;
+9. systematize partner/healthcare distribution;
+10. prove customer-level economics beyond a single classroom transaction.
+
+## 8. Partnership direction
+
+The current model explicitly favors structural combinations with specialists when Formalife and the partner possess complementary assets.
+
+Svezzy is a current natural candidate for the weaning vertical because it already owns specialist product/technology/audience assets that Formalife should not duplicate merely to enter that category.
+
+Potential target products include co-created publishing and digital education, with real specialist provenance and explicit economics/IP/data terms. No partnership is assumed closed until mutually agreed.
+
+## 9. Boundaries of the target model
+
+Formalife's current target territory is:
+
+**pediatric safety + prevention + emergency preparedness.**
+
+The company may develop many products inside that territory over time, but this target does not authorize generic expansion into unrelated parenting categories merely to increase SKU count.
+
+The certified-training track is a separate functional/commercial lane and must not force the consumer brand to become certification-led.
 
 ## Layer 1 references
 
 Relevant current doctrine:
 
-- `merenda/01_mercato/clienti-identificabili-e-target.md`
-- `merenda/01_mercato/appropriatezza-clienti.md`
+- `REASONING_KERNEL.md`
 - `merenda/02_posizionamento/differenziazione-operativa.md`
 - `merenda/02_posizionamento/estensioni-di-linea-e-architettura-brand.md`
-- `merenda/03_offerta/front-end-e-back-end.md`
-- `merenda/03_offerta/prezzo-premium-e-percezione-del-valore.md`
 - `merenda/05_acquisizione/partnership-distribuzione-e-combinazioni.md`
-- `merenda/09_business/numeri-cassa-e-crescita.md`
-- `REASONING_KERNEL.md`
+- current doctrine on offer architecture, second transaction, economics, cash and transferability.
