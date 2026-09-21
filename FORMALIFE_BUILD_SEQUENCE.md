@@ -17,28 +17,33 @@ The sequencing rule is:
 
 This deliberately increases the sophistication of the overall system while limiting the number of variables being introduced at the same time.
 
-## Block 1 — Make the choking-led flagship system the commercial proof engine
+## Block 1 — Make the choking-led B2C flagship system the commercial proof engine
 
-The first priority is not a new product. It is to make the current **choking-led acquisition system** strong enough to feed a coherent broader pediatric-safety/emergency-preparedness flagship and function as the first commercial proof engine of the target company.
+The first priority is not a new product. It is to make the current **choking-led direct-to-consumer acquisition system** strong enough to feed a coherent broader pediatric-safety/emergency-preparedness flagship and function as the first commercial proof engine of the target company.
 
-The commercial system is:
+The immediate B2C system is:
 
-**choking-specific Guide / appropriate low-friction Light or direct entry -> broader Full Course -> designed next step.**
+**choking/weaning trigger -> direct Full Course OR optional Guide first -> broader Full Course -> designed next relevant state.**
 
-Choking/weaning remains the primary acquisition wedge; the rebuilt Full Course is the broader parent-first pediatric safety/emergency-preparedness flagship. The system must not collapse those two jobs into the same market meaning.
+High-intent prospects must be able to buy the Full Course directly. The Guide remains an optional paid information front-end, not a mandatory toll booth.
+
+**Light / Serata Anti-Panico is not part of the direct B2C funnel.** It belongs to the B2B/B2B2C partner-hosted lane and is handled in Block 2.
+
+Choking/weaning remains the primary acquisition wedge; the rebuilt Full Course is the broader parent-first pediatric safety/emergency-preparedness live flagship. The system must not collapse those two jobs into the same market meaning.
 
 The flagship must present Formalife as a parent-first pediatric-safety company, not as another generic training provider.
 
-The minimum system includes:
+The minimum B2C proof system includes:
 
 - visible human/scientific authority;
 - clear customer-facing distinction between Formalife consumer education and certification-led training;
-- the Guide/Light choking entry assets and broader Full Course working as one coherent commercial system without making the entry product deliberately incomplete;
+- the Guide as an optional choking-specific paid front-end and the broader Full Course as coherent but distinct offers;
 - simple Single/Couple architecture;
 - reliable checkout, attribution and customer data capture;
-- real proof from previous/current customers;
+- real proof from previous/current customers, without stretching historical choking proof to claims about a materially rebuilt flagship;
 - explicit capture of source, relevant child life stage/trigger where voluntarily provided and useful, and purchased product;
-- normalized delivery economics including instructor cost.
+- normalized delivery economics including instructor cost;
+- explicit handling of non-buyers, cart recovery and post-delivery referral/proof.
 
 The immediate economic proof remains the current founder target of 10-12 paying participants at EUR 80 Single / EUR 120 Couple, but the measurement unit expands from one edition to the full customer relationship.
 
@@ -48,18 +53,28 @@ Formalife must be able to read reliably:
 
 - revenue and normalized contribution per edition;
 - source of each customer;
-- conversion by source/partner when observable;
+- conversion by source when observable;
 - customer count and purchase history;
+- Guide -> Full Course behavior when Guide is used as front-end;
+- direct high-intent -> Full Course behavior;
 - second-purchase / upgrade behavior when offered;
+- why buyers say they chose Formalife and what they perceived as different;
 - whether the choking-specific entry -> broader Full Course bridge is actually understood and accepted by customers.
 
-The goal of Block 1 is not perfect branding. It is a flagship system that can generate money, proof and usable data without founder-side improvisation.
+The goal of Block 1 is not perfect branding. It is a B2C flagship system that can generate money, proof and usable data without founder-side improvisation.
 
-## Block 2 — Turn the pediatrician success into a repeatable distribution system
+The mature B2C target funnel is defined separately in `B2C_COMMERCIAL_FUNNEL_V2.md`; Block 1 deliberately implements only the minimum proven subset.
+
+## Block 2 — Turn trusted distribution into a repeatable B2B/B2B2C channel
 
 Before relying on paid cold acquisition, Formalife should attempt to reproduce the strongest existing commercial evidence: trusted distribution through people and organizations that already serve the right parents.
 
 The current pediatrician relationship is treated as the prototype, not as a permanent single-source channel.
+
+This block includes two distinct mechanisms:
+
+1. **referral/distribution into central B2C offers** — partner introduces Formalife, while Formalife retains the central customer journey, sale, payment and delivery;
+2. **partner-hosted Light / Serata Anti-Panico** — Light is a B2B/B2B2C hosted product used when a lower-friction local educational initiative creates value for the partner and its audience.
 
 The distribution system should be productized for repeatable use with:
 
@@ -76,7 +91,9 @@ The company must be able to distinguish:
 
 - partner that merely expressed interest;
 - partner that actively promoted/hosted;
+- referral to a central B2C offer versus hosted-Light participation;
 - participants/customers generated;
+- downstream movement from partner-sourced activity into broader Formalife products;
 - economics of the relationship;
 - repeatability over more than one initiative.
 
@@ -84,7 +101,7 @@ The strategic objective is to move from **one pediatrician relationship** to a *
 
 ## Block 3 — Build one scalable digital flagship, not a digital catalog
 
-Only after the flagship and customer path are coherent should Formalife build the first substantial digital product.
+Only after the live flagship and customer path are coherent should Formalife build the first substantial digital product.
 
 The first digital product should stay very close to the proven core: pediatric choking / emergency preparation for parents and caregivers.
 
@@ -100,6 +117,14 @@ Preferred characteristics include:
 - ability to sell nationally without proportional classroom capacity.
 
 The job of this product is to create the first meaningful scalable revenue layer and to prove that Formalife can monetize outside physical classroom capacity.
+
+The mature B2C funnel may then test:
+
+- Digital as a direct first core purchase;
+- Guide -> Digital;
+- Digital -> Live;
+- Digital + Live Hybrid packaging;
+- Live direct versus Digital-first economics.
 
 ### Gate before broadening the digital library
 
@@ -188,9 +213,9 @@ They become rational only when the earlier engine creates demand, economics, pro
 
 ## Current executive sequence
 
-1. **Flagship commercial proof** — make the choking-led Guide/Light -> broader Full Course path work as one measurable parent-first engine.
-2. **Trusted distribution** — reproduce the pediatrician mechanism across multiple relevant partners.
-3. **Scalable digital flagship** — create the first nationally sellable, high-quality consumer digital product around the same proven core.
+1. **B2C flagship commercial proof** — make choking/weaning demand -> optional Guide or direct broader Full Course work as one measurable parent-first engine.
+2. **Trusted B2B/B2B2C distribution** — reproduce the pediatrician mechanism across multiple relevant partners; use Light only inside the partner-hosted lane where it creates value.
+3. **Scalable digital flagship** — create the first nationally sellable, high-quality consumer digital product around the same proven core and test Digital/Live/Hybrid routing.
 4. **Owned demand + lifecycle** — recurring free utility and trigger-based customer relationship infrastructure tied to working paid products.
 5. **Adjacent expansion** — specialist partnership first; proprietary BLSD and broader vertical depth after the core proves repeatable.
 
