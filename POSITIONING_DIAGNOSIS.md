@@ -1,6 +1,6 @@
 # Formalife Positioning Diagnosis
 
-Status: CURRENT — research synthesis / provisional strategic recommendation
+Status: CURRENT — positioning block reopened after founder correction
 Date: 2026-09-21
 
 Purpose: record the current competitive diagnosis for Formalife's B2C choking/weaning beachhead. This file does **not** convert hypotheses into founder decisions and does not authorize new clinical claims.
@@ -25,24 +25,15 @@ The relevant competitive field is wider than local classroom courses.
 
 ### A. Institutional / recognized training providers
 
-Examples observed include:
+Examples observed include Fondazione Poliambulanza, Croce Rossa committees, hospitals/ASL and Salvamento Academy.
 
-- Fondazione Poliambulanza Brescia — pediatric first-aid course for parents/educators, theory + practice, 4 hours, EUR 80;
-- Croce Rossa committees — pediatric lifesaving/disobstruction courses, often low-cost or free for some audiences;
-- Salvamento Academy — pediatric first-aid/PBLS formats with manuals/materials, certificates and instructor network.
-
-Structural advantages: authority, institutional trust, standardized training, network/distribution, often lower price.
+Structural advantages include authority, institutional trust, standardized training, network/distribution and often lower price.
 
 ### B. Specialist private operators
 
-Examples observed include:
+Examples observed include Salvagente Italia, Missione Crescere / Polina Kazimirova, Santagostino, Camillo, Amabimbi and other parenting specialists.
 
-- Salvagente Italia — theory + practice, pediatric emergencies, individual mannequin practice, materials, attendance certificate, blended/refresh architecture;
-- Missione Crescere / Polina Kazimirova — choking + resuscitation, prevention, partial-vs-total recognition, safe cuts, couple pricing, weaning packages, materials and small-group practice;
-- Santagostino — safe cuts + pediatric choking, individual mannequin availability, repetition and muscle-memory framing;
-- Unimamma / Better Call Sam and similar parenting specialists — weaning + safe cuts + choking content, often online or live group formats.
-
-Structural advantages: parent-specific language, convenience, breadth across parenting topics, strong personal authority, online distribution and frequent low-friction entry products.
+Structural advantages include parent-specific language, convenience, breadth across parenting topics, personal authority, online distribution and low-friction entry products.
 
 ### C. Free / low-cost substitutes
 
@@ -68,7 +59,7 @@ The following elements are already common enough that Formalife should **not** t
 - individual practice / instructor correction;
 - small groups;
 - manuals, handouts, posters or digital follow-up material;
-- participation certificate;
+- participation certificate or practical test;
 - authority from healthcare/first-aid professionals;
 - targeting parents, grandparents, babysitters and educators;
 - weaning + choking bundles;
@@ -76,7 +67,7 @@ The following elements are already common enough that Formalife should **not** t
 - promises around feeling safer, more aware or calmer;
 - blended theory/practice and refresh pathways.
 
-Implication: Formalife cannot win merely by saying that it is more complete, more practical, safer or more reassuring.
+Implication: Formalife cannot win merely by saying that it is more complete, more practical, safer, more reassuring, more family-oriented or more focused on weaning.
 
 ## 4. Formalife assets that matter
 
@@ -85,124 +76,137 @@ Current assets with potential strategic value:
 - proprietary 176-page Guida Anti-Panico integrated with the course;
 - common educational structure across Guide/course: **Ferma. Valuta. Agisci.**;
 - explicit emphasis on recognizing the situation before acting;
-- emphasis on what **not** to do when intervention is not appropriate;
 - prevention + recognition + action framed as one sequence;
 - maximum 12 participants and correction/retry loop;
 - Guide as a durable at-home reference after the class;
 - Training Credit architecture between Guide/Light/full course;
+- current Single/Couple architecture;
 - pediatric scientific-direction asset, subject to current credential/wording verification;
 - real partner/referral/partner-hosted distribution assets.
 
-These assets are useful, but several are still replicable by competitors. They become a stronger position only if combined into a product experience competitors do not currently make central.
+These are assets, not positioning decisions.
 
-## 5. Core diagnosis
+## 5. FOUNDER CORRECTION — 2026-09-21
 
-### OBSERVATION
+The founder rejected two assumptions in the previous provisional recommendation:
 
-Current Formalife content is already conceptually more decision-oriented than a generic "learn the maneuver" course.
+1. **"Anti-Panico" must not be interpreted literally as the customer-facing category or promise.** By itself it does not explain clearly what Formalife is about and should not be assumed to carry the positioning.
+2. The founder is **not convinced that Anti-Panico should be the center of differentiation**. It may remain one element inside a larger product/brand system.
 
-However, the documented course architecture still appears close to the strongest category pattern:
+Therefore the previous recommendation to make **decision-first / scenario-based Anti-Panico training** the central differentiation is **SUPERSEDED AS LEADING POSITIONING HYPOTHESIS**.
 
-**explanation/context -> demonstration -> mannequin practice -> instructor feedback/correction.**
+Scenario-based drills, decision-before-technique and debrief may still be useful product-design components. They are no longer treated as the position itself.
 
-The brand territory "Anti-Panico" therefore risks being ahead of the operational product if it is interpreted as a materially different way of training performance under uncertainty/stress.
+## 6. Deeper category weakness — current synthesis
 
-### PROVISIONAL STRATEGIC RECOMMENDATION — NOT YET FOUNDER DECISION
+### EXTERNAL OBSERVATION
 
-Do **not** position Formalife primarily as:
+Public parent discussions reveal a recurring problem that survives course attendance:
 
-- the most complete pediatric first-aid course;
-- the course with more practice;
-- the course for weaning;
-- the course with a pediatrician;
-- the course with a book;
-- the course that makes parents calm.
+- some parents still fear they would freeze or execute incorrectly in a real event after having taken a course;
+- some repeat courses or rewatch videos months later because they no longer trust their recall;
+- parents frequently mention the need for partners, grandparents and other caregivers to know what to do as well.
 
-All of these are either category conventions, authority/proof assets, or claims that are easy to copy.
+Current resuscitation-education literature also supports a general retention problem: knowledge and procedural skills decline over time, and reinforcement / spaced or competence-based retraining can improve retention. This evidence supports product-design exploration; it does not by itself prove a specific commercial promise for Formalife.
 
-Instead, evaluate building the Anti-Panico product around a real **decision-first, scenario-based training architecture**:
+### CATEGORY OBSERVATION
 
-**recognize -> decide whether/how to act -> execute -> receive feedback -> debrief -> repeat.**
+Most offers still transact primarily as **attendance at an event by an individual participant**, even when they allow couples, grandparents, refresh courses, e-learning access, practical tests or take-home materials.
 
-The intended contrast would be:
+Several competitors already offer individual pieces of continuity or family participation, so none of these features is unique alone.
 
-**training isolated maneuvers** vs **training the sequence that precedes and includes the maneuver in a realistic decision context.**
+The potential strategic gap is instead the **integration and unit of value**:
 
-This is consistent with Layer 1's requirement to build the difference operationally before communicating it.
+**course seat / event attendance**
+vs
+**a defined state of preparedness across the child's real caregiving network, checked and maintained over time.**
 
-## 6. What would need to change operationally
+This is a working synthesis, not yet a founder decision.
 
-To earn this position, the full course should contain explicit components such as:
+## 7. HYPOTHESIS — family preparedness maintained over time
 
-1. **Recognition drills** — participants are shown/asked to classify different situations before being told which maneuver applies.
-2. **No-action / wrong-action discrimination** — exercises include situations in which the correct response is not to perform a choking maneuver, subject to scientific-direction approval.
-3. **Scenario cards / branching cases** — context changes: meal, small object, child vs infant, caregiver alone vs two adults, progression of the situation.
-4. **Decision-before-technique rule** — the participant must state what they observed and why they chose an action before executing it.
-5. **Debrief loop** — not only "were the hands placed correctly?" but "what cue did you notice, what did you miss, why did you choose that response?"
-6. **Repeated scenario variation** — a second attempt changes the scenario instead of merely repeating the same maneuver mechanically.
-7. **At-home continuity** — Guide/checklists preserve the same decision structure after the course.
-8. **Prospective measurement** — future cohorts capture trigger/life stage, acquisition source, confidence/decision-recognition measures that are valid and non-clinical, and conversion/economics.
+A stronger positioning territory to evaluate is:
 
-Clinical wording, scenario correctness and any claim of improved performance/panic reduction require scientific-direction validation and evidence. "Anti-Panico" must not be marketed as clinical superiority without proof.
+**Formalife does not merely sell attendance at a pediatric-choking course; it builds and maintains practical preparedness in the family / caregiver network around the child.**
 
-## 7. Brand / focus implication
+Working interpretation:
 
-Formalife should not broaden market-facing communication to "all pediatric emergencies" at this stage merely because the masterbrand can theoretically support them.
+- **weaning** = first high-salience entry window / beachhead;
+- **soffocamento pediatrico** = clear initial problem/category;
+- **family/caregiver network** = unit of value rather than only the individual attendee;
+- **verified practice** = evidence that the participant has not merely listened;
+- **continuity / refresh** = protection against predictable skill and recall decay;
+- **Guide** = durable home reference and continuity asset;
+- **Anti-Panico / Ferma-Valuta-Agisci** = possible didactic/brand element inside the system, not the market category itself;
+- **scenario-based training** = possible training method inside the system, not the positioning itself.
 
-The current stronger focus is:
+No final name is proposed at this stage. Descriptors such as "family preparedness" are strategic shorthand only.
 
-**choking / weaning beachhead -> Anti-Panico decision-first preparation -> prove demand, economics and transferability.**
+## 8. Product architecture this hypothesis would require
 
-Additional pediatric-emergency modules remain parked until the core earns expansion.
+If this territory survives validation, the product would need to change operationally. Candidate components include:
 
-The corporate/masterbrand can remain Formalife operationally, but market meaning should stay focused rather than asking the customer to remember Formalife for many unrelated emergency categories at once.
+1. **Stage-specific onboarding** — capture the child's current life stage (especially pre-weaning/weaning initially) and relevant caregivers.
+2. **Caregiver map** — make explicit who actually feeds/cares for the child instead of treating participation as an isolated individual purchase.
+3. **Individual practical verification** — attendance alone is not the completion standard; wording must avoid implying professional certification where none exists.
+4. **Scenario / recognition drills** — used as one learning component where clinically appropriate.
+5. **Durable home reference** — Guide/checklists mapped to the same educational structure.
+6. **Scheduled reinforcement** — prospectively test short refresh touchpoints after the live course rather than assuming one classroom event is sufficient indefinitely.
+7. **Care-network extension** — a designed path for the second parent / grandparent / babysitter rather than leaving knowledge transfer to the first attendee.
+8. **Reassessment / refresh offer** — only if evidence and economics show real value; not assumed as a subscription or recurring product yet.
 
-## 8. Offer-ladder implication
+All clinical scenarios, claims, verification criteria and refresh content require scientific-direction validation.
 
-The existing Guide -> Light -> Full Course architecture remains strategically plausible, but its roles should be tested rather than assumed:
+## 9. Why this is strategically stronger than the previous hypothesis
 
-- **Guide**: low-friction understanding/reference;
-- **Light**: sample of the decision-first experience + supervised practice;
-- **Full Course**: complete scenario-based decision + hands-on training;
-- later refresh only if real retention/skill-refresh demand and economics justify it.
+This territory changes more than course choreography. It can alter:
 
-Training Credit is potentially valuable because it connects the ladder without permanently discounting the full course.
+- **what is sold** — preparedness vs attendance;
+- **who the customer unit is** — care network vs isolated seat;
+- **when Formalife enters** — high-salience life stage, initially weaning;
+- **how value is delivered** — before, during and after the live session;
+- **how proof is generated** — individual practical verification and prospective retention/use data;
+- **how second transactions can arise** — additional caregivers / refresh / later life-stage needs, if economically justified;
+- **how partners fit** — pediatricians, nurseries and family services can reach recurring cohorts entering the relevant life stage.
 
-## 9. What not to do now
+It also gives the existing Guide, Couple offer, Light format, Training Credit and partner distribution a possible common strategic role rather than treating them as disconnected features.
 
-Do not yet:
+## 10. Risks / unresolved questions
 
-- scale paid acquisition around generic "pediatric first aid";
-- broaden the product line;
-- claim superior effectiveness or reduced panic;
-- compete on number of topics covered;
-- use price as the main difference;
-- treat pediatric authority, reviews or the Guide as substitutes for operational differentiation;
-- assume the current full course deserves to remain unchanged because the landing copy is already built.
+This hypothesis is not yet a decision because it must survive:
 
-## 10. Current decision required
+- market comprehensibility: the customer must understand why this is better than simply taking a course;
+- willingness to pay relative to free/low-cost alternatives;
+- capacity economics if more caregivers are trained per child;
+- operational cost of refresh/reassessment;
+- regulatory/credential wording around practical verification;
+- transferability to non-founder instructors;
+- competitor response/copyability;
+- proof that continuity materially affects customer preference, not only educational quality.
 
-The next founder decision block is narrow:
+The existence of comparable ingredients elsewhere means Formalife must create a coherent system, not claim novelty for single features.
 
-**Should Formalife deliberately redesign the core course so that "Anti-Panico" means a real decision-first, scenario-based training architecture, rather than continue with a conventional theory/demonstration/practice course wrapped in differentiated copy?**
+## 11. Current decision block
 
-If approved, the next task is product design: define the minimum viable Anti-Panico training protocol, scientific review gates, instructor process, measurable outputs and pilot criteria before returning to acquisition scaling.
+Do **not** yet redesign the course around "Anti-Panico" as the central differentiator.
+
+Current work should instead stress-test the broader hypothesis:
+
+**life-stage trigger (weaning) + family/caregiver network as unit of value + verified practical preparation + continuity over time.**
+
+The next decision is whether this integrated territory can become a customer-understandable, economically viable and operationally real position stronger than the current category alternatives.
 
 ## Layer 1 references
 
 - `REASONING_KERNEL.md`
 - `merenda/01_mercato/clienti-identificabili-e-target.md`
 - `merenda/02_posizionamento/differenziazione-operativa.md`
+- `merenda/02_posizionamento/esempi-di-differenziazione.md`
 - `merenda/02_posizionamento/estensioni-di-linea-e-architettura-brand.md`
 - `merenda/03_offerta/front-end-e-back-end.md`
 
 ## External research references — checked 2026-09-21
 
-- Fondazione Poliambulanza Brescia — current/archived pediatric first-aid courses.
-- Salvagente Italia — Primo Soccorso Pediatrico and practice/refresh formats.
-- Salvamento Academy — Primo Soccorso Pediatrico and Baby Life Support manual.
-- Missione Crescere / Polina Kazimirova — choking/resuscitation and weaning bundles.
-- Santagostino — safe-cut and pediatric choking course.
-- Croce Rossa committee course examples.
-- Unimamma / Better Call Sam — weaning + choking/safe-cut formats.
-- Italian parent/community discussions on choking anxiety and course recommendations.
+Competitive/category examples include institutional providers, Croce Rossa committees, Salvamento Academy, Missione Crescere, Santagostino, Camillo, Amabimbi, maternity/family centers and local health-system courses.
+
+Retention / reinforcement references include current caregiver BLS retention research, spaced-training research and competence-based infant-CPR retraining literature. Community evidence includes Italian parent discussions and international parent communities reporting uncertainty/skill decay after prior training.
