@@ -1,1781 +1,1704 @@
-# B2C Funnel 01 — Choking / Weaning — Full Adaptive Architecture
+# B2C Funnel 01 — Choking / Weaning — Audited Adaptive Architecture
 
-Status: FOUNDER-DIRECTED PROVISIONAL TARGET OPERATING ARCHITECTURE — staged implementation required
+Status: CURRENT PROVISIONAL CANONICAL FUNNEL ARCHITECTURE — founder-directed; staged implementation and empirical validation required
 Date: 2026-09-21
 
-Purpose: define the complete direct-to-consumer Formalife funnel built around the initial choking / complementary-feeding wedge, including multiple entry points, awareness states, relationship states, educational progression, acceleration, backtracking, offers, upsells, cross-sells, downsells, automations, human escalation, post-sale, referral, tracking and economics.
+Purpose: define the complete direct-to-consumer Funnel 01 for Formalife around the initial choking / complementary-feeding wedge, while keeping the architecture causally ordered, economically testable and operationally controllable.
 
-This document supersedes `B2C_FUNNEL_01_CHOKING_WEANING_TO_FLAGSHIP.md` as the **complete target architecture** for Funnel 01. The earlier document remains useful as the narrower Block-1 implementation slice.
+This revision supersedes the previous version of `B2C_FUNNEL_01_CHOKING_FULL_ADAPTIVE.md` and incorporates a full postmortem against current Layer 1 doctrine.
 
-This document does **not** authorize building every component at once. `FORMALIFE_BUILD_SEQUENCE.md` remains canonical for execution order.
+`B2C_FUNNEL_01_CHOKING_WEANING_TO_FLAGSHIP.md` remains the historical narrower implementation slice.
 
-`Light / Serata Anti-Panico` is excluded from direct B2C. It remains a B2B/B2B2C partner-hosted product.
+`FORMALIFE_BUILD_SEQUENCE.md` remains canonical for execution order. This document defines the target system; it does not authorize simultaneous construction of every component.
 
----
-
-## 1. Founder direction incorporated
-
-The Funnel 01 system must be sophisticated enough to serve people entering at materially different levels of readiness.
-
-Founder direction now incorporated:
-
-- multiple entry points are required;
-- source does not determine awareness or readiness;
-- less-ready prospects must be given enough time and enough useful material to become correctly educated before a strong sales ask;
-- highly ready prospects must not be slowed down merely to make them respect a predefined funnel;
-- the funnel must include explicit progression, acceleration, backtracking, recovery, upsell, cross-sell, downsell and long-horizon nurture;
-- the system may be long, while each individual journey should be only as long as required by that person's state.
-
-Core design principle:
-
-**long system, variable individual path.**
+`Light / Serata Anti-Panico` remains outside direct B2C. It belongs to the B2B/B2B2C partner-hosted lane.
 
 ---
 
-## 2. Economic destination and scope
+# 1. Postmortem of the previous adaptive architecture
 
-### Initial wedge
+## 1.1 What was correct and is retained
 
-The strongest current Formalife evidence supports starting from:
+The previous version corrected several important errors:
 
-**parent/caregiver entering or currently in complementary feeding / starting solids + material concern about pediatric choking.**
+- **state before step** rather than one mandatory sequence;
+- **source is not state**;
+- lower-awareness prospects receive more education;
+- high-intent prospects can accelerate directly to the offer;
+- explicit backtracking exists when a prospect has been treated as too advanced;
+- service issues suppress ordinary promotion;
+- no fake urgency or automatic discounting;
+- Guide and Full have different jobs;
+- Guide is optional rather than a toll booth;
+- purchase suppresses acquisition for the same product;
+- no-sale, waitlist, no-show, proof and referral are designed rather than ignored;
+- the funnel is measured through contribution, CAC and payback rather than lead volume alone.
 
-### Initial core economic destination
+These principles remain active.
 
-The first core monetization target remains:
+## 1.2 Main defect: the architecture overcorrected from too short to too specified
 
-**Live Full Course — broader pediatric safety / emergency preparedness.**
+The previous file described fourteen entry points, six named educational assets, more than twenty automations and several future products.
 
-The Full Course is broader than choking. Choking is the acquisition wedge and one of the deepest practical blocks, not the entire meaning of Formalife.
+That sophistication is legitimate as a **target map**, but it risks becoming architecture theatre if Formalife builds the map before proving the upstream commercial mechanism.
 
-### Mature Funnel 01 destination set
+Layer 1 requires simultaneous discipline on two fronts:
 
-As the product system develops, Funnel 01 may monetize through:
+**increase system sophistication + reduce failure variables.**
 
-- Guide / paid reference;
-- Live Full Course;
-- future Digital Emergency-Preparedness Flagship;
-- future Hybrid Digital + Live bundle;
-- future BLSD Formalife non-certified depth product;
-- future private family/caregiver intensive;
-- future refresh/reassessment;
-- relevant specialist/lifecycle cross-sells only when a real need exists.
+Therefore this revision preserves the richness of the system while reducing the number of independently built objects.
 
-Current build order still limits what is implemented first.
+Key correction:
+
+**many doors -> few routing families -> few canonical content jobs -> few monetization states.**
+
+## 1.3 Upstream gap: the funnel was more developed than the positioning and offer
+
+The previous file had a `Formalife Difference / Proof Asset`, but an asset cannot manufacture a difference that the business has not operationally earned.
+
+Current Formalife evidence says many category features are conventions rather than defensible differences by themselves, including practice, mannequins, small groups, healthcare authority, manuals, choking + prevention and couple participation.
+
+Therefore Funnel 01 is blocked from broad cold scaling until Formalife can state and substantiate:
+
+1. what operational difference the relevant customer can perceive;
+2. why that difference matters versus credible alternatives;
+3. how the offer makes that difference tangible;
+4. what proof supports the specific claims.
+
+This is a **positioning/offer gate**, not a copywriting task.
+
+## 1.4 The beachhead is still a working hypothesis
+
+Current evidence supports choking concern and the complementary-feeding window as a strong initial wedge.
+
+It does not yet prove that this cohort is the economically best scalable acquisition segment.
+
+The funnel must therefore prospectively measure:
+
+- actual trigger at entry;
+- awareness state;
+- alternative considered;
+- willingness to pay;
+- conversion;
+- acquisition cost;
+- Full contribution;
+- why the customer chose Formalife.
+
+The funnel is a machine for testing the beachhead as well as monetizing it.
+
+## 1.5 Missing state: current alternative / prior solution history
+
+The prior architecture tracked awareness, intent and relationship, but did not explicitly distinguish people who:
+
+- have never trained;
+- have only self-educated through free content;
+- have taken another first-aid/choking course;
+- hold a certification but want parent-focused preparation;
+- are actively comparing another provider.
+
+This matters because the selling job changes from category education to replacement/comparison or deeper practice.
+
+A new `ALTERNATIVE_STATE` is therefore added below.
+
+## 1.6 Missing state: decision unit
+
+The participant, payer and decision-maker can differ even in B2C.
+
+Examples:
+
+- one parent buys only for themselves;
+- one parent wants the second parent to attend;
+- a grandparent buys for themselves;
+- someone buys a Guide as a gift;
+- one partner wants Couple but needs the other participant to agree to date/time.
+
+The funnel must not turn this into bureaucratic profiling, but must know when another person materially affects the sale.
+
+A minimal `DECISION_UNIT_STATE` is added below.
+
+## 1.7 Purchase state and economic conversion were conflated
+
+A Guide purchase is a real customer transaction, but under paid acquisition it may not yet recover CAC.
+
+Layer 1 explicitly distinguishes first transaction from complete economic conversion.
+
+The revised funnel therefore tracks an **economic state/cohort layer** separately from relationship state.
+
+## 1.8 Educational time was over-specified
+
+The prior 21-45 / 14-30 / 7-14 day ranges were correctly marked hypotheses, but risked becoming accidental doctrine.
+
+The canonical architecture should define **educational jobs and progression evidence**, not a universal calendar.
+
+Calendar cadence belongs in controlled implementation tests.
+
+The revised rule is:
+
+**give enough time and enough useful material to complete the missing educational job; accelerate on explicit intent; slow or pause when timing is the real barrier.**
+
+## 1.9 Content architecture was too asset-centric
+
+`M0`, `M1`, `F1`, `M2`, `M3`, `F2` were useful conceptual labels but could lead Formalife to build six separate assets unnecessarily.
+
+The canonical unit is now the **CONTENT JOB**.
+
+One strong long-form page, video, book, email sequence or briefing may perform one or more jobs if it does so clearly and measurably.
+
+Format is secondary to function.
+
+## 1.10 Future products were too deeply embedded in the active funnel
+
+Digital, Hybrid, BLSD Formalife, Private Family and lifecycle verticals belong to the target company, but several do not exist yet.
+
+They now remain **dormant interfaces** rather than active funnel branches.
+
+An unavailable product cannot be an automation destination.
+
+## 1.11 Proof was present but not sufficiently claim-mapped
+
+The previous architecture distinguished proof by broad stage, but the actual operating requirement is stricter:
+
+**claim/risk -> required proof -> location in funnel -> permission/provenance -> current validity.**
+
+A formal proof register is therefore required.
+
+## 1.12 Risk reduction was under-designed
+
+The Full offer cannot rely only on price, proof and course capacity.
+
+The funnel must identify the actual purchase risks:
+
+- wasting time;
+- choosing the wrong level;
+- discovering a sales event rather than substantive education;
+- unclear transfer/cancellation conditions;
+- uncertainty about scientific authority;
+- uncertainty about what the participation certificate means;
+- concern that a four-hour event will not justify the commitment.
+
+Formalife must design sustainable risk reducers around the real barriers.
+
+No guarantee is invented here. Guarantee/risk-reversal terms require economic and operational approval.
 
 ---
 
-## 3. Governing routing rules
+# 2. Economic job of Funnel 01
 
-### Rule A — state before step
+Funnel 01 must prove that Formalife can turn a real choking / complementary-feeding demand signal into a profitable and repeatable parent-first customer relationship.
 
-The next action is selected from what the person currently knows, wants, has done and has already purchased.
+Primary economic chain:
 
-### Rule B — source is not state
+**existing/active/latent demand -> appropriate education -> first economically useful response -> first transaction or direct core purchase -> Full delivery -> proof/referral -> CAC recovery -> positive contribution -> next real need.**
 
-A person arriving from Google, Instagram, a pediatrician, a referral or a book may still be latent, problem-aware, solution-aware, product-aware or brand-aware.
+The funnel must answer:
 
-### Rule C — materials educate before expensive selling
-
-The lower the awareness and trust, the more work must be transferred to one-to-many educational material before expecting a high-commitment purchase.
-
-### Rule D — every material has a next job
-
-No article, video, guide, webinar, email or landing exists only to "create content".
-
-Each piece must specify:
-
-**state entering -> belief/understanding to create -> observable CTA -> next state.**
-
-### Rule E — accelerate explicit intent
-
-Explicit questions about dates, price, availability, Single/Couple, payment or course details can move a person directly to the appropriate offer/human help.
-
-### Rule F — backtrack weak conversion
-
-If a prospect is repeatedly exposed to a direct offer but does not advance, one hypothesis to test is that the funnel is speaking above their awareness level.
-
-The system may move them backward from:
-
-**product/offer -> solution/category education -> problem education -> waiting/timing state.**
-
-### Rule G — do not equate technical activity with intent
-
-Open, click, page view and video start are weak signals. Stronger evidence includes repeated meaningful consumption, explicit comparison, date/price interaction, checkout start, question, waitlist request or purchase.
-
-### Rule H — sale suppresses acquisition
-
-Once a product is purchased, the person exits acquisition for that same product and enters the relevant onboarding/post-sale state.
-
-### Rule I — service problems override marketing
-
-An unresolved service/support issue suppresses testimonial, referral, upsell and ordinary promotional automations until resolved.
-
-### Rule J — no fake urgency
-
-Only real course dates, seat capacity, valid expiry, shipping cutoffs or other genuine constraints may create deadlines.
+1. who the economically desirable initial customer actually is;
+2. which entry sources/states produce Full buyers rather than attention only;
+3. whether Direct Full or Guide-first produces better economics for each relevant state;
+4. whether the choking wedge successfully bridges to the broader Full Course;
+5. where and why prospects stall;
+6. what complete CAC is required by route;
+7. how quickly CAC is recovered;
+8. whether delivery creates enough satisfaction, proof and referral to strengthen subsequent acquisition;
+9. whether the mechanism can be operated without founder improvisation;
+10. whether capacity can support the demand before traffic is scaled.
 
 ---
 
-## 4. State model — do not flatten everything into one tag
+# 3. Hard gates before broad activation
 
-Routing should use several state dimensions rather than one generic `lead_status`.
+These are prerequisites, not optional optimizations.
 
-### 4.1 Relationship state
+## G0 — Scientific and claim governance
 
-- `UNKNOWN` — anonymous potential customer;
-- `KNOWN_PROSPECT` — identified but no purchase;
-- `ENGAGED_PROSPECT` — meaningful educational/offer interaction;
-- `GUIDE_BUYER` — first paid information purchase;
-- `FULL_CUSTOMER` — Full Course purchased;
-- `ATTENDED_CUSTOMER` — Full Course delivered;
-- `ADVOCATE` — satisfied and eligible for referral/proof requests;
-- `PAST_CUSTOMER_WAITING` — no current relevant paid need;
-- `LEAD_NO_SALE` — reached a genuine offer/decision point but did not buy;
-- `SERVICE_RECOVERY` — unresolved issue overrides marketing;
-- `DO_NOT_MARKET` — opt-out / permission or policy state prevents marketing contact.
+Before clinical educational materials or the rebuilt flagship are broadly promoted:
 
-### 4.2 Awareness state
+- curriculum/actions/red flags/scientific wording reviewed;
+- public roles and credentials reconciled;
+- approved claims and prohibited claims documented;
+- clear boundary between education and real-time medical/emergency advice;
+- content update/version owner defined.
 
-Canonical working progression:
+Clinical content in free materials is subject to the same governance logic as paid content.
 
-- `A0_UNAWARE_LATENT` — in target/life-stage but issue not yet salient;
-- `A1_PROBLEM_AWARE` — recognizes choking concern / preparedness gap;
-- `A2_SOLUTION_AWARE` — knows that training/reference/education can solve part of the problem;
-- `A3_PRODUCT_AWARE` — evaluating a specific course/product category or Formalife product;
-- `A4_BRAND_AWARE` — knows Formalife specifically and is evaluating whether to choose it.
+## G1 — Beachhead / target hypothesis
 
-### 4.3 Intent state
+Working target:
 
-- `I0_PASSIVE`;
-- `I1_ENGAGED`;
-- `I2_ACTIVE_EVALUATION`;
-- `I3_HIGH_INTENT`;
-- `I4_CHECKOUT_INTENT`;
-- `I5_PURCHASED`.
+**parent/caregiver entering or currently in complementary feeding, with meaningful pediatric-choking concern and interest in being prepared.**
 
-### 4.4 Trigger/context state
+Status: working hypothesis, not final market fact.
 
-Store only what changes routing and is appropriate to collect:
+Required prospective evidence:
 
-- `STARTING_SOLIDS_SOON`;
-- `STARTED_SOLIDS`;
-- `CHOKING_CONCERN`;
-- `AFTER_SCARE_OR_EVENT`;
-- `SEARCHING_FOR_TRAINING`;
-- `NEW_CAREGIVER_RESPONSIBILITY`;
-- `RETURNING_PARENT_NEW_CHILD`;
-- `OTHER_RELEVANT_CONTEXT`.
+- reachability;
+- propensity/capacity to pay;
+- response by awareness state;
+- response to the Formalife offer;
+- Full contribution and CAC;
+- fit and satisfaction after delivery.
 
-Do not collect unnecessary clinical details merely for marketing segmentation.
+## G2 — Operational difference / positioning
 
-### 4.5 Timing/barrier state
+Before significant cold demand creation, Formalife must define a difference that is:
 
-- `READY_NOW`;
-- `NEEDS_EDUCATION`;
-- `TIMING_LATER`;
-- `DATE_BARRIER`;
-- `LOCATION_BARRIER`;
-- `PRICE_VALUE_BARRIER`;
-- `TRUST_PROOF_BARRIER`;
-- `FORMAT_BARRIER`;
-- `NON_FIT`.
+- real in product/process/experience;
+- relevant to the beachhead;
+- visible enough to be understood;
+- provable;
+- economically deliverable;
+- coherent with the broader pediatric-safety company Formalife intends to become.
 
-### 4.6 Product state
+Category conventions alone do not pass this gate.
+
+## G3 — Offer architecture
+
+The Full Course offer must be sufficiently explicit on:
+
+- target/customer job;
+- desired state;
+- deliverables;
+- inclusions/exclusions;
+- Single/Couple logic;
+- price;
+- conditions;
+- genuine capacity/date constraints;
+- risk reducers;
+- proof;
+- CTA;
+- transfer/cancellation/no-show rules;
+- support/human-help path.
+
+Training Credit rules must also be standardized before using them as an acquisition claim.
+
+## G4 — Proof and authority
+
+Formalife must possess proof appropriate to the specific claims made.
+
+Historical choking-course proof may support historical delivery credibility but cannot be represented as proof of outcomes of a materially rebuilt broader flagship.
+
+## G5 — Instrumentation
+
+Before interpreting funnel results:
+
+- checkout path verified;
+- source/UTM/referrer attribution verified end to end where feasible;
+- consent states separated from transactional communication;
+- customer identity/purchase history usable;
+- key events captured;
+- normalized delivery economics available;
+- human tasks have an owner and status.
+
+---
+
+# 4. Core customer outcome — what the funnel is ultimately selling
+
+The funnel should not primarily sell “four hours”, “mannequins” or “a course”.
+
+Subject to scientific validation, the Full Course learning job is to help a parent/caregiver at layperson level become better prepared to:
+
+**prevent what is realistically preventable -> recognize when something is seriously wrong -> take the appropriate immediate first action -> activate appropriate professional help.**
+
+Choking is the most salient entry problem; the Full Course is the broader preparedness solution.
+
+Every educational and commercial stage should make this bridge clearer rather than teaching the market that Formalife means only choking.
+
+---
+
+# 5. State model
+
+Do not flatten the funnel into one `lead_status`.
+
+## 5.1 Relationship state
+
+- `UNKNOWN`
+- `KNOWN_PROSPECT`
+- `ENGAGED_PROSPECT`
+- `GUIDE_BUYER`
+- `FULL_CUSTOMER`
+- `ATTENDED_CUSTOMER`
+- `ADVOCATE_ELIGIBLE`
+- `PAST_CUSTOMER_WAITING`
+- `LEAD_INACTIVE` — identified but never reached a real decision stage
+- `LEAD_NO_SALE` — reached a genuine offer/decision stage and did not buy
+- `SERVICE_RECOVERY`
+- `DO_NOT_MARKET`
+
+`LEAD_INACTIVE` and `LEAD_NO_SALE` must remain distinct because they require different work.
+
+## 5.2 Awareness state
+
+- `A0_UNAWARE_LATENT`
+- `A1_PROBLEM_AWARE`
+- `A2_SOLUTION_AWARE`
+- `A3_PRODUCT_AWARE`
+- `A4_BRAND_AWARE`
+
+## 5.3 Intent state
+
+Use explicit behaviour more heavily than passive technical events.
+
+- `I0_PASSIVE`
+- `I1_ENGAGED`
+- `I2_ACTIVE_EVALUATION`
+- `I3_HIGH_INTENT`
+- `I4_CHECKOUT_INTENT`
+- `I5_PURCHASED`
+
+One email open or one page view does not justify high-intent routing.
+
+## 5.4 Trigger/context state
+
+Store only if it changes routing:
+
+- `STARTING_SOLIDS_SOON`
+- `STARTED_SOLIDS`
+- `CHOKING_CONCERN`
+- `AFTER_SCARE_OR_EVENT`
+- `SEARCHING_FOR_TRAINING`
+- `NEW_CAREGIVER_RESPONSIBILITY`
+- `RETURNING_PARENT_NEW_CHILD`
+- `OTHER_RELEVANT_CONTEXT`
+
+Do not collect unnecessary health or family detail for marketing.
+
+## 5.5 Alternative / prior-solution state
+
+Collect or infer only when it materially changes communication:
+
+- `ALT_NONE` — has not used a structured solution;
+- `ALT_FREE_SELF_EDUCATION` — relies primarily on videos/articles/social/free content;
+- `ALT_PREVIOUS_TRAINING` — attended another course previously;
+- `ALT_CERTIFICATION` — holds credential-oriented training but has a distinct parent-preparedness job;
+- `ALT_COMPARING_PROVIDER` — actively comparing another provider/course;
+- `ALT_UNKNOWN`.
+
+Purpose:
+
+- distinguish category education from replacement/comparison;
+- avoid explaining basics to a trained buyer;
+- expose the correct contrast without unsupported competitor attacks.
+
+## 5.6 Timing / barrier state
+
+- `READY_NOW`
+- `NEEDS_EDUCATION`
+- `TIMING_LATER`
+- `DATE_BARRIER`
+- `LOCATION_BARRIER`
+- `PRICE_VALUE_BARRIER`
+- `TRUST_PROOF_BARRIER`
+- `FORMAT_BARRIER`
+- `DECISION_UNIT_BARRIER`
+- `NON_FIT`
+
+## 5.7 Decision-unit state
+
+Minimal states only:
+
+- `SOLE_DECISION`
+- `COUPLE_DECISION`
+- `OTHER_CAREGIVER_INVOLVED`
+- `GIFT_OR_SPONSOR_BUYER`
+- `DECISION_UNIT_UNKNOWN`
+
+Do not add demographic complexity unless it changes message, offer, timing or checkout.
+
+## 5.8 Product state
+
+Current:
 
 - no purchase;
 - Guide owned;
-- Full owned;
-- future Digital owned;
-- future Hybrid owned;
-- future depth/private/refresh product owned.
+- Full owned.
 
-### Routing precedence
+Future product states remain dormant until the product exists.
 
-When states conflict, operational routing should normally prioritize:
+## 5.9 Economic analytics state
 
-1. service / permission / safety exception;
-2. existing purchase and post-sale obligations;
-3. checkout or explicit high intent;
-4. explicit timing/barrier information;
-5. awareness and education need;
-6. source/campaign.
+This is an analytical layer, not customer-facing segmentation.
 
----
+- `ECON_UNREADABLE` — acquisition/fulfilment economics cannot yet be read reliably;
+- `ECON_CAC_OPEN` — acquisition cost not yet recovered by accumulated contribution;
+- `ECON_CAC_RECOVERED`;
+- `ECON_POSITIVE_RELATIONSHIP` — cumulative contribution exceeds designed acquisition/servicing burden.
 
-## 5. Entry-point architecture
+The exact classification belongs primarily to route/cohort economics rather than individual messaging.
 
-Funnel 01 has multiple doors but converges into a controlled set of states and offers.
+## 5.10 Routing precedence
 
-| Entry | Typical source | Likely initial state | First surface | Default job |
-|---|---|---|---|---|
-| EP01 | Brand/direct return | A4 + high intent | Full offer/date page | convert without delay |
-| EP02 | Search: course / pediatric first aid / choking training | A2-A3 | solution/product landing | compare, prove, offer Full |
-| EP03 | Search: choking concern / starting solids questions | A1-A2 | problem/solution resource | educate, route to F1/Guide/Full |
-| EP04 | Customer referral | trust high; awareness variable | referral landing/router | borrow trust, assess readiness |
-| EP05 | Professional/healthcare referral into central B2C | trust high; awareness variable | trust-transfer landing/router | route direct Full or education |
-| EP06 | Organic/social life-stage content | A0-A1 | open trigger content | make problem relevant, earn next step |
-| EP07 | Organic/social problem content | A1 | F0/F1 content | clarify problem and solution category |
-| EP08 | Long-form video / YouTube / editorial | A1-A2 | content/VSL path | pre-educate before offer |
-| EP09 | Guide direct discovery / publishing / QR | A2-A3 | Guide page | first paid relationship or direct Full |
-| EP10 | Existing database lead | known state varies | resume-state campaign | continue, do not restart |
-| EP11 | Prior Guide buyer | buyer + A2-A4 | Guide-to-core bridge | move to Full when relevant |
-| EP12 | Previous customer / new child / new caregiver | customer + high trust | customer router | relevant next need, not acquisition from zero |
-| EP13 | Retargeted/revisiting visitor | inferred only from real behavior | last-relevant stage | continue where evidence supports |
-| EP14 | Offline material / event / physical QR | awareness varies | dedicated source page | identify source and route by state |
+When states conflict, prioritize:
 
-Important:
-
-**entry source sets attribution; it does not automatically set awareness.**
-
-A pediatrician referral can legitimately go straight to Full if ready, or into education if not.
+1. safety / service / permission exception;
+2. already-purchased product obligations;
+3. explicit checkout/high-intent signal;
+4. explicit barrier/timing/decision-unit signal;
+5. current alternative and awareness gap;
+6. trigger/context;
+7. source/campaign.
 
 ---
 
-## 6. Educational staircase — the long path for less-ready prospects
+# 6. Entry architecture — fourteen sources, five operational route families
 
-The funnel must give lower-readiness prospects enough time and enough material to understand the problem, the solution category and Formalife before asking repeatedly for a large commitment.
+The previous fourteen entry categories remain useful for attribution, but they should not create fourteen independently built funnels.
 
-### E0 — Trigger relevance
-
-Audience: `A0_UNAWARE_LATENT`.
-
-Job:
-
-- connect to a real life-stage moment such as starting solids;
-- make pediatric safety preparedness relevant without fear inflation;
-- earn attention for the next educational piece.
-
-Formats:
-
-- short social/video/editorial content;
-- open article/resource;
-- professional/referral content;
-- stage-specific open checklist or tool once scientifically reviewed.
-
-Primary CTA:
-
-**consume the next useful resource / F1 asset.**
-
-### E1 — Problem education
-
-Audience: `A1_PROBLEM_AWARE`.
-
-Job:
-
-- clarify what the actual problem is;
-- separate useful preparation from generic anxiety;
-- make real consequences understandable and proportionate;
-- establish that safe preparation is learnable without promising certainty.
-
-Possible materials, all subject to scientific review where clinical:
-
-- expert article/video;
-- FAQ around common parent questions;
-- myth/mistake clarification where evidence supports it;
-- focused choking/start-solids mini-training.
-
-Primary CTA:
-
-**F1 opt-in / continue education / Guide / Full if already ready.**
-
-### E2 — Solution-category education
-
-Audience: `A2_SOLUTION_AWARE`.
-
-Job:
-
-- explain the distinct roles of information, reference and supervised practical training;
-- teach the prospect how to evaluate credible training;
-- explain why "watching something" and "being able to perform under supervised practice" are different jobs where scientifically appropriate;
-- show when a reference book is useful and when practical training adds value.
-
-Core asset candidate:
-
-**M2 — Parent Buyer's Guide: how to choose pediatric choking / emergency-preparedness education.**
-
-This is a marketing/editorial asset, not the paid Guide itself.
-
-Primary CTA:
-
-**choose the next format: paid Guide / Full Course / continue learning.**
-
-### E3 — Product/category comparison
-
-Audience: `A3_PRODUCT_AWARE`.
-
-Job:
-
-- answer "which type of course / provider / format should I choose?";
-- make comparison criteria visible;
-- show Formalife's actual operational difference once finalized;
-- remove false comparability based only on hours/mannequins/price.
-
-Materials:
-
-- long-form article or VSL;
-- comparison/criteria page;
-- proof demonstrations;
-- transparent scope page;
-- FAQ.
-
-Primary CTA:
-
-**view Full Course offer/dates or buy Guide.**
-
-### E4 — Formalife trust and offer education
-
-Audience: `A4_BRAND_AWARE` or high-trust referral.
-
-Job:
-
-- show who is responsible for the education;
-- show authentic proof;
-- explain exact product scope and boundaries;
-- answer objections;
-- present price, Single/Couple, date, place, capacity and action clearly.
-
-Primary CTA:
-
-**book Full Course / select date.**
-
-### E5 — Decision support
-
-Audience: `I2-I4`.
-
-Job:
-
-- remove remaining uncertainty;
-- answer a purchase question quickly;
-- use real deadline/capacity only;
-- recover an almost-buyer without automatically discounting.
-
-Primary CTA:
-
-**complete purchase / choose date / ask a specific question / join waitlist.**
-
----
-
-## 7. Education time — operating defaults to test
-
-These are **HYPOTHESIS / TEST CADENCES**, not universal doctrine.
-
-The principle is that education time should expand when awareness is lower and compress when intent is explicit.
-
-### Latent cohort
-
-Suggested initial education horizon:
-
-**approximately 21-45 days**, using multiple angles and formats rather than daily sales pressure.
-
-Possible pattern:
-
-- first 7 days: trigger/problem value;
-- next 7-14 days: solution-category education;
-- next 7-21 days: proof, criteria, Guide/Full invitation;
-- if still not ready: move to long-horizon useful nurture.
-
-### Problem-aware cohort
-
-Suggested initial horizon:
-
-**approximately 14-30 days**.
-
-Use a substantive sequence before treating silence as rejection.
-
-### Solution-aware cohort
-
-Suggested initial horizon:
-
-**approximately 7-14 days** with stronger comparison/proof/offering.
-
-### Product/brand-aware or referral cohort
-
-Can move immediately or within a short real decision window.
-
-### Long-horizon nurture
-
-If no purchase and no strong negative signal:
-
-- slow the cadence;
-- keep the material useful;
-- re-enter a stronger commercial sequence when a real trigger, course-date response or explicit behavior appears.
-
-The system must not keep a low-readiness prospect permanently inside a daily autoresponder.
-
----
-
-## 8. Core content/material inventory for Funnel 01
-
-Each material below has a distinct job.
-
-### M0 — Open Trigger Content
-
-Ungated.
-
-Job: earn relevance from the starting-solids/choking life-stage trigger.
-
-### M1 — Open Problem Resource
-
-Ungated.
-
-Job: answer one meaningful parent question well enough to demonstrate usefulness and earn the next interaction.
-
-### F1 — Choking / Starting-Solids Readiness Mini-Training
-
-Gated free asset — TARGET / HYPOTHESIS until clinically reviewed.
-
-Recommended architecture:
-
-- concise expert-led video or equivalent;
-- printable/reference aid;
-- explicit router to Guide, Full or continued learning.
-
-Job:
-
-**identified relationship + problem education + self-selection.**
-
-### M2 — Solution / Buyer's Guide
-
-Free long-form educational asset.
-
-Job:
-
-**teach how to choose the right level and type of preparation.**
-
-### M3 — Formalife Difference / Proof Asset
-
-Format may be long-form page, VSL, article or video.
-
-Job:
-
-- explain operational difference;
-- show proof against the specific doubts;
-- answer "why Formalife?".
-
-The final difference is still test-gated and must not be invented by copy.
-
-### P1 — Guida Anti-Panico al Soffocamento Pediatrico
-
-Current paid information front-end.
-
-Current canonical price: **EUR 19.90**.
-
-Job:
-
-- durable reference;
-- first paid relationship;
-- authority/publishing object;
-- legitimate bridge to deeper practical preparedness.
-
-### F2 — Online Parent Safety Briefing / Q&A
-
-Status: OPTIONAL TARGET HYPOTHESIS — not required for V1 implementation.
-
-Possible job:
-
-- give slow-moving problem/solution-aware prospects a higher-engagement one-to-many experience;
-- handle common objections/questions;
-- move qualified participants toward Guide or Full.
-
-Do not build it merely because a webinar makes the funnel look longer. It earns its place only if it increases economically useful conversion.
-
-### O1 — Full Course Offer System
+## Family E-A — Active intent / active comparison
 
 Includes:
 
-- sales page;
+- brand/direct return;
+- search for choking training / pediatric first aid course;
+- returning prospect asking dates/price;
+- product-aware retargeting;
+- Guide buyer explicitly asking about Full.
+
+Default route:
+
+**appropriate comparison/proof -> Full offer -> checkout.**
+
+Do not force a lead magnet or Guide.
+
+## Family E-B — Trusted introduction
+
+Includes:
+
+- customer referral;
+- professional/healthcare referral into central B2C;
+- trusted community introduction.
+
+Default route:
+
+**trust-transfer surface -> readiness check -> Full direct if ready OR correct educational job if not.**
+
+The partner-acquisition system itself remains outside Funnel 01 and belongs to Block 2.
+
+## Family E-C — Problem/search discovery
+
+Includes:
+
+- search about choking concern;
+- starting-solids safety questions;
+- problem-aware organic/social;
+- long-form editorial/video discovered around the problem.
+
+Default route:
+
+**problem education -> solution/category education -> Guide or Full based on state.**
+
+## Family E-D — Latent/life-stage discovery
+
+Includes:
+
+- starting-solids content;
+- social/organic life-stage content;
+- selected interruptive paid traffic only after economics permit;
+- open safety resources.
+
+Default route:
+
+**trigger relevance -> problem relevance -> permission/identified relationship when useful -> education -> offer only when state justifies it.**
+
+## Family E-E — Owned / returning relationship
+
+Includes:
+
+- existing database lead;
+- Guide buyer;
+- Lead No Sale;
+- previous Formalife customer;
+- returning parent/new child/new caregiver.
+
+Default route:
+
+**resume from known state. Do not restart acquisition from zero.**
+
+### Attribution fields remain granular
+
+Keep original source/medium/campaign/referrer/partner data even though operational routing converges into five families.
+
+---
+
+# 7. Canonical educational jobs
+
+The funnel is built around jobs, not a compulsory list of assets.
+
+A single asset can perform more than one job if the progression remains clear and measurable.
+
+## J0 — Trigger relevance
+
+Audience: A0.
+
+Must answer:
+
+- why this issue has become relevant in this life stage;
+- what real situation makes it worth paying attention now;
+- what small next action is useful.
+
+Must not:
+
+- inflate fear;
+- imply an emergency is inevitable;
+- use unsupported statistics.
+
+Desired transition:
+
+`A0 -> A1` or explicit `TIMING_LATER`.
+
+## J1 — Problem education
+
+Audience: A1.
+
+Must answer:
+
+- what the actual problem is;
+- what parents commonly misunderstand;
+- which consequences are real and supportable;
+- what desired state is possible;
+- whether the person wants to learn more.
+
+Desired transition:
+
+`A1 -> A2` or long-horizon nurture/non-fit.
+
+## J2 — Solution-category education
+
+Audience: A2.
+
+Must answer:
+
+- what solution categories exist;
+- what information/reference can do;
+- what supervised practice can add;
+- what free/self-education can and cannot reasonably replace;
+- what criteria should be used to choose a credible solution;
+- who is not the right fit for this path.
+
+It should explicitly address direct and indirect alternatives without inventing deficiencies in competitors.
+
+Desired transition:
+
+`A2 -> A3` and self-selection into Guide / Full / continued education.
+
+## J3 — Provider/product comparison and Formalife difference
+
+Audience: A3.
+
+Must answer:
+
+- why consider Formalife rather than credible alternatives;
+- what Formalife does operationally differently;
+- what trade-offs or limits are real;
+- what proof supports those claims;
+- what the Guide and Full each do;
+- why the broader Full is coherent for someone who entered through choking.
+
+This job is blocked until G2 positioning/difference is strong enough.
+
+Desired transition:
+
+`A3 -> A4 / I2-I3`.
+
+## J4 — Offer and decision support
+
+Audience: A4 / I2-I4.
+
+Must answer:
+
+- who the offer is for and not for;
+- exact result/job;
+- components and boundaries;
 - proof;
-- scope;
-- dates;
-- FAQ;
+- price;
 - Single/Couple choice;
-- checkout;
-- human-help path;
-- waitlist.
+- risk reducers and policies;
+- next real date/capacity;
+- remaining objections;
+- clear CTA.
+
+Desired transition:
+
+checkout / waitlist / explicit barrier / Guide alternative / non-fit.
+
+## J5 — Long-horizon relationship
+
+Audience: not ready now but still relevant.
+
+Job:
+
+- remain useful;
+- maintain authority and familiarity;
+- detect a real new trigger;
+- reactivate only when timing or behaviour changes.
+
+Do not use daily sales pressure indefinitely.
+
+### Education duration rule
+
+No fixed duration is canonical.
+
+Test cadence by cohort, but determine progression primarily from:
+
+- whether the educational job was consumed meaningfully;
+- explicit responses/questions;
+- movement toward comparison/date/price/checkout;
+- explicit timing later;
+- inactivity/staleness;
+- new life-stage trigger.
 
 ---
 
-## 9. Offer ladder — present and future
+# 8. Candidate material implementations
 
-### Free
+These are implementations, not mandatory funnel stages.
 
-- F0/M0/M1 open useful content;
-- F1 gated mini-training;
-- M2/M3 long-form education/proof;
-- optional F2 briefing when validated.
+## Current / near-current
 
-### First paid relationship
+- `Guide` — Guida Anti-Panico al Soffocamento Pediatrico, EUR 19.90;
+- Full Course sales/offer system;
+- existing authentic photography/reviews/proof within claim limits.
 
-- P1 Guide — EUR 19.90 current.
+## Candidate assets to test
 
-### Current core
+- open trigger article/video/checklist;
+- focused problem resource;
+- gated mini-training if it materially improves owned relationship/conversion;
+- long-form solution/buyer's guide;
+- long-form Formalife proof/difference page or VSL;
+- one-to-many briefing/Q&A only if incremental economics justify it.
 
-- C2 Live Full Course — EUR 80 Single / EUR 120 Couple; maximum 12 participants; target 10-12 paying participants per edition.
+Do not build all of these because they appear in a diagram.
 
-### Planned future core
+For every proposed asset, require an `ASSET TEST CARD`:
 
-- C1 Digital Emergency-Preparedness Flagship;
-- C3 Hybrid Digital + Live Bundle.
-
-### Future depth / premium
-
-- B1 BLSD Formalife non-certified;
-- B2 Private Family / Caregiver Intensive;
-- B3 additional caregiver/family-extension mechanics;
-- R1 Practical Refresh / Reassessment.
-
-### Horizontal specialist/lifecycle
-
-Only when a real new need exists:
-
-- Starting Solids / Feeding Safety specialist partnership;
-- later Home Safety, Water Safety, Allergy, Car Seat, Child + Pet and other mapped verticals.
+- entering state;
+- exact educational job;
+- intended CTA;
+- next state;
+- production/servicing cost;
+- metric;
+- comparative alternative;
+- kill condition.
 
 ---
 
-## 10. Route architecture by awareness
+# 9. Offer contracts
 
-### Route R0 — latent / starting-solids cohort
+Every materially commercial node must have an explicit `OFFER CARD` before launch.
 
-```text
-Life-stage trigger
--> M0 open content
--> M1 problem resource
--> F1 mini-training / identified lead
--> E1 problem sequence
--> E2 solution-category sequence
--> M2 buyer's guide
--> Guide OR Full OR continued nurture
--> E3/E4 proof + Formalife offer when ready
--> Full
-```
+Required fields:
 
-This is deliberately the longest path.
+1. target state;
+2. job/result;
+3. deliverables;
+4. what is not included;
+5. price / payment;
+6. conditions;
+7. proof required;
+8. risk reducer / policy;
+9. real reason to act now, if any;
+10. CTA;
+11. fulfilment/capacity implication;
+12. next appropriate offer/state;
+13. contribution economics;
+14. revision/kill condition.
 
-### Route R1 — problem-aware
+## 9.1 Guide offer
 
-```text
-Problem search/content
--> M1 or F1
--> E1 problem education
--> E2 solution education
--> Guide / M2 / Full
--> proof + offer
--> Full
-```
+Current fact:
 
-### Route R2 — solution-aware
+**Guida Anti-Panico al Soffocamento Pediatrico — EUR 19.90.**
 
-```text
-Course-category search / comparison behavior
--> M2 solution/buyer education
--> M3 Formalife proof/difference
--> Full offer
--> checkout
-```
+Job:
 
-Guide remains available as a lower-commitment paid reference, not a mandatory step.
+- substantive home reference;
+- first paid relationship;
+- authority/publishing object;
+- bridge to supervised practical preparedness when the customer wants that next job.
 
-### Route R3 — product-aware
+Rules:
 
-```text
-Formalife product page / retargeting / returning prospect
--> proof + FAQ + scope + offer
--> Full
-```
+- Guide must be valuable standalone;
+- direct Full remains visible for ready prospects;
+- Guide must re-earn its strategic front-end role from actual economics;
+- additional caregiver/gift copy is only a future test;
+- Training Credit is not promoted until amount, eligibility, expiry, stacking, refunds and operational handling are standardized;
+- Training Credit cost is part of acquisition/monetization economics, not “free value”.
 
-### Route R4 — brand-aware / referral / high trust
-
-```text
-Referral / brand search / returning relationship
--> trust-transfer or Full offer page
--> date + Single/Couple
--> checkout
-```
-
-If the person signals lower awareness despite the source, route backward into education.
-
-### Route R5 — Guide buyer
-
-```text
-Guide purchase
--> fulfilment
--> usage/value
--> information-vs-practice bridge
--> proof
--> Full offer
--> Full OR long nurture/wait
-```
-
-### Route R6 — previous no-sale
-
-```text
-Reason for no-sale
--> appropriate backtrack or barrier route
--> new education/proof/offer
--> Full OR timing wait / non-fit
-```
-
-### Route R7 — previous Formalife customer
-
-Do not restart acquisition.
-
-```text
-customer history
--> actual new trigger / new child / caregiver change / depth intent
--> relevant next product
-```
-
----
-
-## 11. Acceleration rules
-
-Move a person forward faster when there is strong evidence such as:
-
-- explicit request for course dates/pricing;
-- repeated Full Course page/date interaction;
-- checkout start;
-- direct question about Single/Couple or location;
-- referral accompanied by explicit purchase intent;
-- response indicating "I want supervised practice";
-- Guide buyer actively requesting course information.
-
-Acceleration actions can include:
-
-- expose Full CTA immediately;
-- skip lower-awareness sequence;
-- suppress redundant education;
-- create human follow-up task when useful and lawful.
-
-Do not accelerate solely because an email was opened once.
-
----
-
-## 12. Backtracking rules
-
-Backtracking is diagnostic, not punitive.
-
-### Product/offer exposure but no action
-
-Test whether the missing step is:
-
-- insufficient proof;
-- weak offer/value;
-- wrong date/location;
-- insufficient category understanding;
-- low problem priority;
-- no current need.
-
-Possible routing:
-
-`A4/A3 -> A2` through solution/category education.
-
-### Solution content but weak engagement
-
-Possible routing:
-
-`A2 -> A1` through problem/trigger education.
-
-### Problem content but weak relevance
-
-Move to:
-
-`TIMING_LATER / long nurture / WAITING_FOR_TRIGGER`.
-
-Do not keep increasing pressure.
-
-### Returning after a new trigger
-
-Reassess awareness and resume from the highest justified level rather than restarting from zero.
-
----
-
-## 13. Guide architecture
-
-### Guide checkout
-
-Primary CTA: buy Guide.
-
-Secondary visible route: if the prospect wants supervised practice now, go directly to Full.
-
-### Candidate Guide order bump — future test only
-
-**Additional caregiver / gift copy.**
-
-Reasonable because it increases use around the same household problem.
-
-Do not add unrelated merchandise merely to lift AOV.
-
-### Training Credit
-
-Existing asset, final rules still require standardization.
-
-Strategic job:
-
-**reduce the feeling of paying twice when moving from focused reference to a broader practical/core learning level.**
-
-Candidate future applications may include Guide -> Live, Guide -> Digital or Guide -> Hybrid, but exact amount, expiry, stacking and eligibility remain decisions to finalize.
-
----
-
-## 14. Current Full Course offer architecture
-
-The live flagship must answer in sequence:
-
-1. who it is for;
-2. what problem/job it solves beyond choking;
-3. why its format matters;
-4. why Formalife is credible;
-5. what is actually practiced/covered;
-6. what is included;
-7. what it is not;
-8. price;
-9. real date/capacity reason to act;
-10. FAQ/human-help route.
+## 9.2 Full Course offer
 
 Current commercial facts:
 
 - EUR 80 Single;
 - EUR 120 Couple;
 - maximum 12 participants;
-- target 10-12 paying participants;
+- target 10-12 paying participants per edition;
 - attendance certificate, not professional certification;
 - Guide/materials included according to current architecture;
-- rebuilt curriculum and customer-facing clinical claims remain subject to scientific validation.
+- curriculum/claims remain subject to scientific validation.
 
-### Full checkout upgrade
+The customer-facing offer must answer:
 
-Single/Couple is the first natural value ladder.
+1. is this for me?
+2. what desired state/job does it serve?
+3. why broader emergency preparedness if I entered because of choking?
+4. what will I actually practice/learn?
+5. why is the format valuable?
+6. why Formalife?
+7. what proves those claims?
+8. what exactly is included and excluded?
+9. what does Single/Couple mean?
+10. price and policies?
+11. what risk is reduced and how?
+12. next real date/capacity?
+13. what do I do now?
 
-If a Single buyer indicates another regular caregiver should also learn, offer the **Couple / second-caregiver option** clearly before or immediately after checkout where operationally feasible.
+### Single / Couple
 
-This is not a fake add-on. It solves the same household preparedness problem for another relevant adult.
+Treat Single/Couple primarily as **offer architecture at the buying decision**, not as a forced post-checkout upsell.
 
----
-
-## 15. Upsell architecture
-
-Upsells must add real value along depth, completeness, convenience or caregiver coverage.
-
-### U1 — Guide -> Full Live
-
-Current primary ascension.
-
-Trigger:
-
-customer wants supervised practice and broader emergency preparedness.
-
-### U2 — Single -> Couple / second caregiver
-
-Current natural upgrade.
-
-Trigger:
-
-another primary caregiver needs to participate.
-
-### U3 — future Digital -> Live / Hybrid
-
-After the Digital product exists.
-
-Trigger:
-
-customer wants supervised practical correction in addition to digital learning.
-
-### U4 — Full -> BLSD Formalife non-certified
-
-Future.
-
-Trigger:
-
-explicit desire for deeper CPR/AED/resuscitation mastery and repeated practical work.
-
-Not mandatory for every Full customer.
-
-### U5 — Full/public format -> Private Family / Caregiver Intensive
-
-Future premium hypothesis.
-
-Trigger:
-
-household wants customized convenience and multiple caregivers trained together.
-
-### U6 — customer -> Refresh/Reassessment
-
-Future.
-
-Trigger:
-
-skill decay, reduced confidence, new caregiver, new child/context or scientifically justified refresh need.
+If another caregiver becomes relevant after a Single purchase, a legitimate caregiver-extension route may exist.
 
 ---
 
-## 16. Cross-sell architecture
+# 10. Risk-reduction architecture
 
-Cross-sell is activated by a distinct adjacent need, not simply because another SKU exists.
+Do not invent a guarantee before understanding the actual perceived risks and economics.
 
-### X1 — Starting Solids / Feeding Safety
+Required work before broad activation:
 
-Status: specialist-partnership candidate.
+| Customer risk | Candidate reducer to design/test |
+|---|---|
+| “I may choose the wrong course” | transparent fit/non-fit criteria + scope |
+| “It may be superficial / a sales pitch” | exact curriculum boundary + authentic delivery proof |
+| “I may waste the date/money if something changes” | clear transfer/cancellation policy once approved |
+| “I do not know who is responsible scientifically” | verified roles/credentials/governance |
+| “I need certification” | explicit non-certification boundary and credential routing |
+| “I cannot judge whether this is worth the time” | clear desired state, practice design, relevant proof |
 
-Trigger:
-
-parent needs feeding/safe-weaning guidance beyond choking response.
-
-Potential role:
-
-co-created or partner-led Svezzy-type product rather than internal duplication.
-
-### X2 — caregiver extension
-
-Can behave as cross-sell when the original buyer wants another household caregiver equipped but does not need a higher-level core product.
-
-### X3 — future lifecycle verticals
-
-Only with real triggers:
-
-- Home Safety when mobility/home exposure changes;
-- Water Safety when water exposure becomes relevant;
-- Allergy Preparedness when a real allergy-related need exists;
-- Car Seat when purchase/transition creates the need;
-- other mapped verticals according to `LIFECYCLE_STATE_TIMELINE.md`.
-
-No generic catalog blast.
+Any stronger guarantee/risk reversal must be separately tested for abuse, cost and operational sustainability.
 
 ---
 
-## 17. Downsell / alternative architecture
+# 11. Proof and authority architecture
 
-Downsell is based on the real barrier; it is not automatic discounting.
+Authority, credibility and trust perform different jobs.
 
-### D1 — Full too much commitment / not ready
+## 11.1 Authority layer
 
--> Guide.
+Use only verified assets:
 
-### D2 — Full location barrier
+- Guide/publication;
+- visible qualified people and roles;
+- external/trusted introductions;
+- public teaching/media/other authority assets where real;
+- scientific governance.
 
-Current:
+Authority should appear before or alongside lead generation when cold trust is low.
 
--> Guide + waitlist / next-location notification.
+## 11.2 Proof register
 
-Future after Digital exists:
+Every major claim should map to proof.
 
--> Digital Core.
+Minimum fields:
 
-### D3 — Full date barrier
+- claim / perceived risk;
+- proof type;
+- source/customer/product;
+- date/version;
+- permission;
+- where it may be used;
+- limitations;
+- expiry/review condition.
 
--> next-date waitlist / notification.
+Proof families:
 
-Do not offer a cheaper product if date is the only barrier.
+- authority/provenance proof;
+- practical delivery proof;
+- customer relevance/experience proof;
+- fulfilment/reliability proof;
+- proof of broader rebuilt flagship only after the rebuilt product produces it.
 
-### D4 — Full price/value uncertainty
+## 11.3 Proof placement
 
--> value/proof/FAQ education first.
+Use proof where the doubt arises:
 
-Only then consider Guide if the real issue is commitment level rather than misunderstood value.
+**claim -> proof -> consequence -> CTA.**
 
-### D5 — Guide not purchased
-
--> free education / long nurture.
-
-### D6 — future Hybrid too much commitment
-
--> Digital or Live standalone based on the actual preference.
-
-### D7 — future Private Family too expensive
-
--> public Full / Couple.
-
-### D8 — future BLSD depth unnecessary
-
--> no forced sale; possible refresh only if a real refresh need exists.
+Do not isolate all proof in a generic testimonials block.
 
 ---
 
-## 18. Core automation map
+# 12. Current route families
 
-The automations below define the mature Funnel 01 system. Not all are immediate build requirements.
+## R-A — High intent / active comparison
 
-### A00 — Anonymous / open-content continuation
+```text
+active search / brand / trusted referral / returning prospect
+-> J3 if comparison needed
+-> J4 offer + proof
+-> Full checkout
+-> purchase OR barrier routing
+```
+
+This is the shortest lane and should remain protected if it works.
+
+## R-B — Problem-aware
+
+```text
+problem discovery
+-> J1
+-> J2
+-> Guide OR J3/J4 Full route
+-> Full when ready
+-> long relationship if timing later
+```
+
+## R-C — Latent / life-stage
+
+```text
+starting-solids trigger
+-> J0
+-> J1
+-> identified relationship when useful
+-> J2
+-> Guide / J3 / J4 as justified
+-> Full when ready
+```
+
+This is the longest lane.
+
+## R-D — Guide buyer
+
+```text
+Guide purchase
+-> fulfilment + actual use/value
+-> distinct information-vs-practice bridge
+-> J3/J4 + proof
+-> Full OR long-horizon relationship
+```
+
+## R-E — Lead No Sale
+
+```text
+last real decision point
+-> diagnose barrier/state
+-> proof/offer fix OR backtrack OR waitlist/timing OR non-fit
+-> Full when condition changes
+```
+
+Do not restart from generic awareness content automatically.
+
+## R-F — Existing customer
+
+```text
+purchase/delivery history
+-> service/proof/referral
+-> no active need: WAITING_FOR_TRIGGER
+-> real new trigger: HANDOFF_TO_LIFECYCLE_ROUTER
+```
+
+Funnel 01 ends at the lifecycle handoff rather than embedding the entire future catalog.
+
+---
+
+# 13. Acceleration and backtracking
+
+## 13.1 Acceleration signals
+
+Strong signals include:
+
+- explicit question on date, price, availability or course content;
+- waitlist request;
+- checkout start;
+- payment problem;
+- explicit request for supervised practice;
+- Guide buyer asking for course details;
+- trusted referral with explicit purchase intent.
+
+Acceleration actions:
+
+- show Full CTA immediately;
+- suppress redundant lower-awareness material;
+- create human task when economically justified;
+- keep useful education available but do not enforce delay.
+
+Passive events such as one open, one short visit or one social like do not justify a high-intent classification.
+
+## 13.2 Backtracking
+
+If a direct offer is not converting, do not automatically add pressure.
+
+Diagnose in order:
+
+1. process/technical friction;
+2. date/location/decision-unit problem;
+3. offer/value/risk problem;
+4. trust/proof problem;
+5. difference/comparability problem;
+6. solution-category misunderstanding;
+7. problem priority/timing;
+8. non-fit.
+
+Then route to the missing job.
+
+Backtracking is a testable diagnosis, not an automatic rule for every non-buyer.
+
+---
+
+# 14. Current upsell, cross-sell and downsell logic
+
+## 14.1 Current upsell / ascension
+
+### Guide -> Full
+
+Only when the buyer wants the distinct job of supervised practice + broader preparedness.
+
+### Single -> Couple / second caregiver
+
+Primarily offered at the core buying decision when another relevant caregiver should attend.
+
+## 14.2 Current cross-sell
+
+No broad horizontal cross-sell should be automated inside Funnel 01 today.
+
+A distinct feeding/safe-weaning need may later hand off to a specialist-partnership offer when such an offer exists and its economics are approved.
+
+## 14.3 Current downsell / alternative routes
+
+`Full too much commitment / not ready` -> Guide or education, depending real barrier.
+
+`Full date barrier` -> waitlist / next date; do not cheapen the offer.
+
+`Full location barrier` -> current Guide/reference + location wait; future Digital only after it exists.
+
+`Full price/value barrier` -> first diagnose value/proof/comparability; Guide only if lower commitment is genuinely the better job.
+
+`Guide not purchased` -> useful education / long nurture, not repeated discounting.
+
+## 14.4 Dormant future interfaces
+
+These can be recorded as interest states but must not become active sale routes until approved/launched:
+
+- Digital Emergency-Preparedness Flagship;
+- Hybrid Digital + Live;
+- BLSD Formalife non-certified;
+- Private Family / Caregiver Intensive;
+- Refresh/Reassessment;
+- specialist/lifecycle verticals.
+
+Future cross-sell is handled through `HANDOFF_TO_LIFECYCLE_ROUTER`, not generic Funnel 01 blasts.
+
+---
+
+# 15. Automation architecture — fewer engines, explicit contracts
+
+Do not build twenty independent autoresponders when fewer state-aware engines can perform the work.
+
+Every automation must have:
+
+**entry -> current state -> job -> permitted channels -> action -> owner -> time/window -> expected outcome -> fallback -> exit -> suppression -> metric.**
+
+## A1 — Educational progression engine
+
+Covers J0/J1/J2 progression for latent/problem-aware prospects.
+
+Must adapt to:
+
+- current awareness;
+- current alternative;
+- explicit timing;
+- meaningful behaviour;
+- opt-out/permission.
+
+Exit:
+
+A3/A4, Guide buyer, Full buyer, timing later, inactive, non-fit or opt-out.
+
+## A2 — High-intent acceleration engine
 
 Entry:
 
-meaningful F0/M0/M1 consumption where lawful technical tracking exists.
+explicit high-intent signal.
 
 Action:
 
-- contextual next-content CTA;
-- retargeting only where lawful/appropriate;
-- no invented identity or intent.
+- suppress redundant nurture;
+- show correct offer/date/checkout;
+- human help for genuine purchase questions/payment issues.
 
-Exit:
+Owner:
 
-identified lead, direct Full action or inactivity.
+commercial/customer-support role defined before launch.
 
-### A01 — F1 delivery + progressive profile
+Human interaction must be economically proportionate to the €80/€120 sale; do not create founder-intensive selling as the default.
 
-Entry: `f1_optin`.
+## A3 — Guide commerce engine
 
-Immediate:
+Includes:
 
-- deliver promised asset;
-- capture source automatically;
-- optionally ask one routing question only if answer changes next step;
-- present visible Guide and Full paths for those already ready.
+- Guide checkout recovery;
+- Guide fulfilment;
+- Guide usage/value;
+- Guide-to-Full bridge;
+- front-end-without-back-end state.
 
-Exit:
+No automatic discounting.
 
-Guide purchase, Full purchase, strong high-intent behavior, opt-out or education lane assignment.
+## A4 — Full commerce engine
 
-### A02 — Latent education sequence
+Includes:
 
-Entry: A0/weak A1 + valid permission.
+- Full page/decision support;
+- checkout recovery;
+- barrier capture;
+- waitlist/date routing;
+- decision-unit help;
+- payment issue escalation.
 
-Job:
+## A5 — Timing / waiting engine
 
-- trigger relevance;
-- problem understanding;
-- priority without fear inflation;
-- move toward F1/E1/E2.
+For DATE / LOCATION / TIMING_LATER.
 
-Cadence: slower and longer; approximately 21-45-day initial test horizon.
+Rules:
 
-Exit:
+- stop irrelevant immediate-close messages;
+- store reason;
+- store next relevant review/notification condition;
+- useful low-pressure relationship only with valid permission;
+- reactivate on real condition change.
 
-progressed awareness, explicit timing later, opt-out, or long nurture.
-
-### A03 — Problem-aware education sequence
-
-Entry: A1.
-
-Job:
-
-- problem clarity;
-- consequences;
-- safe preparation logic;
-- move into solution/category education.
-
-Cadence: approximately 14-30-day initial test horizon.
-
-Exit:
-
-Guide/Full interest, A2 state, timing wait or long nurture.
-
-### A04 — Solution/category education sequence
-
-Entry: A2.
-
-Job:
-
-- teach selection criteria;
-- explain reference vs supervised practice;
-- compare types of solution;
-- introduce Formalife difference/proof.
-
-Exit:
-
-Guide, Full, A3/A4, backtrack or timing wait.
-
-### A05 — Product/brand acceleration
-
-Entry: A3/A4 + meaningful intent.
-
-Job:
-
-- scope;
-- proof;
-- objections;
-- price/date;
-- CTA.
-
-Exit:
-
-checkout, question/human task, Guide alternative, waitlist or backtrack.
-
-### A06 — Guide checkout abandonment
-
-Entry: `guide_checkout_start` and no purchase.
-
-Actions:
-
-- technical reminder;
-- value/use case;
-- answer shipping/payment questions;
-- direct Full option remains available if practical training was the actual desired job.
-
-No automatic discount.
-
-### A07 — Guide buyer bridge
-
-Entry: `guide_purchase`.
-
-Sequence job:
-
-1. fulfilment and usage;
-2. establish value of the Guide itself;
-3. explain distinct value of supervised practice/broader preparedness;
-4. relevant proof;
-5. Full offer / real course-date invitation;
-6. long nurture if not ready.
-
-Stop selling Guide to Guide buyers.
-
-### A08 — Full offer engaged but no checkout
-
-Entry:
-
-meaningful Full page/date/pricing engagement but no checkout.
-
-Job:
-
-- product proof;
-- FAQ;
-- exact scope;
-- decision support.
-
-If repeated direct-offer exposure fails, test backtracking to A2 solution education.
-
-### A09 — Full checkout recovery
-
-Entry: `full_checkout_start = true`, no purchase.
-
-Suggested test sequence:
-
-- rapid technical reminder;
-- proof/FAQ within the next decision window;
-- ask the actual barrier;
-- route by `DATE`, `LOCATION`, `NOT_READY`, `PRICE_VALUE`, `TRUST_PROOF`, `NEED_INFO`, `OTHER`.
-
-Human task for explicit purchase questions/payment problems where lawful and operationally justified.
-
-### A10 — Waitlist / timing automation
-
-Entry:
-
-DATE, LOCATION or TIMING_LATER barrier.
-
-Job:
-
-- stop repeating irrelevant dates;
-- preserve relationship;
-- notify when the stated condition changes;
-- continue useful low-pressure education where permission exists.
-
-### A11 — Full onboarding / pre-course
+## A6 — Onboarding / attendance engine
 
 Entry: Full purchase.
 
-Actions:
+Includes:
 
-- receipt/confirmation;
-- date/location/logistics;
-- attendee details only as needed;
-- preparation/reference material;
-- reminder cadence;
-- easy help route.
+- confirmation;
+- logistics;
+- approved pre-course preparation;
+- reminders;
+- easy support;
+- no-show/transfer handling according to approved policy.
 
-Suppress acquisition ads/sequences for Full.
+## A7 — Customer success / service / proof engine
 
-### A12 — No-show / transfer recovery
+After attendance:
 
-Entry: booked but not attended.
+1. capture delivery/experience feedback;
+2. identify and resolve service issues first;
+3. ask why Formalife was chosen and what felt different;
+4. capture actual trigger and alternatives where useful;
+5. request specific proof/testimonial only when appropriate;
+6. request referral only after verified positive experience;
+7. exit to waiting/lifecycle/depth-interest state.
 
-Job:
+Service issue suppresses ordinary upsell/referral/testimonial activity.
 
-- determine cause;
-- apply approved transfer/cancellation rules;
-- recover genuine attendance opportunity;
-- do not request satisfaction/referral before delivery.
+## A8 — Lead No Sale / inactive reactivation engine
 
-### A13 — Post-course experience
+Differentiate:
 
-Entry: attended.
+- `LEAD_INACTIVE` — never reached a genuine decision stage;
+- `LEAD_NO_SALE` — did reach a genuine decision point.
 
-Actions:
+Use:
 
-- reference/next-actions appropriate to product;
-- satisfaction/feedback;
-- ask why they chose Formalife and what felt different;
-- identify service issue versus positive outcome;
-- identify caregiver/depth/lifecycle need without forcing an offer.
+- last known barrier;
+- age in state;
+- last meaningful activity;
+- next action/date;
+- new trigger/date/proof/offer change.
 
-### A14 — Service recovery
+Do not treat either as a fresh cold lead.
 
-Entry:
+## A9 — Referral engine
 
-negative feedback, unresolved problem or support escalation.
+Entry only after positive experience/advocate eligibility.
 
-Suppress:
+V1 mechanism preference:
 
-- testimonials;
-- referral requests;
-- upsell/cross-sell promotion.
+- easy sharing of genuinely useful choking/start-solids material;
+- clear introduction path;
+- referrer ID when lawful/appropriate;
+- referred lead/purchase/contribution tracking.
 
-Exit only when issue is resolved/closed according to service process.
+No incentive is assumed until economics support one.
 
-### A15 — Proof/testimonial automation
-
-Entry:
-
-positive experience and eligibility.
-
-Job:
-
-- ask for specific, authentic feedback/proof;
-- connect testimonial to the actual delivered product/claim;
-- preserve permission/usage records.
-
-Historical choking-course proof must not be stretched into proof of undelivered rebuilt-flagship outcomes.
-
-### A16 — Referral automation
+## A10 — Lifecycle handoff engine
 
 Entry:
 
-high satisfaction / advocate eligibility.
+actual new safety trigger after Funnel 01 delivery.
 
-V1 mechanism:
+Action:
 
-- make it easy to share genuinely useful choking/start-solids material;
-- track referrer -> referred lead -> purchase -> contribution.
+handoff to the relevant lifecycle mini-funnel when that product/funnel exists.
 
-Future tests may include Guide gifts, caregiver invitations or economically sustainable incentives.
-
-### A17 — Caregiver expansion
-
-Entry:
-
-customer states that another regular caregiver needs preparation.
-
-Routes:
-
-- Couple/second seat;
-- future digital family access;
-- future private family intensive;
-- gift/Guide where appropriate.
-
-### A18 — Depth intent / BLSD future
-
-Entry:
-
-explicit desire for substantially deeper resuscitation practice.
-
-Until B1 exists:
-
-record `DEPTH_INTEREST` only; do not promise a product/date that is not available.
-
-After launch:
-
-route to BLSD Formalife.
-
-### A19 — Lifecycle cross-sell future
-
-Entry:
-
-real new trigger.
-
-Route to the relevant mini-funnel, not a generic catalog.
-
-### A20 — Lead No Sale / reactivation
-
-Entry:
-
-prior genuine offer exposure or checkout without purchase.
-
-Job:
-
-- use last known barrier/state;
-- choose backtrack, new proof, new date or timing reactivation;
-- do not treat as a brand-new cold lead.
+No product availability -> record interest/trigger only.
 
 ---
 
-## 19. Human escalation rules
+# 16. Human escalation rules
 
-Create a human task when:
+Create a human task when one of the following occurs:
 
 - explicit purchase question;
 - payment/checkout failure;
-- need help choosing date or Single/Couple;
-- barrier does not map cleanly;
-- valuable high-intent opportunity has stalled and human intervention is economically justified;
+- help choosing date or Single/Couple;
+- couple/other decision-unit issue requiring clarification;
+- barrier not mapped by the system;
+- high-value/high-intent opportunity stalled where human intervention is economically justified;
 - complaint/service problem;
-- customer-facing clinical question that cannot be answered from approved educational material.
+- customer-facing clinical question outside approved material.
 
-Marketing automation must not act as emergency medical advice. Urgent health situations are outside the marketing funnel and must be directed according to scientifically/legal approved customer-support policy.
+The human task must have:
+
+- owner role;
+- reason;
+- due date;
+- last relevant context;
+- permitted response scope;
+- resolution state.
+
+Marketing automation is not emergency medical advice. Urgent health situations are outside this funnel and require separately approved scientific/legal support policy.
 
 ---
 
-## 20. Suppression logic
+# 17. Suppression and permission logic
 
-### Global suppression
+Global suppression when:
 
-Do not run marketing sequence when:
-
-- no valid marketing permission where required;
 - opt-out/do-not-contact;
-- unresolved service issue;
+- no valid marketing permission for the intended communication where required;
+- unresolved service issue for ordinary promotion;
 - legal/policy restriction.
 
-### Product suppression
+Product suppression:
 
-- Guide buyer: suppress Guide acquisition;
-- Full buyer: suppress Full acquisition/abandonment;
-- attended customer: suppress pre-course sales;
-- future Digital buyer: suppress Digital acquisition;
-- waitlist: suppress irrelevant date pressure.
+- Guide buyer -> suppress Guide acquisition;
+- Full buyer -> suppress Full acquisition/abandonment;
+- attended customer -> suppress pre-course sales;
+- waitlist/date barrier -> suppress irrelevant date pressure.
 
-### State suppression
+State suppression:
 
-When strong intent appears, suppress slower redundant education and accelerate.
+- strong intent -> suppress redundant slow education;
+- timing later -> suppress repeated immediate-close attempts;
+- service recovery -> suppress testimonial/referral/upsell;
+- non-fit -> suppress inappropriate offer.
 
-When timing-later is explicit, suppress repeated immediate close attempts.
-
----
-
-## 21. Funnel surfaces / pages
-
-Minimum mature surface architecture:
-
-1. `P0 Trigger Content / Content Hub`;
-2. `P1 Problem Resource`;
-3. `P2 F1 Opt-in Landing`;
-4. `P3 F1 Thank-you / Router`;
-5. `P4 Solution / Buyer's Guide`;
-6. `P5 Formalife Difference + Proof / VSL`;
-7. `P6 Guide Sales Page`;
-8. `P7 Guide Checkout`;
-9. `P8 Full Course Sales Page`;
-10. `P9 Full Date / Single-Couple Selection`;
-11. `P10 Full Checkout`;
-12. `P11 Waitlist / Date-Location Preference`;
-13. `P12 Purchase Confirmation / Onboarding`;
-14. `P13 Feedback / Proof`;
-15. `P14 Referral Share Page`;
-16. future Digital/Hybrid/depth pages when products exist.
-
-Do not send every traffic source to the same generic homepage.
+Transactional fulfilment messages and marketing permission must remain conceptually and operationally distinct.
 
 ---
 
-## 22. Content machine by awareness state
+# 18. CRM minimum operating model
 
-Formalife should maintain content families, not one undifferentiated newsletter.
+Maintain one customer identity where possible.
 
-### A0 content — trigger/life stage
+Required/valuable fields:
 
-Job: make the issue relevant at the right moment.
-
-### A1 content — problem
-
-Job: clarify the real parent problem and consequences.
-
-### A2 content — solution/category
-
-Job: explain solution types, trade-offs and selection criteria.
-
-### A3 content — product/category comparison
-
-Job: help evaluate training/reference formats and provider criteria.
-
-### A4 content — Formalife/proof
-
-Job: show real difference, authority, delivery and offer.
-
-### Customer content
-
-Job:
-
-- improve use/outcome;
-- collect proof;
-- referral;
-- detect real new trigger;
-- support next purchase without generic cross-selling.
-
-Every content asset must define its next CTA before production.
-
----
-
-## 23. Lead-status movement — graduated evidence
-
-Do not use one simplistic points score as truth.
-
-### Weak signals
-
-- one email open;
-- one page view;
-- short video start;
-- social like.
-
-Use for context only.
-
-### Medium signals
-
-- repeated relevant content consumption;
-- meaningful completion of F1;
-- repeated category/offer page visits;
-- Guide page/checkout engagement.
-
-Can increase directness.
-
-### Strong signals
-
-- dates/pricing view;
-- waitlist request;
-- explicit question;
-- checkout start;
-- choice of Single/Couple;
-- purchase.
-
-Can trigger acceleration/human action.
-
----
-
-## 24. Event taxonomy
-
-Track at minimum where technically feasible:
-
-### Discovery / education
-
-- `content_view_meaningful`;
-- `f1_view`;
-- `f1_optin`;
-- `f1_complete`;
-- `buyers_guide_view`;
-- `difference_proof_view`.
-
-### Guide
-
-- `guide_page_view`;
-- `guide_checkout_start`;
-- `guide_purchase`;
-- `guide_fulfilled` where trackable.
-
-### Full
-
-- `full_page_view`;
-- `full_date_view`;
-- `full_checkout_start`;
-- `full_purchase`;
-- `full_attended`;
-- `full_no_show`.
-
-### Intent/barrier
-
-- `question_submitted`;
-- `waitlist_joined`;
-- `barrier_selected`;
-- `human_task_created`;
-- `human_task_resolved`.
-
-### Post-sale
-
-- `feedback_submitted`;
-- `service_issue_opened`;
-- `service_issue_resolved`;
-- `testimonial_received`;
-- `referral_created`;
-- `referred_purchase`;
-- `caregiver_interest`;
-- `depth_interest`;
-- `lifecycle_trigger_recorded`.
-
----
-
-## 25. CRM minimum fields
-
-Maintain a single customer identity where possible.
-
-Useful fields:
-
-- person/customer ID;
-- contact data and consent state;
+- customer/person ID;
+- contact data;
+- consent / permission state;
 - source / medium / campaign;
-- referrer / partner ID when applicable;
+- referrer / partner ID where relevant;
+- route family;
 - relationship state;
-- awareness state when known/inferred with evidence;
+- awareness state with evidence/confidence if inferred;
 - intent state;
-- trigger/context state;
-- timing/barrier state;
-- products purchased and dates;
+- trigger/context;
+- alternative/prior-solution state when useful;
+- barrier/timing state;
+- decision-unit state when useful;
+- products purchased + dates;
 - course date/status;
-- last meaningful activity;
-- next action and due date for human tasks;
-- no-sale reason where explicitly known;
+- last meaningful activity timestamp;
+- age in current state;
+- next action / due date;
+- no-sale reason if known;
 - service issue state;
-- referral relationships;
-- revenue and contribution data where available.
+- referral relationship;
+- revenue;
+- variable fulfilment contribution;
+- attributable acquisition/follow-up cost where available.
 
-Do not collect data merely because the CRM has a field for it.
-
----
-
-## 26. Proof architecture by funnel stage
-
-### Trigger/problem stage
-
-Need to prove:
-
-- information is credible;
-- concern is treated proportionately;
-- Formalife is useful before asking for money.
-
-### Solution/category stage
-
-Need to prove:
-
-- the selection criteria are legitimate;
-- different formats solve different jobs;
-- supervised practical learning adds real value where claimed.
-
-### Guide stage
-
-Need to prove:
-
-- substantive editorial/reference value;
-- credible authorship/scientific provenance;
-- physical/product fulfilment reliability.
-
-### Full stage
-
-Need to prove:
-
-- human/scientific authority;
-- authentic practical delivery;
-- relevance to parents like the prospect;
-- exact broader flagship scope;
-- value of the format;
-- current product-specific outcomes only after the rebuilt flagship has actually generated that proof.
-
-### Post-sale
-
-Delivery creates the next proof asset.
-
-The loop is:
-
-**claim -> delivery -> observed experience -> proof -> acquisition.**
+Do not collect fields that do not change service, routing or analysis.
 
 ---
 
-## 27. Sales and offer recovery logic
+# 19. Funnel stage contract
 
-### Almost buyer first
+Every implemented stage/page/sequence must be documented with this structure:
 
-Before paying to generate another cold prospect, recover:
+| Field | Required definition |
+|---|---|
+| State in | exact relationship/awareness/intent context |
+| Job | belief/action/state transition required |
+| CTA | one primary observable response |
+| Owner | marketing / CRM / sales-help / fulfilment / scientific / customer success |
+| Window | response/service window appropriate to state |
+| Expected outcome | event/state transition |
+| Fallback | if outcome does not occur |
+| Exit | state/condition ending the stage |
+| Suppressions | when stage must not run |
+| Cost | production + media + people + tooling where material |
+| KPI | conversion/economic metric |
+| Decision rule | keep / revise / kill logic |
 
-- Guide cart abandoners;
-- Full cart abandoners;
-- date/location waitlist;
-- explicit no-sale opportunities;
-- prior Guide buyers with no core purchase;
-- returning high-intent leads.
-
-### Multichannel where economics justify it
-
-Potential channels:
-
-- email;
-- SMS/WhatsApp where authorized and appropriate;
-- retargeting;
-- human contact;
-- physical Guide/material in selected economics.
-
-Do not use every channel by default.
-
-### Human selling
-
-Human interaction should begin from context already transferred by marketing, not repeat generic education from zero.
+No funnel box is considered operational until these fields are defined.
 
 ---
 
-## 28. Full funnel economics
+# 20. Core event taxonomy
 
-The funnel is not judged by leads alone.
+Minimum events where technically feasible:
 
-Read by entry point and cohort:
+## Education
 
-**source -> total acquisition cost -> identified lead -> first paid transaction -> Full conversion -> normalized contribution -> later purchase/referral contribution -> payback.**
+- `content_job_j0_meaningful`
+- `content_job_j1_meaningful`
+- `content_job_j2_meaningful`
+- `f1_optin` if F1 exists
+- `comparison_proof_meaningful`
 
-### Current Full economics baseline
+## Guide
 
-Current target:
+- `guide_page_view`
+- `guide_checkout_start`
+- `guide_purchase`
+- `guide_fulfilled`
+
+## Full
+
+- `full_page_view`
+- `full_date_view`
+- `full_checkout_start`
+- `full_purchase`
+- `full_attended`
+- `full_no_show`
+
+## Intent/barrier
+
+- `question_submitted`
+- `waitlist_joined`
+- `barrier_selected`
+- `decision_unit_issue`
+- `human_task_created`
+- `human_task_resolved`
+
+## Post-sale
+
+- `feedback_submitted`
+- `service_issue_opened`
+- `service_issue_resolved`
+- `testimonial_received`
+- `referral_created`
+- `referred_purchase`
+- `new_trigger_recorded`
+
+Event names are implementation labels; exact analytics schema may change.
+
+---
+
+# 21. Funnel economics and capacity
+
+Do not evaluate the funnel from opt-ins alone.
+
+Read each route/cohort as:
+
+**source -> complete acquisition cost -> identified prospect -> first transaction -> Full buyer -> delivered Full contribution -> referral/next-purchase contribution -> payback.**
+
+## Current Full baseline
+
+Target:
 
 - 10-12 paying participants per edition;
 - EUR 80 Single / EUR 120 Couple.
 
-Current normalized direct contribution before acquisition/overhead:
+Normalized direct contribution before acquisition/overhead:
 
 - 10 participants: approximately EUR 250-450;
-- 12 participants: approximately EUR 352-592;
+- 12 participants: approximately EUR 352-592.
 
-These are not CAC allowances by themselves.
+These figures do not define allowable CAC by themselves.
 
-### Funnel scorecard
+## Complete CAC must include when material
 
-Measure at least:
+- media/traffic;
+- content/material production amortization where useful for decision;
+- printing/fulfilment;
+- payment costs;
+- retargeting/follow-up;
+- human sales/help time;
+- CRM/tooling attributable cost;
+- partner/referral economics where applicable.
 
-- cost per meaningful visitor where relevant;
-- F1 opt-in rate by entry point;
-- F1 -> Guide;
-- F1 -> Full direct;
-- Guide conversion rate;
-- Guide -> Full conversion and time-to-Full;
-- Full sales-page -> checkout;
+## Capacity discipline
+
+The funnel sells scarce live inventory.
+
+Therefore track:
+
+- seats available by edition;
+- paid participants;
+- Single/Couple mix;
+- no-show/transfer;
+- contribution per edition;
+- instructor/room capacity;
+- acquisition spend tied to fill needs.
+
+Do not scale acquisition if delivery inventory/capacity cannot convert demand into economically attractive editions.
+
+Do not create low-fill editions merely to accommodate scattered demand without measuring the contribution consequence.
+
+---
+
+# 22. Scorecard
+
+## Demand/entry
+
+- entry volume by route family;
+- active-intent share vs lower-awareness share;
+- source mix;
+- trigger mix;
+- alternative-state mix where captured.
+
+## Education
+
+- meaningful progression J0 -> J1 -> J2 -> J3/J4;
+- time to next meaningful state;
+- Guide vs Full self-selection;
+- long-nurture reactivation;
+- complaint/unsubscribe by educational lane.
+
+## Guide
+
+- Guide sales conversion;
+- variable contribution;
+- Guide -> Full rate;
+- time Guide -> Full;
+- Guide buyer CAC recovery;
+- Guide buyer quality/fill contribution.
+
+## Full
+
+- offer page -> checkout;
 - checkout -> purchase;
-- abandonment recovery;
-- waitlist -> purchase;
+- recovery rate;
 - direct high-intent -> Full;
 - referral -> Full;
-- Full fill rate / participant count;
+- fill/participant count;
 - Single/Couple mix;
-- no-show rate;
-- normalized contribution per edition;
-- complete CAC per Full customer by source/path;
-- payback;
-- satisfaction/service-recovery rate;
-- testimonial/proof rate;
-- referral creation and referred-customer contribution;
-- future upsell/cross-sell attach rate;
-- unsubscribe/complaint rate by nurture path;
-- time spent in each awareness/timing state where observable.
+- no-show/transfer;
+- contribution per edition;
+- complete CAC by route;
+- payback.
+
+## Customer success / moat
+
+- satisfaction/issue rate;
+- service recovery;
+- why customer chose Formalife;
+- what customer perceived as different;
+- choking-wedge -> broader-flagship comprehension;
+- proof/testimonial production;
+- referral creation;
+- referred-customer contribution.
+
+## Capacity
+
+- available vs sold seats;
+- human-help burden per sale;
+- fulfilment/admin burden;
+- instructor utilization;
+- marginal operational cost of added route complexity.
+
+No universal pass/fail threshold is invented before baseline data exists.
+
+Use comparative tests and then set internal thresholds from observed economics.
 
 ---
 
-## 29. Funnel decision rules
+# 23. Prospective learning questions built into the funnel
 
-### If active-intent traffic converts
+Formalife should stop trying to reconstruct missing historical memory and learn prospectively.
 
-Protect the short lane. Do not force education merely to increase touchpoints.
+Collect at low-friction points, not all at checkout:
 
-### If active-intent traffic reaches Full but does not buy
+- What brought you here now?
+- Are you starting solids / already in that phase / here for another reason? (only when useful)
+- Were you already looking for a course or did this content/referral make you consider one?
+- What have you already done to prepare? (free content / previous course / nothing / other, when useful)
+- What other solution were you considering?
+- Why did you choose Formalife?
+- What seemed different?
+- If you did not buy, what stopped you?
+- If Couple is relevant, is another caregiver part of the decision?
 
-Inspect:
-
-- positioning/difference;
-- proof;
-- offer/value;
-- date/location;
-- checkout friction;
-- category comparability.
-
-Do not respond first by making the funnel longer.
-
-### If latent/problem-aware traffic does not progress
-
-Inspect:
-
-- trigger relevance;
-- educational quality;
-- awareness mismatch;
-- CTA size;
-- trust/proof;
-- timing.
-
-Give the educational system enough time before declaring the audience bad.
-
-### If Guide sells but Full conversion is weak
-
-Determine whether Guide:
-
-- attracts the wrong buyer;
-- satisfies the need sufficiently by itself;
-- fails to explain the distinct value of practice;
-- creates no economic recovery;
-- or simply needs a longer legitimate decision horizon.
-
-Guide does not retain strategic importance merely because it already exists.
-
-### If F2 briefing/webinar does not create incremental economic value
-
-Do not maintain it as ceremony.
-
-### If cold acquisition works only through discounts
-
-Re-examine offer, positioning, proof and target before scaling.
+Use answers to change routing and future decisions, not as survey theatre.
 
 ---
 
-## 30. Staged implementation — architecture is complete, build is progressive
+# 24. Implementation sequence after audit
 
-The full funnel above is the **target operating design**. Implementation still follows causal order.
+The full architecture is long. Implementation remains intentionally narrow and causal.
 
-### Stage 0 — prerequisites
+## Phase 0 — upstream gates
 
-- scientific review of flagship curriculum/claims;
-- final authority wording;
-- Full offer/scope clarity;
-- Training Credit rules;
-- Guide economics;
-- checkout/attribution audit;
-- CRM identity and consent states;
-- basic proof inventory.
+Close enough of the following to make a real offer testable:
 
-### Stage 1 — short high-intent engine
+- scientific/claim review;
+- authority/credential wording;
+- beachhead working definition;
+- operational difference / positioning hypothesis;
+- Full offer card;
+- risk-reduction/policy clarity;
+- proof register;
+- Training Credit rules if used;
+- checkout/attribution;
+- normalized economics;
+- CRM permission/customer identity basics.
 
-Build/verify:
+## Phase 1 — active demand + trusted inbound
 
-- EP01/EP02/EP04/EP05 high-intent entries;
-- Full page/date/checkout;
-- Guide optional route;
-- Guide buyer bridge;
-- Full abandonment recovery;
-- onboarding;
-- post-course feedback/proof/referral.
+Implement only:
 
-### Stage 2 — problem-aware engine
+- E-A and incoming E-B routes;
+- J3/J4 as needed;
+- Full offer/date/checkout;
+- Single/Couple;
+- abandonment/barrier routing;
+- onboarding/no-show;
+- post-course service/proof/referral;
+- prospective learning questions.
 
-Build:
+Goal:
 
-- M1/F1;
-- A03 problem sequence;
-- M2 solution education;
-- Guide/Full routing;
-- long nurture and backtracking.
+prove the shortest economically plausible core route.
 
-### Stage 3 — latent demand engine
+## Phase 2 — Guide path
 
-Build:
+Test Guide as an actual front-end/authority route:
 
-- M0 trigger content;
-- A02 longer education;
-- social/editorial/SEO entry segmentation;
-- education across 21-45-day test horizons before broad conclusions.
+- Guide sales;
+- Guide fulfilment;
+- Guide-to-Full bridge;
+- Training Credit if approved;
+- economic comparison with Direct Full.
 
-### Stage 4 — deeper one-to-many education
+Guide remains if it creates customer/economic value, not because it exists historically.
 
-Only if needed by evidence:
+## Phase 3 — problem-aware education
 
-- F2 briefing/Q&A;
-- richer VSL/long-form materials;
-- selected physical/material follow-up.
+Build only the minimum assets needed to perform J1/J2 and identify the prospect.
 
-### Stage 5 — paid cold scaling
+Do not automatically build separate M1/F1/M2 assets if one or two strong materials can perform the jobs better.
 
-Only after downstream economics are readable.
+## Phase 4 — latent/life-stage education
 
-### Stage 6 — future Digital / Hybrid
+Build J0 + longer education only after downstream conversion/offer is legible.
 
-After Block 3 of `FORMALIFE_BUILD_SEQUENCE.md` becomes active.
+Give the material enough time to educate; do not judge cold/latent demand from immediate purchase rate alone.
 
-### Stage 7 — depth, lifecycle and broader back-end
+## Phase 5 — cold paid scale
 
-BLSD Formalife, private family, refresh and adjacent product mini-funnels only after the core mechanism justifies them.
+Only after:
 
----
+- downstream conversion is measurable;
+- complete CAC/payback are readable;
+- delivery capacity is sufficient;
+- positioning/offer/proof are not obvious bottlenecks.
 
-## 31. What not to do
+## Future phases
 
-- do not force every lead through the same number of steps;
-- do not send latent prospects directly into repeated Full sales asks before educating them;
-- do not force ready prospects through F1 or Guide;
-- do not treat a click as proof of high intent;
-- do not create fake deadlines or fear;
-- do not turn clinical marketing content into unreviewed medical claims;
-- do not use the B2B/B2B2C Light inside direct B2C;
-- do not discount automatically after abandonment;
-- do not send the same nurture forever;
-- do not restart old leads from zero if their history is known;
-- do not send acquisition ads for products already purchased;
-- do not request referrals/testimonials while a service issue is unresolved;
-- do not cross-sell every Formalife topic to every customer;
-- do not build F2, Digital, membership or other layers merely to make the funnel look sophisticated;
-- do not scale traffic before measuring conversion, contribution, CAC and delivery capacity.
+Digital/Hybrid, BLSD Formalife, Private Family, Refresh and lifecycle mini-funnels activate only when their own build gates are satisfied.
 
 ---
 
-## 32. Master funnel — simplified map
+# 25. Decision rules
+
+## If active intent reaches Full but does not buy
+
+Investigate upstream before adding more content:
+
+**difference -> offer -> proof -> price/value -> risk -> date/location -> checkout.**
+
+## If problem-aware prospects consume education but do not advance
+
+Investigate:
+
+- whether the trigger/problem is actually priority;
+- whether solution-category education is clear;
+- whether the CTA is too large;
+- whether proof/authority is sufficient;
+- whether timing is later.
+
+## If latent prospects do not advance quickly
+
+Do not treat short-term silence as automatic failure.
+
+Evaluate progression over the designed educational horizon and real trigger timing.
+
+## If Guide sells but Full does not
+
+Test whether:
+
+- Guide buyer is the wrong segment;
+- Guide fully satisfies that customer's job;
+- practice/broader-preparedness distinction is weak;
+- offer/proof is weak;
+- the decision horizon is longer;
+- the route fails to recover CAC.
+
+Guide can be demoted from front-end to authority/reference product if economics support that conclusion.
+
+## If a route requires too much human time
+
+Reduce or standardize it before scaling.
+
+An €80/€120 live sale cannot support an arbitrarily expensive sales process.
+
+## If cold acquisition works only through discounts
+
+Return to target/difference/offer/proof rather than scaling discounted volume.
+
+## If a future cross-sell has no observed trigger/pattern
+
+Do not automate it merely because it exists in the product map.
+
+---
+
+# 26. What not to do
+
+- do not build all target assets simultaneously;
+- do not confuse a sophisticated diagram with a proven mechanism;
+- do not send every traffic source to one generic page;
+- do not create fourteen operational funnels for fourteen sources;
+- do not force ready buyers through Guide or lead magnets;
+- do not rush low-awareness prospects before materials have done their educational job;
+- do not assume a fixed number of days creates readiness;
+- do not infer purchase intent from one technical event;
+- do not use copy to invent Formalife's difference;
+- do not market category conventions as proprietary superiority;
+- do not make unreviewed medical/clinical claims;
+- do not use old choking proof as proof of new broader outcomes;
+- do not hide price/conditions until the last possible moment merely to generate leads;
+- do not solve every objection with discounting;
+- do not make the Guide deliberately incomplete to force Full;
+- do not confuse Guide purchase with recovered CAC;
+- do not automate products that do not exist;
+- do not cross-sell the entire future catalog;
+- do not request testimonial/referral during service recovery;
+- do not treat timing-later as lost;
+- do not treat natural lifecycle inactivity as churn;
+- do not scale traffic before contribution, CAC, payback and delivery capacity are readable.
+
+---
+
+# 27. Simplified canonical map
 
 ```text
-                         CHOKING / STARTING-SOLIDS MARKET
-                                      |
-         +----------------------------+-----------------------------+
-         |                            |                             |
-      LATENT                      PROBLEM-AWARE               ACTIVE / HIGH INTENT
-       A0/I0                         A1/I1                    A2-A4 / I2-I4
-         |                            |                             |
-   M0 trigger content          M1 / F1 education            Search / referral / brand
-         |                            |                             |
-   problem relevance            problem clarity                     |
-         |                            |                             |
-        F1 ----------------------> E2 solution education             |
-         |                            |                             |
-         |                        M2 buyer guide                     |
-         |                            |                             |
-         +-------------------+--------+----------+                  |
-                             |                   |                  |
-                           GUIDE            M3 PROOF / DIFFERENCE <-+
-                             |                   |
-                       Guide bridge              |
-                             +-------------------+
-                                      |
-                              FULL COURSE OFFER
-                                      |
-                         +------------+------------+
-                         |                         |
-                      PURCHASE                   NO SALE
-                         |                         |
-                    ONBOARDING             +------+-------+
-                         |                  |      |       |
-                     ATTEND             barrier  wait   backtrack
-                         |                  |      |       |
-             +-----------+-----------+      |      |       |
-             |           |           |      |      |       |
-          positive     issue       no-show  |      |       |
-             |           |           |      |      |       |
-          proof       service      recovery +------+-------+
-             |
-          referral
-             |
-      +------+----------------------------+
-      |                                   |
- caregiver/depth need              no current need
-      |                                   |
- future upsell/cross-sell             WAITING FOR TRIGGER
+                    CHOKING / COMPLEMENTARY-FEEDING MARKET
+                                     |
+          +--------------------------+---------------------------+
+          |                          |                           |
+     ACTIVE INTENT              PROBLEM-AWARE               LATENT/LIFE-STAGE
+        E-A / E-B                    E-C                           E-D
+          |                          |                             |
+     J3 comparison                  J1 problem                    J0 trigger
+     J4 offer/proof                 J2 solution                   J1 problem
+          |                          |                             J2 solution
+          |                    +-----+------+                      |
+          |                    |            |                      |
+          |                  GUIDE      J3/J4 FULL <---------------+
+          |                    |            |
+          +--------------------+------------+
+                                     |
+                              FULL OFFER SYSTEM
+                                     |
+                    +----------------+----------------+
+                    |                                 |
+                 PURCHASE                           NO SALE
+                    |                                 |
+             onboarding/delivery           barrier diagnosis
+                    |                     /    |    |      \
+                 attend                proof date wait  backtrack/non-fit
+                    |
+           +--------+---------+
+           |                  |
+       service issue      positive experience
+           |                  |
+        recovery          proof/referral
+                              |
+                    +---------+----------+
+                    |                    |
+             no current need       real new trigger
+                    |                    |
+          WAITING_FOR_TRIGGER    HANDOFF_TO_LIFECYCLE_ROUTER
 ```
+
+The map is intentionally simpler than the full state model.
+
+Its job is to preserve the economic logic while the state machine handles the complexity underneath.
 
 ---
 
-## 33. Canonical Layer 1 references
+# 28. Canonical Layer 1 references used in this audit
 
-Primary doctrine used for this architecture:
+- `REASONING_KERNEL.md`
+- `merenda/01_mercato/clienti-identificabili-e-target.md`
+- `merenda/02_posizionamento/differenziazione-operativa.md`
+- `merenda/03_offerta/offerta-a-risposta-diretta.md`
+- `merenda/03_offerta/front-end-e-back-end.md`
+- `merenda/04_marketing/gerarchia-domanda-e-canali.md`
+- `merenda/04_marketing/complessita-e-riduzione-variabili.md`
+- `merenda/05_acquisizione/funnel-e-conversione.md`
+- `merenda/05_acquisizione/information-marketing.md`
+- `merenda/05_acquisizione/database-email-e-sequenze.md`
+- `merenda/05_acquisizione/referral-e-soddisfazione.md`
+- `merenda/06_vendita/prequalifica-follow-up-decisori.md`
+- `merenda/06_vendita/follow-up-lead-non-convertiti.md`
+- `merenda/07_copy_comunicazione/priorita-azione-e-inerzia.md`
+- `merenda/08_brand/autorita-e-marketing.md`
+- `merenda/08_brand/testimonianze-e-prova-sociale.md`
+- `merenda/09_business/numeri-cassa-e-crescita.md`
 
-- `REASONING_KERNEL.md`;
-- `merenda/01_mercato/clienti-identificabili-e-target.md`;
-- `merenda/03_offerta/offerta-a-risposta-diretta.md`;
-- `merenda/03_offerta/front-end-e-back-end.md`;
-- `merenda/04_marketing/gerarchia-domanda-e-canali.md`;
-- `merenda/04_marketing/complessita-e-riduzione-variabili.md`;
-- `merenda/05_acquisizione/funnel-e-conversione.md`;
-- `merenda/05_acquisizione/information-marketing.md`;
-- `merenda/05_acquisizione/database-email-e-sequenze.md`;
-- `merenda/05_acquisizione/referral-e-soddisfazione.md`;
-- `merenda/06_vendita/follow-up-lead-non-convertiti.md`;
-- `merenda/07_copy_comunicazione/priorita-azione-e-inerzia.md`;
-- `merenda/09_business/numeri-cassa-e-crescita.md`.
+---
 
-## 34. Related Layer 2 files
+# 29. Related Layer 2 files
 
-- `CURRENT_STATE.md`;
-- `B2C_COMMERCIAL_FUNNEL_V2.md`;
-- `B2C_FUNNEL_01_CHOKING_WEANING_TO_FLAGSHIP.md` — narrower prior implementation slice;
-- `FORMALIFE_BUILD_SEQUENCE.md`;
-- `FLAGSHIP_SCOPE_V1.md`;
-- `ASSET_INVENTORY.md`;
-- `MARKET_EVIDENCE.md`;
-- `LIFECYCLE_STATE_TIMELINE.md`;
-- `LIFECYCLE_FUNNEL_PATHS.md`.
+- `CURRENT_STATE.md`
+- `MARKET_EVIDENCE.md`
+- `POSITIONING_DIAGNOSIS.md`
+- `B2C_COMMERCIAL_FUNNEL_V2.md`
+- `B2C_FUNNEL_01_CHOKING_WEANING_TO_FLAGSHIP.md`
+- `FORMALIFE_BUILD_SEQUENCE.md`
+- `FLAGSHIP_SCOPE_V1.md`
+- `ASSET_INVENTORY.md`
+- `LIFECYCLE_STATE_TIMELINE.md`
+- `LIFECYCLE_FUNNEL_PATHS.md`
 
-## 35. Revision conditions
+---
 
-Revise this architecture when real Funnel 01 data shows one or more of the following:
+# 30. Revision conditions
 
-- an awareness path is materially misclassified;
-- a material repeatedly fails to move the intended state;
-- a shorter path produces better economics without harming fit/outcome;
-- a longer education path materially improves Full conversion/payback;
+Revise Funnel 01 when real evidence shows that:
+
+- the beachhead is economically weaker than another segment;
+- awareness routes are materially misclassified;
+- an educational job fails to move the intended state;
+- a shorter route produces better economics without harming fit/delivery;
+- longer education materially improves conversion/payback;
 - Guide does not create incremental economic/customer value;
-- a new product changes the rational routing;
-- customer feedback shows that the choking -> broader preparedness bridge is misunderstood;
-- operational capacity makes a path uneconomic;
-- scientific/legal review changes permitted content or claims.
+- another operational difference proves more persuasive/relevant;
+- proof requirements change;
+- the choking -> broader preparedness bridge is misunderstood;
+- capacity makes a route uneconomic;
+- human-help cost is too high for the sale value;
+- scientific/legal review changes content or claims;
+- a future product actually launches and earns a place in routing.
 
-The objective is not to preserve this diagram. It is to create a measurable customer-acquisition and relationship system that becomes more accurate as evidence accumulates.
+The objective is not to preserve the architecture.
+
+The objective is to build a measurable system that correctly educates people who need education, accelerates people who are ready, monetizes the right customers, protects delivery quality and becomes more accurate as Formalife evidence accumulates.
