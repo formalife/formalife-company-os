@@ -17,13 +17,15 @@ The sequencing rule is:
 
 This deliberately increases the sophistication of the overall system while limiting the number of variables being introduced at the same time.
 
-## Block 1 — Make the choking flagship the commercial proof engine
+## Block 1 — Make the choking-led flagship system the commercial proof engine
 
-The first priority is not a new product. It is to make the existing pediatric-choking system strong enough to function as the first flagship of the target company.
+The first priority is not a new product. It is to make the current **choking-led acquisition system** strong enough to feed a coherent broader pediatric-safety/emergency-preparedness flagship and function as the first commercial proof engine of the target company.
 
 The commercial system is:
 
-**Guida / appropriate low-friction entry -> full live course -> designed next step.**
+**choking-specific Guide / appropriate low-friction Light or direct entry -> broader Full Course -> designed next step.**
+
+Choking/weaning remains the primary acquisition wedge; the rebuilt Full Course is the broader parent-first pediatric safety/emergency-preparedness flagship. The system must not collapse those two jobs into the same market meaning.
 
 The flagship must present Formalife as a parent-first pediatric-safety company, not as another generic training provider.
 
@@ -31,11 +33,11 @@ The minimum system includes:
 
 - visible human/scientific authority;
 - clear customer-facing distinction between Formalife consumer education and certification-led training;
-- the Guide and live course working as one coherent product system;
+- the Guide/Light choking entry assets and broader Full Course working as one coherent commercial system without making the entry product deliberately incomplete;
 - simple Single/Couple architecture;
 - reliable checkout, attribution and customer data capture;
 - real proof from previous/current customers;
-- explicit capture of source, relevant child life stage and purchased product;
+- explicit capture of source, relevant child life stage/trigger where voluntarily provided and useful, and purchased product;
 - normalized delivery economics including instructor cost.
 
 The immediate economic proof remains the current founder target of 10-12 paying participants at EUR 80 Single / EUR 120 Couple, but the measurement unit expands from one edition to the full customer relationship.
@@ -48,9 +50,10 @@ Formalife must be able to read reliably:
 - source of each customer;
 - conversion by source/partner when observable;
 - customer count and purchase history;
-- second-purchase / upgrade behavior when offered.
+- second-purchase / upgrade behavior when offered;
+- whether the choking-specific entry -> broader Full Course bridge is actually understood and accepted by customers.
 
-The goal of Block 1 is not perfect branding. It is a flagship that can generate money, proof and usable data without founder-side improvisation.
+The goal of Block 1 is not perfect branding. It is a flagship system that can generate money, proof and usable data without founder-side improvisation.
 
 ## Block 2 — Turn the pediatrician success into a repeatable distribution system
 
@@ -125,15 +128,20 @@ The exact utility is still an open research problem and should not be invented c
 
 ### Lifecycle CRM/account logic
 
-Formalife should know enough, lawfully and usefully, to avoid treating every customer as anonymous:
+Formalife should know enough, lawfully and usefully, to avoid treating every customer as anonymous.
 
-- products purchased;
+The mature lifecycle architecture is trigger-based, not a rigid age calendar. The working model is defined in `LIFECYCLE_STATE_TIMELINE.md` and `LIFECYCLE_FUNNEL_PATHS.md`.
+
+Relevant future dimensions include:
+
+- products purchased/completed;
 - source/partner;
-- relevant child life stage;
-- completed training;
-- next coherent safety need.
+- caregiver role where useful;
+- broad child/family life stage where voluntarily provided;
+- the real trigger/need that brought the customer in;
+- next plausible safety need only when a real transition or exposure makes it relevant.
 
-The objective is to turn acquisition into a customer relationship and design the second purchase rather than waiting for it accidentally.
+The objective is to turn acquisition into a customer relationship and design the second purchase rather than waiting for it accidentally, while preserving a legitimate `WAITING FOR TRIGGER` state when no next paid need is active.
 
 ## Block 5 — Expand through the closest high-leverage adjacency
 
@@ -180,10 +188,10 @@ They become rational only when the earlier engine creates demand, economics, pro
 
 ## Current executive sequence
 
-1. **Flagship commercial proof** — make choking/Guide/live work as one measurable parent-first engine.
+1. **Flagship commercial proof** — make the choking-led Guide/Light -> broader Full Course path work as one measurable parent-first engine.
 2. **Trusted distribution** — reproduce the pediatrician mechanism across multiple relevant partners.
-3. **Scalable digital flagship** — create the first nationally sellable, high-quality consumer digital product around the same core.
-4. **Owned demand + lifecycle** — recurring free utility and customer relationship infrastructure tied to working paid products.
+3. **Scalable digital flagship** — create the first nationally sellable, high-quality consumer digital product around the same proven core.
+4. **Owned demand + lifecycle** — recurring free utility and trigger-based customer relationship infrastructure tied to working paid products.
 5. **Adjacent expansion** — specialist partnership first; proprietary BLSD and broader vertical depth after the core proves repeatable.
 
 ## Layer 1 references
