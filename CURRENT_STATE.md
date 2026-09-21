@@ -102,7 +102,7 @@ Current assets include:
 
 - Guida Anti-Panico al Soffocamento Pediatrico;
 - full in-person choking course;
-- Light/Serata pilot;
+- Light/Serata pilot in the B2B/B2B2C partner-hosted lane;
 - Training Credit;
 - practical teaching/delivery capability;
 - proprietary educational materials and Ferma. Valuta. Agisci.;
@@ -161,20 +161,23 @@ Current accreditation/instructor/provider details still require documentary reco
 
 The two products must remain clearly distinct in purpose and communication.
 
-## 7. FOUNDER DECISION — flagship scope
+## 7. FOUNDER DECISION — flagship and channel scope
 
 Status: CURRENT.
 
 The Full Course will **not** remain exclusively about pediatric choking.
 
-Current product ladder:
+Current product/channel architecture:
 
-- **choking/weaning** remains the primary acquisition wedge;
-- **Guide** remains choking-specific;
-- **Light** remains choking-specific and particularly suitable for partner-hosted entry;
-- **Full Course** becomes the broader parent-first pediatric safety/emergency-preparedness flagship;
+- **choking/weaning** remains the primary B2C acquisition wedge;
+- **Guide** remains choking-specific and can operate as an optional B2C paid information front-end;
+- **Light / Serata Anti-Panico** is assigned to the **B2B/B2B2C partner-hosted channel** and is not part of the direct B2C funnel;
+- **Full Course** becomes the broader parent-first pediatric safety/emergency-preparedness live flagship and can be purchased directly by high-intent B2C prospects;
+- **Digital Emergency-Preparedness Flagship** is the planned future substantial B2C core digital product;
 - **BLSD Formalife non-certified** later provides much deeper proprietary resuscitation practice;
 - **BLSD certified** remains the separate credential path.
+
+The direct B2C funnel must be designed zero-based around customer state and economics rather than around current products. The mature target is defined in `B2C_COMMERCIAL_FUNNEL_V2.md`.
 
 The Full Course must remain curated rather than encyclopedic. Live time is prioritized for situations where physical practice, decision feedback and immediate first-response education have the highest value.
 
@@ -200,9 +203,9 @@ The governing question is:
 
 The current causal sequence is:
 
-1. **Flagship commercial proof** — make the Guide/Light/Full system a coherent, measurable parent-first commercial engine using choking/weaning as the acquisition wedge.
-2. **Trusted distribution** — reproduce the pediatrician mechanism across multiple relevant partners instead of depending on one relationship or jumping prematurely to cold paid acquisition.
-3. **Scalable digital flagship** — create one strong nationally sellable digital product around the same proven core before building a large digital catalog.
+1. **B2C flagship commercial proof** — make choking/weaning demand -> optional Guide or direct broader Full Course work as one measurable parent-first engine.
+2. **Trusted B2B/B2B2C distribution** — reproduce the pediatrician mechanism across multiple relevant partners; use Light only inside the partner-hosted lane where it creates value.
+3. **Scalable digital flagship** — create one strong nationally sellable digital product around the same proven core and test Digital/Live/Hybrid routing.
 4. **Owned demand + lifecycle** — add recurring free utility/value and lifecycle CRM only once working paid products exist to monetize and serve the audience.
 5. **Adjacent expansion** — use specialist partnership first where another operator already owns the competence; develop proprietary BLSD and broader safety depth after the initial engine proves repeatable.
 
