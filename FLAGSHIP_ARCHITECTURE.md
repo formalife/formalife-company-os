@@ -1,17 +1,15 @@
 # Formalife Flagship Architecture
 
-Status: CURRENT — provisional strategic recommendation; founder scope decision pending
+Status: CURRENT — founder-approved flagship architecture
 Date: 2026-09-21
 
-Purpose: define the recommended role and scope of the first Formalife flagship and the relationship among Guide, Light, Full Course and later BLSD products.
+Purpose: define the role of the first Formalife flagship and the relationship among Guide, Light, Full Course and the later BLSD products. Detailed curriculum scope is current in `FLAGSHIP_SCOPE_V1.md`.
 
-This document does not yet convert the flagship scope into a founder decision. It records the strongest current strategic recommendation based on Formalife evidence, Layer 1 doctrine and current international benchmark architecture.
+## 1. Founder decision
 
-## 1. Core recommendation
+Formalife will **not** keep the Full Course exclusively about pediatric choking.
 
-Formalife should **not** make the full flagship course exclusively about pediatric choking.
-
-Recommended architecture:
+Current architecture:
 
 - **choking / weaning = primary acquisition wedge and high-salience entry problem**;
 - **Guide = focused choking reference product**;
@@ -20,179 +18,106 @@ Recommended architecture:
 - **BLSD Formalife non-certified = later deep proprietary resuscitation/practice product**;
 - **BLSD certified = separate credential product**.
 
-The commercial focus can remain narrow while the flagship product delivers a broader, more valuable safety outcome.
+The market entry can remain narrow while the flagship delivers a broader safety outcome.
 
-## 2. Why choking should remain the spearhead
+## 2. Why choking remains the spearhead
 
-Formalife has real evidence around choking:
+Formalife has direct evidence around choking:
 
-- choking fear/concern was common among historical participants;
+- choking concern/fear was common among historical participants;
 - approximately 50-60% were reported to be in the weaning/complementary-feeding phase;
 - the current Guide, course materials, teaching experience and proof already exist around this problem;
-- weaning/choking is a specific, understandable and high-salience life-stage trigger.
+- weaning/choking is a specific, understandable life-stage trigger.
 
-Therefore Formalife should continue to use choking as the easiest problem through which a parent can understand why to act now.
+Therefore choking remains the strongest current route into the relationship. It does not define the final boundary of the flagship or of Formalife.
 
-This does **not** require the flagship course to stop at choking.
+## 3. International pattern supporting the architecture
 
-## 3. International benchmark pattern
+Strong parent-first international operators commonly separate the **reason a parent enters** from the **total value delivered by the flagship**.
 
-The strongest parent-first international operators separate the **reason a parent enters** from the **total value delivered by the flagship**.
+Tiny Hearts currently uses a broad 4-hour Baby & Child First Aid flagship including red flags, CPR/defibrillation, choking, respiratory distress, fever/convulsions, anaphylaxis, injuries, burns and poisoning while also selling more specific milestone products.
 
-Tiny Hearts' current 4-hour in-person Baby & Child First Aid flagship is broad: first-aid foundations, red flags, critically unwell child, healthcare pathways, CPR, defibrillation, choking, anaphylaxis, respiratory distress, fever/febrile convulsions, injuries, burns, poisoning and related emergencies. It simultaneously sells more specific milestone products such as introducing-solids education.
+CPR Kids similarly uses broad parent-facing first-aid classes while concentrating hands-on/live value on CPR/choking and moving some secondary topics into online learning.
 
-CPR Kids similarly uses broad parent-facing first-aid classes covering CPR, choking, fever, burns, seizures, poisoning, allergies/anaphylaxis, head injury and red flags.
+Safe Beginnings demonstrates the complementary pattern of a tightly focused CPR/choking/injury-prevention core with supporting reference content.
 
-Safe Beginnings uses a narrower essential workshop around CPR/choking/injury prevention and then broader first-aid products. This reinforces the same structural lesson: focused entry products and broader preparation products can coexist without requiring the whole company to mean only one emergency.
+Formalife therefore should not confuse marketing focus with topic count.
 
-Formalife's chosen target-company model is closer to Tiny Hearts than to a single-procedure training company, so the flagship should teach the market what Formalife is becoming: a parent-first pediatric-safety company.
+## 4. Product roles
 
-## 4. The distinction that matters: marketing focus vs product scope
+### Guide
 
-Layer 1 explicitly distinguishes focused market meaning from absolute SKU/topic narrowness.
-
-Formalife can be acquired through a highly specific message such as the fear of choking during weaning while delivering a flagship that prepares the parent for a wider set of pediatric emergencies.
-
-The risk to avoid is not breadth itself. The risk is **generic breadth**: a flat list of topics that turns the course into another undifferentiated "pediatric first aid" class.
-
-The flagship therefore needs one coherent job:
-
-**prepare a parent/caregiver to recognize, prevent and respond appropriately to the pediatric emergencies they are most likely to face before professional help takes over.**
-
-Choking remains a high-depth practical block inside that promise, not merely one bullet among twenty.
-
-## 5. Recommended offer ladder
-
-### 5.1 Guide
-
-**Guida Anti-Panico al Soffocamento Pediatrico** remains a focused product.
+**Guida Anti-Panico al Soffocamento Pediatrico** remains specific to choking.
 
 Job:
 
 - solve one urgent problem well;
-- create the first paid relationship;
-- provide prevention/recognition/reference value at home;
+- create a first paid relationship;
+- provide durable home reference;
 - create Training Credit toward the Full Course where economically appropriate.
 
-It should remain useful and complete enough to justify purchase even if the customer never upgrades.
+### Light
 
-### 5.2 Light
-
-Recommended scope: **choking-specific**, not a compressed version of the broad Full Course.
+The Light format remains choking-specific rather than becoming a compressed general first-aid course.
 
 Job:
 
-- convert high-salience choking concern into supervised first practical experience;
-- work especially well in pediatrician / nursery / partner-hosted environments;
-- lower the friction of the first live experience;
-- preserve an obvious reason to continue to the Full Course without making Light artificially incomplete.
+- provide prevention/recognition education and first supervised practical exposure;
+- work well inside pediatrician/nursery/partner-hosted distribution;
+- lower friction into the Formalife experience;
+- preserve a clear reason to progress into the broader Full Course.
 
-Expected content territory, subject to scientific validation:
+### Full Course
 
-- prevention;
-- gagging / obstruction recognition where appropriate;
-- what not to do;
-- pediatric choking maneuvers;
-- brief practical supervised repetition;
-- clear bridge to broader emergency preparedness.
+The Full Course becomes the first true representation of the target Formalife company: broader **pediatric safety and emergency preparedness for parents/caregivers**, with substantial practical depth concentrated on choking and introductory pediatric resuscitation.
 
-The Light product should not attempt to survey every pediatric emergency in two hours.
+The current curriculum boundary is defined in `FLAGSHIP_SCOPE_V1.md`.
 
-### 5.3 Full Course — recommended scope
+### BLSD Formalife non-certified
 
-Recommended flagship: **broader pediatric safety and emergency preparedness**, not choking-only.
+The proprietary non-certified BLSD remains a later deeper product for people whose job is learning/preparedness rather than obtaining a credential.
 
-The exact curriculum requires scientific design, but the intended structure is:
+Its differentiation can come from intensive deliberate practice, scenarios, AED depth, individual correction, refresh and household-sharing logic.
 
-1. **Prevention / home-safety foundations** — selected high-impact preventable risks, not a complete babyproofing course.
-2. **Recognizing severity / red flags** — what deserves observation, medical contact, urgent escalation or emergency response, within safe educational boundaries.
-3. **Major common pediatric emergency situations** — selected, memorable and actionable topics rather than encyclopedic coverage.
-4. **Choking block — high depth** — prevention, recognition, disobstruction, supervised practice and correction.
-5. **Basic resuscitation / BLSD introduction** — enough to understand the emergency sequence and experience the basic skill, while preserving the later BLSD Formalife course as the deeper proprietary practice product.
-6. **At-home reference / continuity** — material and digital reference that extends value beyond the event.
+### BLSD certified
 
-The flagship should not be sold as "we cover more topics". Breadth is part of the delivered value; the market position remains parent-first preparedness and Formalife's larger safety system.
+The certified product remains a distinct credential path whose curriculum follows the competent accreditation/certification requirements.
 
-## 6. Why not keep the Full Course choking-only
+## 5. Governing distinction: focused marketing, curated broader value
 
-A choking-only flagship has real advantages: maximum focus, deep practice and simple communication.
+Formalife should not sell the Full Course as "the course with more topics".
 
-However, it creates four strategic costs in the chosen target model:
+The coherent job is:
 
-1. it teaches the market that Formalife is principally a choking-course company rather than a pediatric-safety company;
-2. it makes later expansion look like unrelated line extension rather than natural depth inside one territory;
-3. it leaves too little distance between Guide, Light and Full Course, increasing internal overlap/cannibalization;
-4. it underuses the strongest proven parent-first international architecture, where the flagship is broader while specific milestone problems still generate acquisition.
+**prepare a parent/caregiver to prevent what is realistically preventable, recognize when something is seriously wrong, take the correct immediate first action and activate appropriate professional help.**
 
-The choking-only format is therefore better suited to **entry products and campaigns** than to the final flagship identity.
+Broad does not mean encyclopedic. The course must preserve practical depth by excluding or moving lower-priority, diagnosis-heavy or reference-friendly topics into digital/editorial products.
 
-## 7. Why not make the Full Course encyclopedic
+## 6. Commercial progression
 
-Broad does not mean exhaustive.
-
-A four-hour course cannot responsibly become a lecture covering every pediatric condition. Excess breadth would:
-
-- reduce practical time;
-- lower retention;
-- create a list-of-topics commodity;
-- increase scientific/content maintenance burden;
-- reduce the reason to buy later specialized products.
-
-The Full Course should therefore cover a **curated parent emergency core**, with practical depth concentrated where hands-on training matters most.
-
-Separate digital courses, books and specialist modules should carry the deeper long-tail knowledge.
-
-## 8. Relationship with BLSD Formalife
-
-The broader flagship should include an **introduction/basic practical exposure** to pediatric resuscitation sufficient for the parent-first emergency-preparedness job.
-
-It should not attempt to replace the later **BLSD Formalife non-certified** product.
-
-BLSD Formalife remains the intensive proprietary product for participants who want to go substantially deeper into:
-
-- resuscitation sequence;
-- repeated deliberate practice;
-- AED use where appropriate;
-- scenario work;
-- individual correction;
-- repetition under changing conditions;
-- refresh and household sharing.
-
-This creates a natural ascension:
-
-**general preparedness -> discover the importance of resuscitation -> choose deeper proprietary BLSD training.**
-
-The certified BLSD remains a separate credential path.
-
-## 9. Commercial logic of the ladder
-
-Recommended customer progression:
+Current intended progression:
 
 **choking concern / weaning trigger**
 -> free content or Guide
--> Light when a lower-friction live entry is appropriate
+-> Light where a lower-friction live entry is useful
 -> Full Course: broader pediatric safety/emergency preparedness
 -> later relevant second purchase: digital reference / specialist adjacency / BLSD Formalife / refresh.
 
-This makes the first customer problem specific while progressively widening the value relationship inside the same Formalife territory.
+This uses a specific problem to acquire the customer while widening lifetime value inside one coherent safety territory.
 
-## 10. Current decision required
+## 7. Current next product task
 
-Founder decision required:
+The strategic scope decision is closed. The next product work is execution of `FLAGSHIP_SCOPE_V1.md`:
 
-**Adopt the broader Full Course as the Formalife flagship, while keeping choking as the primary acquisition wedge and the focused subject of Guide/Light; reserve deep resuscitation for the later proprietary BLSD Formalife product.**
-
-If approved, the next work should not be copywriting. It should be the product architecture of the Full Course:
-
-- exact learning job;
-- topics included/excluded;
-- practical-vs-theory time allocation;
-- course duration;
-- role of Guide and future broader handbook/reference material;
-- how Light upgrades into Full without redundancy;
+- scientific curriculum validation;
+- detailed practical-vs-theory allocation;
+- exact duration and session design;
+- materials/reference layer;
+- Light-to-Full upgrade design without redundant repetition;
 - boundary between Full Course and BLSD Formalife;
-- scientific review gates;
-- price/economics implications.
+- implications for pricing/economics once delivery design is known.
+
+No customer-facing clinical claim or procedure is authorized by this architecture document.
 
 ## Layer 1 references
 
@@ -203,6 +128,6 @@ If approved, the next work should not be copywriting. It should be the product a
 
 ## External benchmark references checked 2026-09-21
 
-- Tiny Hearts — current in-person Baby & Child First Aid flagship and Starting Solids bundle.
-- CPR Kids — current parent-facing public/private Baby & Child CPR + First Aid classes.
-- Safe Beginnings — current Infant/Child CPR, Choking + Injury Prevention workshop and broader first-aid path.
+- Tiny Hearts — current Baby & Child First Aid flagship.
+- CPR Kids — current parent-facing public/private Baby & Child CPR + First Aid classes and online extensions.
+- Safe Beginnings — current Infant/Child CPR, Choking + Injury Prevention course.
