@@ -11,11 +11,7 @@ Purpose: record what Formalife already owns, can currently sell/deliver, has in 
 
 - **Guida Anti-Panico al Soffocamento Pediatrico** — physical product, final internal version reported as 176 pages; canonical price EUR 19.90; can generate Training Credit toward the full course.
 - **Corso Anti-Panico al Soffocamento Pediatrico** — active in-person full offer; Single: 1 participant + 1 Guide; Couple: 2 participants + 2 Guides; practical repetition/correction is central; contractual maximum capacity 12 participants; list price EUR 80 Single / EUR 120 Couple; participation certificate only, not professional certification.
-- **Credito Formazione Formalife** — existing ascension mechanism: amount paid for the Guide or Light can, under defined conditions, become credit toward the full course.
-
-### PILOT
-
-- **Serata Anti-Panico / Light** — approximately 2 hours; understanding, prevention, recognition and brief supervised practice; reported standard price EUR 30 Single / EUR 40 Couple with Guide included. Not yet a fully public/scalable offer; unresolved operating details remain.
+- **Credito Formazione Formalife** — existing B2C ascension mechanism: amount paid for the Guide can, under defined conditions, become credit toward the full course. Any use of credit from partner-hosted Light belongs to the separate B2B/B2B2C offer design.
 
 ### PARKED / near-adjacent
 
@@ -35,7 +31,7 @@ No current canonical evidence of paid 1:1 consulting, online course, paid webina
 
 ### PILOT
 
-- **Partner-Hosted Light** — partner provides venue and communicates initiative; Formalife manages activity, materials, registrations and payments. Reported real pilots/conversations include educational-service partners. The model is structurally adaptable to nurseries, preschools, parent associations, birth pathways, pediatric/perinatal structures, communities and other family aggregators, subject to offer/contract validation.
+- **Partner-Hosted Light / Serata Anti-Panico** — approximately 2 hours; understanding, prevention, recognition and brief supervised practice; reported standard price EUR 30 Single / EUR 40 Couple with Guide included. Founder direction now assigns Light to the B2B/B2B2C partner-hosted lane rather than the direct B2C funnel. Partner provides venue and communicates initiative; Formalife manages activity, materials, registrations and payments. Reported real pilots/conversations include educational-service partners. The model is structurally adaptable to nurseries, preschools, parent associations, birth pathways, pediatric/perinatal structures, communities and other family aggregators, subject to offer/contract validation.
 
 ### ASSET — historical B2B design work
 
@@ -153,11 +149,15 @@ Potential future productization includes private sessions, retraining/continuity
 
 ## Strategic observation — not yet a decision
 
-The inventory supports viewing Formalife as more than one classroom course. A plausible current system is:
+The inventory supports viewing Formalife as more than one classroom course.
 
-**Guide -> Light -> Full Course -> future refresh/additional emergency modules**, supported by **partner/referral/partner-hosted distribution**.
+For **direct B2C**, current assets can support:
 
-This architecture is evidence of reusable assets, not yet proof that every step deserves to remain. The current strategic block remains market/category/positioning before acquisition scaling or line expansion.
+**choking/weaning demand -> optional Guide OR direct Full Course -> future Digital / specialist / lifecycle products.**
+
+For **B2B/B2B2C**, Light remains a separate partner-hosted asset that can create trust-transfer and later movement into the wider Formalife relationship.
+
+These architectures are evidence of reusable assets, not proof that every step deserves to remain. `B2C_COMMERCIAL_FUNNEL_V2.md` defines the zero-based mature B2C target; `FORMALIFE_BUILD_SEQUENCE.md` governs what gets built first.
 
 ## Provenance
 
