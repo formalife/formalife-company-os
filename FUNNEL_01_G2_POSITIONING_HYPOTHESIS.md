@@ -1,11 +1,11 @@
 # Funnel 01 — G2 Operational Difference / Positioning Hypothesis
 
-Status: PROVISIONAL POSITIONING HYPOTHESIS — not yet a founder-approved market claim; must be earned operationally and tested
+Status: FOUNDER-APPROVED DESIGN DIRECTION — operational truth and market/economic validation still required
 Date: 2026-09-22
 
-Purpose: advance Gate G2 of `B2C_FUNNEL_01_CHOKING_FULL_ADAPTIVE.md` without inventing a verbal USP. This document defines the strongest current positioning hypothesis for Funnel 01, the operational commitments required to make it true, the contrasts it should and should not use, and the prospective evidence required before treating the position as validated.
+Purpose: advance Gate G2 of `B2C_FUNNEL_01_CHOKING_FULL_ADAPTIVE.md` without inventing a verbal USP. This document defines the founder-approved current positioning direction for Funnel 01, the operational commitments required to make it true, the contrasts it should and should not use, and the prospective evidence required before treating the position as market-validated.
 
-This document does not supersede `FORMALIFE_TARGET_MODEL.md`. The target model defines what Formalife is being built to become. This file defines how the first B2C commercial engine may make that strategy concrete for a specific initial customer and buying moment.
+This document does not supersede `FORMALIFE_TARGET_MODEL.md`. The target model defines what Formalife is being built to become. This file defines how the first B2C commercial engine should make that strategy concrete for a specific initial customer and buying moment.
 
 ---
 
@@ -30,7 +30,7 @@ Formalife does not yet know reliably:
 - which Formalife difference customers will actually perceive and value enough to pay for;
 - the CAC/payback of cold B2C acquisition.
 
-Therefore the output of G2 must remain a **testable position**, not a declaration of category leadership.
+Therefore G2 is a **founder-approved design direction**, not yet a validated claim of category leadership or proven market preference.
 
 ---
 
@@ -72,7 +72,7 @@ The answer must be visible in the product and customer experience before it is p
 
 ---
 
-## 4. Recommended positioning stack — HYPOTHESIS
+## 4. Founder-approved positioning stack — validation still required
 
 ### 4.1 Category Formalife intends to own
 
@@ -86,6 +86,8 @@ This is broader than “disostruzione pediatrica” and narrower than generic pa
 
 The market-facing entry remains specific even though the Full product is broader.
 
+Beachhead economics and scalability remain to be tested prospectively.
+
 ### 4.3 Core customer job
 
 Not:
@@ -98,7 +100,7 @@ Working job:
 
 ### 4.4 Main contrast
 
-The strongest current contrast is not “Formalife teaches the maneuver better”.
+The founder-approved design contrast is not “Formalife teaches the maneuver better”.
 
 It is:
 
@@ -108,7 +110,7 @@ versus
 
 **a parent-first preparedness system designed around the real decisions, practical actions, reference needs and caregiver context of a family.**
 
-This contrast is a HYPOTHESIS until customer response proves it matters.
+This contrast remains empirically testable: founder approval does not prove that customers will perceive or value it sufficiently.
 
 ### 4.5 Product-level promise territory
 
@@ -120,7 +122,7 @@ This is a decision-and-action framework across selected high-consequence situati
 
 ### 4.6 Working market-facing concept
 
-Internal positioning concept, not approved final copy:
+Internal positioning concept, not final approved copy:
 
 **Formalife prepares families for pediatric emergencies as families — not for a certificate and not for one isolated maneuver.**
 
@@ -231,7 +233,7 @@ G3 should not build the Full offer as:
 
 It should build a visible preparedness package around the job above.
 
-The future G3 Offer Card must show at minimum:
+The G3 Offer Card must show at minimum:
 
 - who the Full is specifically for;
 - what preparedness gap it solves;
@@ -246,6 +248,8 @@ The future G3 Offer Card must show at minimum:
 - price and terms;
 - proof matched to each important claim;
 - real capacity/date reason to act.
+
+G3 is developed in `FUNNEL_01_G3_FULL_OFFER_ARCHITECTURE.md`.
 
 ---
 
@@ -300,15 +304,15 @@ Read by route/cohort:
 - time to purchase;
 - referral/proof creation after delivery.
 
-A positioning hypothesis that customers praise but that cannot support sustainable acquisition economics does not pass G2.
+A positioning direction that customers praise but that cannot support sustainable acquisition economics does not pass G2 empirically.
 
 ---
 
 ## 10. G2 pass / fail criteria
 
-### PASS ENOUGH TO ADVANCE
+### PASS ENOUGH TO ADVANCE FROM DESIGN TO VALIDATED POSITION
 
-G2 can be treated as provisionally passed when:
+G2 can be treated as empirically provisionally passed when:
 
 1. the promised difference is operationally true in the Full experience;
 2. customer-facing wording survives G0 scientific/credential review;
@@ -334,17 +338,17 @@ Revise the position if:
 
 ## 11. Current strategic decision boundary
 
-### PROVISIONAL RECOMMENDATION
+### FOUNDER DECISION — design direction approved 2026-09-22
 
 Use the following as the current design direction for Funnel 01 and G3 work:
 
 **focused choking/weaning trigger -> parent-first broader preparedness system -> practical live flagship + durable reference + household/caregiver logic + visible scientific governance.**
 
-### NOT YET A FINAL FOUNDER DECISION
+Founder approval establishes the strategic direction to build and test. It does **not** establish that the position is already operationally true, that market preference is proven, or that the wording is ready for public claims.
 
-Do not yet promote this wording to `CURRENT_STATE.md` as a final market positioning claim.
+### VALIDATION STILL OPEN
 
-The target company position remains canonical in `FORMALIFE_TARGET_MODEL.md`. This file is the current working hypothesis for making that target concrete in Funnel 01.
+The target company position remains canonical in `FORMALIFE_TARGET_MODEL.md`. This file is the founder-approved Funnel 01 translation of that target and remains subject to G0, delivery truth, customer response and economics.
 
 ---
 
@@ -362,6 +366,7 @@ The target company position remains canonical in `FORMALIFE_TARGET_MODEL.md`. Th
 ## Related Layer 2 files
 
 - `B2C_FUNNEL_01_CHOKING_FULL_ADAPTIVE.md`
+- `FUNNEL_01_G3_FULL_OFFER_ARCHITECTURE.md`
 - `FORMALIFE_TARGET_MODEL.md`
 - `FLAGSHIP_SCOPE_V1.md`
 - `MARKET_EVIDENCE.md`
