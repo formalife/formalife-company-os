@@ -11,3 +11,5 @@ Layer 1 canonical repository:
 `formalife/merenda-business-core`
 
 Start from `PROJECT_BOOTSTRAP.md`.
+
+For ChatGPT Project runtime behavior, live-repo preflight and the ChatGPT/Codex operating boundary, see `CHATGPT_RUNTIME_CONTRACT.md`.
