@@ -13,7 +13,7 @@ Commercial architecture remains:
 
 Instructional architecture:
 
-**impactful baseline -> problem salience -> mental framework -> deep choking learning -> break -> simple paediatric CPR sequence + QCPR feedback -> reset -> structured secondary emergencies -> complex transfer test/scenarios -> continuity.**
+**impactful baseline -> problem salience -> Formalife mental protocol -> deep choking learning -> break -> simple paediatric CPR sequence + QCPR feedback -> reset -> structured secondary emergencies -> complex transfer test/scenarios -> continuity + household transfer + final bookend.**
 
 ---
 
@@ -24,11 +24,12 @@ Instructional architecture:
 3. **Choking remains the deepest signature block.** It is both the strongest current commercial wedge and a major practical learning job.
 4. **Paediatric resuscitation is real but intentionally introductory.** Full is not the future BLSD Formalife product.
 5. **Practice must include correction and repetition.** One uncorrected attempt is not sufficient product value.
-6. **The same mental model recurs throughout.** `FERMA -> VALUTA -> AGISCI` is used as an orientation schema, not as a medical protocol or as permission to delay time-critical action.
+6. **The same mental model recurs throughout.** `FERMA -> VALUTA -> AGISCI` follows the current Formalife choking book; it is an orientation/action protocol, not a substitute for the specific emergency algorithm and never permission to delay time-critical action.
 7. **The opening and ending create an experiential before/after contrast.** The final test is harder than the initial one; it is not a staged replay.
 8. **No clinical performance guarantee.** Immediate improvement in simulation is learning evidence, not proof of future real-emergency competence.
 9. **Customer-facing medical/scientific content receives Mafalda review before use.**
 10. **The live event is one component of a broader preparedness system.** Guide, Family Emergency Pack, customer stream and refresh carry learning beyond the room.
+11. **The official ending is protected.** Administration, referral explanation and material handoff occur before the final bookend so logistics do not become the last memory of the event.
 
 ---
 
@@ -36,20 +37,20 @@ Instructional architecture:
 
 Working target:
 
-**approximately 250 minutes / 4h10 total calendar time**, with operational tolerance toward ~4h20 where delivery requires it.
+**250 minutes / 4h10 total calendar time**, with operational tolerance toward ~4h20 where delivery requires it.
 
 | Act | Working duration | Primary job |
 |---|---:|---|
 | ACT 0 — Open + experiential baseline | 12 min | human connection, calibration, cold-start experience |
-| ACT 1 — Il Problema | 6 min | proportional epidemiological/statistical framing |
-| ACT 2 — La Mentalità / F-V-A | 7 min | common mental orientation framework |
+| ACT 1 — Il Problema | 6 min | six-lens epidemiological/problem framing |
+| ACT 2 — La Mentalità / F-V-A | 7 min | exact Formalife mental protocol from the current choking book |
 | ACT 3 — Il Soffocamento | 72 min | prevention + mechanism + recognition + child/infant skills + post-event logic |
 | BREAK | 10 min | real recovery |
 | ACT 4 — La Rianimazione / QCPR | 55 min | simple paediatric CPR sequence + AED/112 + feedback-based compression practice |
 | MINI-BREAK / ACTIVE RESET | 5 min | energy reset |
 | ACT 5 — Altre Emergenze | 48 min | structured one-by-one first-action teaching |
 | ACT 6 — Scenari + complex Mirror Test | 25 min | transfer, integration, F-V-A application |
-| ACT 7 — Conclusione / continuity | 10 min | retrieval, Pack, referral tool, customer relationship, refresh, admin |
+| ACT 7 — Conclusione / continuity | 10 min | retrieval + 24h transfer + AFTER + Pass + admin + final bookend |
 | **TOTAL** | **250 min / 4h10** | |
 
 This is an operating budget, not a sacred schedule. First rebuilt editions must record actual timings and revise the run-of-show from evidence.
@@ -106,201 +107,168 @@ Explicit framing:
 
 At ACT 6 repeat with the same volunteer if willing, but use a materially more complex transfer scenario.
 
+Detailed current run-of-show: `FUNNEL_01_ACT0_ACT6_MIRROR_TEST_RUN_OF_SHOW_V1.md`.
+
 ---
 
 # 4. ACT 1 — Il Problema
 
-Working duration: ~6 min.
+Working duration: **6 min**.
 
-Use only a few current/traceable data points covering, where evidence is defensible:
+ACT 1 must frame the problem through several distinct lenses rather than rely on one dramatic statistic.
 
-- pediatric domestic-injury burden;
-- choking relevance in younger children;
-- emergency-department/hospital burden;
-- the role of prevention and early first response.
+Current founder-directed sequence:
+
+**domestic accidents -> choking event/hospital burden -> age distribution -> causes -> mortality/consequence -> change the meaning of the numbers.**
+
+Working live architecture:
+
+- ~35 sec bridge from ACT 0;
+- ~45 sec domestic-accident frequency/exposure;
+- ~55 sec choking observed burden vs broader estimated burden where useful;
+- ~50 sec age distribution;
+- ~50 sec causes/food contribution;
+- ~1 min 15 sec consequence/mortality;
+- **50 sec protected close** converting fear/salience into prevention + recognition + preparation.
+
+Current preferred evidence jobs include, subject to final source wording and Mafalda review:
+
+- ISS 2025 domestic-accident surveillance in age 0–2;
+- SINIACA/ISS pediatric domestic-injury burden;
+- official national choking hospital-discharge series `7,143 admissions / 2001–2013`;
+- concentration of those admissions in children under 4;
+- Ministry `60–80%` food-related framing;
+- institutionally corroborated mortality framing in younger children.
 
 Rules:
 
-- every statistic shows source and year;
-- no unsupported mortality arithmetic;
-- no fear montage;
-- no claim that incidence automatically predicts the individual's risk.
+- source + year/period visible;
+- observed data and estimates must look different;
+- no `foreign-body injury` figure silently renamed `choking`;
+- no estimated quasi-events presented as severe complete obstructions;
+- no death-share statistic presented as the probability that a choking episode is fatal;
+- no fear montage.
 
 Narrative job:
 
-**the problem is important enough to justify preparation; the purpose of preparation is agency, not panic.**
+**frequency does not mean inevitability; severity does not mean helplessness. The problem has a shape, some causes are modifiable, and preparedness changes the caregiver's first response.**
+
+Detailed current run-of-show and data bank:
+
+- `FUNNEL_01_ACT1_ACT2_PROBLEM_MINDSET_RUN_OF_SHOW_V1.md`
+- `FUNNEL_01_ACT1_EPIDEMIOLOGY_DATA_BANK_V1.md`
 
 ---
 
-# 5. ACT 2 — La Mentalità
+# 5. ACT 2 — La Mentalità / Formalife protocol
 
-Working duration: ~7 min.
+Working duration: **7 min**.
 
-Introduce:
+Source of truth:
 
-**FERMA -> VALUTA -> AGISCI**
+**`La Guida Anti-Panico al Soffocamento Pediatrico`, Chapter 1, pp. 5–8.**
 
-Founder job:
+The protocol is exactly:
 
-- address fear of freezing;
-- give participants one reusable orientation cue before technical procedures;
-- make later scenarios feel like applications of one system rather than unrelated chapters.
+# **FERMA -> VALUTA -> AGISCI**
 
-Boundary:
+Do not substitute an assistant-created interpretation.
 
-`FERMA` is a seconds-long cognitive reset/orientation, never permission to delay urgent action.
+## FERMA
 
-Use the framework repeatedly later, but do not overload this opening with all detail already available in the Guide/materials.
+The book gives **2–3 conscious seconds**, not a prolonged pause:
+
+1. **Respira** — one deliberate breath;
+2. **Stabilisci il contatto con la realtà** — `Dove sei? Chi c'è con te? Cosa vedi davanti a te?`;
+3. **Verifica che tu stesso sia al sicuro**.
+
+FERMA does not mean wait. It creates the short transition from automatic reaction to intentional response.
+
+## VALUTA
+
+Three questions, in order:
+
+1. **È cosciente?**
+2. **Respira normalmente?**
+3. **C'è una minaccia immediata visibile?**
+
+This is the reusable base. Situation-specific observations are added later inside the relevant emergency protocol.
+
+## AGISCI
+
+The Guide's universal sequence:
+
+1. **chiama aiuto**;
+2. **intervieni con la manovra appropriata**;
+3. **monitora e adatta**.
+
+The exact timing of 112 in each time-critical scenario is governed by ACT 3/4/5 technical teaching; the generic mental protocol does not override the specific emergency algorithm.
+
+ACT 2 closes with rapid retrieval of the three FERMA gestures, three VALUTA questions and three AGISCI steps, then opens ACT 3.
+
+Detailed current run-of-show: `FUNNEL_01_ACT1_ACT2_PROBLEM_MINDSET_RUN_OF_SHOW_V1.md`.
 
 ---
 
 # 6. ACT 3 — Il Soffocamento
 
-Working duration: ~72 min.
+Working duration: **72 min**.
 
-## 6.1 Prevention + anatomy/physiology
+Detailed canonical production proposal: `FUNNEL_01_ACT3_CHOKING_RUN_OF_SHOW_V1.md`.
 
-Approximately 10 min.
+Current timing:
 
-### Prevention
-
-Concise introduction to:
-
-- eating context;
-- safe food preparation principles: shape, consistency and size where scientifically approved;
-- behavioural/environmental hazards.
-
-The Guide remains the deeper prevention/reference asset.
-
-### Mechanism
-
-Use simple visual anatomy/physiology to explain:
-
-- how foreign-body obstruction interferes with airflow;
-- why young children are especially vulnerable;
-- why an effective cough should not be interrupted;
-- why ineffective/absent cough requires a different response.
-
-Do not strip the content to slogans; teach enough mechanism to make the later actions understandable.
-
-## 6.2 Recognition + child >1 year
-
-Approximately 10 min.
+| Segment | Duration |
+|---|---:|
+| Prevention | 5 min |
+| Anatomy / physiology | 4 min |
+| Recognition state | 5 min |
+| Child >1 / adolescent sequence + demo/deconstruction | 9 min |
+| Infant sequence + demo/deconstruction | 9 min |
+| Selected cases + practice briefing | 3 min |
+| Split practical lab + rotation | 28 min |
+| Rejoin: resolution / failure / 112 / bridge to CPR | 9 min |
 
 Keep the clinically useful conceptual distinction:
 
-**partial obstruction vs complete/severe obstruction.**
-
-Translate it into the observable operating cue already used by Formalife:
+**partial obstruction vs complete/severe obstruction**, translated operationally through:
 
 - **effective cough / meaningful sound and airflow**;
 - **ineffective or absent cough / little or no sound and ineffective airflow**.
 
-Cover:
+Whole-room theory and demos happen **before** practice.
 
-- what to do and not do when cough is effective;
-- severe/ineffective-cough response;
-- 112 logic;
-- full-speed child demonstration;
-- immediate deconstruction of the demonstration.
+Then split into:
 
-## 6.3 Infant <1 year
+- child station;
+- infant station;
+- rotation;
+- guided practice -> correction -> corrected repetition -> variable-state scenario -> no-prompt attempt.
 
-Approximately 10 min.
+After both rotations, reunite the room and teach:
 
-Cover:
+- resolved obstruction -> reassess + approved medical follow-up route;
+- unresolved / unresponsive -> transition to paediatric CPR;
+- 112 logic with one vs two rescuers / phone availability.
 
-- effective vs ineffective cough;
-- what to do / not do;
-- positioning and support;
-- approved back-blow/chest-thrust sequence;
-- no abdominal thrusts;
-- avoid shaking/unsafe handling;
-- 112 logic;
-- full-speed infant demonstration;
-- deconstruction.
-
-## 6.4 Selected edge cases
-
-Approximately 3 min.
-
-Keep only the relevant cases requested by founder:
+Selected edge cases remain limited to:
 
 - adolescent with obesity / inability to encircle abdomen normally;
-- rescuer who is pregnant, obese or materially unable to use normal abdominal-thrust positioning.
+- rescuer pregnant, obese or materially unable to use normal abdominal-thrust positioning.
 
-Exact technique/wording requires Mafalda/ERC/IRC review.
+Current equipment note:
 
-## 6.5 Practical station lab
+- Little Baby QCPR supports the infant station strongly;
+- Act+Fast Red remains the temporary child/adolescent choking workaround;
+- founder has decided to acquire **one pediatric choking trainer** for production use.
 
-Approximately 30–32 min.
-
-The sequence is deliberately:
-
-**all theory + full demonstration + deconstruction first -> then all practical work.**
-
-Split participants into two groups only after the whole-room teaching:
-
-- Group A starts child station;
-- Group B starts infant station;
-- rotate after first station;
-- two instructors, one per station.
-
-### Inside each station
-
-1. guided practice;
-2. immediate correction — one critical issue at a time;
-3. immediate corrected repetition;
-4. short variable-state scenario;
-5. final no-prompt attempt.
-
-Where equipment allows, use pairs and rotate quickly:
-
-- active rescuer;
-- observer with a short checklist;
-- swap.
-
-Instructor remains responsible for clinical/safety correction.
-
-### Equipment-density target
-
-Aim for approximately one functional trainer/manikin per two learners where feasible. If equipment density is materially worse, increase practice time or reduce group size rather than turning practice into observation.
-
-## 6.6 Rejoin — what happens after the manoeuvres
-
-Approximately 7–9 min.
-
-After both groups rotate, reunite the room.
-
-Cover:
-
-### If the obstruction resolves
-
-- stop the manoeuvres appropriately;
-- reassess;
-- explain the approved medical follow-up route after successful relief, after Mafalda/local-pathway review.
-
-### If the obstruction does not resolve / child becomes unresponsive
-
-- transition to paediatric CPR;
-- this becomes the narrative bridge into ACT 4.
-
-### 112 logic
-
-Current design direction:
-
-- severe/ineffective-cough FBAO -> EMS activation as early as practical;
-- two rescuers -> one acts, one calls;
-- alone with mobile -> speakerphone while continuing response where feasible;
-- do not deliberately postpone the call until every manoeuvre has failed if communication can occur without abandoning care.
-
-Exact customer wording requires Mafalda/IRC review.
+Exact technique and post-relief wording require Mafalda/IRC review.
 
 ---
 
 # 7. BREAK
 
-Approximately 10 minutes.
+**10 minutes.**
 
 Real break. No forced content.
 
@@ -308,127 +276,52 @@ Real break. No forced content.
 
 # 8. ACT 4 — La Rianimazione Pediatrica / QCPR
 
-Working duration: ~55 min.
+Working duration: **55 min**.
 
-Full is **not** a BLSD course. The job is to teach one simple usable consumer sequence and give the participant a short experience of objective compression feedback.
+Detailed current run-of-show: `FUNNEL_01_ACT4_CPR_QCPR_RUN_OF_SHOW_V1.md`.
 
-## 8.1 Causal bridge
+Current timing:
 
-Approximately 5 min.
+| Segment | Duration |
+|---|---:|
+| Choking / hypoxia / arrest bridge | 4 min |
+| Adult survival principle vs pediatric reality | 5 min |
+| Recognition + simple pediatric CPR sequence | 6 min |
+| 112 + AED logic | 5 min |
+| Child + infant demonstrations | 9 min |
+| Practice briefing | 2 min |
+| Parallel QCPR lab + rotation | 13 min |
+| QCPR debrief / timeline | 5 min |
+| Full-sequence retrieval | 4 min |
+| Close to mini-break | 2 min |
 
-Explain:
+Full is **not** a BLSD course.
 
-**unresolved severe airway obstruction / severe respiratory problem -> hypoxia -> loss of consciousness -> cardiac arrest can follow.**
+Current founder decision:
 
-Do not teach a fabricated percentage for progression from pediatric choking to arrest unless denominator-valid pediatric evidence is later identified.
+**5 initial rescue breaths -> 30:2 -> AED as soon as available -> continue according to 112/AED instructions.**
 
-## 8.2 Survival evidence — two-panel architecture
+Do not teach CAB as the mnemonic in the Full.
 
-Do not present an adult CPR/AED curve as quantitatively transferable to children.
+QCPR measured drill is **compression-only**:
 
-### Panel A — adult time-critical principle
+- 0–20 sec: no coaching;
+- 20–40 sec: one highest-priority correction;
+- 40–60 sec: all remaining essential corrections.
 
-Use clearly labelled adult evidence to illustrate:
+Each participant performs the drill on both child and infant QCPR manikins using the current parallel equipment layout.
 
-- immediate CPR improves survival;
-- early defibrillation is critical when a shockable rhythm is present;
-- every minute of delay matters in the relevant adult/shockable context.
+Ventilations remain part of the taught pediatric sequence, but are kept separate from the scored QCPR compression graph.
 
-### Panel B — pediatric translation
+Adult CPR/AED survival evidence may illustrate time-critical principles but must not be transferred numerically to pediatric survival.
 
-Make the difference explicit:
-
-- pediatric arrests are frequently respiratory/asphyxial and initially non-shockable;
-- ventilations plus compressions matter;
-- AED remains important when a shockable rhythm exists but does not define the typical pediatric arrest in the way many adult graphs imply.
-
-Teaching line:
-
-**the adult evidence illustrates the time-critical nature of CPR/defibrillation; pediatric physiology and rhythm distribution are different and must not inherit the adult curve numerically.**
-
-## 8.3 Simple customer algorithm — founder decision
-
-Do not teach CAB as a mnemonic in the Full.
-
-Current working sequence:
-
-**5 initial rescue breaths -> 30 compressions : 2 breaths -> AED as soon as available -> continue according to 112/AED instructions.**
-
-This is the current consumer-track direction for a participant not being trained to ERC PBLS certification level.
-
-Exact sequence/technique and Italian wording require Mafalda/IRC validation before use.
-
-## 8.4 112 / AED logic
-
-Teach visually and simply.
-
-### Two rescuers
-
-- one starts/continues CPR;
-- second activates 112 and retrieves AED.
-
-### One rescuer with phone
-
-- use speaker mode and begin/continue the approved sequence.
-
-### One rescuer without phone
-
-Teach the approved ERC/IRC consumer sequence after Mafalda validation, including the current ERC direction around approximately one minute of CPR before leaving to seek help where applicable.
-
-### AED
-
-- attach as soon as available without unnecessary interruption of CPR;
-- follow device prompts;
-- explain that the device shocks only when indicated.
-
-## 8.5 Demonstration
-
-Approximately 8 min.
-
-Demonstrate the complete simplified child and infant sequence, including rescue breaths, 30:2 and AED/112 transitions at the level appropriate to the Full.
-
-Do not expand into deep BLSD instruction.
-
-## 8.6 QCPR compression drill — founder decision
-
-The scored QCPR exercise is **compression-only** so ventilation activity does not contaminate/falsify the compression feedback graph.
-
-Each participant performs exactly **60 seconds of compressions**:
-
-- **0–20 sec:** no coaching;
-- **20–40 sec:** instructor gives one highest-priority correction;
-- **40–60 sec:** instructor gives all remaining essential corrections needed for the drill.
-
-Then inspect the QCPR result/graph briefly.
-
-Purpose:
-
-- make the value of feedback visible;
-- allow the participant to feel how correct rate/depth/recoil differ from their baseline;
-- show visible within-session improvement;
-- not certify CPR competence.
-
-No public leaderboard.
-
-If equipment permits, work in parallel to keep practice density high.
-
-## 8.7 Ventilation boundary
-
-Ventilations remain part of the taught CPR sequence because of pediatric physiology.
-
-However:
-
-- do **not** mix ventilations into the scored 60-second QCPR compression exercise;
-- teach/demonstrate the ventilation technique separately;
-- any participant rehearsal of breaths/30:2 integration should be **unscored/separate from the QCPR compression graph** and kept proportionate to the Full's non-BLSD scope.
-
-Exact minimum practical exposure is a scientific/instructional detail to close with Mafalda.
+Exact technique/sequence wording requires Mafalda/IRC validation.
 
 ---
 
 # 9. MINI-BREAK / ACTIVE RESET
 
-Approximately 5 minutes.
+**5 minutes.**
 
 Water, stand, equipment/room reset.
 
@@ -438,11 +331,11 @@ No forced content.
 
 # 10. ACT 5 — Altre Emergenze
 
-Working duration: ~48 min.
+Working duration: **48 min**.
 
-Do not introduce every topic with a micro-case.
+Detailed current run-of-show: `FUNNEL_01_ACT5_OTHER_EMERGENCIES_RUN_OF_SHOW_V1.md`.
 
-Teach each emergency directly with the same stable grammar:
+Teach each emergency directly using the stable grammar:
 
 1. **Cos'è / cosa sta succedendo**;
 2. **Come prevenirlo** where meaningful;
@@ -451,101 +344,105 @@ Teach each emergency directly with the same stable grammar:
 5. **Cosa NON fare**;
 6. **Quando chiamare 112 / quando serve valutazione urgente**.
 
-Current founder-approved topic pool:
+Current founder-approved timing:
 
-- foreign-body ingestion;
-- head injury / falls;
-- febrile seizures;
-- poisoning / toxic exposure;
-- burns/scalds;
-- anaphylaxis / severe allergic reaction;
-- drowning / water incident;
-- serious bleeding / major injury first response.
+| Topic | Duration |
+|---|---:|
+| Grammar / scope reset | 2 min |
+| Foreign-body ingestion | 8 min |
+| Head injury / fall | 6 min |
+| Febrile seizures | 5 min |
+| Poisoning / toxic exposure | 4 min |
+| Burns / scalds | 5 min |
+| Anaphylaxis / severe allergic reaction | 6 min |
+| Drowning / water incident | 7 min |
+| Severe bleeding / major trauma first response | 4 min |
+| Protected free buffer | 1 min |
 
-**Severe breathing difficulty is intentionally excluded as a standalone ACT 5 topic** because its possible causes are too heterogeneous for the desired compressed first-action treatment. Relevant respiratory deterioration remains covered where it materially belongs, including anaphylaxis, drowning and the resuscitation transition.
-
-Current detailed timing is canonical in `FUNNEL_01_ACT5_OTHER_EMERGENCIES_RUN_OF_SHOW_V1.md`, including a protected one-minute operating buffer.
+`Severe breathing difficulty` is intentionally excluded as a standalone topic because its possible causes are too heterogeneous for the desired compressed first-action treatment.
 
 Rule:
 
-**if scientific review shows a topic cannot be taught responsibly at a first-action/red-flag level inside the available attention budget, move it to Pack/reference/customer content instead of compressing it into unsafe oversimplification.**
-
-Use the same slide structure for every topic to reduce cognitive switching cost.
+**if scientific review shows a topic cannot be taught responsibly at first-action/red-flag level inside the available budget, move depth to Pack/reference/customer content rather than compressing it into unsafe oversimplification.**
 
 ---
 
 # 11. ACT 6 — Scenari + Complex Mirror Test
 
-Working duration: ~25 min.
+Working duration: **25 min**.
 
-## 11.1 Scenario variation
+Detailed current run-of-show: `FUNNEL_01_ACT0_ACT6_MIRROR_TEST_RUN_OF_SHOW_V1.md`.
 
-Use several short mental/visual scenarios varying deliberately:
+Current timing:
 
-- infant / toddler / older child/adolescent;
-- home / restaurant / car / park / water;
-- one rescuer / two rescuers;
-- phone available / unavailable;
-- stable vs deteriorating state;
-- recognition-only vs motor response;
-- choking -> unresponsive -> CPR transition where appropriate.
+| Segment | Duration |
+|---|---:|
+| F-V-A reset / transfer rules | 1 min |
+| Three scenario-carousel cases | 9 min |
+| Mirror-test prebrief + renewed consent | 1 min |
+| Complex final scenario | 6 min |
+| Scripted debrief / visible before-after | 5 min |
+| Whole-room retrieval + bridge to ACT 7 | 3 min |
 
-Participants apply:
+The final scenario must be materially harder than ACT 0 and test transfer rather than replay.
 
-**FERMA -> VALUTA -> AGISCI**
+Current V1 scenario direction:
 
-Questions:
+- different setting;
+- child >1 year;
+- effective cough -> ineffective cough;
+- second caregiver requiring delegation;
+- 112 activation;
+- persistent obstruction;
+- loss of consciousness;
+- transition to `5 breaths -> 30:2`;
+- AED arrival/integration.
 
-- what do you see/hear?;
-- what state is this?;
-- what do you do first?;
-- what must you not do?;
-- who calls 112 and when?;
-- what changes if the child deteriorates?
+Do not script a perfect ending. If the volunteer makes an error, correct and rerun the relevant step.
 
-## 11.2 Final experiential test — founder decision
-
-Return to the ACT 0 volunteer if willing.
-
-The final scenario must be materially more complex than the opening baseline.
-
-It should demonstrate two things:
-
-1. the participant can now solve a state they could not manage at the beginning;
-2. the participant can transfer the learning to a more complex situation with added variables.
-
-Example complexity stack:
-
-- different child age and setting;
-- initially effective cough;
-- deterioration to ineffective cough;
-- second rescuer/phone variable;
-- obstruction persists;
-- child becomes unresponsive;
-- volunteer must recognise state change, assign/call 112, apply the appropriate choking response and transition into the CPR sequence.
-
-Do not script a perfect ending. If the volunteer makes an error, correct it openly and positively.
-
-This is an impactful experiential close to the learning arc, not humiliation and not proof of long-term real-world competence.
+Immediate simulation improvement is learning evidence, not proof of future clinical performance.
 
 ---
 
 # 12. ACT 7 — Conclusione / Continuity
 
-Working duration: ~10 min.
+Working duration: **10 min**.
 
-Required operations:
+Detailed current founder-approved run-of-show: `FUNNEL_01_ACT7_CONCLUSION_CONTINUITY_RUN_OF_SHOW_V1.md`.
 
-1. short retrieval of critical anchors;
-2. transition to Guide + Family Emergency Pack;
-3. explain customer update stream;
-4. explain free practical refresh within 12 months;
-5. explain the two `Pass Sicurezza` referral cards and make the T0 referral invitation;
-6. certificates/document handoff.
+Current timing:
 
-The **memorable final verbal close remains OPEN** and will be designed separately rather than filled with generic motivation.
+| Segment | Duration |
+|---|---:|
+| Final memory compression | 1 min 15 sec |
+| 24-hour household transfer commitment | 1 min |
+| AFTER: Guide + Pack + updates + refresh | 2 min 15 sec |
+| Pass Sicurezza referral invitation | 1 min |
+| Certificates / materials / operational handoff | 2 min 15 sec |
+| Final bookend / official close | 2 min 15 sec |
 
-Do not let referral dominate the final emotional memory of the course; the Pass is a concrete invitation/tool inside the preparedness system.
+Founder-approved decisions:
+
+1. ACT 6 remains the experiential peak; ACT 7 gives it meaning rather than trying to out-dramatize it.
+2. Every participant writes **one concrete action to complete within 24 hours**, preferably in the Family Safety Checklist: `Entro domani, dopo ___, farò ___`.
+3. Explain the AFTER system through four jobs, not a bonus pile:
+   - **Guide** -> capire/ripassare il soffocamento;
+   - **Family Emergency Pack** -> portare il sistema a casa;
+   - **customer update stream** -> mantenerlo aggiornato;
+   - **free refresh** -> tornare a fare pratica.
+4. Explain the two Pass Sicurezza and Guide Gift briefly; referral must not become the emotional endpoint.
+5. Complete certificates/admin **before** the final 2 min 15 sec.
+6. No group Q&A, sales restart or Google-review request after the official close.
+7. Final visual returns to ordinary family life, not an emergency image.
+8. Signature close V1 meaning:
+
+**`Prepararsi non significa vivere aspettando che succeda un'emergenza. Significa poter vivere le giornate normali sapendo che, se qualcosa cambia, non dovrete inventare tutto da zero.`**
+
+followed by:
+
+**`Avete un modo per fermarvi, valutare, agire — e strumenti per continuare ad allenarlo. Questo era l'obiettivo di oggi.`**
+
+Exact spoken copy may be polished later, but the meaning/order is a current founder decision.
 
 ---
 
@@ -559,7 +456,8 @@ Apply throughout:
 - long choking/CPR acts are learning loops, not lectures;
 - ACT 5 uses a repeated content grammar to make rapid topic changes predictable;
 - preserve the real break and mini-reset;
-- Q&A must not consume core practice time or become individualized medical diagnosis.
+- Q&A must not consume core practice time or become individualized medical diagnosis;
+- do not let operational/admin work become the final official memory of the event.
 
 ---
 
@@ -568,41 +466,58 @@ Apply throughout:
 Delivery hands the customer into the existing G3 post-course architecture:
 
 - Guida Anti-Panico;
-- Family Emergency Pack;
+- Family Emergency Pack with 24-hour action field;
 - dedicated customer communication stream;
 - one free practical refresh within 12 months;
+- two Pass Sicurezza per household;
 - Google-review request at T+24;
-- referral follow-up under `FUNNEL_01_REFERRAL_SYSTEM_V2.md`;
+- T+7 referral follow-up only to actual reviewers/testimonial givers under `FUNNEL_01_REFERRAL_SYSTEM_V2.md`;
+- Guide Gift after a completed referred Full purchase;
 - future relevant lifecycle/backend only when a real need state exists.
 
 ---
 
-# 15. Equipment/capacity gates
+# 15. Equipment / capacity state
 
-Before final minute-by-minute run-of-show record:
+Current founder-reported equipment:
 
-- number/type of child choking trainers;
-- number/type of infant choking trainers/manikins;
-- number of child QCPR manikins;
-- relevant infant CPR equipment;
-- ventilation barriers/masks required;
-- AED trainers;
+- 2 Laerdal Little Baby QCPR;
+- 2 Laerdal Little Junior QCPR;
+- 2 Laerdal adult QCPR manikins;
+- Act+Fast Red choking trainer;
+- Laerdal AED Trainer.
+
+Founder decision:
+
+- acquire **one pediatric choking trainer**;
+- until then use Act+Fast Red as the temporary child/adolescent workaround with honest age/equipment framing.
+
+Rehearsal must still validate:
+
+- actual learner active-practice seconds;
+- waiting time;
+- instructor ability to observe/correct parallel drills;
+- station-change time;
+- ventilation supplies/barriers;
+- AED accessories/mode;
 - room/floor layout.
 
-Practice time is credible only if equipment density supports the plan.
+Practice time is credible only if equipment density supports the promised experience.
 
 ---
 
 # 16. Evidence boundary / source layer
 
-External evidence checked in the V2–V4 research cycle includes:
+External evidence checked in the V2–V5 research cycle includes:
 
 - ERC Guidelines 2025 Paediatric Life Support;
 - ERC 2025 layperson BLS material;
 - IRC 2025 guideline hub;
 - AHA/AAP 2025 Pediatric BLS;
 - AHA 2025 Resuscitation Education Science;
-- current competitor training architectures documented in V2.
+- INACSL 2025 simulation standards;
+- current competitor training architectures documented in V2;
+- ISS/EpiCentro, Ministry and peer-reviewed Italian epidemiology used in ACT 1.
 
 Current governing boundaries retained:
 
@@ -611,7 +526,8 @@ Current governing boundaries retained:
 - do not teach unsupported pediatric choking-to-arrest percentages;
 - do not transfer adult AED survival curves numerically to children;
 - do not use cognitive aids in a way that encourages delaying time-critical action;
-- do not turn immediate simulation improvement into a clinical-outcome claim.
+- do not turn immediate simulation improvement into a clinical-outcome claim;
+- preserve the difference between observed epidemiological data and estimates.
 
 All final medical/scientific customer-facing use requires Dott.ssa Mafalda Camposarcone review.
 
@@ -619,14 +535,22 @@ All final medical/scientific customer-facing use requires Dott.ssa Mafalda Campo
 
 # 17. Current OPEN items
 
-1. memorable final verbal close;
-2. exact ACT 1 statistics and source slides;
-3. exact Italian post-relief medical follow-up wording for choking;
-4. exact ventilation practical exposure inside ACT 4;
-5. ACT 5 timings/content to be validated in rehearsal and Mafalda review;
-6. final equipment/practice-density rehearsal validation;
-7. remaining run-of-show blocks and full-course integration;
-8. final slide deck and instructor script/checklist.
+The macro live architecture ACT 0–7 is now closed at founder-decision level.
+
+Remaining production/validation items:
+
+1. exact final ACT 1 statistics/visuals and Mafalda wording sign-off;
+2. exact Italian post-relief medical follow-up wording for choking;
+3. exact ventilation practical exposure inside ACT 4;
+4. Mafalda/IRC sign-off on all technical sequences and 112 wording;
+5. ACT 5 first-action wording/threshold sign-off;
+6. first full rehearsal timing/capacity validation;
+7. final slide deck and visual assets;
+8. instructor script/checklist and room/equipment reset plan;
+9. final Family Emergency Pack production specifications;
+10. rehearsal-driven revisions before first paid rebuilt edition.
+
+The next execution artifact is the integrated `FUNNEL_01_FULL_MASTER_RUN_OF_SHOW_V1.md` for full-course rehearsal.
 
 ---
 
@@ -635,6 +559,13 @@ All final medical/scientific customer-facing use requires Dott.ssa Mafalda Campo
 - `FUNNEL_01_FULL_DELIVERY_SYSTEM_V4_FOUNDER_DIRECTED.md` — superseded
 - `FUNNEL_01_FULL_DELIVERY_SYSTEM_V2_RESEARCH_PROPOSAL.md` — research provenance
 - `FUNNEL_01_FULL_DELIVERY_V2_SAFETY_BOUNDARIES.md`
+- `FUNNEL_01_ACT0_ACT6_MIRROR_TEST_RUN_OF_SHOW_V1.md`
+- `FUNNEL_01_ACT1_ACT2_PROBLEM_MINDSET_RUN_OF_SHOW_V1.md`
+- `FUNNEL_01_ACT1_EPIDEMIOLOGY_DATA_BANK_V1.md`
+- `FUNNEL_01_ACT3_CHOKING_RUN_OF_SHOW_V1.md`
+- `FUNNEL_01_ACT4_CPR_QCPR_RUN_OF_SHOW_V1.md`
+- `FUNNEL_01_ACT5_OTHER_EMERGENCIES_RUN_OF_SHOW_V1.md`
+- `FUNNEL_01_ACT7_CONCLUSION_CONTINUITY_RUN_OF_SHOW_V1.md`
 - `FUNNEL_01_G3_FULL_OFFER_ARCHITECTURE.md`
 - `FUNNEL_01_G4_PROOF_ARCHITECTURE.md`
 - `FUNNEL_01_REFERRAL_SYSTEM_V2.md`
