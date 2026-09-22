@@ -1,41 +1,165 @@
 # Funnel 01 — ACT 1 Epidemiology / Problem Data Bank V1
 
-Status: CURRENT RESEARCH BANK — founder will select which data enter the live ACT 1; every customer-facing statistic requires final source/wording check and Dott.ssa Mafalda Camposarcone review
+Status: CURRENT RESEARCH BANK — SOURCE-RECONCILED 2026-09-22; founder selects which data enter live ACT 1; every customer-facing statistic requires final wording/source check and Dott.ssa Mafalda Camposarcone review
 Date: 2026-09-22
 
-Purpose: collect a deliberately broad set of epidemiological/statistical candidates for ACT 1 `Il Problema` without prematurely narrowing the live deck. Older authoritative data are admissible when useful; the year, population, geography, denominator and exact measure must remain visible.
+Purpose: maintain a deliberately broad epidemiological/statistical bank for ACT 1 `Il Problema` without prematurely narrowing the live deck. Older authoritative data are admissible when useful. Year, population, geography, denominator and exact measure must remain visible.
 
-Founder decision governing this file:
+Founder decision:
 
-**do not exclude useful data merely because a newer national number is unavailable; collect the strongest available current and historical evidence, then decide separately which numbers and framing belong in the live course.**
+**Do not exclude useful evidence merely because a newer national number is unavailable. Collect current and historical evidence first; decide separately which numbers and framing deserve to enter the live course.**
 
-Important methodological rule:
+Governing methodological rule:
 
-**the main risk is often not age of the data but mixing different denominators.**
+**The largest source of error is not necessarily age of data. It is silently treating different endpoints as if they measured the same thing.**
 
-Do not silently merge:
+Do not merge without explicit qualification:
 
 - self-reported domestic accidents;
 - healthcare contacts;
 - emergency-department visits;
 - hospitalisations;
-- choking injuries;
+- choking / airway-obstruction admissions;
 - broader aerodigestive foreign-body injuries;
 - suspected aspiration cases;
-- estimated minor/self-resolved `quasi-events`;
-- deaths / share of accidental deaths.
+- minor/self-resolved `quasi-events`;
+- deaths;
+- share of accidental deaths.
 
-Each number below therefore preserves what it actually measures.
+Evidence-status legend used below:
 
-Legend:
-
-- `GREEN` — strong candidate; authoritative/direct source and measure is reasonably clear;
-- `YELLOW` — useful candidate but dated, indirect, local, definition-limited or primary-source verification should be tightened before hero use;
-- `RED` — research/context only; do not use as a standalone customer-facing national claim.
+- `GREEN` — strong live candidate: direct/authoritative source and endpoint reasonably clear.
+- `GREEN/YELLOW` — strong evidence, but contextual/date/definition caveat should remain visible.
+- `YELLOW` — usable with explicit qualification; indirect, historical, local or primary-source extraction incomplete.
+- `YELLOW/RED` — official/professional claim worth retaining in research, but not suitable as an unqualified hero statistic.
+- `RED` — research/context only until materially reverified.
 
 ---
 
-# A. Domestic-accident burden — Italy
+# 1. Reconciliation summary — what the research now says
+
+## 1.1 There is no single interchangeable `annual choking number`
+
+Three different evidence chains have often been quoted together even though they measure different things:
+
+1. **National choking hospital-discharge records, ICD-9 933/934** — direct administrative data for airway/pharynx/larynx/tracheobronchial choking injuries.
+2. **Broader aerodigestive foreign-body injury estimates** — includes ingestion/swallowing and other foreign-body injuries, not only airway choking.
+3. **Ministry 2017 public-health estimates** — official wording, but some cited references do not directly reproduce the Italian annual figures stated in the guideline.
+
+Therefore:
+
+**do not average, blend or use these series as mutually confirming estimates of the same incidence.**
+
+## 1.2 `~1,000 hospitalisations/year` — official Ministry wording, but not a clean national-incidence series
+
+The 2017 Ministry guideline states that Italy had a stable trend of approximately **1,000 hospitalisations/year**. Its cited reference `(4)` is Gregori et al. 2008, an ESFBI study based on major hospitals in **19 European countries** for 2000–2002. That study describes 170 pharynx/larynx and 552 trachea/bronchi/lung injuries in the multinational dataset; it is not an Italian nationwide annual-incidence study.
+
+Evidence status for the numeric `~1,000/year` claim: **`YELLOW`**.
+
+Interpretation:
+
+- it remains an official Ministry statement and may be cited as such with date;
+- it should **not** be presented as if the underlying paper directly measured 1,000 Italian choking admissions per year;
+- if used live, wording should be `the Ministry's 2017 guideline estimated/reported...`, not `Italian national discharge data show...`.
+
+Sources:
+
+- Ministero della Salute, 2017, `Linee di indirizzo per la prevenzione del soffocamento da cibo in età pediatrica`.
+- Gregori D. et al., 2008, `Foreign bodies in the upper airways causing complications and requiring hospitalization in children aged 0-14 years: results from the ESFBI study`, PMID 18210146.
+
+## 1.3 Direct national choking hospitalisation series — stronger denominator
+
+Lorenzoni et al. 2018 analysed official Italian hospital-discharge records, children 0–14, ICD-9 CM 933/934, for 2001–2013:
+
+- **7,143 choking hospitalisations** over 13 years;
+- crude arithmetic average ≈ **549/year** over the study period;
+- annual rate ranged from **10.42/100,000 in 2002** to **3.46/100,000 in 2013**;
+- age distribution: **3,744 infants 0–12 months**, **2,380 toddlers 1–3**, **1,019 age 4–14**;
+- **22 in-hospital deaths** among the 7,143 admissions; the authors explicitly warn that mortality estimation from hospital coding is difficult and this is not total Italian choking mortality.
+
+Evidence status: **`GREEN`** for the endpoint it actually measures.
+
+Source:
+https://pubmed.ncbi.nlm.nih.gov/30066094/
+
+## 1.4 Broader foreign-body hospital burden explains part of the apparent conflict
+
+Snidero et al. 2012 estimated the broader burden of **aerodigestive foreign-body injuries** in children 0–14 for 2004:
+
+- **15,829** estimated foreign-body injuries overall;
+- **12,844** estimated as treated in hospital or emergency department;
+- the paper cites **1,814 officially hospitalised children in 2003** for such foreign-body injury.
+
+This is a broader endpoint than ICD-9 933/934 choking. It includes swallowing/ingestion and cannot be relabelled `airway choking`.
+
+Evidence status: **`GREEN/YELLOW`** for broader foreign-body burden; **not an airway-choking incidence figure**.
+
+Source:
+https://pubmed.ncbi.nlm.nih.gov/23202831/
+
+## 1.5 `~80,000 episodes/year` — official Ministry estimate, but source chain does not directly reproduce it
+
+The Ministry 2017 guideline states that, including minor/self-resolved `quasi-events`, real incidence may be **50–80 times** hospitalisations, giving `~80,000 episodes/year` in Italy; it cites Snidero et al. 2012 as reference `(6)`.
+
+However, the cited scale-up paper's own headline estimate is **15,829 broader aerodigestive foreign-body injuries** in 2004, not 80,000 choking episodes. Its discussion compares 15,829 estimated injuries with 1,814 officially hospitalised foreign-body injuries — roughly 1 hospitalisation per 9 estimated injuries, not 1 per 50–80.
+
+The Ministry number therefore remains an **official public-health estimate**, but the cited paper does not directly validate the stated `50–80x / 80,000` magnitude.
+
+Evidence status: **`YELLOW/RED`** for use as an exact magnitude.
+
+Live-use boundary:
+
+- never describe 80,000 as observed severe/complete airway obstructions;
+- if used, explicitly say it is a **2017 Ministry estimate including minor/self-resolved quasi-events**;
+- do not use it as the denominator for mortality, arrest or intervention probabilities.
+
+## 1.6 `27% / 11.5% / 4.7%` — heavily corroborated, primary ISTAT table still not archived
+
+The age-gradient claim is repeatedly attributed to ISTAT by authoritative Italian institutions:
+
+- **27%** of accidental deaths age 0–4 attributed to choking from food/foreign body;
+- **11.5%** age 5–9;
+- **4.7%** age 10–14.
+
+Corroboration includes:
+
+- Italian Senate act, 2015: 27% for age 0–4, explicitly attributed to official ISTAT data;
+- IRCCS Burlo Garofolo, 2024: 27% / 11.5% / 4.7%, attributed to ISTAT;
+- CRI and pediatric-training communications tracing the 27% figure to **SIP 2007**;
+- **ASL Sassari project dated 31 March 2026**, which states that its review of the latest ISTAT cause-of-death release available to it (2023 publication, data 2022) still finds choking to represent **about one quarter / 25–27% of accidental deaths in age 0–4**.
+
+The exact underlying ISTAT table/codes/year calculation has not yet been independently extracted into the Formalife evidence archive.
+
+Evidence status: **`GREEN/YELLOW` for the broad `about one quarter` conclusion; `YELLOW` for the exact 27% / 11.5% / 4.7% triplet until the primary table is archived.**
+
+Practical wording hierarchy:
+
+- stronger: `circa un quarto delle morti accidentali 0–4` with current institutional corroboration;
+- more exact but more source-sensitive: `27% / 11.5% / 4.7%` with dated attribution.
+
+## 1.7 `~50 pediatric deaths/year` — historical SIP signal with recent institutional corroboration of the order of magnitude
+
+The figure is not a modern primary mortality series, but it is not merely an internet repetition either.
+
+Evidence chain:
+
+- CRI materials trace `~50 deaths/year` to **SIP 2007**;
+- 2015 Senate act reports **50 children/year, 30 under age 4**, attributed to Società Italiana di Pediatria;
+- SIPPS 2016 material/communication states approximately **50 under-4 deaths/year**, showing that historic professional communications were not perfectly consistent in the age denominator;
+- ASL Sassari 2026, referring to ISTAT 2022 cause-of-death data, states **some tens of deaths, in the order of 40–50 cases/year across age 0–14**, concentrated under age 3.
+
+The 2026 ASL document materially strengthens the conclusion that the national mortality burden remains in the **tens per year**, but it is still a secondary interpretation rather than the extracted primary ISTAT table.
+
+Evidence status: **`YELLOW`**.
+
+Live-use boundary:
+
+- safest current language: `nell'ordine di alcune decine di decessi pediatrici l'anno`, with source/year;
+- `50/year` should be labelled to the specific SIP/SIPPS/ASL source rather than presented as a precise current ISTAT count.
+
+---
+
+# 2. Domestic-accident burden — Italy
 
 ## A1 — ISS 0–2 surveillance 2025 — domestic accident reported
 
@@ -50,218 +174,155 @@ Status: `GREEN`
 
 Possible live meaning:
 
-**domestic accidents are common enough in the first years of life to justify systematic prevention/preparedness.**
+**Domestic accidents are common enough in the first years of life to justify systematic prevention/preparedness.**
 
 Source:
 https://www.epicentro.iss.it/sorveglianza02anni/indagine-2025-sicurezza-casa
 
-Supporting results page:
-https://www.epicentro.iss.it/sorveglianza02anni/indagine-2025-risultati
-
 Boundary:
 Do not silently translate this into `12.6% of all Italian children had an accident`; it is a maternal-report surveillance result from the participating pool.
-
----
 
 ## A2 — ISS 0–2 surveillance 2022 — healthcare contact after domestic accident
 
 Status: `GREEN`
 
-- Population: mothers of children 0–2 in participating regions.
-- Measure: mother sought healthcare staff for a child's domestic accident (falls, wounds, burns, ingestion of harmful substances, etc.).
-- Result: **12.4%**.
+- **12.4%** of mothers reported seeking healthcare staff for a child's domestic accident.
 - Breakdown: **6.1% pediatrician**, **4.6% emergency department**, **1.7% both**.
 - Territorial range: **10.5%–14.7%**.
 
 Source:
 https://www.epicentro.iss.it/sorveglianza02anni/indagine-2022-sicurezza-casa
 
-Use value:
-This is a different endpoint from A1 and shows healthcare utilisation, not simply event occurrence.
+Boundary:
+This is healthcare utilisation, not merely occurrence of any domestic event.
 
----
+## A3 — SINIACA / ISS — domestic-accident healthcare burden
 
-## A3 — SINIACA / ISS — hospital burden of domestic accidents
+Status: `GREEN/YELLOW`
 
-Status: `GREEN/YELLOW` — authoritative system, historical aggregate estimate
+ISS/EpiCentro historical aggregate estimates:
 
-ISS/EpiCentro reports approximate annual Italian rates:
-
-- **20 emergency-department visits per 1,000 residents/year** for domestic accidents;
-- **2 hospital admissions per 1,000 residents/year**;
-- children **0–4 years: about 50 ED visits per 1,000/year**, one of the highest-risk groups.
+- approximately **20 ED visits per 1,000 residents/year** for domestic accidents;
+- approximately **2 hospital admissions per 1,000 residents/year**;
+- age **0–4: about 50 ED visits per 1,000/year**, one of the highest-risk groups.
 
 Source:
 https://www.epicentro.iss.it/incidenti-domestici/epidemiologia
 
-Use value:
-A strong denominator-based way to show that the 0–4 group is disproportionately represented.
-
----
-
 ## A4 — European Injury Database, three Italian regions, 2018
 
-Status: `YELLOW` — contemporary-ish, but only three regions
+Status: `YELLOW`
 
-For home-accident ED access in ages 0–4:
+Home-accident ED access, age 0–4:
 
-- males: **1,240 per 100,000**;
-- females: **1,054 per 100,000**.
+- males **1,240/100,000**;
+- females **1,054/100,000**.
 
 Source:
 https://www.epicentro.iss.it/ben/2023/2/pronto-soccorso-incidenti-violenza-2018
 
-Boundary:
-Do not present as national incidence.
-
----
+Boundary: three-region dataset; not national incidence.
 
 ## A5 — Province of Trento pediatric domestic accidents, 2014–2017
 
-Status: `YELLOW` — useful concrete local clinical burden, not national
+Status: `YELLOW`
 
-- **5,977** pediatric ED accesses age 0–14 for domestic accidents.
-- **53%** occurred age 0–4.
-- Triage: **21.7% white**, **72% green**, **6.2% yellow**, **0.06% red**.
-- Most frequent injury types: **contusion 31.8%**, **wound/abrasion 22.6%**, **head injury 21.9%**.
+- **5,977** pediatric ED accesses age 0–14 for domestic accidents;
+- **53%** age 0–4;
+- triage **21.7% white**, **72% green**, **6.2% yellow**, **0.06% red**;
+- frequent diagnoses: **contusion 31.8%**, **wound/abrasion 22.6%**, **head injury 21.9%**.
 
 Source:
 https://www.epicentro.iss.it/incidenti-domestici/aggiornamenti
 
-Use value:
-Can support why head trauma belongs in the course, while showing most events are not catastrophic.
-
----
-
 ## A6 — ISTAT 1999 household survey / ISS child-safety booklet
 
-Status: `YELLOW` — very old but national and useful historical scale
+Status: `YELLOW`
 
-- **3.672 million domestic accidents/year** involving **3.048 million people**.
-- Approximately **68,000 children** involved.
+Historical national scale:
+
+- **3.672 million domestic accidents/year** involving **3.048 million people**;
+- approximately **68,000 children** involved.
 
 Source:
 https://www.epicentro.iss.it/incidenti-domestici/pdf/inc-bambini.pdf
 
-Boundary:
-Historical scale only; never present as a current annual count.
+Boundary: historical scale only.
 
----
+## A7 — Historical SINIACA/ISS whole-population burden
 
-## A7 — Historical SINIACA/ISS national burden estimates
+Status: `YELLOW/RED`
 
-Status: `YELLOW/RED` — useful background, not needed as a hero pediatric statistic
-
-Historical national sources compiled by ISS reported millions of domestic-accident events and roughly 1–2 million ED accesses/year depending on source/period. One ISS 2002 summary described around **2 million ED visits/year**, about **350,000 hospital admissions/year**, and around **6,000 deaths/year** from domestic accidents across the whole population.
+Historical ISS material reports roughly **2 million ED visits/year**, **350,000 hospital admissions/year**, and **6,000 deaths/year** from domestic accidents across the whole population in an older evidence period.
 
 Sources:
 https://www.epicentro.iss.it/cong_leb/balducci
 https://www.epicentro.iss.it/incidenti-domestici/pdf/Siniaca04.pdf
 
-Boundary:
-Whole-population burden, not pediatric-specific. Use only if the course wants a broad public-health frame.
+Boundary: not pediatric-specific.
 
 ---
 
-# B. Choking / foreign-body airway obstruction — Italy
+# 3. Choking / foreign-body airway obstruction — Italy
 
-## B1 — Ministry of Health — problem relevance and age profile
+## B1 — Ministry age-risk/public-health framing
 
-Status: `GREEN`
+Status: `GREEN` for qualitative age/public-health relevance; numeric subclaims are graded separately above.
 
-Current Ministry material reiterates that foreign-body choking:
+Current Ministry material continues to frame foreign-body choking as a relevant pediatric public-health problem, particularly in younger children and still relevant through age 14.
 
-- is a relevant public-health problem;
-- is among the main causes of death in children **under 3 years**;
-- remains a relevant accident risk through age 14.
-
-Current Ministry nutrition material also states:
-
-- approximately **1,000 hospitalisations/year** in Italy in the referenced trend;
-- **60–80%** of pediatric choking episodes are attributable to food.
-
-Current Ministry source:
+Sources:
+https://www.salute.gov.it/new/it/pubblicazione/linee-di-indirizzo-la-prevenzione-del-soffocamento-da-cibo-eta-pediatrica/
 https://www.salute.gov.it/imgs/C_17_opuscoliPoster_530_allegato.pdf
 
-Canonical prevention guideline:
-https://www.salute.gov.it/new/it/pubblicazione/linee-di-indirizzo-la-prevenzione-del-soffocamento-da-cibo-eta-pediatrica/
+## B2 — Ministry 2017 `~1,000 hospitalisations/year`
 
-Boundary:
-The underlying epidemiological estimates have historical provenance; slide footer must preserve source/year rather than imply a newly measured 2026 incidence.
+Status: `YELLOW`
 
----
+Official Ministry statement, but the cited ESFBI reference is multinational and does not itself establish Italian nationwide annual incidence. Use only as a dated Ministry estimate/report.
 
-## B2 — Ministry 2017 guideline — estimated hidden burden / quasi-events
+## B3 — Ministry 2017 `50–80x / ~80,000 episodes/year`
 
-Status: `YELLOW` — official historical estimate, useful if explicitly dated
+Status: `YELLOW/RED`
 
-The national guideline states:
+Official estimate including minor/self-resolved `quasi-events`; the cited Snidero scale-up paper estimates 15,829 broader foreign-body injuries and does not directly reproduce 80,000 choking episodes.
 
-- approximately **1,000 hospitalisations/year**;
-- including minor/self-resolved `quasi-events`, estimated phenomenon **50–80 times larger than hospitalisations**;
-- approximately **80,000 episodes/year** estimated in Italy;
-- food responsible for **60–80%** of pediatric choking episodes.
-
-Source:
-https://www.salute.gov.it/new/it/pubblicazione/linee-di-indirizzo-la-prevenzione-del-soffocamento-da-cibo-eta-pediatrica/
-
-Mirror of the Ministry PDF text used for verification:
-https://www.ats-valpadana.it/system/files/pagina_standard/files/2056/4613/Linee%20di%20Indirizzo%20per%20la%20prevenzione%20del%20soffocamento%20da%20cibo%20in%20et%C3%A0%20pediatrica.pdf
-
-Use value:
-Potentially powerful for showing why hospital data undercount the full phenomenon.
-
-Critical caveat:
-`80,000` is an estimate that explicitly includes minor/self-resolved events; it is not an observed count of severe complete airway obstructions.
-
----
-
-## B3 — Official Italian hospital discharge records, 2001–2013
+## B4 — National SDO choking hospitalisations 2001–2013
 
 Status: `GREEN`
 
-Peer-reviewed analysis of official Italian hospital discharge data for choking injuries (ICD-9 933/934), age 0–14:
-
-- **7,143 hospitalisations** over 13 years;
-- annual hospitalisation rate fell from **5.28 per 100,000 person-years in 2001** to **3.46 per 100,000 in 2013**.
+- **7,143 hospitalisations**;
+- ≈ **549/year arithmetic average** across the 13-year period;
+- annual rate **10.42/100,000 in 2002 → 3.46/100,000 in 2013**;
+- **3,744 infant**, **2,380 age 1–3**, **1,019 age 4–14** admissions;
+- **22 in-hospital deaths**, not total national choking mortality.
 
 Source:
 https://pubmed.ncbi.nlm.nih.gov/30066094/
 
-Important reconciliation issue:
-This administrative-data study averages about 549 hospitalisations/year across the period, whereas Ministry guideline material commonly cites `~1,000 hospitalisations/year` from a different evidence chain/period. Do **not** average or blend the two numbers. Preserve both until exact source definitions and periods are reconciled.
+## B5 — Broader aerodigestive foreign-body burden, Italy 2004
 
-This is the clearest example of why denominator/definition matters more than simply `old vs new`.
+Status: `GREEN/YELLOW`
 
----
+Snidero et al.:
 
-## B4 — Estimated broader aerodigestive foreign-body injury burden, Italy 2004
-
-Status: `YELLOW`
-
-Scale-up study based on a survey of 1,081 women estimated for children under 15:
-
-- **15,829 foreign-body injuries** in 2004 (95% CI 14,376–17,282);
-- **12,844 treated in hospital or ED** (95% CI 11,535–14,153).
+- **15,829** estimated foreign-body injuries;
+- **12,844** estimated treated in hospital or ED;
+- cites **1,814** officially hospitalised children in 2003 for this broader endpoint.
 
 Source:
 https://pubmed.ncbi.nlm.nih.gov/23202831/
 
-Critical boundary:
-This is broader **foreign-body injury of the aerodigestive tract**, not synonymous with choking/FBAO. It should not be relabelled as `15,829 choking events`.
+Boundary: not synonymous with airway choking/FBAO.
 
----
+## B6 — Recent Italian tertiary-care aspiration series, 2009–2022
 
-## B5 — Recent Italian tertiary-care foreign-body aspiration series, 2009–2022
+Status: `GREEN/YELLOW`
 
-Status: `GREEN/YELLOW` — recent and clinically useful, single-center/non-incidence
-
-Bambino Gesù-led study:
-
-- **171** children evaluated for suspected inhalation;
+- 171 children evaluated for suspected inhalation;
 - foreign body detected in **83**;
 - mean age **2.3 years**;
-- **83%** of retrieved foreign bodies were vegetable material;
+- **83%** of retrieved foreign bodies vegetable material;
 - peanut most common;
 - right main bronchus **43%**;
 - chest radiograph normal in **25%**;
@@ -270,190 +331,185 @@ Bambino Gesù-led study:
 Source:
 https://pubmed.ncbi.nlm.nih.gov/38551664/
 
-Use value:
-Good evidence for age profile and food/vegetable context.
+Boundary: single tertiary-care series, not national incidence.
 
-Boundary:
-Single tertiary-care series; not national incidence or national cause distribution.
+## B7 — Accidental-death share by age
 
----
+Status: `GREEN/YELLOW` for `about one quarter age 0–4`; `YELLOW` for exact triplet.
 
-## B6 — Mortality share of accidental deaths by age
+Candidate exact figures:
 
-Status: `YELLOW` — repeated by authoritative institutions, exact primary ISTAT table should be archived before final hero use
+- **27% age 0–4**;
+- **11.5% age 5–9**;
+- **4.7% age 10–14**.
 
-IRCCS Burlo Garofolo (2024), citing ISTAT, reports that choking accounts for:
+Sources/corroboration:
 
-- **27%** of accidental deaths age 0–4;
-- **11.5%** age 5–9;
-- **4.7%** age 10–14.
+- Senate 2015, attributed to ISTAT;
+- IRCCS Burlo Garofolo 2024, attributed to ISTAT;
+- ASL Sassari 2026, citing latest ISTAT 2022 cause-of-death data and reporting approximately **25–27%** age 0–4.
 
-Source:
-https://www.burlo.trieste.it/2024-6-novembre-esperti-del-burlo-formano-personale-scolastico-del-fvg-disostruzione-rianimazione-cardiopolmonare
-
-The same 27% figure appears in a 2015 Italian Senate act attributed to official ISTAT data:
+Sources:
 https://www.senato.it/show-doc?id=909943&idoggetto=0&leg=17&part=doc_dc-allegatob_ab-sezionetit_icrdrs-atto_403719&tipodoc=Resaula
+https://www.burlo.trieste.it/2024-6-novembre-esperti-del-burlo-formano-personale-scolastico-del-fvg-disostruzione-rianimazione-cardiopolmonare
+https://www.asl1sassari.it/wp-content/uploads/2026/05/PDEL_2026_0000521_Promozione_delle_manovre_salvavita_pediatriche_un_progetto-n.-426-allegato.pdf
 
-Use value:
-Potentially strong mortality-salience statistic.
+Open verification: archive/recompute exact primary ISTAT table before treating the exact age-band percentages as primary statistics.
 
-Before final slide use:
-retrieve/archive the underlying ISTAT mortality table if possible and verify exact definition of `accidental deaths` and years.
+## B8 — Pediatric choking mortality order of magnitude
 
----
+Status: `YELLOW`
 
-## B7 — Approximately 50 pediatric deaths/year in older Italian communications
+Historical and recent institutional/professional signals place the burden in the **tens of deaths per year**, but exact age/period definitions differ:
 
-Status: `YELLOW/RED` — candidate only until primary statistical basis is pinned down
+- SIP 2007 repeatedly cited as **~50/year**;
+- Senate 2015: **50/year, 30 under 4**, attributed to SIP;
+- SIPPS 2016 communication: approximately **50 under 4/year**;
+- ASL Sassari 2026, citing ISTAT 2022: **order of 40–50 deaths/year age 0–14**, concentrated under age 3.
 
-Multiple Italian institutional/professional communications historically report around **50 children/year**, often with **30 under age 4**, dying from foreign-body choking.
+Safest live formulation before primary-table extraction:
 
-Examples:
-
-- 2015 Senate act attributes the figure to Società Italiana di Pediatria:
-  https://www.senato.it/show-doc?id=909943&idoggetto=0&leg=17&part=doc_dc-allegatob_ab-sezionetit_icrdrs-atto_403719&tipodoc=Resaula
-- 2016 SIPPS communication reported by ANSA:
-  https://www.ansa.it/canale_saluteebenessere/notizie/salute_bambini/alimentazione/2016/10/12/pasti-sereni-per-bimbi-con-guida-manovre-anti-soffocamento_154741e6-9a04-11e6-9836-00505695d1bc.html
-
-Boundary:
-Do not present `50/year` as a verified current 2026 mortality rate without identifying the original period/table.
+**`nell'ordine di alcune decine di decessi pediatrici l'anno`**, followed by source/year.
 
 ---
 
-# C. Food / circumstance evidence useful to ACT 1 or ACT 3
+# 4. Food / circumstance evidence useful to ACT 1 or ACT 3
 
 ## C1 — Food contribution to pediatric choking
 
 Status: `GREEN/YELLOW`
 
-Ministry material: **60–80%** of pediatric choking episodes attributable to food.
+Ministry 2017 states **60–80%** of pediatric choking episodes are attributable to food. Later peer-reviewed literature/Italian CHOP protocol likewise notes that food-related choking injuries account for up to **60–80%** in some studies.
 
-Source:
+Sources:
 https://www.salute.gov.it/imgs/C_17_opuscoliPoster_530_allegato.pdf
+https://pmc.ncbi.nlm.nih.gov/articles/PMC6704497/
 
-Use value:
-Direct bridge from ACT 1 problem salience to ACT 3 prevention-at-table content.
-
----
+Boundary:
+The exact percentage varies by dataset and endpoint; use as a range, not an Italian annual incidence calculation.
 
 ## C2 — Food types in Ministry material
 
-Status: `YELLOW` — useful but depends on registry/source population
+Status: `YELLOW`
 
-Ministry material reports, among ages 0–14, frequent incident-associated foods including:
+Ministry material reports incident-associated foods including:
 
-- chicken bones/fish bones **32%**;
+- chicken/fish bones **32%**;
 - peanuts **22%**;
 - seeds **16%**.
 
 Source:
 https://www.salute.gov.it/imgs/C_17_opuscoliPoster_530_allegato.pdf
 
-Boundary:
-Verify underlying registry denominator before turning into a `top choking foods in Italy` headline.
+Boundary: verify underlying registry denominator before using as `top foods in Italy`.
 
----
+## C3 — Adult presence does not eliminate risk
 
-## C3 — Supervision does not remove foreign-body risk
+Status: `RED/YELLOW`
 
-Status: `RED/YELLOW` — contextual research, not population risk
-
-An Italian two-hospital study of upper-airway foreign bodies found an adult was present in **84.2%** of cases at the time of injury.
+Italian two-hospital upper-airway/foreign-body study reports an adult present in **84.2%** of cases at time of injury.
 
 Source:
 https://pubmed.ncbi.nlm.nih.gov/17506234/
 
-Use value:
-Potential prevention message: supervision alone is not the same as risk elimination.
-
-Boundary:
-The study includes upper-airway/ENT foreign bodies broadly and had limited true tracheobronchial choking burden; not a national choking statistic.
+Boundary: broader ENT/upper-airway foreign-body sample; not national choking risk.
 
 ---
 
-# D. European/international context — optional, not Italian incidence
+# 5. European / international context — optional
 
 ## D1 — Ministry European estimate
 
 Status: `YELLOW`
 
-Ministry guideline/material estimates approximately **500 pediatric choking deaths/year in Europe**.
+Ministry 2017 material estimates approximately **500 pediatric choking deaths/year in Europe**.
 
-Source:
-https://www.salute.gov.it/imgs/C_17_opuscoliPoster_530_allegato.pdf
+Use only with geography and evidence period explicit.
 
-Use only when the geography `Europe` is visually explicit.
+## D2 — ESFBI / Susy Safe datasets
 
----
+Status: `YELLOW`
 
-## D2 — ESFBI / Susy Safe severe-airway datasets
-
-Status: `RED/YELLOW`
-
-European registry studies show that airway foreign-body injuries disproportionately involve young children and can require hospitalisation/produce complications.
+Useful for age, object and complication patterns; not Italian incidence.
 
 Example:
 https://pubmed.ncbi.nlm.nih.gov/18210146/
 
-Use value:
-Mechanism/risk-pattern context, not Italian incidence.
+---
+
+# 6. Comparative decision table for founder selection
+
+| Candidate | What it actually measures | Period / population | Evidence status | Suitable live use |
+|---|---|---|---|---|
+| **12.6%** | maternal report of ≥1 domestic accident | ISS 2025, child 0–2 participating pool | `GREEN` | strong frequency opener |
+| **12.4%** | healthcare contact for domestic accident | ISS 2022, child 0–2 | `GREEN` | stronger healthcare-burden framing |
+| **~50 ED/1,000/year** | domestic-accident ED access | SINIACA/ISS, age 0–4 | `GREEN/YELLOW` | age vulnerability / burden |
+| **7,143 in 13 years** | choking hospitalisations ICD-9 933/934 | Italy 2001–2013, age 0–14 | `GREEN` | strongest direct national hospitalisation statistic |
+| **~549/year average** | arithmetic derivative of same 7,143 series | 2001–2013 | `GREEN/YELLOW` | usable if explained as period average, not current annual count |
+| **~1,000/year** | Ministry-reported hospitalisations | Ministry 2017, historical evidence chain | `YELLOW` | only as dated Ministry estimate |
+| **15,829** | estimated broader aerodigestive FB injuries | Italy 2004, age 0–14 | `GREEN/YELLOW` | broader foreign-body problem, not choking |
+| **1,814** | official hospitalised broader FB injuries cited by scale-up paper | Italy 2003, age 0–14 | `GREEN/YELLOW` | shows endpoint-definition difference; not choking-only |
+| **~80,000/year** | Ministry estimate incl. minor/self-resolved quasi-events | Ministry 2017 | `YELLOW/RED` | only with explicit estimate/quasi-event caveat |
+| **60–80% food** | share of choking injury/events attributed to food in cited studies | Ministry + literature | `GREEN/YELLOW` | strong bridge to prevention, retain range |
+| **~25–27% age 0–4** | share of accidental deaths attributed to food/FB choking | ISTAT-attributed; corroborated ASL 2026 using 2022 data | `GREEN/YELLOW` | strong consequence statistic as `about one quarter` |
+| **27/11.5/4.7%** | age-gradient of accidental-death share | ISTAT-attributed institutional sources | `YELLOW` | use exact triplet only with dated attribution until primary table archived |
+| **~40–50 deaths/year 0–14** | recent institutional interpretation of ISTAT mortality | ASL Sassari 2026 citing 2022 data | `YELLOW` | order-of-magnitude only until primary table extracted |
+| **~50/year, 30 under 4** | historical SIP-attributed mortality claim | SIP 2007 / Senate 2015 | `YELLOW` | historical comparison, not precise current rate |
+| **mean age 2.3; 83% vegetable** | tertiary-care detected aspiration cases | Italy 2009–2022, single center | `GREEN/YELLOW` | age/material context, not incidence |
 
 ---
 
-# E. Candidate live-story structures — NOT decisions yet
+# 7. Candidate live-story structures — not yet founder decisions
 
-The bank intentionally does not decide the final ACT 1 deck. Possible structures for founder selection include:
+## Structure A — common → concentrated → consequential
 
-### Structure 1 — frequency → vulnerability → choking scale
+1. ISS 2025 domestic accident frequency;
+2. 0–4 domestic-accident ED burden;
+3. direct national choking-hospitalisation series / strong age concentration;
+4. `about one quarter` of accidental deaths 0–4;
+5. close by changing meaning from risk to preparation.
 
-- 12.6% maternal report of domestic accident in 0–2;
-- 0–4 highest domestic-injury ED-risk group;
-- choking concentrated under age 3;
-- 60–80% food-related;
-- historical `~80,000 estimated episodes` as scale, clearly dated/defined.
+## Structure B — broad problem → choking wedge → prevention
 
-### Structure 2 — broad problem → narrow wedge → consequence
+1. domestic accident frequency / healthcare contacts;
+2. national SDO choking burden and concentration under 3;
+3. food **60–80%**;
+4. `about one quarter` mortality-share consequence;
+5. anti-fear close → prevention/recognition/action.
 
-- domestic injuries / healthcare use;
-- under-3 choking relevance;
-- 7,143 official choking hospitalisations 2001–2013;
-- 27% share of accidental deaths age 0–4 candidate;
-- close by changing meaning from danger to preparation.
+## Structure C — visible burden vs hidden burden
 
-### Structure 3 — ordinary life, not catastrophe
+1. direct SDO hospitalisations;
+2. explain why hospital data are only one layer;
+3. broader foreign-body scale-up estimate;
+4. optionally show Ministry `quasi-event` estimate with explicit uncertainty;
+5. close: the job is not catastrophising the denominator but preparing for ordinary events and rare time-critical states.
 
-- most pediatric domestic ED events are low-acuity in Trento series;
-- nevertheless 0–4 is high-exposure group;
-- food is a major choking driver;
-- some events are time-critical;
-- preparation exists to distinguish `watch / act / escalate`, not to treat every event as catastrophe.
-
-These are hypotheses for rehearsal, not approved slide order.
+No structure is approved until founder selection and rehearsal.
 
 ---
 
-# F. Rules for final founder selection
+# 8. Rules for final founder selection
 
-When choosing the actual 6-minute ACT 1:
-
-1. **Founder decides which data and how many.** The research bank should be broad; the live act can still be selective.
-2. Every slide number shows at least **source + year/period**.
-3. Where relevant preserve **population/geography/denominator** in footer or spoken wording.
-4. An old number may be used when still decisionally useful; do not relabel it as current.
-5. Do not combine different measures into a synthetic incidence estimate.
-6. Hospitalisation data do not represent all choking episodes.
+1. Founder decides which data and how many enter the 6-minute live act.
+2. Every number displays source + year/period.
+3. Preserve population/geography/denominator when they change meaning.
+4. Old data are allowed; never silently relabel them current.
+5. Never combine different endpoints into a synthetic incidence estimate.
+6. Hospitalisation data do not represent all events.
 7. Estimated quasi-events are not severe complete obstructions.
 8. Single-center clinical series cannot become national incidence.
-9. `foreign-body injury` is not automatically `choking`.
-10. The final narrative still ends by **changing the meaning of the numbers**: from fear to preparation, prevention and first-action agency.
-11. Final customer-facing selection and wording receive Mafalda review.
+9. `foreign-body injury` is not automatically `airway choking`.
+10. `In-hospital death` is not total national mortality.
+11. The final narrative must end by **changing the meaning of the numbers** from fear to preparation, prevention, recognition and first-action agency.
+12. Final customer-facing selection and wording receive Mafalda review.
 
 ---
 
-# G. Open verification jobs before slide freeze
+# 9. Remaining verification jobs before slide freeze
 
-1. Retrieve the exact primary ISTAT mortality table behind the `27% / 11.5% / 4.7%` figures if available.
-2. Reconcile the source/period/definition behind Ministry `~1,000 hospitalisations/year` with official discharge-data study `7,143 hospitalisations in 2001–2013`.
-3. Verify which Ministry 2025 nutrition material version should be archived as the current official citation for `60–80% food` and `~1,000 hospitalisations/year`.
-4. Decide whether `80,000 estimated episodes/year` is useful live once its `quasi-event/minor event` definition is explained.
-5. Founder selects the live sequence; rehearsal tests comprehension/energy, not merely shock value.
+1. **Primary ISTAT extraction:** retrieve or recompute the exact 2022 (and, if useful, historical 2007) W79/W80 age-band numerator and accidental-death denominator behind `~25–27% / 11.5% / 4.7%` and the `40–50 deaths/year` order of magnitude.
+2. **Ministry ~1,000/year provenance:** the cited ESFBI study does not directly establish Italian annual incidence. If no better underlying national source is found, retain only as a dated Ministry estimate.
+3. **Ministry ~80,000 provenance:** treat as an official 2017 estimate but not as directly validated by the cited scale-up paper; do not elevate to `GREEN` without a matching primary derivation.
+4. **Founder selection:** choose the actual live sequence only after this evidence distinction is understood.
+5. **Rehearsal:** test comprehension, emotional effect and transition quality—not shock value alone.
