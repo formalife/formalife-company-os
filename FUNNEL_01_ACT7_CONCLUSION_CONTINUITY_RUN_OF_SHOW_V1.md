@@ -1,6 +1,6 @@
 # Funnel 01 — ACT 7 Conclusion / Continuity Run-of-Show V1
 
-Status: CURRENT PRODUCTION PROPOSAL — founder review required before promotion into the V5 canonical delivery architecture; referral mechanics already founder-approved in `FUNNEL_01_REFERRAL_SYSTEM_V2.md`
+Status: CURRENT FOUNDER-APPROVED OPERATING RUN-OF-SHOW — referral mechanics governed by `FUNNEL_01_REFERRAL_SYSTEM_V2.md`; exact medical wording inside final retrieval remains subject to Dott.ssa Mafalda Camposarcone sign-off
 Date: 2026-09-22
 
 Purpose: close the live Full Course in a way that preserves the learning peak created by ACT 6, compresses critical memory, transfers one concrete action into the home, explains the AFTER system without turning the ending into a sales/admin dump, and finishes on a meaningful bookend to ACT 0.
@@ -49,7 +49,7 @@ The actual last memory of the official event should therefore **not** be:
 - asking where the toilets/parking are;
 - waiting in a queue for materials.
 
-Operational/admin work is deliberately moved **before the final 90–120 second close**.
+Operational/admin work is deliberately moved **before the final 2 min 15 sec close**.
 
 ---
 
@@ -127,13 +127,15 @@ Do not summarize all ACT 5 emergencies again.
 
 # 4. 00:01:15–00:02:15 — 24-hour transfer commitment
 
-## Purpose
+## Founder decision
 
-Move one learning outcome from `I understood it in class` to `I changed something in my household`.
+Every participant chooses **one concrete household action to complete within 24 hours**.
+
+Purpose:
+
+move one learning outcome from `I understood it in class` to `I changed something in my household`.
 
 Do not give everyone the same homework.
-
-Prompt each participant to choose **one concrete action within 24 hours**.
 
 Suggested options:
 
@@ -151,15 +153,15 @@ Example:
 
 `Dopo cena, io e il mio partner decidiamo chi chiama il 112 e chi interviene.`
 
-## Physical implementation
+## Physical implementation — founder-approved direction
 
-Do not add a large new product component if unnecessary.
+Do not add a large new product component.
 
-Preferred V1 options, in order:
+V1 implementation:
 
 1. add a `La mia azione nelle prossime 24 ore` field to the existing Family Safety Checklist;
-2. if two caregivers need separate ownership, duplicate a very small personal slip/card;
-3. use the participant worksheet if already present.
+2. if two caregivers need separate ownership, duplicate a very small personal slip/card only where useful;
+3. use an existing participant worksheet if one is later produced and makes the duplicate piece unnecessary.
 
 Participants take ~20–30 seconds to write the action.
 
@@ -221,7 +223,7 @@ Each household Pack contains **2 Pass Sicurezza**.
 
 Keep the ask short and concrete.
 
-Recommended direction:
+Current direction:
 
 **`Nel vostro Pack trovate due Pass Sicurezza. Se vi viene in mente una persona che si occupa regolarmente di un bambino e a cui pensate possa essere utile prepararsi meglio, passategliene uno. Non dovete spiegarle o venderle il corso: il Pass la porta nel punto giusto per capire da sola se vuole vedere direttamente date e programma oppure prima approfondire.`**
 
@@ -244,7 +246,7 @@ The T+7 digital referral request remains only for actual reviewers/testimonial g
 
 # 7. 00:05:30–00:07:45 — Certificates / materials / operational handoff
 
-## Design principle
+## Founder decision
 
 Administration happens **before** the official emotional ending.
 
@@ -285,11 +287,11 @@ If a venue/process currently requires signatures at the exit desk, redesign that
 
 # 8. 00:07:45–00:10:00 — Final bookend / official close
 
-## Purpose
+## Founder-approved direction
 
 Close the meaning of the day, not its logistics.
 
-The ending should reconnect four things:
+The ending reconnects four things:
 
 1. the uncertainty visible in ACT 0;
 2. the materially harder scenario handled in ACT 6;
@@ -326,13 +328,13 @@ If a different volunteer was used or the participant is uncomfortable, skip this
 
 ### Step 3 — reconnect the room
 
-Direction:
+Current approved direction:
 
 **`All'inizio abbiamo visto quanto sia facile partire dall'istinto quando non abbiamo ancora una struttura. Alla fine avete visto una situazione più difficile, con più cose da riconoscere e più decisioni da prendere. Il punto non è uscire da qui pensando di sapere tutto. Il punto è non dover partire da zero.`**
 
-### Step 4 — recommended final meaning
+### Step 4 — signature close V1
 
-Working preferred close:
+Founder-approved V1 meaning:
 
 **`Prepararsi non significa vivere aspettando che succeda un'emergenza. Significa poter vivere le giornate normali sapendo che, se qualcosa cambia, non dovrete inventare tutto da zero.`**
 
@@ -344,9 +346,7 @@ Thank the room.
 
 Course officially ends.
 
-## Important
-
-This wording is a **working proposed close**, not yet a founder-approved signature line.
+The exact spoken copy may later be polished for natural delivery, but the **meaning/order is current founder decision** and should not be replaced with generic motivational language.
 
 Do not claim:
 
@@ -368,9 +368,11 @@ Instructors may remain for:
 - optional photo where consented;
 - missing material/support issues.
 
-Do not restart a group lecture or sales pitch.
+Founder decision:
 
-Do not ask for the Google review in person after the final line.
+**do not restart a group Q&A, sales pitch or Google-review request after the official close.**
+
+Google review remains T+24h.
 
 ---
 
@@ -417,7 +419,7 @@ Record:
 
 - total ACT 7 duration;
 - admin duration;
-- whether final close still has a full uninterrupted 90–120 seconds;
+- whether final close still has a full uninterrupted 2 min 15 sec;
 - whether any material queue continues after official end.
 
 ## Learning
@@ -462,26 +464,17 @@ ACT 7 fails if:
 
 ---
 
-# 14. Decision status / open items
+# 14. Decision status
 
-## Already founder-approved inputs used here
+## FOUNDER DECISION — current
 
-- 10-minute ACT 7 budget in V5;
-- Guide + Family Emergency Pack + customer stream + free refresh;
-- 2 Pass Sicurezza at T=0;
-- referral router ready/not-ready;
-- Guide Gift on successful referred Full purchase;
-- Google review at T+24, not in the room;
-- T+7 referral follow-up only to actual reviewers/testimonial givers.
+Approved on 2026-09-22:
 
-## New proposals requiring founder review
+1. **24-hour household transfer commitment** is an explicit ACT 7 step;
+2. the commitment should live primarily inside the Family Safety Checklist / small personal piece rather than a large new asset;
+3. certificates/admin are completed **before** the last 2:15;
+4. the last 2:15 are protected for a bookend to ACT 0/6;
+5. signature close V1 uses the `Prepararsi non significa vivere aspettando... / non partire da zero` meaning above;
+6. no group Q&A, sales restart or Google-review request after the official close.
 
-1. **24-hour household transfer commitment** as an explicit ACT 7 step;
-2. add the commitment field to the Family Safety Checklist / personal piece rather than creating a large new asset;
-3. complete certificates/admin **before** the last 2:15;
-4. reserve the actual last minutes for a bookend to ACT 0/6;
-5. use the working signature meaning:
-   - `Prepararsi non significa vivere aspettando che succeda un'emergenza...`
-6. no group Q&A or review request after the official close.
-
-If approved, promote these into `FUNNEL_01_FULL_DELIVERY_SYSTEM_V5_CANONICAL.md` and the Master Operating System.
+These decisions are promoted into the V5 canonical delivery architecture and Master Operating System.
