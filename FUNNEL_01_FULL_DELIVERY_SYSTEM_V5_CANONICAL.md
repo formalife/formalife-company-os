@@ -65,7 +65,7 @@ Working duration: ~12 min.
 Approximately 2 minutes:
 
 - who Formalife/instructors are;
-- why the room exists;
+- why this course exists;
 - what participants should be able to recognise/do differently by the end.
 
 Do not spend prime attention on long biographies, company history or administration.
@@ -451,19 +451,20 @@ Teach each emergency directly with the same stable grammar:
 5. **Cosa NON fare**;
 6. **Quando chiamare 112 / quando serve valutazione urgente**.
 
-Current topic pool:
+Current founder-approved topic pool:
 
 - foreign-body ingestion;
 - head injury / falls;
 - febrile seizures;
 - poisoning / toxic exposure;
-- drowning / water incident;
 - burns/scalds;
 - anaphylaxis / severe allergic reaction;
-- severe breathing difficulty;
+- drowning / water incident;
 - serious bleeding / major injury first response.
 
-Not every topic receives equal time.
+**Severe breathing difficulty is intentionally excluded as a standalone ACT 5 topic** because its possible causes are too heterogeneous for the desired compressed first-action treatment. Relevant respiratory deterioration remains covered where it materially belongs, including anaphylaxis, drowning and the resuscitation transition.
+
+Current detailed timing is canonical in `FUNNEL_01_ACT5_OTHER_EMERGENCIES_RUN_OF_SHOW_V1.md`, including a protected one-minute operating buffer.
 
 Rule:
 
@@ -622,9 +623,9 @@ All final medical/scientific customer-facing use requires Dott.ssa Mafalda Campo
 2. exact ACT 1 statistics and source slides;
 3. exact Italian post-relief medical follow-up wording for choking;
 4. exact ventilation practical exposure inside ACT 4;
-5. exact timing allocation inside ACT 5 after Mafalda review;
-6. exact equipment inventory and resulting practice density;
-7. final run-of-show minute-by-minute;
+5. ACT 5 timings/content to be validated in rehearsal and Mafalda review;
+6. final equipment/practice-density rehearsal validation;
+7. remaining run-of-show blocks and full-course integration;
 8. final slide deck and instructor script/checklist.
 
 ---
