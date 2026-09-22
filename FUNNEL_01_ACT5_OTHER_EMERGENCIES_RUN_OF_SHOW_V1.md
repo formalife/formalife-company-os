@@ -3,7 +3,7 @@
 Status: CURRENT PRODUCTION PROPOSAL — derived from founder-approved V5 architecture and current first-aid/pediatric evidence; exact medical/scientific wording, thresholds and escalation instructions require Dott.ssa Mafalda Camposarcone sign-off before customer delivery
 Date: 2026-09-22
 
-Purpose: convert ACT 5 `Altre Emergenze` into a rehearsable 48-minute live operating sequence that gives parents/caregivers clear first-action competence without pretending to teach full diagnosis or treatment for nine separate emergencies.
+Purpose: convert ACT 5 `Altre Emergenze` into a rehearsable 48-minute live operating sequence that gives parents/caregivers clear first-action competence without pretending to teach full diagnosis or treatment for eight separate emergencies.
 
 Parent architecture:
 
@@ -15,14 +15,15 @@ Founder decisions governing this run-of-show:
 - teach emergencies **one by one**, not through micro-cases;
 - use the same stable grammar for every topic:
   **cos'è -> prevenzione -> riconoscimento -> cosa fare -> cosa NON fare -> escalation / 112 / urgent evaluation**;
-- include all currently selected topics;
-- if a topic cannot be taught responsibly inside the available time, move depth to Guide/Pack/post-course rather than compressing it into unsafe oversimplification.
+- current ACT 5 scope includes eight topics; severe breathing difficulty is intentionally excluded because the underlying cause set is too heterogeneous for a useful standalone first-action block in this course;
+- if a topic cannot be taught responsibly inside the available time, move depth to Guide/Pack/post-course rather than compressing it into unsafe oversimplification;
+- preserve **1 minute of unallocated buffer** rather than filling the entire 48-minute block with planned teaching.
 
 ---
 
 # 1. ACT 5 outcome
 
-At the end of ACT 5 a participant should not believe they can diagnose or independently manage nine medical emergencies.
+At the end of ACT 5 a participant should not believe they can diagnose or independently manage eight medical emergencies.
 
 The intended layperson outcome is narrower and more useful:
 
@@ -62,6 +63,8 @@ No individual micro-case openings.
 
 No open Q&A inside each topic. Questions that need more than a clarification are parked for the end / appropriate follow-up, otherwise the 48-minute contract collapses.
 
+The final one-minute buffer is deliberately protected. It can absorb a transition, one clarification, or natural timing variance, but it is not a ninth content slot.
+
 ---
 
 # 3. Total timing
@@ -71,22 +74,26 @@ No open Q&A inside each topic. Questions that need more than a clarification are
 | Relative time | Segment | Duration |
 |---|---|---:|
 | 00:00–00:02 | Grammar / scope reset | 2 min |
-| 00:02–00:08 | Ingestione di corpo estraneo | 6 min |
-| 00:08–00:13 | Trauma cranico / caduta | 5 min |
-| 00:13–00:18 | Convulsioni febbrili | 5 min |
-| 00:18–00:23 | Avvelenamento / esposizione tossica | 5 min |
-| 00:23–00:28 | Ustione / scottatura | 5 min |
-| 00:28–00:34 | Anafilassi / reazione allergica grave | 6 min |
-| 00:34–00:39 | Grave difficoltà respiratoria | 5 min |
-| 00:39–00:44 | Annegamento / incidente in acqua | 5 min |
-| 00:44–00:48 | Emorragia grave / trauma maggiore — first response | 4 min |
+| 00:02–00:10 | Ingestione di corpo estraneo | 8 min |
+| 00:10–00:16 | Trauma cranico / caduta | 6 min |
+| 00:16–00:21 | Convulsioni febbrili | 5 min |
+| 00:21–00:25 | Avvelenamento / esposizione tossica | 4 min |
+| 00:25–00:30 | Ustione / scottatura | 5 min |
+| 00:30–00:36 | Anafilassi / reazione allergica grave | 6 min |
+| 00:36–00:43 | Annegamento / incidente in acqua | 7 min |
+| 00:43–00:47 | Emorragia grave / trauma maggiore — first response | 4 min |
+| 00:47–00:48 | Buffer libero | 1 min |
 | **TOTAL** | | **48 min** |
 
-Why the asymmetry:
+Founder rationale reflected in the allocation:
 
-- foreign-body ingestion receives 6 minutes because ordinary objects, button batteries, magnets and sharp objects do not have the same urgency;
-- anaphylaxis receives 6 minutes because recognition + adrenaline + positioning + 112 + repeat-dose logic must be coherent;
-- severe bleeding is kept to 4 minutes because the Full teaches a deliberately narrow lay first-response contract rather than tourniquet mastery.
+- foreign-body ingestion receives **8 minutes** because ordinary objects, button batteries, magnets and sharp objects require clear differentiation and enough time to prevent dangerous overgeneralisation;
+- head trauma receives **6 minutes** to make red flags and observation/escalation boundaries clearer;
+- poisoning is reduced to **4 minutes** because the safest consumer contract is deliberately narrow: identify the exposure, do not improvise, use 112/Centro Antiveleni appropriately;
+- severe breathing difficulty is removed as a standalone topic because it has too many materially different possible causes for this compressed block;
+- drowning receives **7 minutes** because prevention, rescuer safety, rescue logic, respiratory priority and post-submersion escalation deserve a more coherent treatment;
+- severe bleeding remains 4 minutes because the Full teaches a deliberately narrow lay first-response contract rather than tourniquet mastery;
+- one minute remains unallocated as operating buffer.
 
 ---
 
@@ -98,7 +105,7 @@ Tell the room exactly what this act is and is not.
 
 Suggested operating direction:
 
-**“Adesso cambiamo ritmo. Non cercheremo di trasformarvi in medici su nove argomenti diversi. Per ciascuna emergenza useremo sempre la stessa domanda: che cos'è, come la prevengo, come riconosco che è seria, cosa faccio subito, cosa non devo fare e quando chiedo aiuto.”**
+**“Adesso cambiamo ritmo. Non cercheremo di trasformarvi in medici su otto argomenti diversi. Per ciascuna emergenza useremo sempre la stessa domanda: che cos'è, come la prevengo, come riconosco che è seria, cosa faccio subito, cosa non devo fare e quando chiedo aiuto.”**
 
 Show the six-part grammar once and leave a small persistent visual marker in subsequent slides.
 
@@ -106,9 +113,11 @@ This is the attention aid: the topic changes, the cognitive structure does not.
 
 ---
 
-# 5. 00:02–00:08 — Ingestione di corpo estraneo
+# 5. 00:02–00:10 — Ingestione di corpo estraneo
 
-Working duration: **6 min**.
+Working duration: **8 min**.
+
+The additional time is for clearer discrimination between object classes and escalation pathways, not for adding specialist gastroenterology detail.
 
 ## COS'È
 
@@ -178,9 +187,11 @@ Evidence basis checked:
 
 ---
 
-# 6. 00:08–00:13 — Trauma cranico / caduta
+# 6. 00:10–00:16 — Trauma cranico / caduta
 
-Working duration: **5 min**.
+Working duration: **6 min**.
+
+The additional minute is for red-flag discrimination and clearer boundary between minor home observation and urgent escalation.
 
 ## COS'È
 
@@ -234,7 +245,7 @@ Evidence basis checked:
 
 ---
 
-# 7. 00:13–00:18 — Convulsioni febbrili
+# 7. 00:16–00:21 — Convulsioni febbrili
 
 Working duration: **5 min**.
 
@@ -296,9 +307,11 @@ Evidence basis checked:
 
 ---
 
-# 8. 00:18–00:23 — Avvelenamento / esposizione tossica
+# 8. 00:21–00:25 — Avvelenamento / esposizione tossica
 
-Working duration: **5 min**.
+Working duration: **4 min**.
+
+The block is deliberately compressed to the safe first-action contract rather than a taxonomy of poisons.
 
 ## COS'È
 
@@ -306,10 +319,10 @@ Poisoning can involve swallowing, inhalation, skin/eye exposure or medication do
 
 ## PREVIENI
 
+Keep to the two highest-yield messages:
+
 - medicines/chemicals locked and in original containers;
-- no decanting into beverage bottles;
-- dosing devices and weight-based medicine instructions used correctly;
-- store household products outside sight/reach.
+- no decanting into beverage bottles / dosing improvisation.
 
 ## RICONOSCI
 
@@ -326,8 +339,7 @@ Emergency signs:
 ## FAI
 
 - ensure rescuer safety;
-- identify substance/product if possible;
-- keep packaging/name/amount/time available;
+- identify substance/product if possible and keep packaging/name/amount/time available;
 - for suspected exposure without immediate life threat, contact a recognised **Centro Antiveleni** promptly for substance-specific advice;
 - if collapse/seizure/breathing problem -> 112 first.
 
@@ -358,7 +370,7 @@ Evidence basis checked:
 
 ---
 
-# 9. 00:23–00:28 — Ustione / scottatura
+# 9. 00:25–00:30 — Ustione / scottatura
 
 Working duration: **5 min**.
 
@@ -423,7 +435,7 @@ Evidence basis checked:
 
 ---
 
-# 10. 00:28–00:34 — Anafilassi / reazione allergica grave
+# 10. 00:30–00:36 — Anafilassi / reazione allergica grave
 
 Working duration: **6 min**.
 
@@ -484,68 +496,11 @@ Evidence basis checked:
 
 ---
 
-# 11. 00:34–00:39 — Grave difficoltà respiratoria
+# 11. 00:36–00:43 — Annegamento / incidente in acqua
 
-Working duration: **5 min**.
+Working duration: **7 min**.
 
-## COS'È
-
-“Difficulty breathing” is a danger state, not one diagnosis. Causes may include asthma, infection/bronchiolitis, croup, allergy, airway disease and others.
-
-The parent's job in this course is not to distinguish every diagnosis; it is to recognise **respiratory effort/failure risk**.
-
-## PREVIENI
-
-For children with known respiratory disease:
-
-- follow the individual action plan;
-- prescribed rescue medication/device available;
-- caregivers know correct use.
-
-General prevention detail belongs outside this 5-minute block.
-
-## RICONOSCI
-
-High-yield red flags:
-
-- clearly increased work of breathing / retractions below ribs;
-- grunting or marked noisy breathing;
-- severe tachypnoea / gasping;
-- unable to feed/speak/cry normally because of breathlessness;
-- pale/blue/grey colour;
-- exhaustion, marked drowsiness or altered responsiveness.
-
-## FAI
-
-- keep the child calm and in the position in which breathing is easiest;
-- activate 112 for severe respiratory distress/red flags;
-- if the child has a **prescribed** emergency medication/action plan (for example asthma), follow that plan while help is activated;
-- monitor for deterioration to unresponsiveness / abnormal breathing -> ACT 4 pathway.
-
-## NON FARE
-
-- do not force a severely breathless child flat if that worsens breathing;
-- do not delay 112 because a home device/medicine is being tried when severe red flags are present;
-- do not use someone else's prescription medication.
-
-## ESCALA
-
-Severe work of breathing, cyanosis/pallor, exhaustion/altered consciousness -> **112**.
-
-## ANCHOR LINE
-
-**“Non devo conoscere la diagnosi per riconoscere che un bambino sta lavorando troppo per respirare.”**
-
-Evidence basis checked:
-
-- Ospedale Pediatrico Bambino Gesù emergency respiratory guidance;
-- NHS / pediatric-hospital respiratory-distress red flags.
-
----
-
-# 12. 00:39–00:44 — Annegamento / incidente in acqua
-
-Working duration: **5 min**.
+The additional time protects four jobs that should not be rushed: prevention, rescuer safety, respiratory-priority first response, and post-submersion escalation.
 
 ## COS'È
 
@@ -559,6 +514,8 @@ Use the four highest-value ERC-style messages:
 - safe/lifeguarded swimming areas;
 - appropriate lifejacket/flotation on watercraft;
 - water-safety/swimming education appropriate to age.
+
+Use the extra time to distinguish **supervision** from mere adult presence: the responsible adult must actually be available to intervene.
 
 ## RICONOSCI
 
@@ -578,7 +535,8 @@ Watch for:
 2. **do not enter dangerous water if untrained** — use flotation/reach/throw rescue where possible;
 3. safely remove from water;
 4. if unresponsive and not breathing normally -> **5 rescue breaths then standard CPR**, directly retrieving ACT 4;
-5. if breathing -> recovery/appropriate position, keep warm, seek urgent professional evaluation when symptoms/concerns exist.
+5. if breathing -> recovery/appropriate position, keep warm, seek urgent professional evaluation when symptoms/concerns exist;
+6. clearly distinguish immediate recovery from the need for professional evaluation when respiratory symptoms, altered state or a significant submersion event create concern.
 
 Bambino Gesù current guidance supports immediate EMS activation in non-fatal drowning with respiratory impairment.
 
@@ -605,7 +563,7 @@ Evidence basis checked:
 
 ---
 
-# 13. 00:44–00:48 — Emorragia grave / trauma maggiore — first response
+# 12. 00:43–00:47 — Emorragia grave / trauma maggiore — first response
 
 Working duration: **4 min**.
 
@@ -668,9 +626,24 @@ Evidence basis checked:
 
 ---
 
+# 13. 00:47–00:48 — Buffer libero
+
+This minute is intentionally **not assigned to a ninth topic or planned teaching point**.
+
+Permitted uses:
+
+- absorb a natural transition;
+- one short clarification;
+- regain timing after a slightly longer high-value explanation;
+- arrive at ACT 6 without starting behind schedule.
+
+Do not routinely consume it in rehearsal. If it disappears every time, the underlying timing plan is too tight and should be corrected rather than pretending the buffer exists.
+
+---
+
 # 14. Slide / visual design contract
 
-ACT 5 should visually feel like one system, not nine unrelated PowerPoints.
+ACT 5 should visually feel like one system, not eight unrelated PowerPoints.
 
 Recommended V1:
 
@@ -699,9 +672,9 @@ Use the following low-friction interactions:
 - use hand raises only for binary misconception checks, not open discussion;
 - vary visual mode: icon, photograph/diagram, red-flag list, simple action arrow;
 - instructor changes physical position or speaker at selected transitions if useful;
-- no single explanation stretch > ~5–6 minutes because the topic itself changes the learner's frame.
+- no single explanation stretch > ~7–8 minutes because the topic itself changes the learner's frame.
 
-Do not add nine mini quizzes; the stable grammar and anchor lines provide the cognitive repetition.
+Do not add eight mini quizzes; the stable grammar and anchor lines provide the cognitive repetition.
 
 ---
 
@@ -716,18 +689,19 @@ For each topic:
 - planned time;
 - actual time;
 - question overrun;
-- transition time.
+- transition time;
+- whether the 1-minute buffer remained unused.
 
 ## Comprehension
 
 Immediately after ACT 5, before scenarios, sample the room without slides:
 
 - button battery: wait or urgent?;
+- head trauma: which change makes you worry?;
 - seizure: what must never go in the mouth?;
 - poisoning: vomit or call for substance-specific advice?;
 - burn: how long under cool running water?;
 - anaphylaxis: what treatment should not be delayed?;
-- respiratory distress: what signs make this 112-level?;
 - drowning: what changes if not breathing normally?;
 - severe bleeding: first physical action?
 
@@ -766,9 +740,8 @@ Before public delivery, specifically confirm:
 5. Italian Centro Antiveleni / 112 / PS routing and any substance-specific exceptions worth teaching;
 6. burn cooling / covering / pediatric escalation threshold;
 7. anaphylaxis recognition, positioning, auto-injector wording and 5-minute second-dose rule;
-8. respiratory-distress red flags and prescribed-medication wording;
-9. drowning post-event evaluation and wording around ventilation priority;
-10. severe-bleeding direct-pressure instructions and tourniquet exclusion boundary.
+8. drowning post-event evaluation and wording around ventilation priority;
+9. severe-bleeding direct-pressure instructions and tourniquet exclusion boundary.
 
 ---
 
