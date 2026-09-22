@@ -103,7 +103,7 @@ This does not remove the need to distinguish consumer education from medical adv
 
 ### A1. Purchase / fit confirmation
 
-Immediately after purchase:
+Immediately after purchase the customer receives a clear confirmation of:
 
 - date/location;
 - 1 Caregiver or 2 Caregivers;
@@ -431,19 +431,20 @@ Using current cash costs, one failed pre-enrolment costs Formalife approximately
 
 Therefore use this mechanism selectively for activation campaigns where the demand signal is worth buying; do not make every edition uncertain.
 
-## Activation threshold — revised with current economics
+## Activation threshold — CURRENT SURVIVAL-PHASE RULE
 
-The earlier provisional 8-person floor is **superseded as a general rule**.
+The earlier provisional 8- and 10-person floors are superseded wherever they conflict with the founder's current survival decision.
 
-With current taxes/materials/pack/Stripe/fixed delivery costs, an 8-person edition can be too thin if many seats are sold through 2-Caregiver orders.
+Current rule:
 
-Recommended current rule:
+- Formalife may confirm/deliver a Brescia Full edition from **5 paying participants**;
+- this is explicitly a **cash-generation / survival floor**, enabled by current EUR 0 instructor cash outflow from unpaid shareholder delivery;
+- it is **not** evidence that five participants produce acceptable normalized economics;
+- normalized target remains **10–12 paying participants** per edition with EUR 200 instructor cost reserved in the sustainable model;
+- cold paid acquisition still requires actual booked-mix, cash contribution and CAC logic rather than headcount alone;
+- every activation edition must publish its minimum and confirmation deadline before pre-enrolment and honor them for that edition.
 
-- for Brescia / low- or zero-CAC activation tests, use **10 paying participants as the provisional customer-facing floor** unless the booked mix/economics justify a different published threshold;
-- for cold paid acquisition, do not confirm from headcount alone until CAC is known; use the actual booked order mix and expected contribution;
-- every activation edition publishes its threshold before pre-enrolment.
-
-This threshold is a planning rule, not a permanent universal standard.
+Canonical detail: `FUNNEL_01_SURVIVAL_OPERATING_FLOOR.md`.
 
 ---
 
@@ -491,6 +492,7 @@ This is a Company OS planning treatment supplied by the founder, not tax advice.
 - travel in Brescia: **EUR 0 current cash cost**;
 - Family Emergency Pack: **EUR 5 estimated / household pack** pending quote;
 - normalized instructors: **EUR 120 + EUR 80 = EUR 200 / edition**, all included;
+- current instructor cash outflow: **EUR 0** while shareholder-instructors voluntarily deliver during the survival phase;
 - customer-care/admin current cash cost: **EUR 0** because founder performs it;
 - Brevo/content/scientific-review current incremental cash cost: **EUR 0**;
 - free refresh incremental cash cost: approximately **EUR 0** when attached to spare capacity in a Full edition;
@@ -498,7 +500,7 @@ This is a Company OS planning treatment supplied by the founder, not tax advice.
 
 ### Scalability warning
 
-Founder/customer-care work and unpaid scientific review may have EUR 0 current cash cost but are not automatically EUR 0 normalized replacement cost.
+Founder/customer-care work, shareholder delivery and unpaid scientific review may have EUR 0 current cash cost but are not automatically EUR 0 normalized replacement cost.
 
 Do not use current volunteer/founder labor as proof that the model can scale without added operating cost. Track time/capacity once volume grows.
 
@@ -538,9 +540,12 @@ Contribution before edition fixed cost per occupied seat is therefore materially
 
 - room: EUR 60;
 - normalized instructors: EUR 200;
-- total: **EUR 260 / edition**.
+- normalized total: **EUR 260 / edition**;
+- current survival cash view: room EUR 60 + instructor cash outflow EUR 0.
 
 ## Edition contribution sensitivity before CAC/overhead
+
+### Normalized view — includes EUR 200 instructor reserve
 
 | Paying participants | All 1-Caregiver orders | All 2-Caregiver orders |
 |---:|---:|---:|
@@ -548,11 +553,21 @@ Contribution before edition fixed cost per occupied seat is therefore materially
 | 10 | ~EUR 284 | ~EUR 148 |
 | 12 | ~EUR 393 | ~EUR 230 |
 
-Illustrative mixed examples:
+Illustrative mixed normalized examples:
 
 - 10 participants = 6 single-seat orders + 2 two-seat orders -> ~**EUR 230**;
 - 10 participants = 4 single-seat orders + 3 two-seat orders -> ~**EUR 203**;
 - 12 participants = 6 single-seat orders + 3 two-seat orders -> ~**EUR 312**.
+
+### Survival cash view — 5 participants, EUR 0 current instructor cash outflow
+
+| 5-participant mix | Cash contribution after room, before CAC | Normalized contribution after room + EUR 200 instructor cost |
+|---|---:|---:|
+| 5 x 1 Caregiver | ~EUR 212 | ~EUR 12 |
+| 3 x 1 Caregiver + 1 x 2 Caregivers | ~EUR 185 | ~EUR -15 |
+| 1 x 1 Caregiver + 2 x 2 Caregivers | ~EUR 158 | ~EUR -42 |
+
+This is why five participants can be rational for survival cash while remaining unacceptable as the target scalable model.
 
 These figures still exclude:
 
@@ -578,11 +593,11 @@ This explains why a failed Guide-backed pre-enrolment has a real acquisition cos
 
 # 12. Proof / G4 handoff
 
-G4 must now map proof to the current offer claims.
+G4 proof architecture is now defined in `FUNNEL_01_G4_PROOF_ARCHITECTURE.md`.
 
 Important current distinction:
 
-- scientific/medical review capability is now a founder-provided current asset via Dott.ssa Mafalda Camposarcone;
+- scientific/medical review capability is a founder-provided current asset via Dott.ssa Mafalda Camposarcone;
 - proof that the **rebuilt broader Full** delivers the new preparedness-system experience is still NOT YET EARNED and must come from delivery of the rebuilt product;
 - historical choking-course reviews can support historical delivery credibility but must retain provenance.
 
@@ -648,6 +663,8 @@ Revise any component that adds complexity without customer or economic value.
 - `B2C_FUNNEL_01_CHOKING_FULL_ADAPTIVE.md`
 - `FUNNEL_01_G2_POSITIONING_HYPOTHESIS.md`
 - `FUNNEL_01_G3_BENCHMARK_POLICY_OPTIONS_2026-09-22.md`
+- `FUNNEL_01_G4_PROOF_ARCHITECTURE.md`
+- `FUNNEL_01_SURVIVAL_OPERATING_FLOOR.md`
 - `FLAGSHIP_SCOPE_V1.md`
 - `CURRENT_STATE.md`
 - `ASSET_INVENTORY.md`
