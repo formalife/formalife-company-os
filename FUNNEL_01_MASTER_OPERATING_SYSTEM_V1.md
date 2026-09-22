@@ -14,6 +14,8 @@ Primary detailed sources:
 - `FUNNEL_01_G3_FULL_OFFER_ARCHITECTURE.md` — offer/economics/policies;
 - `FUNNEL_01_G4_PROOF_ARCHITECTURE.md` — claim-to-proof system;
 - `FUNNEL_01_FULL_DELIVERY_SYSTEM_V5_CANONICAL.md` — live delivery architecture;
+- `FUNNEL_01_FULL_MASTER_RUN_OF_SHOW_V1.md` — integrated 00:00–04:10 rehearsal/delivery clock;
+- `FUNNEL_01_ACT7_CONCLUSION_CONTINUITY_RUN_OF_SHOW_V1.md` — founder-approved conclusion/continuity operating block;
 - `FUNNEL_01_REFERRAL_SYSTEM_V2.md` — referral engine;
 - `FUNNEL_01_SURVIVAL_OPERATING_FLOOR.md` — current 5-person survival floor.
 
@@ -369,32 +371,61 @@ Normalized target remains **10–12 participants**.
 
 # 9. Full delivery — canonical live arc
 
-Detailed canonical file: `FUNNEL_01_FULL_DELIVERY_SYSTEM_V5_CANONICAL.md`.
+Canonical architecture: `FUNNEL_01_FULL_DELIVERY_SYSTEM_V5_CANONICAL.md`.
 
-Current ~4h10 architecture:
+Integrated rehearsal clock: `FUNNEL_01_FULL_MASTER_RUN_OF_SHOW_V1.md`.
 
-1. **ACT 0 — Open + experiential baseline**
-2. **ACT 1 — Il Problema**
-3. **ACT 2 — Ferma / Valuta / Agisci**
-4. **ACT 3 — Soffocamento**
-5. **Break**
-6. **ACT 4 — Rianimazione pediatrica / QCPR**
-7. **Mini reset**
-8. **ACT 5 — Altre emergenze**
-9. **ACT 6 — Scenari + complex Mirror Test**
-10. **ACT 7 — Continuity / Pack / Pass / refresh / admin**
+Current **250-minute / 4h10** architecture:
+
+1. **ACT 0 — Open + experiential baseline — 12 min**
+2. **ACT 1 — Il Problema — 6 min**
+3. **ACT 2 — Ferma / Valuta / Agisci — 7 min**
+4. **ACT 3 — Soffocamento — 72 min**
+5. **Break — 10 min**
+6. **ACT 4 — Rianimazione pediatrica / QCPR — 55 min**
+7. **Mini reset — 5 min**
+8. **ACT 5 — Altre emergenze — 48 min**
+9. **ACT 6 — Scenari + complex Mirror Test — 25 min**
+10. **ACT 7 — Continuity / household transfer / Pack / Pass / admin / final bookend — 10 min**
 
 ### Signature learning mechanic
 
 Opening:
 
-**consenting volunteer -> ambiguous choking situation -> no coaching -> capture starting behaviour.**
+**consenting volunteer -> effective cough -> deterioration to ineffective cough -> no coaching -> capture starting behaviour.**
 
 Ending:
 
-**same volunteer if willing -> different, more complex scenario -> demonstrate transfer under more variables.**
+**same volunteer if willing -> different, more complex scenario -> second caregiver/112 -> persistent obstruction -> loss of consciousness -> CPR transition -> AED.**
 
 No humiliation; no staged perfect ending; correct errors openly.
+
+### ACT 1 problem map
+
+Founder-directed six-lens logic:
+
+**domestic accidents -> choking observed/broader burden -> age distribution -> causes -> mortality/consequence -> protected meaning close.**
+
+The course uses source-labelled observed data and estimates without blending them.
+
+### ACT 2 Formalife mental protocol
+
+Source: current choking Guide, Chapter 1.
+
+**FERMA**
+- respira;
+- contatto con la realtà;
+- verifica sicurezza.
+
+**VALUTA**
+- cosciente?;
+- respira normalmente?;
+- minaccia immediata visibile?
+
+**AGISCI**
+- chiama aiuto;
+- manovra appropriata;
+- monitora e adatta.
 
 ### Choking practice
 
@@ -403,6 +434,12 @@ Whole-room explanation/demo first.
 Then:
 
 **child station + infant station -> rotate -> guided practice -> correction -> repeat -> variable state -> no-prompt attempt -> reunite -> resolved vs unresponsive pathway.**
+
+Current equipment decision:
+
+- Act+Fast Red temporary child/adolescent workaround;
+- one pediatric choking trainer to be acquired;
+- 2 Little Baby QCPR support infant practice.
 
 ### CPR working sequence
 
@@ -434,9 +471,31 @@ Current founder-approved pool:
 - severe bleeding/major trauma — 4 min;
 - plus 2 min ACT 5 scope reset and **1 min protected buffer**.
 
-`Severe breathing difficulty` is no longer a standalone ACT 5 topic. Founder decision: the possible causes are too heterogeneous for a useful compressed block at this level.
+`Severe breathing difficulty` is no longer a standalone ACT 5 topic.
 
-Detailed timing/content: `FUNNEL_01_ACT5_OTHER_EMERGENCIES_RUN_OF_SHOW_V1.md`.
+### ACT 7 conclusion / continuity — founder-approved
+
+ACT 6 remains the experiential peak. ACT 7 gives it meaning.
+
+Sequence:
+
+1. retrieve three critical anchors;
+2. each participant writes one **24-hour household action**;
+3. explain Guide / Pack / customer updates / free refresh by job;
+4. explain two Pass Sicurezza + Guide Gift briefly;
+5. complete certificates/admin **before** the final 2 min 15 sec;
+6. return attention to the room and close the ACT 0/6 arc;
+7. no group Q&A, sales restart or Google-review request after official close.
+
+Current signature meaning:
+
+**`Prepararsi non significa vivere aspettando che succeda un'emergenza. Significa poter vivere le giornate normali sapendo che, se qualcosa cambia, non dovrete inventare tutto da zero.`**
+
+followed by:
+
+**`Avete un modo per fermarvi, valutare, agire — e strumenti per continuare ad allenarlo. Questo era l'obiettivo di oggi.`**
+
+Exact spoken copy may be polished later without changing the approved meaning/order.
 
 ---
 
@@ -467,12 +526,18 @@ Do not turn:
 
 ## T=0 — in room
 
-- complete course;
-- Guide + Family Emergency Pack;
+Current founder-approved ACT 7 order:
+
+- final memory compression;
+- write one concrete household action to complete within 24 hours;
+- Guide + Family Emergency Pack / resource access;
 - explain customer update stream;
 - explain free refresh entitlement;
 - explain two Pass Sicurezza and make explicit referral invitation;
-- certificates/admin.
+- explain Guide Gift in one sentence;
+- complete certificates/admin before the final bookend;
+- official meaning close;
+- no group Q&A, sales restart or review request after official close.
 
 ## T+24h — Google review
 
@@ -635,6 +700,7 @@ Minimum high-value events include:
 - Full checkout/purchase;
 - activating/confirmed edition state;
 - attendance/no-show;
+- 24-hour household action field completed at ACT 7 where measured;
 - review request;
 - review/testimonial observed;
 - Pass issued/visit;
@@ -673,46 +739,61 @@ Primary funnel economics:
 
 # 16. Current build / test order
 
-Do not activate every theoretical branch simultaneously.
+The Full macro architecture ACT 0–7 is now closed at founder-decision level.
 
-## Now
+## Immediate production sequence
 
-1. final scientific/instructional review of V5 delivery;
-2. build final Full run-of-show and materials;
-3. make Full sales surface / checkout / tracking operable;
-4. produce first rebuilt editions;
-5. collect current proof and economics;
-6. implement Pass/referral attribution;
-7. observe Direct Full vs Guide-first behaviour.
+1. use `FUNNEL_01_FULL_MASTER_RUN_OF_SHOW_V1.md` to run a **full internal rehearsal**;
+2. record planned vs actual time for every segment;
+3. measure ACT 3/4 practice density, waiting time and instructor correction load;
+4. surface all clinical wording/questions requiring Mafalda sign-off;
+5. revise only from observed bottlenecks / clinical review, preserving the founder-approved architecture unless evidence forces a change;
+6. freeze a Delivery Release Candidate;
+7. build final slide deck / visual assets / instructor checklist / Pack pieces against that RC;
+8. make Full sales surface / checkout / tracking operable;
+9. produce first rebuilt paid editions;
+10. collect current proof and economics;
+11. implement Pass/referral attribution;
+12. observe Direct Full vs Guide-first behaviour.
 
 ## Then
 
-8. improve lower-awareness education from observed objections/no-sale reasons;
-9. test acquisition by source;
-10. improve proof and referral economics;
-11. scale only after CAC/payback/capacity are readable.
+13. improve lower-awareness education from observed objections/no-sale reasons;
+14. test acquisition by source;
+15. improve proof and referral economics;
+16. scale only after CAC/payback/capacity are readable.
 
 Digital/Hybrid/BLSD/lifecycle adjacent products remain dormant interfaces until they exist and deserve activation.
 
 ---
 
-# 17. Current open decisions
+# 17. Current open decisions / production gates
 
-Still open, not silently resolved:
+The following are still open or evidence-dependent:
 
 - final customer-facing Full name;
-- memorable final verbal close;
-- exact ACT 1 data/statistics slides;
+- final ACT 1 exact statistics/visual treatment and source footers;
 - final Mafalda sign-off on all clinical sequences/wording;
 - exact post-relief choking medical follow-up wording;
-- ACT 5 timing/content validation during rehearsal;
-- equipment/practice-density validation during rehearsal;
-- final Pack production specifications/cost;
+- exact minimum practical exposure to ventilations inside ACT 4;
+- ACT 5 first-action thresholds/wording after clinical review;
+- full-rehearsal timing results;
+- final equipment/practice-density validation;
+- final Pack production specifications/cost, including the 24-hour action field;
 - exact activation confirmation deadline/balance window;
 - final Guide Gift fulfilment logistics;
 - CAC by source;
 - final sales surface creative/copy;
 - customer-stream editorial cadence.
+
+No longer open:
+
+- ACT 7 architecture;
+- 24-hour household commitment;
+- admin-before-final-bookend rule;
+- final close meaning/order;
+- referral timing T0/T+24/T+7;
+- Guide Gift direction.
 
 ---
 
