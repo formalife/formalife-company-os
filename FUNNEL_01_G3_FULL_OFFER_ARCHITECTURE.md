@@ -1,773 +1,653 @@
 # Funnel 01 — G3 Full Course Offer Architecture
 
-Status: PROVISIONAL OFFER ARCHITECTURE — built from founder-approved G2 direction; founder review and empirical validation required
+Status: CURRENT FOUNDER-APPROVED OFFER DESIGN — operational build, legal wording, G0 claim checks and empirical validation still required
 Date: 2026-09-22
 
-Purpose: translate the founder-confirmed Funnel 01 positioning direction into a concrete, sellable Full Course offer without inventing unsupported clinical claims, fake value stacks or unnecessary SKU complexity.
+Purpose: define the current Full Course offer that makes the founder-approved G2 positioning tangible and economically testable.
 
-This document advances Gate G3 of `B2C_FUNNEL_01_CHOKING_FULL_ADAPTIVE.md`.
-
-Governing positioning direction from G2:
+Governing G2 direction:
 
 **focused choking/weaning trigger -> parent-first broader preparedness system -> practical live flagship + durable reference + household/caregiver logic + visible scientific governance.**
 
-The customer-facing wording is not yet final copy. Scientific/credential claims remain subject to G0. Proof remains subject to G4.
+This file governs the Full offer design for Funnel 01. Customer-facing copy is still to be written. Clinical/scientific statements remain subject to claim-by-claim review before publication.
 
-`Light / Serata Anti-Panico` is not part of this direct B2C offer.
+`Light / Serata Anti-Panico` remains outside direct B2C.
 
 ---
 
-# 1. Offer design decision
+# 1. Core offer decision
 
 The Full must not be sold primarily as:
 
-**approximately four hours + list of topics + mannequins + attendance certificate.**
+**hours + topic list + mannequins + attendance certificate.**
 
-That structure is highly comparable with the category and does not make the G2 position tangible.
+It is designed and sold as a **parent-first preparedness system** with three visible phases:
 
-The Full should instead be packaged as a **parent-first preparedness system** with three visible phases:
+**BEFORE -> LIVE PRACTICE / DECISION LEARNING -> AFTER / HOME REFERENCE + REFRESH.**
 
-**BEFORE -> LIVE PRACTICE / DECISION LEARNING -> AFTER / HOME REFERENCE.**
-
-The offer must make it easy for the customer to understand:
+The offer must make clear:
 
 1. who it is for;
 2. what preparedness gap it closes;
 3. what happens before, during and after;
 4. what requires live practice and why;
 5. what remains available at home;
-6. who else in the care network may need preparation;
-7. what it does not attempt to do;
-8. what the customer pays and under what conditions;
-9. what evidence makes the claims credible;
-10. why action now is rational when a real date/capacity constraint exists.
+6. which other caregiver may need preparation;
+7. what the course does not attempt to do;
+8. price and conditions;
+9. customer protection / risk reversal;
+10. proof and scientific responsibility;
+11. real date/capacity constraints;
+12. the next useful relationship after the course.
 
 ---
 
-# 2. Target state and customer job
+# 2. Primary customer job and fit
 
-## Working primary target
+## Initial beachhead
 
-Parent/caregiver entering or currently in complementary feeding / starting solids who has a meaningful pediatric-choking concern and is open to broader emergency preparedness.
+Parent/caregiver entering or currently in complementary feeding / starting solids with meaningful pediatric-choking concern and openness to broader emergency preparedness.
 
-The Full may also serve other appropriate parents/caregivers. The choking/weaning segment is the initial commercial beachhead hypothesis, not a restriction that every attendee must be in weaning.
+The Full may serve other appropriate parents/caregivers; the beachhead remains a commercial hypothesis to validate.
 
-## Customer job
+## Working customer job
 
-Working internal formulation:
+**“I want my household to be meaningfully better prepared to recognize and handle the first critical minutes of the pediatric emergencies I am realistically most likely to face, without becoming a healthcare professional or reconstructing everything from fragmented information.”**
 
-**“I want my household to be meaningfully better prepared to recognize and handle the first critical minutes of the pediatric emergencies I am realistically most likely to face, without having to become a healthcare professional or reconstruct everything from fragmented information.”**
+## Desired learning state
 
-## Desired customer state
-
-Subject to G0 scientific validation, the learning system should help the lay parent/caregiver become better prepared to:
+Subject to scientific validation of each content element:
 
 **PREVENT what is realistically preventable -> RECOGNIZE when something is seriously wrong -> ACT with the appropriate immediate first response -> ESCALATE to appropriate professional help.**
 
-This is preparation and education. It is not a promise of perfect performance, guaranteed calm or clinical outcomes.
+No promise of perfect performance, guaranteed calm or medical outcome is authorized.
+
+## Non-fit
+
+Route elsewhere when the person primarily wants:
+
+- professional/regulated certification;
+- individual medical diagnosis/treatment advice;
+- encyclopedic pediatric medicine;
+- a fully remote core product, until one exists;
+- only a low-commitment choking reference — Guide may fit better;
+- an unavailable date/location — waitlist or future edition.
 
 ---
 
-# 3. Offer fit / non-fit
+# 3. Scientific governance — current founder-provided operating fact
 
-## Fit
+Founder states that Formalife scientific/medical educational material is validated by **Dott.ssa Mafalda Camposarcone**, pediatrician with approximately thirty years of experience, BLSD-certified instructor and 25% Formalife shareholder.
 
-The Full is designed for a parent/caregiver who:
+Founder further states:
 
-- wants practical, parent-focused pediatric emergency preparedness rather than a professional credential;
-- values supervised practice where motor skill matters;
-- wants more than a choking-only reference product;
-- accepts a curated course rather than an encyclopedic pediatric-medicine syllabus;
-- is willing to spend meaningful live time practicing and learning.
+- she currently performs this role without compensation;
+- Formalife has the necessary permissions for commercial use of her name/image and related materials;
+- future medical/scientific claims and materials will continue to receive specific checks before customer use.
 
-## Non-fit / route elsewhere
+Current operating decision:
 
-The Full is not the correct product when the customer primarily wants:
+**no separate authority registry is required at this stage.**
 
-- a professional/regulated certification;
-- individual medical diagnosis or treatment advice;
-- an exhaustive pediatric medicine course;
-- a fully remote product — not currently available as a Formalife core offer;
-- only a low-commitment choking reference — the Guide may fit better;
-- an unavailable date/location — route to waitlist rather than forcing another product.
+The control that remains mandatory is simpler:
 
-This fit boundary should be visible in the commercial material because filtering inappropriate demand is part of a strong offer.
+**customer-facing medical/scientific content or claim -> specific clinical/scientific check before publication/use.**
+
+This does not remove the need to distinguish consumer education from medical advice or attendance certificates from professional certification.
 
 ---
 
-# 4. V1 Full package — recommended architecture
-
-The package below distinguishes **current facts**, **required V1 build elements** and **optional future tests**.
+# 4. V1 offer package
 
 ## PHASE A — BEFORE
 
 ### A1. Purchase / fit confirmation
 
-Status: REQUIRED OPERATING ELEMENT.
+Immediately after purchase:
 
-Immediately after purchase the customer receives a clear confirmation of:
-
-- chosen date/location;
-- Single or Couple / two-caregiver formula;
-- participant count;
-- what the course is and is not;
+- date/location;
+- 1 Caregiver or 2 Caregivers;
+- participant names/count;
+- fit/non-fit and course boundaries;
 - logistics;
-- support contact for administrative questions;
-- attendance / transfer / cancellation rules once standardized.
-
-Job:
-
-**remove uncertainty before the event and prevent avoidable no-shows or mismatched expectations.**
+- customer-protection policy;
+- support contact.
 
 ### A2. Pre-course orientation
 
-Status: RECOMMENDED V1 BUILD — small asset, not a second course.
-
-A concise approved pre-course orientation should:
-
-- set expectations about the parent-first preparedness job;
-- explain that live time will prioritize practice and first-response decisions;
-- tell participants how to arrive prepared for the practical work;
-- optionally ask one short question about the emergency concern they most want clarified, if the answer is operationally used.
-
-Format can be a short page/video/email sequence. Do not build a large pre-course digital curriculum before evidence requires it.
+Build one concise orientation asset, not a second digital course.
 
 Job:
 
-**protect live time and make the system feel designed before the classroom begins.**
+- frame the broader parent-first preparedness system;
+- set practical expectations;
+- reduce live theory that can be transferred beforehand;
+- prepare participants to use live time for decision/practice work.
+
+Format may be short video/page/email; exact format is implementation, not strategy.
 
 ---
 
-## PHASE B — DURING
+## PHASE B — LIVE
 
-### B1. Live Full Course
+### B1. Duration — FOUNDER-APPROVED DIRECTION
 
-Status: CURRENT PRODUCT BEING REBUILT.
+Based on current international benchmark work, retain approximately **4 hours of meaningful live education/practice**.
 
-Current commercial structure:
+Operational calendar target:
 
-- in person;
-- approximately four hours;
-- contractual maximum 12 participants;
-- attendance certificate only, not professional certification.
+- approximately 3h50–4h00 meaningful teaching/practice;
+- approximately 10–20 minutes total break/transition;
+- total on-site block approximately **4h10–4h20**.
 
-Curriculum direction is canonical in `FLAGSHIP_SCOPE_V1.md` and remains subject to scientific validation.
+Do not stretch to five hours merely to preserve low-value theory. Lower-priority material should move to pre/post-course reference layers.
 
-The live offer should concentrate meaningful time on:
+Exact instructional allocation remains subject to scientific/instructional design.
 
-- emergency recognition / escalation framework;
+### B2. Live priorities
+
+Canonical curriculum direction remains in `FLAGSHIP_SCOPE_V1.md`:
+
+- recognition/escalation framework;
 - choking prevention, recognition and high-depth supervised disobstruction practice;
-- meaningful practical introduction to the unresponsive child / pediatric resuscitation and AED awareness;
+- meaningful hands-on introduction to unresponsive child / pediatric resuscitation and AED awareness;
 - curated respiratory/severe-allergy, seizure and selected injury/exposure situations;
-- prevention attached to relevant risks rather than an encyclopedic babyproofing module.
+- prevention attached to the relevant emergency rather than generic babyproofing theory.
 
-### B2. Supervised practical correction
+### B3. Supervised practice
 
-Status: REQUIRED CORE VALUE.
+Where motor performance matters, participants receive genuine practice, correction and repetition.
 
-Where motor performance matters, the participant must receive genuine supervised practice, correction and repetition rather than passive demonstration only.
+This is required product value, not a uniqueness claim by itself.
 
-This is not claimed as unique. Its role is to make the **preparedness system** operational rather than purely informational.
+### B4. Reusable decision framework
 
-### B3. Reusable decision framework
+The course must teach one coherent orientation/decision structure across selected emergencies rather than a disconnected topic list.
 
-Status: REQUIRED DESIGN ELEMENT, subject to G0.
-
-The participant should be taught a coherent way to orient themselves across selected emergency situations rather than memorizing isolated facts.
-
-`Ferma. Valuta. Agisci.` may support the educational structure but must not be represented as a proprietary clinical protocol or as evidence of superior performance.
+`Ferma. Valuta. Agisci.` can support didactics but is not a proprietary clinical protocol or evidence of superior outcomes.
 
 ---
 
 ## PHASE C — AFTER
 
-### C1. Guida Anti-Panico al Soffocamento Pediatrico
+### C1. Guida Anti-Panico
 
-Status: CURRENT INCLUDED COMPONENT.
+Current included component:
 
-Current architecture:
+- 1 Caregiver -> one Guide;
+- 2 Caregivers -> two Guides, unless one or both participants already own their Guide through the Training Credit path.
 
-- Single includes one Guide;
-- Couple includes two Guides.
+The Guide remains the durable choking-specific reference, not the reference for every Full topic.
 
-Job inside the Full:
+### C2. Formalife Family Emergency Pack — FOUNDER-APPROVED DESIGN DIRECTION
 
-**durable choking-specific reference after the live experience.**
+Build a low-cost, tangible family preparedness pack rather than an artificial bonus stack.
 
-The Guide is not presented as a reference for every topic covered by the broader Full.
+V1 design:
 
-### C2. Family Emergency Reference Pack V1
+1. Emergency Action Cards — small laminated/versioned quick-reference set;
+2. fridge emergency card / magnet with 112, blank family contacts and QR to current resources;
+3. Caregiver Handover Card for grandparents/babysitters/other caregivers;
+4. Family Safety Checklist;
+5. a small set of at-home decision/scenario cards, explicitly not a substitute for manikin practice;
+6. QR/access card to the versioned digital reference hub;
+7. 12-Month Practice Refresh Pass;
+8. compact branded folder/envelope.
 
-Status: RECOMMENDED NEW V1 COMPONENT — HYPOTHESIS; G0 review required before customer use.
+Founder planning estimate for the pack: **approximately EUR 5 per pack**, to replace with supplier quotes.
 
-The broader Full needs a durable reference layer beyond a choking-only book if Formalife wants to sell a preparedness system rather than a one-day event.
+Recommended economic implementation: **one family pack per household/order**, with duplicate personal quick-reference cards for a second caregiver only where useful. This is more coherent with the household job and protects 2-Caregiver economics. If Formalife chooses two complete packs for a 2-Caregiver order, subtract approximately EUR 5 additional contribution per such order.
 
-Recommended V1 job:
+Do not assign fictional standalone retail values to pack components.
 
-- concise, approved reference for the broader decision/escalation framework and selected high-value course reminders;
-- optimized for later consultation, not for reproducing the live curriculum;
-- clear emergency/medical-advice boundaries;
-- version/date visible so updates can be governed.
+### C3. Free practical retraining — FOUNDER DECISION
 
-Format should be deliberately small and maintainable — for example a concise printed/digital reference pack — rather than a second 176-page book.
+Every Full participant receives **one free practical retraining opportunity within 12 months** of the original Full attendance.
 
-Do not assign a fake standalone monetary value. It is an integrated component of the Full result.
+Current operating direction:
 
-### C3. Post-course recap / refresh touchpoint
+- approximately the final 90 minutes of an appropriate Full edition;
+- practice/decision refresh, not repetition of the full course;
+- one redemption per participant;
+- booking required;
+- customer remains subject to refresh attendance/no-show rules to be specified;
+- actual use must be tracked.
 
-Status: RECOMMENDED V1 TEST.
+Founder states the incremental cash cost is currently approximately EUR 0 because refresh participants can join the final practical portion of a Full edition.
 
-A minimal post-course sequence should:
+Economic caution:
 
-- deliver/access approved reference materials;
-- reinforce where to find them;
-- remind the customer what the course does and does not replace;
-- collect feedback and service issues;
-- later support an evidence-based refresh route if/when Formalife designs one.
+**cash cost EUR 0 does not automatically mean capacity cost EUR 0.**
 
-Exact cadence is a test variable, not doctrine.
+If the contractual/operational maximum of 12 people includes refresh attendees, a refresh seat can displace a paying seat in a full edition. Therefore refresh capacity must be controlled so the benefit is delivered without silently consuming profitable sellable capacity. Track:
 
-Job:
+- refresh redemptions;
+- edition seat fill;
+- whether refreshers occupy otherwise sellable capacity;
+- no-show rate.
 
-**extend useful value beyond the room and create the customer-success/proof loop.**
+### C4. Dedicated customer relationship stream — FOUNDER DECISION
 
-### C4. Ongoing clinical support
+Full customers enter a dedicated Formalife customer stream designed to:
 
-Status: NOT INCLUDED BY DEFAULT.
+- continue delivering useful pediatric-safety information;
+- share verified news, articles, updates and seasonal issues;
+- cover relevant adjacent topics when useful;
+- keep Formalife mentally available;
+- support referral;
+- surface real backend/lifecycle needs;
+- offer future products only when relevant to the customer's state/trigger.
 
-Do not promise open-ended medical Q&A or real-time clinical support as part of the Full unless Formalife separately designs, staffs and governs that service.
+Transactional/service communication and marketing/editorial communication must remain legally and operationally distinguishable; consent, unsubscribe and suppression rules must be implemented correctly.
 
-Administrative support and clarification of approved course materials are different from individual medical advice.
+Cadence and exact editorial format remain implementation tests.
+
+Historical Frank Merenda email research remains pending because the currently connected Gmail account is not the requested `raffph@gmail.com` archive.
 
 ---
 
-# 5. Offer variants
+# 5. Customer-facing package names and price
 
-## O1 — Single / one caregiver
+## O1 — 1 Caregiver
 
-Current price: **EUR 80**.
+**EUR 80 customer price.**
 
-Current / proposed package:
+Includes:
 
 - one live participant;
-- one Guida Anti-Panico;
+- one Guide unless already owned through the Guide-first path;
 - pre-course orientation;
-- live Full Course;
+- live Full;
 - supervised practical work;
-- Family Emergency Reference Pack V1 once approved;
-- post-course recap/customer-success sequence;
-- attendance certificate within approved wording.
+- one Family Emergency Pack per household/order;
+- post-course customer stream;
+- one free practical refresh within 12 months;
+- attendance certificate within approved wording;
+- Better-Than-Risk-Free protection below.
 
-## O2 — Couple / two caregivers
+## O2 — 2 Caregivers
 
-Current price: **EUR 120 total**.
+**EUR 120 total customer price.**
 
-Current / proposed package:
+Customer-facing language should be functional rather than romantic:
+
+**2 Caregivers = two adults who regularly care for the child: partner, grandparent, babysitter or another trusted caregiver.**
+
+Includes:
 
 - two live participants;
-- two Guida Anti-Panico copies;
-- same before/during/after preparedness system for both participants;
-- two-participant attendance / records as operationally required.
+- two Guides total unless already owned through Guide-first paths;
+- same before/live/after system for both;
+- one Family Emergency Pack per household/order, with duplicate personal quick-reference pieces where useful;
+- two refresh entitlements, one per participant.
 
-### Customer-facing naming hypothesis
+### Upgrade mechanic — FOUNDER-APPROVED DIRECTION
 
-Test whether `Single / Couple` is less accurate than a more functional framing such as:
+A 1-Caregiver customer may add a second caregiver for **+EUR 40**, subject to real seat availability and a defined operational cutoff.
 
-**1 caregiver / 2 caregivers**
+Do not create 3/4-person group discounts in V1.
 
-because the second participant may be a partner, grandparent or another regular caregiver.
+### Capacity warning
 
-This is a copy/offer test, not a current naming decision.
+2 Caregivers is valuable when it creates real household coverage, but it uses two live seats at a lower average price per seat.
 
-### Economic warning on the Couple formula
-
-The Couple formula improves household coverage and can increase order value, but it also uses two of the maximum 12 live seats.
-
-At current prices and direct material cost:
-
-- one Single order contributes EUR 71 before edition-level fixed room/instructor cost and before CAC/overhead;
-- one Couple order contributes EUR 102 before edition-level fixed room/instructor cost and before CAC/overhead;
-- moving one buyer from Single to Couple adds EUR 40 revenue and approximately EUR 9 direct participant material cost, therefore about EUR 31 incremental contribution, while consuming one additional seat.
-
-If editions have spare capacity, this can be attractive.
-
-If editions regularly sell out, the opportunity cost of the second discounted seat becomes material because two Single participants generate more revenue/contribution than one Couple order using the same two seats.
-
-Therefore Couple should be sold because it solves a real care-network job, but the price/mix must be read together with fill rate and contribution per available seat.
-
-Do not change the founder-approved EUR 80 / EUR 120 architecture before a readable baseline exists.
+Therefore monitor contribution per occupied seat and do not push 2 Caregivers indiscriminately when editions are capacity-constrained.
 
 ---
 
-# 6. Guide-first bridge / Training Credit
+# 6. Training Credit — FOUNDER-APPROVED TEST ARCHITECTURE
 
-The Guide remains an optional paid information front-end, not a mandatory prerequisite.
+Guide remains an optional paid front-end, never a mandatory toll booth.
 
-For a Guide buyer who later wants supervised practice and broader preparedness, Training Credit can reduce the feeling of paying twice.
+## Standard Credit
 
-### Current known fact
+From day 91 through day 365 after Guide purchase:
 
-The amount paid for the Guide can, under defined conditions, become credit toward the Full Course.
+**EUR 19.90 Guide purchase -> EUR 19.90 Full credit.**
 
-### OPEN — must be standardized before promotional use
+## 150% Momentum Credit
 
-G3 is not complete for Guide-first acquisition until Formalife defines:
+Within the first 90 days:
 
-- exact credit amount when price/promotions vary;
-- expiry or no-expiry;
-- whether credit can be transferred;
-- whether it applies to both Single and Couple;
-- whether multiple credits stack;
-- what happens when the Full already includes a Guide the buyer owns;
-- cancellation/refund interaction;
-- how the credit is technically redeemed and attributed.
+**EUR 19.90 Guide purchase -> EUR 29.90 Full credit.**
 
-Until these rules are approved, Training Credit should not be used as a strong public acquisition promise.
+Purpose:
 
----
+- reward progression from information/reference to supervised broader preparedness;
+- create a legitimate reason to act without generic discounting;
+- make previous educational spend appreciate rather than disappear.
 
-# 7. No bonus-stack inflation
+## Guide already owned
 
-V1 should not create unrelated “bonuses” merely to manufacture a large theoretical value stack.
+For a Guide buyer who upgrades to Full, the already-delivered Guide counts as their included Guide.
 
-The customer should perceive value because the package is coherent around preparedness:
+Do **not** automatically give the same customer a duplicate copy merely because the standard direct-Full package includes a Guide.
 
-**orientation -> live supervised learning -> durable references -> customer-success follow-through.**
+For 2 Caregivers, provide a second Guide if the second participant does not already own one.
 
-Possible future bonuses/add-ons must pass the same test:
+This avoids both duplicate-value confusion and unnecessary cost.
 
-**does this materially improve preparedness, convenience or caregiver coverage?**
+## Household credit
 
-If not, exclude it.
+Where two caregivers separately bought Guides, credits may be combined for 2 Caregivers, but the Momentum version should use a controlled cap until real economics are observed.
 
-Do not assign invented list prices to internal components to create an artificial anchor.
+Initial test cap: **EUR 40–50 total** for the 2-Caregiver Momentum path.
 
----
+## Economics / kill condition
 
-# 8. Risk architecture
+Using current founder-provided costs and treating the existing Guide as the included Full copy:
 
-G3 should reduce the risks the customer actually perceives rather than defaulting immediately to a refund guarantee.
+- direct 1-Caregiver contribution before edition fixed cost/CAC: approximately **EUR 54.42**;
+- Guide -> Full with 100% credit: approximately **EUR 49.12** across the relationship before edition fixed cost/CAC;
+- Guide -> Full with 150% Momentum Credit: approximately **EUR 41.07** across the relationship before edition fixed cost/CAC.
 
-## Risk R1 — “Is this the right course for me?”
+Therefore 150% Momentum costs roughly **EUR 8.05 more contribution than 100% credit** and roughly **EUR 13.35 versus a direct Full buyer**, before considering acquisition differences.
 
-Reducer:
+Keep the 150% credit only if the Guide-first route improves conversion, acquisition cost, speed-to-Full or total relationship economics enough to justify that sacrifice.
 
-- visible fit/non-fit;
-- transparent scope;
-- clear distinction between Guide, Full and certification lane;
-- direct route to ask a simple purchase question.
-
-## Risk R2 — “Will I waste four hours on generic theory?”
-
-Reducer:
-
-- show the curated live architecture;
-- show what receives practical depth;
-- show authentic practical-delivery proof;
-- state what is intentionally outside the live course.
-
-## Risk R3 — “Is the information scientifically credible?”
-
-Reducer:
-
-- verified named roles/credentials once reconciled;
-- visible scientific governance;
-- current-version educational materials;
-- no unsupported medical/superiority claims.
-
-## Risk R4 — “Is this secretly a sales event?”
-
-Recommended operating commitment:
-
-**the paid live-course time is for the promised education and practice, not a disguised sales presentation.**
-
-Any future product offer should be clearly separated from core teaching and should not materially consume the purchased educational experience.
-
-Status: RECOMMENDATION — founder/operating approval required before customer-facing use.
-
-## Risk R5 — “What if my date changes?”
-
-Reducer:
-
-Formalife needs a clear transfer/cancellation/no-show policy.
-
-Status: OPEN. Do not invent customer-facing terms until economics and operations are approved.
-
-## Risk R6 — “What does the certificate mean?”
-
-Reducer:
-
-State clearly that the Full provides an attendance certificate only and is not a professional certification.
-
-## Risk R7 — “Why pay more than a cheaper local course?”
-
-Reducer:
-
-Do not argue abstract quality.
-
-Make the parent-first system visible:
-
-- before/live/after structure;
-- curated practical priorities;
-- durable home reference;
-- caregiver option;
-- scientific governance;
-- explicit scope and trade-offs.
-
-Then test whether customers value that package enough to support the price.
+It is an approved commercial test, not an untouchable permanent entitlement.
 
 ---
 
-# 9. Guarantee / risk reversal boundary
+# 7. Formalife Total Protection — FOUNDER-APPROVED POLICY DIRECTION
 
-Layer 1 supports meaningful risk reversal, but no guarantee should be invented merely because “a strong offer needs a guarantee”.
+Final legal/customer wording must be reviewed before publication, but the operating policy is approved as follows.
 
-Before testing a financial or satisfaction guarantee Formalife must define:
+## Confirmed edition — customer cancellation / transfer
 
-- the exact customer risk it solves;
-- objective/understandable conditions;
-- refund/abuse exposure;
-- effect on CAC and contribution;
-- interaction with attendance and consumed materials;
-- operational owner.
+### More than 7 days before
 
-For V1 the primary risk reduction should come first from **clarity, fit, proof, transparent policy and a coherent package**.
+Customer chooses:
 
-A stronger guarantee remains a test hypothesis, not a current commitment.
+- full refund; or
+- free transfer to another suitable edition.
 
----
+### 7 days to 48 hours before
 
-# 10. Proof architecture required by the offer
+One free transfer to another edition within 12 months, or 100% Formalife credit if an appropriate date is not yet available.
 
-G4 must build proof against specific offer claims.
+### Less than 48 hours before / before course start
 
-| Offer claim/risk | Proof required | Current status |
-|---|---|---|
-| Formalife has real live-delivery experience | authentic historical photos/reviews/delivery records | ASSET, must preserve product/date provenance |
-| practical work is genuinely supervised | authentic practical-delivery evidence; future rebuilt-Full evidence | historical evidence exists; rebuilt Full needs current proof |
-| education is scientifically governed | verified roles/credentials + review/version process | NEED DATA / G0-G4 |
-| Guide is substantive durable reference | physical/product preview + authorship/provenance | ASSET |
-| broader Full delivers parent-first preparedness system | current rebuilt-Full customer experience/proof | NOT YET EARNED |
-| Couple/2-caregiver package is useful | purchase/attendance/use feedback | TO TEST |
-| before/after layers create additional value | usage/feedback, not internal opinion | TO TEST |
+For genuine family/child illness or material emergency communicated before course start:
 
-Historical choking-course reviews must not be represented as evidence of outcomes from a materially rebuilt broader Full.
+- one free transfer.
 
----
+No medical certificate required initially unless abuse becomes material.
 
-# 11. Offer presentation sequence
+### No-show without notice
 
-This is an information architecture, not final copy.
+No cash refund.
 
-For product/brand-aware and high-intent traffic the Full offer surface should normally answer:
+Test one recovery route:
 
-1. **who this is for + desired preparedness state**;
-2. **why the problem is broader than one isolated choking maneuver** without diluting the choking entry trigger;
-3. **what the Formalife preparedness system contains — before / during / after**;
-4. **proof/authority early enough to reduce distrust**;
-5. **what the live session prioritizes and why**;
-6. **what remains available at home**;
-7. **Single vs Couple / caregiver logic**;
-8. **fit / non-fit and explicit boundaries**;
-9. **price and exactly what is included**;
-10. **real date/location/capacity**;
-11. **FAQ and risk reducers**;
-12. **clear CTA**.
+- rebook once at **50% of the then-current public price**, subject to capacity.
 
-Primary CTA working job:
+## If Formalife cancels a confirmed edition
 
-**choose the appropriate date and participant formula, then purchase.**
+Customer receives:
 
-Possible customer-facing wording can be tested later; the CTA job must remain observable.
+- choice of automatic 100% refund or priority transfer;
+- **EUR 20 future Formalife goodwill credit** because the service failure originated with Formalife.
+
+The goodwill credit is not cash compensation and should have clear expiry/use rules in implementation.
 
 ---
 
-# 12. Urgency and scarcity
+# 8. Pre-enrolment / edition activation — FOUNDER-APPROVED MECHANISM
 
-Only genuine constraints may create urgency.
+Some editions may be marketed before they are confirmed.
 
-Current real constraints include:
+The status must be conspicuous:
 
-- fixed course date;
-- physical location;
-- contractual maximum 12 participants;
-- actual remaining seats;
-- any approved transfer/cancellation cutoff once policy exists.
+**EDIZIONE IN ATTIVAZIONE — PRE-ISCRIZIONE PROTETTA**
 
-Do not use evergreen countdown timers, fake “last seats” or artificial expiry.
+Before commitment the customer must see:
 
-When the current edition is unsuitable, route to a real next-date/location waitlist rather than manufacture pressure.
+- that the edition is not yet confirmed;
+- the minimum threshold for that specific edition;
+- the confirmation deadline;
+- what happens if it activates;
+- what happens if it does not;
+- how payment/refund works.
 
----
+## Preferred premium activation model
 
-# 13. Immediate upsell / cross-sell / downsell around the Full
+### Guide-backed Better-Than-Risk-Free pre-enrolment
 
-## Immediate upgrade — Single -> Couple / second caregiver
+Customer pays **EUR 19.90** and receives the Guide immediately.
 
-Offer when another real caregiver should attend and capacity exists.
+If the edition activates:
 
-The value is broader household preparedness, not “spend more”.
+- the Guide payment becomes Training Credit;
+- if activation occurs inside the Momentum window, the approved 150% Momentum logic may apply;
+- customer pays the remaining Full balance.
 
-Measure:
+If the edition does not activate by the published deadline:
 
-- acceptance rate;
-- contribution per order;
-- contribution per seat;
-- effect on fill rate;
-- whether second participants would otherwise have purchased Single separately.
+- Formalife refunds the EUR 19.90 automatically;
+- customer keeps the Guide.
 
-## Guide buyer -> Full
+Using current cash costs, one failed pre-enrolment costs Formalife approximately **EUR 14.15** in Guide printing + packaging + shipping + lost Stripe fee, before CAC/overhead.
 
-Primary current ascension, using Training Credit only once rules are standardized.
+Therefore use this mechanism selectively for activation campaigns where the demand signal is worth buying; do not make every edition uncertain.
 
-## Full -> immediate unrelated product
+## Activation threshold — revised with current economics
 
-**Do not add one in V1.**
+The earlier provisional 8-person floor is **superseded as a general rule**.
 
-BLSD Formalife, Digital, Private Family and lifecycle verticals are future dormant interfaces until they actually exist and the relevant need is observed.
+With current taxes/materials/pack/Stripe/fixed delivery costs, an 8-person edition can be too thin if many seats are sold through 2-Caregiver orders.
 
-## Full downsell / alternative routing
+Recommended current rule:
 
-- commitment too high / not ready -> Guide;
-- date barrier -> waitlist / future date;
-- location barrier -> waitlist + Guide if useful;
-- price/value uncertainty -> proof/value education first, not automatic discount;
-- certification need -> separate credential lane only after current provider/accreditation details are verified;
-- online-only preference -> Guide currently; future Digital when real.
+- for Brescia / low- or zero-CAC activation tests, use **10 paying participants as the provisional customer-facing floor** unless the booked mix/economics justify a different published threshold;
+- for cold paid acquisition, do not confirm from headcount alone until CAC is known; use the actual booked order mix and expected contribution;
+- every activation edition publishes its threshold before pre-enrolment.
 
----
-
-# 14. Pricing and contribution guardrails
-
-## Current founder-approved prices
-
-- Single: EUR 80;
-- Couple: EUR 120.
-
-Keep these prices for the first controlled proof cycle unless new evidence creates a stronger reason to change them.
-
-Reason:
-
-Changing product architecture, offer package, price and acquisition simultaneously would make causal diagnosis harder.
-
-## Current normalized direct-cost model
-
-- room: EUR 60 / edition;
-- normalized instructor cost: EUR 200 / edition;
-- materials: approximately EUR 9 / participant;
-- payment fees, travel/setup, administration, taxes, overhead and CAC excluded from the current baseline.
-
-For `S` Single orders and `C` Couple orders:
-
-- participants `P = S + 2C`, with `P <= 12`;
-- revenue `= 80S + 120C`;
-- normalized direct cost `= 260 + 9P`;
-- normalized direct contribution before acquisition/overhead `= 71S + 102C - 260`.
-
-Current known contribution range at the target participant count remains approximately:
-
-- 10 participants: EUR 250-450;
-- 12 participants: EUR 352-592;
-
-depending heavily on Single/Couple mix.
-
-## Offer economics rule
-
-Do not judge G3 only on conversion rate.
-
-Read at least:
-
-**offer variant -> participant mix -> revenue -> direct contribution -> complete CAC -> payback -> service burden -> proof/referral created.**
-
-A higher-converting package can still be economically worse if it consumes scarce seats, instructor time or support burden without enough contribution.
+This threshold is a planning rule, not a permanent universal standard.
 
 ---
 
-# 15. Capacity guardrail
+# 9. Better-Than-Risk-Free Guarantee — FOUNDER DECISION
 
-Before increasing traffic, monitor:
+Formalife adopts the following V1 guarantee direction inspired by Jay Abraham's risk-reversal logic:
 
-- actual seat fill;
-- Single/Couple seat mix;
-- waitlist demand;
-- no-show/transfer rate;
-- instructor and room availability;
-- setup/admin burden;
-- customer-support burden.
+**Attend the complete Full Course. If within 24 hours of the end you believe the experience did not justify what you paid, contact Formalife and receive a 100% refund of the Full amount actually paid. The Guida Anti-Panico and Formalife Family Emergency Pack remain yours for the time and trust you invested.**
 
-If editions regularly approach true capacity, Formalife should not continue pushing the same discounted seat economics blindly. Price architecture, edition frequency and delivery capacity become the next decision block.
+Rules:
 
-Do not solve a capacity bottleneck with more acquisition.
+- a reason/feedback can be requested for learning but cannot become an artificial barrier to a legitimate refund;
+- no-show/cancellation uses the separate Total Protection policy;
+- refund reverses any unused future service entitlement tied to the refunded Full, including the free retraining; the customer still keeps the physical Guide/Pack;
+- Stripe fee is lost on refund under the current founder-reported payment economics;
+- guarantee claim rate and retained-material cost must be tracked;
+- no wording may imply guaranteed emergency performance, guaranteed calm or clinical outcome.
+
+This is genuinely better-than-risk-free because the customer can recover the purchase amount while retaining useful tangible materials.
+
+Do not add cash compensation beyond the refund in V1.
 
 ---
 
-# 16. Open operating decisions required to complete G3
+# 10. Current cost and tax model — founder-provided
 
-The following are not safe to invent and remain OPEN:
+## Tax / price basis
+
+For planning calculations:
+
+- Guide sale component: treat as **0% output VAT** under the founder-described publishing treatment;
+- course component: **22% VAT**;
+- hybrid 1-Caregiver EUR 80: book EUR 19.90 + course gross EUR 60.10; course net revenue = `60.10 / 1.22`;
+- 2-Caregiver EUR 120: current architecture includes two Guides, therefore planning allocation = books EUR 39.80 + course gross EUR 80.20; course net revenue = `80.20 / 1.22`.
+
+This is a Company OS planning treatment supplied by the founder, not tax advice.
+
+## Founder-provided direct costs
+
+- Guide print: approximately EUR 7 + 22% VAT = **EUR 8.54 cash** per copy;
+- standalone Guide packaging: EUR 0.40 + VAT = **EUR 0.488 cash**;
+- standalone Guide shipping: EUR 3.95 + VAT = **EUR 4.819 cash**;
+- Stripe: **1.5%** of customer payment; fee is lost on refund;
+- room in Brescia: **EUR 60 / edition**;
+- travel in Brescia: **EUR 0 current cash cost**;
+- Family Emergency Pack: **EUR 5 estimated / household pack** pending quote;
+- normalized instructors: **EUR 120 + EUR 80 = EUR 200 / edition**, all included;
+- customer-care/admin current cash cost: **EUR 0** because founder performs it;
+- Brevo/content/scientific-review current incremental cash cost: **EUR 0**;
+- free refresh incremental cash cost: approximately **EUR 0** when attached to spare capacity in a Full edition;
+- CAC: UNKNOWN.
+
+### Scalability warning
+
+Founder/customer-care work and unpaid scientific review may have EUR 0 current cash cost but are not automatically EUR 0 normalized replacement cost.
+
+Do not use current volunteer/founder labor as proof that the model can scale without added operating cost. Track time/capacity once volume grows.
+
+---
+
+# 11. Revised unit economics — planning view before CAC/overhead
+
+Planning basis uses supplier cash amounts including the stated input VAT and one EUR 5 Family Emergency Pack per household/order.
+
+## 1 Caregiver — EUR 80 gross
+
+- Guide sale component: EUR 19.90;
+- course gross component: EUR 60.10;
+- course net of 22% VAT: **EUR 49.26**;
+- total planning net revenue: **EUR 69.16**;
+- Guide cash print cost: EUR 8.54;
+- Family Emergency Pack estimate: EUR 5.00;
+- Stripe: EUR 1.20;
+- contribution before edition fixed cost/CAC/overhead: **EUR 54.42**.
+
+## 2 Caregivers — EUR 120 gross
+
+Assuming two Guides and one household Family Emergency Pack:
+
+- Guide sale components: EUR 39.80;
+- course gross component: EUR 80.20;
+- course net of 22% VAT: **EUR 65.74**;
+- total planning net revenue: **EUR 105.54**;
+- two Guide cash print costs: EUR 17.08;
+- one Family Emergency Pack estimate: EUR 5.00;
+- Stripe: EUR 1.80;
+- contribution before edition fixed cost/CAC/overhead: **EUR 81.66**.
+
+Contribution before edition fixed cost per occupied seat is therefore materially lower for 2 Caregivers than for 1 Caregiver. This is acceptable only if the household value and conversion benefit justify it and capacity is not the bottleneck.
+
+## Edition fixed delivery cost — Brescia planning baseline
+
+- room: EUR 60;
+- normalized instructors: EUR 200;
+- total: **EUR 260 / edition**.
+
+## Edition contribution sensitivity before CAC/overhead
+
+| Paying participants | All 1-Caregiver orders | All 2-Caregiver orders |
+|---:|---:|---:|
+| 8 | ~EUR 175 | ~EUR 67 |
+| 10 | ~EUR 284 | ~EUR 148 |
+| 12 | ~EUR 393 | ~EUR 230 |
+
+Illustrative mixed examples:
+
+- 10 participants = 6 single-seat orders + 2 two-seat orders -> ~**EUR 230**;
+- 10 participants = 4 single-seat orders + 3 two-seat orders -> ~**EUR 203**;
+- 12 participants = 6 single-seat orders + 3 two-seat orders -> ~**EUR 312**.
+
+These figures still exclude:
+
+- CAC;
+- expected BTRF refund liability;
+- travel outside Brescia;
+- any future normalized replacement cost for admin/scientific/content work;
+- general overhead/taxes beyond the course VAT treatment above.
+
+## Standalone Guide cash economics before CAC/overhead
+
+At EUR 19.90:
+
+- print: EUR 8.54;
+- packaging: EUR 0.488;
+- shipping: EUR 4.819;
+- Stripe: ~EUR 0.299;
+- planning contribution: approximately **EUR 5.75**.
+
+This explains why a failed Guide-backed pre-enrolment has a real acquisition cost even when the customer is fully refunded.
+
+---
+
+# 12. Proof / G4 handoff
+
+G4 must now map proof to the current offer claims.
+
+Important current distinction:
+
+- scientific/medical review capability is now a founder-provided current asset via Dott.ssa Mafalda Camposarcone;
+- proof that the **rebuilt broader Full** delivers the new preparedness-system experience is still NOT YET EARNED and must come from delivery of the rebuilt product;
+- historical choking-course reviews can support historical delivery credibility but must retain provenance.
+
+Proof jobs include:
+
+- real live-delivery experience;
+- supervised practice actually occurs;
+- scientific/medical content is reviewed;
+- Guide/Pack are substantive and useful;
+- customers understand the broader preparedness job;
+- 2-Caregiver architecture adds household value;
+- free refresh is actually used and valued;
+- customer protection is honored as promised.
+
+---
+
+# 13. Current OPEN items
 
 1. final customer-facing Full name;
-2. final revised live duration if scientific/instructional design changes the current approximately four hours;
-3. transfer/cancellation/no-show policy;
-4. Training Credit full rules;
-5. final customer-facing labels for Single/Couple versus 1/2 caregivers;
-6. exact format/content of the Family Emergency Reference Pack V1;
-7. whether any post-course support beyond automated reference/customer-success messages is promised;
-8. whether a guarantee/risk reversal is economically and operationally justified;
-9. exact approved scientific/authority wording;
-10. payment fees/travel/setup/admin cost baseline needed for complete offer economics.
-
-These are decisions to close before broad launch, not reasons to stop defining the offer architecture.
-
----
-
-# 17. G3 prospective tests
-
-## Test G3-T1 — Offer comprehension
-
-Ask prospects/buyers in their own words:
-
-- what do you think you are buying?;
-- what made this different from a normal choking/first-aid course?;
-- what part of the package matters most?;
-- what almost stopped you?;
-- why Single or Couple?;
-- what alternative were you considering?
-
-Success evidence:
-
-customers understand the broader parent-first preparedness job without being coached into Formalife wording.
-
-## Test G3-T2 — Direct Full conversion by state/source
-
-Read separately:
-
-- active search;
-- trusted referral;
-- Guide buyer;
-- problem-aware educated lead.
-
-Do not average incompatible states into one conversion rate.
-
-## Test G3-T3 — Package-component value
-
-Measure actual use/perceived value of:
-
-- pre-course orientation;
-- Guide;
-- Family Emergency Reference Pack;
-- post-course recap.
-
-Remove or redesign components that add complexity without customer/economic value.
-
-## Test G3-T4 — Single/Couple economics
-
-Measure:
-
-- order mix;
-- contribution per seat;
-- household/caregiver usefulness;
-- capacity effect;
-- whether Couple drives incremental attendance rather than cannibalizing two Singles.
-
-## Test G3-T5 — No-sale diagnosis
-
-Classify real no-sales:
-
-- price/value;
-- date;
-- location;
-- trust/proof;
-- format;
-- decision-unit barrier;
-- insufficient priority;
-- non-fit;
-- other.
-
-Do not respond to every no-sale by changing price.
+2. final minute-by-minute curriculum allocation after scientific/instructional design;
+3. final legal wording of Total Protection / pre-enrolment / BTRF terms;
+4. exact supplier cost of Family Emergency Pack;
+5. exact cutoff for adding second caregiver;
+6. exact expiry/use rules for EUR 20 goodwill credit;
+7. refresh capacity/no-show operating rules;
+8. customer newsletter cadence/content operating rhythm;
+9. CAC by source;
+10. actual refund, transfer, no-show, refresh-redemption and guarantee-claim rates;
+11. normalized replacement cost of founder/volunteer functions once scale makes it material.
 
 ---
 
-# 18. G3 pass criteria
+# 14. G3 validation / revision conditions
 
-G3 is sufficiently complete to move into final customer-facing build when:
+G3 remains valid only if:
 
-1. the offer clearly embodies the founder-approved G2 position;
-2. Full scope and customer-facing clinical claims pass G0;
-3. inclusions/exclusions are explicit;
-4. Single/Couple or caregiver formulas and economics are readable;
-5. Training Credit is either fully standardized or omitted from public claims;
-6. transfer/cancellation/no-show terms are explicit;
-7. risk reducers address the main observed barriers;
-8. proof required by each material claim is available or the claim is removed;
-9. checkout/fulfilment can deliver exactly what the offer promises;
-10. the normalized economics plus acquisition can be measured;
-11. no unavailable future product is required to make the offer feel complete;
-12. customers can understand why the package is broader than choking without losing the clarity of the choking entry wedge.
+- customers understand the broader parent-first preparedness job;
+- the before/live/after package is actually delivered;
+- the guarantee/policies do not create abusive or unsustainable economics;
+- Guide-first acquisition earns back its lower contribution through better acquisition economics;
+- 2-Caregiver mix does not destroy contribution under capacity pressure;
+- refresh can be fulfilled without silently displacing excessive paid capacity;
+- broader scope does not weaken the choking-led entry;
+- customer-facing scientific/medical claims survive specific review;
+- CAC/payback become readable and sustainable.
 
----
-
-# 19. Fail / revision conditions
-
-Revise G3 if:
-
-- prospects still perceive the offer as interchangeable except for price;
-- “before/after” components are ignored and add complexity without value;
-- the broader preparedness package weakens choking-led conversion;
-- Couple economics materially damage contribution once editions fill;
-- customer-facing promise exceeds what the live product/reference system reliably delivers;
-- cancellation/support burden destroys contribution;
-- the offer depends on unverified authority or clinical claims;
-- customers cannot distinguish the Full job from the Guide or from certification;
-- the actual reasons for purchase point consistently to a different offer structure.
+Revise any component that adds complexity without customer or economic value.
 
 ---
 
-# 20. Current decision / hypothesis boundary
-
-## CURRENT FOUNDER DECISIONS / FACTS USED
-
-- G2 direction confirmed: choking/weaning entry -> broader parent-first preparedness system;
-- Full is broader than choking;
-- Full current price architecture: EUR 80 Single / EUR 120 Couple;
-- maximum 12 participants;
-- Guide included in current Single/Couple structure;
-- Light excluded from direct B2C;
-- Guide can operate as optional B2C paid front-end;
-- professional certification is a separate job/lane.
-
-## PROVISIONAL G3 RECOMMENDATIONS
-
-- package the Full visibly as BEFORE -> LIVE -> AFTER;
-- add a small pre-course orientation;
-- create a scientifically reviewed broader Family Emergency Reference Pack V1;
-- add a minimal post-course recap/customer-success layer;
-- avoid bonus-stack inflation;
-- make fit/non-fit and risk reducers explicit;
-- test 1-caregiver / 2-caregiver customer-facing framing;
-- preserve current prices through first controlled proof cycle;
-- do not add an immediate unrelated Full upsell in V1.
-
-These recommendations become founder decisions only after approval or implementation authorization.
-
----
-
-# 21. Layer 1 references
+# 15. Layer 1 references
 
 - `REASONING_KERNEL.md`
 - `merenda/03_offerta/offerta-a-risposta-diretta.md`
 - `merenda/03_offerta/front-end-e-back-end.md`
 - `merenda/05_acquisizione/funnel-e-conversione.md`
 - `merenda/06_vendita/follow-up-lead-non-convertiti.md`
-- `merenda/08_brand/autorita-e-marketing.md`
 - `merenda/08_brand/testimonianze-e-prova-sociale.md`
 - `merenda/09_business/numeri-cassa-e-crescita.md`
 
-# 22. Related Layer 2 files
+## Related Layer 2
 
 - `B2C_FUNNEL_01_CHOKING_FULL_ADAPTIVE.md`
 - `FUNNEL_01_G2_POSITIONING_HYPOTHESIS.md`
+- `FUNNEL_01_G3_BENCHMARK_POLICY_OPTIONS_2026-09-22.md`
 - `FLAGSHIP_SCOPE_V1.md`
 - `CURRENT_STATE.md`
 - `ASSET_INVENTORY.md`
-- `MARKET_EVIDENCE.md`
-- `FORMALIFE_TARGET_MODEL.md`
