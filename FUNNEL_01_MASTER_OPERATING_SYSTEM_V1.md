@@ -422,17 +422,21 @@ Teach one by one using:
 
 **what it is -> prevention -> recognition -> what to do -> what not to do -> escalation/112/urgent evaluation.**
 
-Current pool:
+Current founder-approved pool:
 
-- foreign-body ingestion;
-- head injury/fall;
-- febrile seizures;
-- poisoning;
-- drowning;
-- burns;
-- anaphylaxis;
-- severe breathing difficulty;
-- severe bleeding/major trauma.
+- foreign-body ingestion — 8 min;
+- head injury/fall — 6 min;
+- febrile seizures — 5 min;
+- poisoning — 4 min;
+- burns — 5 min;
+- anaphylaxis — 6 min;
+- drowning — 7 min;
+- severe bleeding/major trauma — 4 min;
+- plus 2 min ACT 5 scope reset and **1 min protected buffer**.
+
+`Severe breathing difficulty` is no longer a standalone ACT 5 topic. Founder decision: the possible causes are too heterogeneous for a useful compressed block at this level.
+
+Detailed timing/content: `FUNNEL_01_ACT5_OTHER_EMERGENCIES_RUN_OF_SHOW_V1.md`.
 
 ---
 
@@ -701,8 +705,8 @@ Still open, not silently resolved:
 - exact ACT 1 data/statistics slides;
 - final Mafalda sign-off on all clinical sequences/wording;
 - exact post-relief choking medical follow-up wording;
-- precise ACT 5 timing by topic;
-- equipment inventory / practice density;
+- ACT 5 timing/content validation during rehearsal;
+- equipment/practice-density validation during rehearsal;
 - final Pack production specifications/cost;
 - exact activation confirmation deadline/balance window;
 - final Guide Gift fulfilment logistics;
