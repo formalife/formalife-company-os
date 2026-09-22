@@ -1,34 +1,39 @@
 # Funnel 01 — ACT 1 + ACT 2 Problem / Mindset Run-of-Show V1
 
-Status: CURRENT PRODUCTION PROPOSAL — derived from founder-approved V5 architecture; epidemiological/statistical slides and all medical wording require Dott.ssa Mafalda Camposarcone sign-off before customer delivery
+Status: CURRENT PRODUCTION PROPOSAL — founder-directed; final statistical selection, medical wording and physiological claims require Dott.ssa Mafalda Camposarcone review before customer delivery
 Date: 2026-09-22
 
-Purpose: convert ACT 1 `Il Problema` and ACT 2 `La Mentalità / Ferma-Valuta-Agisci` into a rehearsable 13-minute sequence that creates proportional problem salience without fear inflation, then gives participants one simple orientation framework before technical teaching begins.
+Purpose: convert ACT 1 `Il Problema` and ACT 2 `La Mentalità / FERMA-VALUTA-AGISCI` into a rehearsable 13-minute sequence that creates problem salience and then introduces the **existing Formalife mental protocol exactly from the current choking book**, rather than an assistant-created reinterpretation.
 
 Parent architecture:
 
 - `FUNNEL_01_FULL_DELIVERY_SYSTEM_V5_CANONICAL.md`
 - `FUNNEL_01_ACT0_ACT6_MIRROR_TEST_RUN_OF_SHOW_V1.md`
+- `FUNNEL_01_ACT1_EPIDEMIOLOGY_DATA_BANK_V1.md`
 
-ACT 1 and ACT 2 are designed as one causal pair:
+Primary Formalife product source for ACT 2:
 
-**I have just experienced uncertainty -> this class of problem is real/relevant -> I do not need panic or encyclopedic memory -> I need a repeatable way to orient myself -> then I can learn the specific procedures.**
+**`La Guida Anti-Panico al Soffocamento Pediatrico`, first edition August 2026, Chapter 1 `Quando il tempo non sembra abbastanza`, section `Il protocollo mentale FERMA, VALUTA, AGISCI`, pp. 5–8.**
+
+The course must follow that source unless the founder/Mafalda explicitly revise the book protocol.
+
+ACT 1 and ACT 2 form one causal pair:
+
+**I have just experienced uncertainty -> the problem is materially relevant -> the numbers acquire meaning -> I need a simple mental method under pressure -> then I can learn the technical procedures.**
 
 ---
 
-# 1. Governing design decisions
+# 1. Governing founder decisions
 
-1. ACT 1 must create **salience, not fear**.
-2. Use very few statistics; every number must have source, population and year visible.
-3. Do not use an old national choking number merely because it is dramatic.
-4. Do not infer national incidence from a single hospital series.
-5. ACT 2 introduces `FERMA -> VALUTA -> AGISCI` as an **educational orientation framework**, not a clinical protocol.
-6. `FERMA` means interrupt panic/impulsive action for the minimum useful cognitive reset; it does **not** authorize delay of a time-critical action.
-7. `VALUTA` means recognise the operational state from observable information; it does **not** require diagnosis.
-8. `AGISCI` means choose the next appropriate first action, including professional help/112 when indicated; it does **not** mean solve the entire medical problem alone.
-9. After acting, the learner returns to evaluation when the child's state changes. The brand remains three words, but the operating logic is cyclical:
-
-**FERMA -> VALUTA -> AGISCI -> rivaluta -> agisci...**
+1. ACT 1 must create salience and perspective; its **closing changes the meaning of the numbers from fear to preparation**.
+2. Research must be broad. **Older authoritative data are allowed** when current equivalents do not exist.
+3. The founder will decide which data and how many enter the live deck after reviewing the full bank.
+4. Every customer-facing statistic preserves source and year/period; population/denominator is preserved where it changes meaning.
+5. Do not reject a number only because it is old; instead distinguish what it measures.
+6. Do not silently merge hospitalisations, ED visits, deaths, estimated quasi-events, foreign-body injuries and actual choking/FBAO.
+7. ACT 2 must follow the choking book's current **FERMA -> VALUTA -> AGISCI** protocol, not an alternative synthesis.
+8. FVA is a **Formalife mental action protocol**, not a substitute for the specific medical/first-aid algorithm taught for each emergency.
+9. The specific emergency procedure determines what `AGISCI` contains in that situation.
 
 ---
 
@@ -38,408 +43,393 @@ Working duration: **6 minutes**.
 
 ## Outcome
 
-At the end of ACT 1 the participant should understand:
+At the end of ACT 1 the participant should understand that:
 
-- pediatric accidents are not an exotic edge case;
-- early childhood is a period of particular exposure/vulnerability;
-- choking belongs inside a broader domestic-safety/preparedness problem;
-- preparation is rational precisely because many events occur in ordinary life, not because parents should remain constantly afraid.
+- pediatric domestic accidents are common enough to merit preparation;
+- the first years of life carry distinctive exposure/vulnerability;
+- choking is one meaningful part of a broader pediatric-safety problem;
+- some events are minor while others become time-critical;
+- the rational response is prevention + preparation, not permanent alarm.
 
-The intended emotional state is:
+The desired transition is:
 
-**"this matters and I can prepare"**, not **"my child is in constant danger"**.
+**`this is real` -> `there is something useful I can do about it`.**
 
 ---
 
-# 3. ACT 1 timing
+# 3. ACT 1 — Data source policy
+
+Detailed candidate bank:
+
+`FUNNEL_01_ACT1_EPIDEMIOLOGY_DATA_BANK_V1.md`
+
+The bank deliberately includes both current and historical evidence, including:
+
+- ISS 0–2 domestic-accident surveillance 2025 and 2022;
+- SINIACA/ISS pediatric domestic-injury burden;
+- regional ED series;
+- Ministry of Health choking estimates/guidelines;
+- official Italian hospital-discharge choking data;
+- Italian clinical foreign-body aspiration series;
+- candidate ISTAT-attributed mortality-share data;
+- older national estimates where still useful.
+
+**No final 2–3-stat limit is imposed at the research stage.**
+
+The 6-minute live ACT still has a finite attention budget, so the founder will select the final sequence after seeing the whole bank and after rehearsal.
+
+---
+
+# 4. ACT 1 — Working run-of-show
+
+The data slots remain deliberately flexible until founder selection.
 
 | Relative time | Segment | Duration |
 |---|---|---:|
-| 00:00–00:00:45 | Bridge from ACT 0 baseline | 45 sec |
-| 00:00:45–00:02:30 | Data 1 — domestic accidents are common enough to matter | 1 min 45 sec |
-| 00:02:30–00:04:00 | Data 2 — choking risk is concentrated in early childhood | 1 min 30 sec |
-| 00:04:00–00:05:15 | Data 3 — recent Italian clinical reality / age profile | 1 min 15 sec |
-| 00:05:15–00:06:00 | Meaning / anti-fear close | 45 sec |
+| 00:00–00:00:40 | Bridge from ACT 0 baseline | 40 sec |
+| 00:00:40–00:05:10 | Founder-selected data sequence from the bank | 4 min 30 sec |
+| 00:05:10–00:06:00 | Meaning / perspective close | 50 sec |
 | **TOTAL** | | **6 min** |
 
----
-
-# 4. ACT 1 — Bridge from baseline
-
-Do not begin with a title slide saying `EPIDEMIOLOGIA`.
-
-Begin from what the room just experienced.
-
-Suggested direction:
-
-**"Quello che è appena successo qui non serve a dirvi che un'emergenza succederà. Serve a farvi vedere una cosa più semplice: quando succede qualcosa di improvviso, il problema non è solo sapere una manovra. È riconoscere in fretta che cosa sta succedendo e decidere la prima cosa giusta."**
-
-Then move into scale/relevance.
+This timing may later be redistributed between statistics; the **50-second meaning close is protected**.
 
 ---
 
-# 5. ACT 1 — Data 1: domestic accidents
+# 5. ACT 1 — Bridge from ACT 0
 
-## Primary current statistic
+Do not open with an academic `EPIDEMIOLOGIA` title.
 
-Use the **ISS Sorveglianza Bambine e Bambini 0–2 anni — Indagine 2025**, presented in May 2026.
+Begin from the uncertainty the room has just experienced.
 
-Current source finding:
+Direction:
 
-- **12.6%** of mothers in the participating regional pool reported that their child had experienced a domestic accident.
-- The 2025 survey involved **64,789 mothers** overall; almost all Italian Regions/Autonomous Provinces participated, with Tuscany not included in the completed collection at publication.
+**the initial simulation was one example of a broader fact: ordinary pediatric life contains events that range from common/minor to rare/time-critical, and the caregiver's job is to distinguish them and act appropriately.**
 
-Customer-facing simplification direction:
-
-**"Nell'ultima Sorveglianza nazionale ISS sui bambini 0–2 anni, circa 1 madre su 8 ha riferito almeno un incidente domestico del proprio bambino."**
-
-Source/year displayed on slide:
-
-**ISS — Sorveglianza Bambine e Bambini 0–2 anni, raccolta 2025 / risultati 2026.**
-
-Do not silently say `1 bambino su 8 in Italia` without preserving that this is a maternal-report surveillance measure from the participating pool.
-
-## Visual job
-
-Prefer one clean visual:
-
-**100 simple figures -> ~13 highlighted**
-
-or
-
-**"~1 su 8"**
-
-No collage of injured children.
-
-External source checked 2026-09-22:
-
-- https://www.epicentro.iss.it/sorveglianza02anni/indagine-2025-sicurezza-casa
-- https://www.epicentro.iss.it/sorveglianza02anni/indagine-2025
+Do not solve the choking scenario yet.
 
 ---
 
-# 6. ACT 1 — Data 2: choking / early childhood
+# 6. ACT 1 — Candidate data categories
 
-## Current safest official framing
+The founder may select any combination that survives source review and rehearsal.
 
-The Italian Ministry of Health continues to frame foreign-body choking as a relevant public-health problem and particularly important in children **under 3 years**, with risk not disappearing in later childhood.
+## A. Frequency / burden
 
-Use the age-risk concept more than old national volume estimates.
+Possible jobs:
 
-Suggested line:
+- domestic accidents are not exotic;
+- 0–4 is a high-exposure age group;
+- healthcare use is material.
 
-**"Nel soffocamento il rischio non è distribuito allo stesso modo a tutte le età: i primi anni di vita sono il punto più delicato. È uno dei motivi per cui prevenzione a tavola e capacità di riconoscere rapidamente la situazione contano così tanto."**
+Candidates include:
 
-Source footer:
+- ISS 2025: **12.6%** maternal report of a domestic accident in child 0–2;
+- ISS 2022: **12.4%** sought healthcare staff after a child's domestic accident;
+- SINIACA: about **50 ED visits per 1,000/year in age 0–4** for domestic accidents.
 
-**Ministero della Salute — prevenzione soffocamento da cibo in età pediatrica.**
+## B. Choking scale
 
-### Evidence-age boundary
+Possible jobs:
 
-The Ministry's currently available public material still refers back to the 2017 national guideline for many numeric estimates (for example historical hospitalisation estimates and 60–80% food attribution).
+- show public-health relevance;
+- distinguish observed severe cases from estimated broader event burden.
 
-V1 recommendation:
+Candidates include:
 
-- do **not** make the old `~1000 hospitalisations/year` or `~80,000 episodes/year` estimate a hero statistic in ACT 1;
-- those numbers may remain research/background material only if Mafalda judges them useful and the slide labels their evidence period clearly;
-- do not present them as 2026 incidence.
+- Ministry historical/retained estimate: about **1,000 hospitalisations/year**;
+- Ministry guideline estimate including minor/self-resolved `quasi-events`: up to **~80,000 episodes/year**, around **50–80x** hospitalisation burden;
+- official hospital-discharge study: **7,143 choking hospitalisations in children 0–14 during 2001–2013**, with rate falling from **5.28 to 3.46 per 100,000 person-years**.
 
-External sources checked 2026-09-22:
+These numbers use different evidence chains/definitions and must not be merged.
 
-- https://www.salute.gov.it/new/it/news-e-media/notizie/sicurezza-alimentare/progetto-chi-salva-un-bambino-salva-il-mondo-intero/
-- https://www.salute.gov.it/new/it/pubblicazione/linee-di-indirizzo-la-prevenzione-del-soffocamento-da-cibo-eta-pediatrica/
+## C. Age / food relevance
 
----
+Candidates include:
 
-# 7. ACT 1 — Data 3: recent Italian clinical reality
+- Ministry: highest relevance under **3 years**, risk remains through childhood;
+- Ministry: **60–80%** of pediatric choking episodes attributed to food;
+- recent Italian tertiary-care aspiration series: mean age **2.3 years**, **83%** of retrieved foreign bodies vegetable material.
 
-Use only if the slide adds value after rehearsal; this is **clinical-series evidence**, not a national incidence estimate.
+## D. Consequence / mortality
 
-Recent Italian tertiary-care study (Bambino Gesù-led, published 2024):
+Candidate evidence includes:
 
-- 171 children were evaluated for suspected foreign-body inhalation over the study period;
-- 83 had a foreign body detected;
-- mean age at presentation: **2.3 years**;
-- among retrieved foreign bodies, **83% were vegetable material**.
+- institutional/ISTAT-attributed figures: choking reported as **27% of accidental deaths age 0–4**, declining to 11.5% age 5–9 and 4.7% age 10–14;
+- historical communications around **~50 pediatric deaths/year**, often ~30 under 4.
 
-Teaching job:
-
-reinforce that the early-childhood/food context is not an abstract marketing construction.
-
-Suggested line:
-
-**"Anche nelle casistiche cliniche italiane recenti, questi episodi si concentrano nei bambini molto piccoli e spesso coinvolgono materiale alimentare/vegetale."**
-
-Do not say:
-
-- `83% dei soffocamenti italiani sono causati da...`;
-- `l'età media nazionale è 2.3 anni`;
-- any incidence calculation from this hospital series.
-
-External source checked:
-
-- https://pubmed.ncbi.nlm.nih.gov/38551664/
-
-### Optionality rule
-
-If ACT 1 feels numerically overloaded during rehearsal, **remove this third data point first**. Two defensible ideas remembered are better than three statistics forgotten.
+These require tighter primary-source verification before final hero use; they stay in the bank rather than being silently discarded.
 
 ---
 
-# 8. ACT 1 — Anti-fear close
+# 7. ACT 1 — Closing job: change the meaning of the numbers
 
-Close the act by interpreting the numbers rather than adding another one.
+This function is founder-confirmed and non-negotiable.
 
-Suggested direction:
+After the statistics, do not end on mortality, hospitalisation or risk.
 
-**"Questi numeri non servono a farvi vivere in allerta. Il contrario: molti rischi possono essere ridotti con la prevenzione, e quando qualcosa succede possiamo allenare il modo in cui lo riconosciamo e reagiamo. È esattamente il lavoro che faremo oggi."**
+The instructor reframes:
+
+- numbers are not a reason to treat the child as permanently fragile;
+- prevention reduces avoidable risk;
+- many incidents are manageable;
+- some situations are time-critical;
+- preparation exists so the caregiver can distinguish states and take the next useful action.
+
+Direction, not final copy:
+
+**`The point of these numbers is not that you should be more afraid. The point is that ordinary caregivers are often the people already there when something happens — and prevention, recognition and the first correct actions are learnable.`**
 
 Transition:
 
-**"E prima di entrare nelle singole manovre, vi serve una sola struttura mentale che useremo per tutto il corso."**
+**`And before learning the individual procedures, we use one mental protocol to stop chaos from choosing for us.`**
 
 This opens ACT 2.
 
 ---
 
-# 9. What ACT 1 must NOT become
+# 8. ACT 1 — What remains prohibited
 
-Do not use:
+Even with a broad data bank:
 
-- mortality countdowns;
-- unsupported `ogni X giorni muore un bambino` claims;
-- horror imagery;
-- decontextualised emergency-department totals;
-- international numbers presented as Italian;
-- 2017 estimates presented as current 2026 data;
-- a long list of causes/deaths/admissions.
+- no statistic without traceable source/year;
+- no international number presented as Italian;
+- no single-center series presented as national incidence;
+- no `foreign-body injury` number silently renamed `choking`;
+- no estimated minor/quasi-events presented as complete severe obstruction;
+- no composite arithmetic that manufactures an `every X days` death claim unless source/denominator supports it;
+- no horror-image montage.
 
-Six minutes are enough if the room leaves with three ideas:
-
-**the problem exists -> early childhood matters -> preparation is useful.**
+The founder can choose older numbers; the deck must simply say what they actually are.
 
 ---
 
-# 10. ACT 2 — La Mentalità / Ferma-Valuta-Agisci
+# 9. ACT 2 — La Mentalità / Formalife mental protocol
 
 Working duration: **7 minutes**.
 
-## Outcome
+Source of truth:
 
-At the end of ACT 2 a participant should be able to explain, in ordinary language, what each word means and what it does **not** mean.
+**`La Guida Anti-Panico al Soffocamento Pediatrico`, Chapter 1, pp. 5–8.**
 
-They are not yet expected to know the technical answer to the choking baseline.
+The protocol is:
 
-The framework's job is to lower cognitive chaos before specific procedures are introduced.
+# **FERMA -> VALUTA -> AGISCI**
+
+The book frames this as the move from automatic fight/flight/freeze reactions toward a **response oriented to the objective: act with intention rather than impulse**.
+
+Do not replace it with a different three-step interpretation.
 
 ---
 
-# 11. ACT 2 timing
+# 10. ACT 2 — Timing
 
 | Relative time | Segment | Duration |
 |---|---|---:|
-| 00:00–00:00:45 | Emotional pivot: anxiety does not need to disappear before action | 45 sec |
-| 00:00:45–00:02:00 | FERMA | 1 min 15 sec |
-| 00:02:00–00:04:15 | VALUTA | 2 min 15 sec |
-| 00:04:15–00:06:15 | AGISCI + re-evaluation loop | 2 min |
-| 00:06:15–00:07:00 | Retrieval / reconnect to opening scenario | 45 sec |
+| 00:00–00:00:40 | Why a mental method is needed | 40 sec |
+| 00:00:40–00:02:35 | FERMA — the three gestures | 1 min 55 sec |
+| 00:02:35–00:04:15 | VALUTA — the three questions | 1 min 40 sec |
+| 00:04:15–00:06:20 | AGISCI — the universal sequence | 2 min 05 sec |
+| 00:06:20–00:07:00 | Retrieval + bridge to ACT 3 | 40 sec |
 | **TOTAL** | | **7 min** |
 
 ---
 
-# 12. 00:00–00:00:45 — Emotional pivot
+# 11. Why the protocol exists
 
-Founder objective: address the fear `e se poi mi blocco?` without promising calm.
+Keep this concise because the Guide carries the deeper explanation.
 
-Suggested direction:
+The book's logic:
 
-**"Non vi prometteremo che in una vera emergenza sarete tranquilli. Sarebbe poco serio. Potreste avere paura, tremare, essere agitati. Il nostro obiettivo è un altro: darvi un modo semplice per non lasciare che l'agitazione scelga al posto vostro."**
+- emergency stress can push the caregiver into freeze, fight or flight;
+- the desired fourth mode is a **goal-oriented response**;
+- the mental protocol is intentionally simple and repeatable;
+- the participant does not need to reproduce the neuroscience chapter in class; they need to remember and practise the method.
 
-Important boundary:
+Important claim boundary:
 
-- do not promise panic elimination;
-- do not imply psychological training can guarantee performance under real stress.
-
----
-
-# 13. FERMA
-
-## Core meaning
-
-**FERMA = interrompi per un istante l'impulso a fare qualcosa a caso.**
-
-Better internal interpretation:
-
-**ferma te stesso, non il soccorso.**
-
-The useful pause may be only one or two seconds and disappears entirely where the state already requires an immediate known action.
-
-Teach three jobs:
-
-1. do not rush into an unsafe scene;
-2. do not act only because panic tells you to `fare qualcosa`;
-3. create the minimum mental space needed to observe the child.
-
-## Explicit anti-misunderstanding
-
-Slide / spoken contrast:
-
-**FERMA ≠ ASPETTA**
-
-**FERMA ≠ CALMATI PRIMA DI AGIRE**
-
-**FERMA = BLOCCA L'AUTOMATISMO SBAGLIATO**
-
-Possible line:
-
-**"Se il bambino non respira, non state cinque secondi a fare mindfulness. Ferma significa evitare il gesto impulsivo sbagliato e orientarti immediatamente."**
-
-Exact humour/tone to test in rehearsal.
+The book contains physiological/neuroscience explanations. Their customer-facing course wording remains subject to Mafalda review; ACT 2 should not expand into a neuroscience lecture.
 
 ---
 
-# 14. VALUTA
+# 12. FERMA — follow the book
 
-## Core meaning
+The book gives **two or three conscious seconds before acting**, not a prolonged pause.
 
-**VALUTA = raccogli poche informazioni osservabili che cambiano la decisione.**
+Teach the three gestures in this order:
 
-Do not teach diagnosis.
+### 1. Respira
 
-Use three questions that recur throughout the course:
+One deliberate deep breath.
 
-### 1. È sicuro intervenire?
+Course job:
+create the short interruption between automatic reaction and intentional response.
 
-Environment / rescuer safety where materially relevant.
+### 2. Stabilisci il contatto con la realtà
 
-### 2. Che cosa vedo e sento nel bambino?
+The book anchors this through three rapid orientation questions:
 
-Examples later in the course will include:
+- **Dove sei?**
+- **Chi c'è con te?**
+- **Cosa vedi davanti a te in questo momento?**
 
-- responsive / unresponsive;
-- breathing normally / not normally;
-- effective cough / ineffective cough;
-- visible major bleeding;
-- seizure duration;
-- burn mechanism;
-- high-risk ingested object.
+### 3. Verifica che tu stesso sia al sicuro
 
-At ACT 2, do not teach all these answers. Show that **observable state beats vague panic labels** such as `sta malissimo`.
+Scene/rescuer safety.
 
-### 3. La situazione è stabile o sta cambiando?
+Core book meaning:
 
-This is essential to the whole course.
+**FERMA does not mean do nothing. It means take the brief conscious interval needed to stop reacting chaotically and begin responding.**
 
-A child can move from:
-
-- effective cough -> ineffective cough;
-- conscious -> unresponsive;
-- apparently minor situation -> red-flag pattern.
-
-The response must change when the state changes.
-
-## Explicit anti-misunderstanding
-
-**VALUTA ≠ FAI UNA DIAGNOSI**
-
-**VALUTA = RICONOSCI LO STATO CHE CAMBIA LA PROSSIMA AZIONE**
-
-This is the bridge between `Ferma-Valuta-Agisci` and the later scenario design.
+Do not substitute the previous assistant shorthand as the canonical protocol.
 
 ---
 
-# 15. AGISCI
+# 13. VALUTA — follow the book
 
-## Core meaning
+The current Guide specifies **three questions, in order**:
 
-**AGISCI = esegui la prima azione appropriata per lo stato che hai riconosciuto.**
+1. **È cosciente?**
+2. **Respira normalmente?**
+3. **C'è una minaccia immediata visibile?**
 
-Teach three components:
+That is the ACT 2 teaching structure.
 
-1. **azione fisica / prima risposta** when indicated;
-2. **attivazione o delega dei soccorsi** when indicated;
-3. **continua a osservare perché lo stato può cambiare.**
+Do not replace these with a generic `what do I see / is it changing` framework.
 
-## Important reframing
-
-Calling 112 is not a separate failure state after `I couldn't solve it`.
-
-Where indicated, professional help is **part of AGISCI**.
-
-Likewise, `AGISCI` does not mean:
-
-- perform every possible manoeuvre;
-- remember the entire book;
-- solve the diagnosis;
-- do everything alone.
-
-## Loop
-
-Visualise:
-
-**FERMA -> VALUTA -> AGISCI**
-
-then a return arrow from `AGISCI` to `VALUTA`:
-
-**"Ha funzionato? Il bambino è cambiato? Devo cambiare risposta?"**
-
-Do not add `RIVALUTA` as a fourth branded word; represent it as the operating loop behind the three-word framework.
+Later acts can add situation-specific observations inside the relevant emergency protocol, but ACT 2 keeps the Guide's three questions as its reusable base.
 
 ---
 
-# 16. ACT 2 — Retrieval / reconnect to ACT 0
+# 14. AGISCI — follow the book
 
-Do not solve the choking baseline yet.
+The Guide defines a universal sequence:
 
-Return mentally to it and ask the room:
+### 1. Prima di tutto: chiama aiuto
 
-**"Nella scena di prima, prima ancora di sapere la manovra, quali erano le informazioni che avremmo dovuto osservare per capire che la situazione stava cambiando?"**
+- where another person is present and the situation requires it, delegate 112 while intervention begins;
+- when alone, the exact timing depends on age/situation and is taught in the specific technical sections.
 
-Desired observations, without giving the procedure:
+### 2. Poi: intervieni con la manovra appropriata
 
-- sound/cough changed;
-- airflow/effective cough changed;
-- distress/state changed.
+The specific procedure depends on the emergency.
 
-Then say:
+### 3. Infine: monitora e adatta
 
-**"Perfetto. Adesso abbiamo il modo di pensare. Tra poco costruiamo il modo di agire."**
+The child's state can change; action must change with it.
 
-Transition into ACT 3 prevention/anatomy/choking.
+This is where the later course acts reconnect naturally to FVA.
+
+Do not teach `AGISCI = do everything yourself`.
+
+Professional help and delegation are part of the action sequence where indicated.
+
+---
+
+# 15. 112 expectation-setting from the Guide
+
+The choking book immediately follows FVA with a short explanation of what happens during the emergency call:
+
+- operator asks a few essential questions such as location, what is happening and child's age;
+- medical terminology is not required; describe what is seen;
+- remain on the line;
+- operator can guide actions;
+- speakerphone allows action while communicating.
+
+ACT 2 does not need to teach the detailed 112 timing for every scenario; those decisions belong in ACT 3/4/5.
+
+But this short expectation-setting can reduce hesitation around `chiama aiuto` if it fits the 7-minute rehearsal.
+
+---
+
+# 16. Retrieval / bridge back to ACT 0
+
+At the end of ACT 2, use a fast whole-room retrieval:
+
+**FERMA: quali sono i tre gesti?**
+
+Expected:
+
+- respira;
+- contatto con la realtà;
+- sicurezza.
+
+**VALUTA: quali sono le tre domande?**
+
+Expected:
+
+- cosciente?;
+- respira normalmente?;
+- minaccia immediata visibile?
+
+**AGISCI: qual è la sequenza?**
+
+Expected:
+
+- chiama aiuto;
+- manovra appropriata;
+- monitora e adatta.
+
+Then reconnect to the opening choking scenario without giving the full technical solution:
+
+**`Adesso abbiamo la struttura mentale. Il prossimo passo è capire esattamente che cosa stiamo guardando quando parliamo di soffocamento e quali azioni cambiano in base allo stato.`**
+
+This opens ACT 3.
 
 ---
 
 # 17. Slide architecture
 
-ACT 1 target: **2–3 slides maximum**.
+## ACT 1
 
-1. ISS domestic-accident statistic.
-2. Early-childhood choking relevance.
-3. Optional Italian clinical-series evidence if rehearsal shows it improves rather than overloads.
+Not frozen.
 
-ACT 2 target: **2 slides maximum**.
+Build slide candidates from `FUNNEL_01_ACT1_EPIDEMIOLOGY_DATA_BANK_V1.md`; founder selects final data/order after review.
 
-1. `FERMA -> VALUTA -> AGISCI` with one-line meaning under each word.
-2. `NON SIGNIFICA` contrasts + loop back from AGISCI to VALUTA.
+Rules:
 
-Do not use the slides as the Guide.
+- one visual idea per slide where possible;
+- source + year/period visible;
+- denominator/geography visible when necessary;
+- live density tested in rehearsal.
+
+## ACT 2
+
+Recommended minimum:
+
+### Slide 1 — FERMA · VALUTA · AGISCI
+
+Three words, visual sequence.
+
+### Slide 2 — exact internal structure
+
+**FERMA**
+- respira
+- contatto con la realtà
+- sicurezza
+
+**VALUTA**
+- cosciente?
+- respira normalmente?
+- minaccia immediata visibile?
+
+**AGISCI**
+- chiama aiuto
+- manovra appropriata
+- monitora e adatta
+
+No assistant-created substitute wording.
 
 ---
 
 # 18. Instructor choreography
 
-ACT 1 should preferably remain with the same lead instructor who facilitated the ACT 0 debrief, preserving narrative continuity.
+ACT 1 should remain with the instructor who facilitated the ACT 0 debrief where possible, preserving narrative continuity.
 
-ACT 2 can remain with that instructor or pass to the second only if the handoff is deliberate and rehearsed.
+ACT 2 should feel like **the answer to the uncertainty created at the opening**, not an unrelated mindset lecture.
 
-Do not alternate speakers merely to create movement.
+Do not alternate speakers merely for movement.
 
-If two instructors are used:
-
-- Instructor A: problem framing + FVA explanation;
-- Instructor B: one short room check / retrieval prompt, then hands back.
-
-The room's attention should stay on the idea, not on speaker choreography.
+The second instructor can participate in retrieval or demonstrate how `chiama aiuto` becomes delegation, but the content remains one coherent explanation.
 
 ---
 
@@ -449,73 +439,68 @@ The room's attention should stay on the idea, not on speaker choreography.
 
 Record:
 
-- total actual duration;
-- whether any statistic required lengthy explanation;
-- whether participants react with useful salience or visible fear inflation;
-- which number participants can recall 10 minutes later;
-- whether Data 3 adds understanding or only clutter.
+- actual total duration;
+- data used;
+- time per data point;
+- where the room loses the thread;
+- which figures are remembered later;
+- whether definitions require too much explanation;
+- emotional response before and after the meaning close;
+- whether the closing successfully converts `danger` into `preparation`.
 
-### Decision rule
-
-If participants cannot recall the core meaning, remove a number before adding explanation.
+Do not decide from memory that `fewer is always better`; test the founder-selected sequence.
 
 ## ACT 2
 
-Immediately before ACT 3, sample the room:
+Before ACT 3, sample recall of the exact Guide structure.
 
-- `FERMA non significa...?`
-- `VALUTA non significa...?`
-- `AGISCI include anche...?`
+Success criterion:
 
-Success is not verbatim repetition.
+- participants can reconstruct the three FERMA gestures;
+- the three VALUTA questions;
+- the three AGISCI steps;
+- without confusing the mental protocol with the specific emergency algorithm.
 
-The room should understand:
+During ACT 3–6, track whether the exact FVA structure can be naturally reused.
 
-- **Ferma = stop impulsive error, not delay**;
-- **Valuta = observable state, not diagnosis**;
-- **Agisci = next useful action + help when indicated**.
-
-During ACT 3–6, note whether instructors can naturally call back to FVA without forcing it.
-
-If the framework is never spontaneously useful later, it is decoration and must be redesigned.
+If it is never useful later, the delivery is at fault or the protocol has not been integrated strongly enough.
 
 ---
 
-# 20. Scientific / content sign-off checklist for Mafalda
+# 20. Scientific / content sign-off for Mafalda
 
 Before customer use confirm:
 
-1. wording of the ISS 2025 domestic-accident statistic and population description;
-2. wording of the official age-risk statement for pediatric choking;
-3. whether the 2024 Italian foreign-body-aspiration clinical series should appear in the live deck at all;
-4. whether any older Ministry numeric estimates deserve inclusion with historical dating — V1 recommendation: **not as hero statistics**;
-5. all medical examples used under `VALUTA`;
-6. the boundary that `FERMA` must never create delay in an already-recognised time-critical state;
-7. wording linking 112 activation to `AGISCI`.
+1. final founder-selected ACT 1 statistics and their spoken wording;
+2. any reconciliation needed between historical Ministry estimates and official hospital-discharge data;
+3. primary-source basis for mortality-share/death figures if selected;
+4. current course wording for the book's neuroscience/physiology claims under FERMA;
+5. that the exact FVA wording remains medically safe across the later time-critical scenarios;
+6. technical 112 timing remains governed by ACT 3/4/5 scenario-specific guidance, not by a generic interpretation of `chiama aiuto`.
 
 ---
 
-# 21. Evidence checked 2026-09-22
+# 21. Evidence / source layer
 
-Current/high-authority external evidence:
+## Formalife product source — primary for ACT 2
 
-- ISS/EpiCentro — Sorveglianza Bambine e Bambini 0–2 anni, Indagine 2025, sicurezza in casa:
-  https://www.epicentro.iss.it/sorveglianza02anni/indagine-2025-sicurezza-casa
-- ISS/EpiCentro — Indagine 2025 methodology/sample:
-  https://www.epicentro.iss.it/sorveglianza02anni/indagine-2025
-- Ministero della Salute — current public choking-prevention communication:
-  https://www.salute.gov.it/new/it/news-e-media/notizie/sicurezza-alimentare/progetto-chi-salva-un-bambino-salva-il-mondo-intero/
-- Ministero della Salute — national food-choking prevention guideline, 2017, retained as dated background evidence:
-  https://www.salute.gov.it/new/it/pubblicazione/linee-di-indirizzo-la-prevenzione-del-soffocamento-da-cibo-eta-pediatrica/
-- Recent Italian pediatric tertiary-care FBA series, PubMed PMID 38551664:
-  https://pubmed.ncbi.nlm.nih.gov/38551664/
+`La Guida Anti-Panico al Soffocamento Pediatrico` — Raffaele La Torre / Dott.ssa Mafalda Camposarcone, Formalife Edizioni, first edition August 2026, Chapter 1.
 
-These sources inform the production proposal but do not replace Mafalda's required review of customer-facing slides and wording.
+Drive source identified 2026-09-22 as `Libro_Completo.pdf`.
+
+## ACT 1 research bank
+
+See:
+
+`FUNNEL_01_ACT1_EPIDEMIOLOGY_DATA_BANK_V1.md`
+
+External sources in that bank include ISS/EpiCentro, Ministero della Salute, official hospital-discharge research and peer-reviewed Italian clinical series.
 
 ---
 
 # 22. Related Layer 2
 
+- `FUNNEL_01_ACT1_EPIDEMIOLOGY_DATA_BANK_V1.md`
 - `FUNNEL_01_FULL_DELIVERY_SYSTEM_V5_CANONICAL.md`
 - `FUNNEL_01_ACT0_ACT6_MIRROR_TEST_RUN_OF_SHOW_V1.md`
 - `FUNNEL_01_ACT3_CHOKING_RUN_OF_SHOW_V1.md`
