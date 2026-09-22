@@ -15,13 +15,14 @@ Do not copy Layer 1 doctrine into Layer 2. Read Layer 1 live when needed.
 
 ## Mandatory startup — compact architecture
 
-For a substantial Formalife task:
+For a substantial Formalife task or a new decision block:
 
-1. Read this file.
-2. Read `LAYER1_REF.md`.
-3. Read only the current Layer 2 files relevant to the task.
-4. From Layer 1 read `REASONING_KERNEL.md` as the default strategic/diagnostic bootstrap.
-5. Retrieve progressively only the canonical specialist sections needed for the current decision.
+1. Live-read this file.
+2. Live-read `CHATGPT_RUNTIME_CONTRACT.md`.
+3. Live-read `LAYER1_REF.md`.
+4. Read only the current Layer 2 files relevant to the task.
+5. From Layer 1 read `REASONING_KERNEL.md` as the default strategic/diagnostic bootstrap.
+6. Retrieve progressively only the canonical specialist sections needed for the current decision.
 
 **Do not preload by default** all five full Layer 1 control-plane documents:
 
@@ -36,6 +37,30 @@ They remain canonical governance/reference/fallback documents. Open them when th
 Current specialist doctrine always overrides the kernel when it is more recent, precise or contextual.
 
 The repositories are authoritative over chat memory.
+
+## Live-repo preflight gate
+
+**NO LIVE REPO, NO SUBSTANTIVE FORMALIFE ANSWER.**
+
+For every substantive Formalife reply, at least one successful live GitHub retrieval must occur in the current turn before the answer is finalized.
+
+Previous-turn reads, chat history, model memory, cached summaries and general knowledge do not satisfy this gate.
+
+After the task-entry bootstrap, narrow follow-ups do not need to reload the full kernel mechanically. They still require turn-local freshness from the current file(s) materially used, and Layer 1 must be reread whenever doctrine, diagnosis or a new strategic recommendation is material.
+
+If required GitHub access fails, the runtime is fail-closed:
+
+- state `Repo preflight: BLOCKED` briefly;
+- do not claim repository-dependent facts, decisions or doctrine as current/canonical;
+- never silently substitute memory for GitHub live.
+
+Every substantive Formalife answer must expose successful live access with a compact marker such as:
+
+`Repo preflight: LIVE — L2: CURRENT_STATE; L1: REASONING_KERNEL + relevant specialist node`
+
+Never emit `LIVE` unless the current turn actually contained a successful GitHub retrieval. For high-impact architecture, governance or write-back work, include a short relevant head/commit SHA when practical.
+
+Detailed runtime behavior, task boundaries and the ChatGPT/Codex division of labor are canonical in `CHATGPT_RUNTIME_CONTRACT.md`.
 
 ## Retrieval pattern
 
