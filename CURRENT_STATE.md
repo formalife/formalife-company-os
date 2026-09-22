@@ -40,6 +40,7 @@ Founder-provided:
 - standalone Guide shipping: EUR 3.95 + VAT = EUR 4.819;
 - Family Emergency Pack: approximately EUR 5 estimated / household pack pending supplier quote;
 - normalized instructor cost: EUR 120 primary + EUR 80 secondary = EUR 200 / edition, all included;
+- current instructor cash outflow: EUR 0 while shareholder-instructors voluntarily deliver during the survival phase;
 - current customer-care/admin cash cost: EUR 0 because founder performs it;
 - current Brevo/content/scientific-review incremental cash cost: EUR 0;
 - refresh incremental cash cost: approximately EUR 0 when fulfilled using spare capacity in an existing Full edition;
@@ -69,13 +70,13 @@ Assuming one EUR 5 Family Emergency Pack per household/order:
 - Stripe: EUR 1.80;
 - contribution before edition fixed cost/CAC/overhead: ~**EUR 81.66**.
 
-Edition fixed Brescia baseline:
+Edition normalized fixed Brescia baseline:
 
 - room EUR 60;
 - normalized instructors EUR 200;
-- total fixed delivery baseline EUR 260.
+- normalized total fixed delivery baseline EUR 260.
 
-Approximate edition contribution before CAC/overhead:
+Approximate normalized edition contribution before CAC/overhead:
 
 | Paying participants | All 1-Caregiver orders | All 2-Caregiver orders |
 |---:|---:|---:|
@@ -84,6 +85,30 @@ Approximate edition contribution before CAC/overhead:
 | 12 | ~EUR 393 | ~EUR 230 |
 
 This supersedes the older rough contribution table that ignored course VAT, Stripe and the new Pack.
+
+### FOUNDER DECISION — survival-phase operating floor
+
+During the current cash-constrained phase Formalife may confirm and deliver a Full edition from **5 paying participants**.
+
+Reason:
+
+- shareholder-instructors currently create no instructor cash outflow;
+- the company needs to generate cash while the commercial engine is rebuilt;
+- founder explicitly recognizes this is not the sustainable target business model.
+
+Illustrative 5-participant Brescia editions before CAC/overhead:
+
+| 5-participant mix | Cash contribution after EUR 60 room, using EUR 0 current instructor cash outflow | Normalized contribution after room + EUR 200 instructor cost |
+|---|---:|---:|
+| 5 x 1 Caregiver | ~EUR 212 | ~EUR 12 |
+| 3 x 1 Caregiver + 1 x 2 Caregivers | ~EUR 185 | ~EUR -15 |
+| 1 x 1 Caregiver + 2 x 2 Caregivers | ~EUR 158 | ~EUR -42 |
+
+Therefore **5 participants is a survival/cash floor, not proof of sustainable unit economics**.
+
+The normalized target remains 10–12 paying participants per edition and the EUR 200 instructor reserve remains in strategic economics.
+
+Canonical detail: `FUNNEL_01_SURVIVAL_OPERATING_FLOOR.md`.
 
 ### DERIVED — standalone Guide planning economics
 
@@ -108,8 +133,9 @@ Historical configuration is evidence only, not forward benchmark.
 
 - EUR 80 / 1 Caregiver;
 - EUR 120 / 2 Caregivers;
-- target 10–12 paying participants per edition;
-- no use of historical EUR 50 or 6-person average as forward benchmarks.
+- normalized target 10–12 paying participants per edition;
+- temporary survival floor 5 paying participants per edition;
+- no use of historical EUR 50 or 6-person average as sustainable forward benchmarks.
 
 ---
 
@@ -342,12 +368,17 @@ Preferred model:
 
 Current failed-activation direct cash exposure is ~EUR 14.15 per pre-enrollee before CAC.
 
-The earlier generic 8-person activation floor is superseded.
+Current survival-phase activation rule:
 
-Current planning rule:
+- **5 paying participants** is the current default minimum to confirm/deliver a Brescia Full edition;
+- this is a cash-generation floor supported by unpaid shareholder-instructor delivery, not the normalized business target;
+- normalized target remains 10–12 participants;
+- paid acquisition must still consider actual CAC, booked mix and cash contribution rather than relying on headcount alone;
+- the exact threshold and confirmation deadline must be published before a customer pre-enrols and must be honored for that edition.
 
-- low/zero-CAC Brescia activation test: provisional 10 paying participants unless booked mix justifies a different published threshold;
-- paid cold acquisition: activation must consider actual contribution/CAC, not headcount alone.
+This founder decision supersedes earlier provisional 8- or 10-person activation floors wherever they conflict.
+
+Canonical detail: `FUNNEL_01_SURVIVAL_OPERATING_FLOOR.md`.
 
 ---
 
