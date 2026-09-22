@@ -25,17 +25,19 @@ The system must do five things:
 
 ---
 
-# 2. Do not use the course close as the main referral ask
+# 2. Two-stage referral model
 
-ACT 7 should contain only a **referral seed**, not a hard request to “bring us customers”.
+The course close can contain a **light referral seed / invitation**, because by then value has been delivered.
 
-Reason:
+It should not become the main sales pitch of ACT 7.
 
-- the participant has just completed a high-emotion learning experience;
-- we have not yet captured service issues or guarantee dissatisfaction;
-- the final memory should be preparedness/value, not a commercial extraction moment.
+The stronger explicit referral ask occurs after Formalife observes satisfaction and confirms there is no unresolved service issue.
 
-The explicit ask comes after satisfaction is observed.
+This creates two moments:
+
+**T0 course close -> physical/digital referral tool is explained and lightly invited.**
+
+**T+24h positive feedback -> explicit referral ask with one-click sharing.**
 
 ---
 
@@ -51,9 +53,9 @@ Recommended V1:
 - front side explains who it is for: parent/grandparent/babysitter/regular caregiver;
 - back side sends the person to a useful Formalife entry surface.
 
-Customer-facing concept:
+Customer-facing direction at ACT 7:
 
-**“Se conosci una persona che si occupa di un bambino e pensi che possa esserle utile prepararsi meglio, puoi passarle uno di questi inviti. Non devi spiegarle o venderle il corso: il materiale lo farà per te.”**
+**“Nel Pack trovate due Pass Sicurezza. Se vi viene in mente qualcuno che si occupa regolarmente di un bambino e che pensate possa trarre beneficio da quello che avete fatto oggi, potete semplicemente passargli questa card. Non dovete spiegargli o vendergli il corso: il materiale lo farà per voi.”**
 
 Do not collect the friend's contact data from the customer without the friend's direct action/consent.
 
@@ -125,7 +127,7 @@ Job:
 
 Recommended question structure:
 
-**“C'è una persona che si occupa regolarmente di un bambino — partner, nonno/a, amico, babysitter — a cui avresti voluto far vedere quello che hai imparato oggi?”**
+**“C'è una persona che si occupa regolarmente di un bambino — partner, nonno/a, amico, babysitter — a cui avresti voluto far vedere quello che hai imparato?”**
 
 Then offer:
 
@@ -137,7 +139,7 @@ Suggested share message must be editable by customer and should sound like a per
 
 Example operating direction only:
 
-**“Ho fatto questo corso e mi è stato utile. Ti giro il link perché secondo me potrebbe interessarti; qui puoi prima vedere il materiale e decidere da solo/a.”**
+**“Ho fatto questo corso e mi è stato utile. Ti giro il link perché secondo me potrebbe interessarti; qui puoi prima capire di cosa si tratta e decidere da solo/a.”**
 
 Do not force customer to write names into Formalife forms.
 
@@ -145,11 +147,9 @@ Do not force customer to write names into Formalife forms.
 
 # 7. Follow-up timing
 
-Recommended V1 triggers:
-
 ## T0 — end of course
 
-Seed only: show the two Pass Sicurezza cards and what they are for.
+Explain the two Pass Sicurezza and make a light invitation to use them if someone naturally comes to mind.
 
 ## T+24h
 
@@ -200,39 +200,40 @@ Reason:
 - preserves current Full price;
 - avoids adding another variable before referral conversion is readable.
 
-## V1-B — first incentive test after referral baseline exists
+## First incentive test after baseline — preferred: `GUIDE GIFT`
 
-Preferred non-price test:
+After one referred person completes a paid Full purchase, the referrer earns:
 
-### `GUEST REFRESH PASS`
+**one Guide Gift Voucher** to pass to another parent/caregiver.
 
-When one referred person completes a paid Full purchase, referrer earns:
-
-**one Guest Refresh Pass** allowing them to bring one additional regular caregiver to the referrer's 90-minute practical refresh, subject to real capacity.
-
-Why this is strategically coherent:
-
-- reinforces household preparedness;
-- perceived value can exceed cash cost;
-- current cash cost may be low when refresh capacity is spare;
-- it does not discount the core Full;
-- it gives the customer something relevant rather than generic points.
-
-Track capacity opportunity cost.
-
-## Alternative test — `GUIDE GIFT`
-
-After a successful referred Full purchase, referrer may receive one Guide gift voucher to pass to another caregiver/prospect.
+The voucher allows the new person to receive the Guida Anti-Panico under the test terms defined by Formalife.
 
 Current standalone Guide cash fulfilment is approximately EUR 14.15 if Formalife prints/packages/ships it.
 
-This has a higher direct cost but can seed a second acquisition path and closely follows the Layer 1 principle of giving customers referral materials instead of expecting them to become salespeople.
+Why this is the preferred first test:
 
-Do not launch both incentive tests simultaneously.
+- it is directly relevant to Formalife's educational mission;
+- it follows the Layer 1 logic of giving customers useful referral material instead of asking them to become salespeople;
+- it can create a second-generation acquisition path rather than merely paying a rebate;
+- it avoids discounting the Full;
+- cost is explicit and measurable.
+
+Possible cost-control variants to test later:
+
+- free Guide + recipient pays shipping;
+- Guide collected at an event/partner point, avoiding shipping cost;
+- one Guide Gift maximum per successful referred Full purchase;
+- cap per referrer if abuse/cost becomes material.
+
+Do not promise the exact fulfilment variant until selected operationally.
+
+## Why not use a Guest Refresh Pass as referral incentive
+
+Do not bring an untrained new caregiver directly into a 90-minute refresh designed for previous Full participants. The refresh assumes prior course context and should not become a shortcut around the Full learning pathway.
 
 ## Future double-sided credit test
 
-Only if needed and economics support it:
+Only if organic referral + Guide Gift are insufficient and economics support it:
 
 - small Training Credit for the new referred prospect;
 - small Formalife future credit for referrer after purchase.
@@ -306,13 +307,15 @@ Therefore:
 
 ---
 
-# 12. V1 recommendation
+# 12. Current recommendation
 
 Launch referral as:
 
-**valuable Full experience -> Pack contains 2 share tools -> 24h satisfaction gate -> explicit one-click ask to advocates -> referred person enters adaptive referral landing/router -> attribution -> customer-protection delivery -> later test Guest Refresh Pass or Guide Gift incentive.**
+**valuable Full experience -> ACT 7 explains 2 Pass Sicurezza -> 24h satisfaction gate -> explicit one-click ask to advocates -> referred person enters adaptive referral landing/router -> attribution -> customer-protection delivery -> once baseline is readable, test Guide Gift for successful referrals.**
 
-This is intentionally more sophisticated than a `PORTA UN AMICO - €X off` coupon while remaining simple enough to operate now.
+This is intentionally more sophisticated than a simple `PORTA UN AMICO - EUR X OFF` coupon while remaining operable now.
+
+A current Italian competitor, Camillo, publicly uses a direct `Porta un Amico` discount on its Rescue Baby course. Formalife should not copy that surface by default; the intended difference is trust-transfer + educational material + routing + protection + attribution, with incentive added only when economically justified.
 
 ---
 
