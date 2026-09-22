@@ -15,7 +15,7 @@ Founder reports Formalife currently owns:
 - **1 x Act+Fast Red Anti Choking Trainer**;
 - **1 x Laerdal AED Trainer**.
 
-Exact device generations/app configuration should be checked before final classroom rehearsal, but this inventory is sufficient to design the current operating model.
+Exact AED-trainer model/accessories and QCPR app configuration should be checked before final classroom rehearsal, but this inventory is sufficient to design the current operating model.
 
 ---
 
@@ -57,7 +57,7 @@ Operational consequence:
 
 - useful for adolescent-sized choking mechanics;
 - useful for the selected edge/special-case discussion;
-- **not a substitute for a child-proportioned 1–11-year choking trainer.**
+- **not an anatomically exact substitute for a child-proportioned 1–11-year choking trainer.**
 
 Manufacturer source checked 2026-09-22:
 https://www.actfastmed.com/order/
@@ -78,16 +78,24 @@ With two Little Baby QCPR units and a maximum six-person infant station:
 
 ## Child >1-year choking
 
-Current capacity: **material gap**.
+Current capacity: **temporary equipment gap, accepted for pilot/rehearsal only.**
 
 Current assets provide:
 
 - 2 Little Junior QCPR CPR manikins, but no manufacturer-specified child choking simulation;
 - 1 Act+Fast Red capable of actual choking mechanics, but sized for age 12+.
 
-Therefore Formalife currently cannot truthfully claim equivalent hands-on child-choking practice density to the infant station for the whole 1–11-year range.
+### FOUNDER DECISION — 2026-09-22
 
-This is a delivery/equipment bottleneck, not a curriculum problem.
+Formalife will acquire **one child-specific choking trainer**; a second unit is not currently considered necessary.
+
+Until it is acquired:
+
+- ACT 3 continues to use the **Act+Fast Red** as the temporary physical choking trainer for the child/adolescent station;
+- the limitation must remain explicit internally;
+- the internal rehearsal must verify whether one physical trainer provides enough active practice time for a six-person station.
+
+This decision supersedes the prior provisional recommendation to target two child choking trainers as the minimum production density.
 
 ## Pediatric CPR
 
@@ -97,26 +105,38 @@ Two Little Junior + two Little Baby QCPR allow:
 
 - two simultaneous child CPR learners;
 - two simultaneous infant CPR learners;
-- four active QCPR positions if desired;
+- four active QCPR positions simultaneously;
+- a 12-person class to split into child/infant six-person stations with three learners per manikin;
 - efficient 60-second compression micro-drills;
-- objective feedback via QCPR ecosystem.
+- objective feedback via the QCPR ecosystem.
+
+Laerdal states Little Junior QCPR can provide real-time feedback on compression depth/rate/release and ventilation metrics, and can be monitored with QCPR applications. Little Baby QCPR provides comparable infant feedback capability.
 
 ## AED
 
 One Laerdal AED Trainer is adequate for whole-room demonstration and integrated scenario use. It is not intended to create twelve simultaneous AED stations in the Full.
 
+Before rehearsal verify:
+
+- exact AED Trainer model;
+- available training pads;
+- whether the appropriate pediatric training mode/activator/accessory is present if the selected model requires it.
+
+Do not assume an accessory exists merely because the trainer family supports it.
+
 ---
 
-# 4. Production target for choking equipment
+# 4. Child choking equipment production target
 
-Before treating ACT 3 as fully production-standardized, acquire or otherwise secure **child-specific choking simulation capacity**.
+### FOUNDER DECISION
+
+Production target is now **one child-specific choking trainer**, not two.
 
 Minimum functional requirement:
 
 - child-proportioned trainer appropriate to the chosen pediatric age range;
 - supports both back blows and abdominal thrusts under the approved protocol;
-- safe for repeated supervised learner practice;
-- enough units to avoid long queues.
+- safe for repeated supervised learner practice.
 
 Current benchmark option:
 
@@ -125,40 +145,44 @@ Current benchmark option:
 Source checked 2026-09-22:
 https://www.actfastmed.com/product/childrens-anti-choking-trainer/
 
-This is an equipment reference, not yet a founder purchase decision.
+### Operating implication of one unit
 
-### Preferred density
+For a six-person child station, one trainer means practice must be deliberately sequenced to avoid observation-heavy downtime.
 
-For a six-person child station:
+The run-of-show must therefore measure:
 
-- **2 child choking trainers** -> 3 learners/device;
-- aligns with the infant-station density already available.
+- active seconds per learner;
+- waiting time;
+- number of corrected repetitions;
+- whether one trainer can support the promised supervised practice within the planned station time.
 
-One child trainer is workable but reduces repetition and raises waiting/transition time.
+If rehearsal shows unacceptable waiting or insufficient repetition, the response is to change timing/group choreography or revisit capacity — not to silently lower the practice standard.
 
 ### Residual age boundary
 
-Even the Act+Fast Yellow is stated for ages 5–11. Formalife should not silently present it as an anatomically exact toddler simulator. The teaching design may still use it for child-proportioned mechanics while explaining age/body-size adaptation, subject to Mafalda review.
+The Act+Fast Yellow is stated for ages 5–11. Formalife should not silently present it as an anatomically exact toddler simulator. The teaching design may use it for child-proportioned mechanics while explaining age/body-size adaptation, subject to Mafalda review.
 
 ---
 
 # 5. Pilot operating rule with current equipment
 
-Formalife can rehearse/pilot ACT 3 now, but must preserve the equipment limitation honestly.
+Formalife can rehearse/pilot ACT 3 now.
 
-Until child-specific equipment exists:
+Until the child-specific trainer arrives:
 
-- infant practice can run at intended production density on Little Baby QCPR;
-- child/adolescent practical mechanics use Act+Fast Red only within its appropriate training boundary;
-- Little Junior QCPR may support recognition, body positioning, transition and algorithm rehearsal but should not receive forceful choking manoeuvres unless manufacturer documentation specifically permits it;
+- infant practice runs at intended production density on Little Baby QCPR;
+- child/adolescent physical choking mechanics use Act+Fast Red as the founder-approved temporary workaround;
+- Little Junior QCPR supports recognition, body positioning, transition and algorithm rehearsal but should not receive forceful choking manoeuvres unless manufacturer documentation specifically permits it;
 - record the child-practice bottleneck during internal rehearsal;
-- do not let a temporary equipment gap silently redefine the final product standard.
+- do not let the temporary workaround redefine the final teaching claim.
 
 ---
 
-# 6. Next operating dependency
+# 6. Next operating dependencies
 
 `FUNNEL_01_ACT3_CHOKING_RUN_OF_SHOW_V1.md` uses this inventory.
+
+`FUNNEL_01_ACT4_CPR_QCPR_RUN_OF_SHOW_V1.md` uses the four pediatric QCPR manikins and AED Trainer.
 
 After internal rehearsal record:
 
@@ -167,6 +191,6 @@ After internal rehearsal record:
 - waiting time;
 - number of corrected repetitions;
 - transition time between stations;
-- equipment failures/setup friction.
+- equipment/app failures/setup friction.
 
 The goal is not equipment abundance. It is enough capacity for the promised supervised practice to be true.
