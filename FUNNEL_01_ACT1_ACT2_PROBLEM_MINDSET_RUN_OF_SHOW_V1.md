@@ -31,9 +31,11 @@ ACT 1 and ACT 2 form one causal pair:
 4. Every customer-facing statistic preserves source and year/period; population/denominator is preserved where it changes meaning.
 5. Do not reject a number only because it is old; instead distinguish what it measures.
 6. Do not silently merge hospitalisations, ED visits, deaths, estimated quasi-events, foreign-body injuries and actual choking/FBAO.
-7. ACT 2 must follow the choking book's current **FERMA -> VALUTA -> AGISCI** protocol, not an alternative synthesis.
-8. FVA is a **Formalife mental action protocol**, not a substitute for the specific medical/first-aid algorithm taught for each emergency.
-9. The specific emergency procedure determines what `AGISCI` contains in that situation.
+7. ACT 1 must frame the problem through multiple distinct lenses, not only one dramatic statistic: **domestic accidents -> choking event scale -> healthcare/hospital burden -> age distribution -> causes -> mortality/consequence**.
+8. The preferred live sequence should give the participant a coherent map of the problem while preserving the distinction between observed counts and estimates.
+9. ACT 2 must follow the choking book's current **FERMA -> VALUTA -> AGISCI** protocol, not an alternative synthesis.
+10. FVA is a **Formalife mental action protocol**, not a substitute for the specific medical/first-aid algorithm taught for each emergency.
+11. The specific emergency procedure determines what `AGISCI` contains in that situation.
 
 ---
 
@@ -48,12 +50,15 @@ At the end of ACT 1 the participant should understand that:
 - pediatric domestic accidents are common enough to merit preparation;
 - the first years of life carry distinctive exposure/vulnerability;
 - choking is one meaningful part of a broader pediatric-safety problem;
-- some events are minor while others become time-critical;
+- hospital data capture only one part of the event spectrum;
+- choking burden is concentrated strongly in the youngest children;
+- food is a major causal category;
+- the possible consequence, while uncommon relative to all incidents, can be severe and time-critical;
 - the rational response is prevention + preparation, not permanent alarm.
 
 The desired transition is:
 
-**`this is real` -> `there is something useful I can do about it`.**
+**`this is real` -> `I now understand its scale and shape` -> `there is something useful I can do about it`.**
 
 ---
 
@@ -71,123 +76,156 @@ The bank deliberately includes both current and historical evidence, including:
 - Ministry of Health choking estimates/guidelines;
 - official Italian hospital-discharge choking data;
 - Italian clinical foreign-body aspiration series;
-- candidate ISTAT-attributed mortality-share data;
+- ISTAT-attributed mortality-share data with current institutional corroboration;
 - older national estimates where still useful.
 
 **No final 2–3-stat limit is imposed at the research stage.**
 
-The 6-minute live ACT still has a finite attention budget, so the founder will select the final sequence after seeing the whole bank and after rehearsal.
+The live ACT should not maximize the count of numbers; it should maximize **problem coverage per minute**. Multiple figures can coexist on the same visual when they answer the same question.
 
 ---
 
-# 4. ACT 1 — Working run-of-show
+# 4. ACT 1 — Working live data architecture
 
-The data slots remain deliberately flexible until founder selection.
+Working duration remains **6 minutes**, including a protected 50-second meaning close.
 
-| Relative time | Segment | Duration |
-|---|---|---:|
-| 00:00–00:00:40 | Bridge from ACT 0 baseline | 40 sec |
-| 00:00:40–00:05:10 | Founder-selected data sequence from the bank | 4 min 30 sec |
-| 00:05:10–00:06:00 | Meaning / perspective close | 50 sec |
-| **TOTAL** | | **6 min** |
+| Relative time | Lens | Duration | Working evidence |
+|---|---|---:|---|
+| 00:00–00:00:35 | Bridge from ACT 0 | 35 sec | Initial uncertainty is one example inside a broader pediatric-safety problem |
+| 00:00:35–00:01:20 | 1 — Domestic accidents / frequency | 45 sec | ISS 2025: **12.6%** of mothers in the 0–2 surveillance pool report a domestic accident; SINIACA/ISS historical estimate: age 0–4 around **50 ED visits/1,000/year** for domestic accidents |
+| 00:01:20–00:02:15 | 2 — Choking event scale / visible vs hidden burden | 55 sec | National choking admissions are directly measurable; community event incidence is less certain. Use **7,143 choking hospitalisations in 2001–2013** as observed severe-system burden. Ministry 2017 **up to ~80,000/year** may appear only if explicitly labelled an estimate including minor/self-resolved quasi-events, never as observed complete obstructions |
+| 00:02:15–00:03:05 | 3 — Who is most exposed / age distribution | 50 sec | Of 7,143 national choking admissions: **3,744 age 0–12 months (52.4%)**, **2,380 age 1–3 (33.3%)**, **1,019 age 4–14 (14.3%)**; therefore about **85.7% were under 4** in that series |
+| 00:03:05–00:03:55 | 4 — Causes / what drives the problem | 50 sec | Ministry: **60–80%** of pediatric choking episodes attributable to food. Optional supporting distribution: Susy Safe incident-associated foods include chicken/fish bones **32%**, peanuts **22%**, seeds **16%**, with explicit registry/endpoint caveat |
+| 00:03:55–00:05:10 | 5 — Consequence / mortality | 1 min 15 sec | Current institutional corroboration of ISTAT 2022: choking represents roughly **one quarter / 25–27% of accidental deaths age 0–4**; ASL Sassari 2026 places absolute burden in the order of **40–50 deaths/year age 0–14**, concentrated in younger children. Optional age-gradient visual: **27% -> 11.5% -> 4.7%** across 0–4 / 5–9 / 10–14, still source-sensitive |
+| 00:05:10–00:06:00 | Meaning / perspective close | **50 sec protected** | Convert risk information into prevention + recognition + preparation |
 
-This timing may later be redistributed between statistics; the **50-second meaning close is protected**.
-
----
-
-# 5. ACT 1 — Bridge from ACT 0
-
-Do not open with an academic `EPIDEMIOLOGIA` title.
-
-Begin from the uncertainty the room has just experienced.
-
-Direction:
-
-**the initial simulation was one example of a broader fact: ordinary pediatric life contains events that range from common/minor to rare/time-critical, and the caregiver's job is to distinguish them and act appropriately.**
-
-Do not solve the choking scenario yet.
+The exact figures and number of slides remain rehearsal variables, but the **six-lens problem map is founder-directed**.
 
 ---
 
-# 6. ACT 1 — Candidate data categories
+# 5. ACT 1 — Visual / narrative structure
 
-The founder may select any combination that survives source review and rehearsal.
+The preferred direction is **4–5 visual ideas**, not one slide per number.
 
-## A. Frequency / burden
+## Visual 1 — `Gli incidenti non sono eventi esotici`
 
-Possible jobs:
+Possible pairing:
 
-- domestic accidents are not exotic;
-- 0–4 is a high-exposure age group;
-- healthcare use is material.
+- **12.6%** — maternal report of domestic accident in child 0–2, ISS surveillance 2025.
+- **~50/1,000/year** — historical SINIACA/ISS ED-visit estimate for domestic accidents age 0–4.
 
-Candidates include:
+Job:
+establish broad relevance before narrowing to choking.
 
-- ISS 2025: **12.6%** maternal report of a domestic accident in child 0–2;
-- ISS 2022: **12.4%** sought healthcare staff after a child's domestic accident;
-- SINIACA: about **50 ED visits per 1,000/year in age 0–4** for domestic accidents.
+## Visual 2 — `Il soffocamento: quello che vediamo e quello che non vediamo`
 
-## B. Choking scale
+Primary observed anchor:
 
-Possible jobs:
+- **7,143 national choking hospitalisations, 2001–2013**.
 
-- show public-health relevance;
-- distinguish observed severe cases from estimated broader event burden.
+Optional secondary estimate:
 
-Candidates include:
+- Ministry 2017: **up to ~80,000 episodes/year including minor/self-resolved quasi-events**.
 
-- Ministry historical/retained estimate: about **1,000 hospitalisations/year**;
-- Ministry guideline estimate including minor/self-resolved `quasi-events`: up to **~80,000 episodes/year**, around **50–80x** hospitalisation burden;
-- official hospital-discharge study: **7,143 choking hospitalisations in children 0–14 during 2001–2013**, with rate falling from **5.28 to 3.46 per 100,000 person-years**.
+If the Ministry estimate is used, the visual must make the evidence-status distinction explicit. Do not visually imply that 80,000 severe obstructions were observed.
 
-These numbers use different evidence chains/definitions and must not be merged.
+Job:
+show why hospital burden and total event burden are not the same thing.
 
-## C. Age / food relevance
+## Visual 3 — `Il rischio non è distribuito allo stesso modo`
 
-Candidates include:
+Use the clean national hospitalisation age distribution:
 
-- Ministry: highest relevance under **3 years**, risk remains through childhood;
-- Ministry: **60–80%** of pediatric choking episodes attributed to food;
-- recent Italian tertiary-care aspiration series: mean age **2.3 years**, **83%** of retrieved foreign bodies vegetable material.
+- **52.4%** age 0–12 months;
+- **33.3%** age 1–3;
+- **14.3%** age 4–14;
+- approximately **85.7% under 4**.
 
-## D. Consequence / mortality
+Job:
+show why parents of infants/toddlers are a particularly relevant audience without suggesting risk disappears later.
 
-Candidate evidence includes:
+## Visual 4 — `Che cosa causa il soffocamento`
 
-- institutional/ISTAT-attributed figures: choking reported as **27% of accidental deaths age 0–4**, declining to 11.5% age 5–9 and 4.7% age 10–14;
-- historical communications around **~50 pediatric deaths/year**, often ~30 under 4.
+Core:
 
-These require tighter primary-source verification before final hero use; they stay in the bank rather than being silently discarded.
+- **60–80% food-related** in Ministry material.
+
+Optional detail, only if useful visually:
+
+- Susy Safe incident-associated food distribution: bones **32%**, peanuts **22%**, seeds **16%**.
+
+Job:
+create the causal bridge toward ACT 3 prevention: form, consistency, size and meal context matter.
+
+## Visual 5 — `Perché lo prendiamo sul serio`
+
+Preferred current framing:
+
+- choking represents roughly **one quarter of accidental deaths age 0–4** according to current institutional material interpreting ISTAT 2022;
+- order of magnitude **some tens / ~40–50 deaths per year age 0–14**, with concentration in younger children.
+
+Optional age-gradient chart:
+
+- **27%** age 0–4;
+- **11.5%** age 5–9;
+- **4.7%** age 10–14.
+
+Job:
+show consequence without implying that death is the typical outcome of a choking episode.
 
 ---
 
-# 7. ACT 1 — Closing job: change the meaning of the numbers
+# 6. What is deliberately NOT the main live statistic
+
+## `~1,000 hospitalisations/year`
+
+Keep in the research bank but do not make it the preferred live admission figure while the Ministry citation chain remains weaker than the direct national SDO series.
+
+Preferred live evidence for hospital burden:
+**7,143 admissions / 2001–2013**, with period shown.
+
+## `~80,000 episodes/year`
+
+May be used only as an explicitly labelled Ministry 2017 estimate of a broader burden that includes minor/self-resolved quasi-events.
+
+If its caveat consumes more attention than the insight it provides, remove it during rehearsal.
+
+## `15,829 foreign-body injuries`
+
+Useful for research but not preferred in ACT 1 because it measures the broader aerodigestive foreign-body endpoint and creates unnecessary confusion with choking.
+
+---
+
+# 7. Closing job: change the meaning of the numbers
 
 This function is founder-confirmed and non-negotiable.
 
-After the statistics, do not end on mortality, hospitalisation or risk.
+The closing must explicitly reverse the emotional direction of the preceding data:
+
+**frequency does not mean inevitability; severity does not mean helplessness.**
 
 The instructor reframes:
 
-- numbers are not a reason to treat the child as permanently fragile;
-- prevention reduces avoidable risk;
-- many incidents are manageable;
-- some situations are time-critical;
-- preparation exists so the caregiver can distinguish states and take the next useful action.
+- many incidents are minor/manageable;
+- risk is not evenly distributed and therefore can be understood;
+- a meaningful part of choking risk is linked to modifiable causes such as food preparation/context;
+- some emergencies are time-critical;
+- prevention, recognition and appropriate first action are trainable;
+- the purpose of the course is not to increase vigilance anxiety but to replace unstructured fear with preparation.
 
 Direction, not final copy:
 
-**`The point of these numbers is not that you should be more afraid. The point is that ordinary caregivers are often the people already there when something happens — and prevention, recognition and the first correct actions are learnable.`**
+**`Questi numeri non servono a convincervi che vostro figlio sia in pericolo in ogni momento. Servono a mostrarvi una cosa diversa: gli incidenti esistono, il rischio ha una forma precisa, alcune cause si possono prevenire e nelle situazioni in cui il tempo conta possiamo prepararci a riconoscere cosa sta succedendo e fare la prima cosa giusta.`**
 
 Transition:
 
-**`And before learning the individual procedures, we use one mental protocol to stop chaos from choosing for us.`**
+**`E prima delle singole manovre, ci serve un modo semplice per riuscire a usare quello che sappiamo quando l'emozione arriva prima del ragionamento.`**
 
 This opens ACT 2.
 
 ---
 
-# 8. ACT 1 — What remains prohibited
+# 8. ACT 1 — Evidence boundaries
 
 Even with a broad data bank:
 
@@ -196,7 +234,9 @@ Even with a broad data bank:
 - no single-center series presented as national incidence;
 - no `foreign-body injury` number silently renamed `choking`;
 - no estimated minor/quasi-events presented as complete severe obstruction;
-- no composite arithmetic that manufactures an `every X days` death claim unless source/denominator supports it;
+- no death share presented as probability that a choking episode is fatal;
+- no mortality count used as if it were measured by the national hospital-discharge series;
+- no composite arithmetic that manufactures an `every X days` claim unless the source supports it;
 - no horror-image montage.
 
 The founder can choose older numbers; the deck must simply say what they actually are.
@@ -381,15 +421,20 @@ This opens ACT 3.
 
 ## ACT 1
 
-Not frozen.
+Working architecture is now the **five-visual / six-lens problem map** defined in sections 4–5.
 
-Build slide candidates from `FUNNEL_01_ACT1_EPIDEMIOLOGY_DATA_BANK_V1.md`; founder selects final data/order after review.
+The exact number of statistics per visual remains subject to rehearsal, but the live sequence should cover:
+
+**incidents -> choking scale -> age distribution -> causes -> mortality -> meaning.**
 
 Rules:
 
-- one visual idea per slide where possible;
+- one primary message per visual;
+- related statistics may share one slide when they answer the same question;
 - source + year/period visible;
 - denominator/geography visible when necessary;
+- estimates visually labelled as estimates;
+- observed data and modelled/secondary estimates should not look equivalent;
 - live density tested in rehearsal.
 
 ## ACT 2
@@ -440,15 +485,16 @@ The second instructor can participate in retrieval or demonstrate how `chiama ai
 Record:
 
 - actual total duration;
-- data used;
-- time per data point;
-- where the room loses the thread;
-- which figures are remembered later;
-- whether definitions require too much explanation;
+- which five visuals were used;
+- time per visual;
+- which figures participants remember later;
+- whether the distinction between `incident / event estimate / hospitalisation / death` remains clear;
+- whether any figure requires so much methodological caveat that it breaks the narrative;
+- whether the age and cause patterns are understood;
 - emotional response before and after the meaning close;
 - whether the closing successfully converts `danger` into `preparation`.
 
-Do not decide from memory that `fewer is always better`; test the founder-selected sequence.
+Do not decide from memory that `fewer is always better`; test the founder-directed problem map.
 
 ## ACT 2
 
@@ -471,12 +517,13 @@ If it is never useful later, the delivery is at fault or the protocol has not be
 
 Before customer use confirm:
 
-1. final founder-selected ACT 1 statistics and their spoken wording;
-2. any reconciliation needed between historical Ministry estimates and official hospital-discharge data;
-3. primary-source basis for mortality-share/death figures if selected;
-4. current course wording for the book's neuroscience/physiology claims under FERMA;
-5. that the exact FVA wording remains medically safe across the later time-critical scenarios;
-6. technical 112 timing remains governed by ACT 3/4/5 scenario-specific guidance, not by a generic interpretation of `chiama aiuto`.
+1. final ACT 1 figures and spoken wording;
+2. whether the Ministry 2017 `~80,000` estimate remains useful enough to justify its caveat;
+3. final wording of the mortality slide (`about one quarter` / exact triplet / absolute annual burden);
+4. use boundaries for the Susy Safe food-distribution percentages;
+5. current course wording for the book's neuroscience/physiology claims under FERMA;
+6. that the exact FVA wording remains medically safe across the later time-critical scenarios;
+7. technical 112 timing remains governed by ACT 3/4/5 scenario-specific guidance, not by a generic interpretation of `chiama aiuto`.
 
 ---
 
@@ -494,7 +541,7 @@ See:
 
 `FUNNEL_01_ACT1_EPIDEMIOLOGY_DATA_BANK_V1.md`
 
-External sources in that bank include ISS/EpiCentro, Ministero della Salute, official hospital-discharge research and peer-reviewed Italian clinical series.
+External sources in that bank include ISS/EpiCentro, Ministero della Salute, national hospital-discharge research and current institutional interpretation of ISTAT cause-of-death data.
 
 ---
 
