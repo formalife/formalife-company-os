@@ -1,7 +1,7 @@
 # Formalife Current State
 
 Status: CURRENT — operating baseline
-Date: 2026-09-21
+Date: 2026-09-22
 
 This file records founder-reported current facts, historical results, explicit founder decisions and the current strategic direction. Detailed target-company architecture is canonical in `FORMALIFE_TARGET_MODEL.md`. The current order of construction is canonical in `FORMALIFE_BUILD_SEQUENCE.md`.
 
@@ -192,6 +192,26 @@ Current scope V1 is defined in `FLAGSHIP_SCOPE_V1.md` and includes, subject to s
 - prevention integrated into the relevant emergency topics rather than a broad standalone babyproofing module.
 
 Routine illness management, detailed babyproofing, long-tail first-aid topics and deep BLSD remain outside the live flagship and belong primarily to future digital/reference/specialist products.
+
+## 7.1 FOUNDER DECISION — Full post-course relationship and practical refresh
+
+Status: CURRENT DESIGN DECISION — operating details and economics still to be finalized.
+
+The rebuilt Full Course must include an ongoing post-course relationship rather than ending at classroom exit.
+
+Founder decisions now in force:
+
+- every Full participant receives **one free practical retraining opportunity within 12 months** of the original course;
+- the retraining is intended primarily as a practical skill refresh, not a repetition of the entire Full curriculum;
+- the operating model should favor scheduled group refresh sessions / controlled refresh capacity rather than one-to-one delivery unless later economics justify otherwise;
+- Full customers enter a **dedicated customer relationship stream** designed to continue delivering useful pediatric-safety information, news, articles, updates and relevant adjacent content;
+- the customer stream should keep Formalife useful and memorable, support appropriate referrals and surface legitimate backend/lifecycle needs;
+- future product offers may be included when relevant to the customer's real need, but the stream must not become generic catalog blasting;
+- transactional/service communications and marketing/editorial communications must remain operationally and legally distinguishable; consent, unsubscribe and CRM suppression rules must be verified before implementation.
+
+The exact refresh duration, session capacity, no-show rules, newsletter cadence and complete economics remain OPEN and must be tested/standardized.
+
+Supporting benchmark/policy work is in `FUNNEL_01_G3_BENCHMARK_POLICY_OPTIONS_2026-09-22.md`.
 
 ## 8. CURRENT CONSTRUCTION SEQUENCE
 
