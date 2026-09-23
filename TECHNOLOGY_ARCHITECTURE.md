@@ -126,3 +126,11 @@ The default rule is to exhaust the approved core stack before adding another sys
 ## 9. Revision condition
 
 Reopen a technology decision only when a concrete requirement, measured limitation, security/privacy need, cost threshold or operational failure shows that the current component is no longer sufficient.
+
+## 10. Canonical implementation roadmap
+
+Execution order, phase gates, Release 1 definition of done and the current immediate queue are canonical in:
+
+`PLATFORM_IMPLEMENTATION_ROADMAP.md`
+
+`FORMALIFE_BUILD_SEQUENCE.md` continues to govern business construction order. The implementation roadmap must support that sequence rather than supersede it.
