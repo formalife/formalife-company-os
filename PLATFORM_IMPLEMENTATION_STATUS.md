@@ -125,39 +125,71 @@ Implementation documentation:
 
 P4 does not authorize a CMS or broad future-product page families. Runtime content schemas and route implementation may now be built only against the frozen route/source-of-truth contract.
 
-## Current next phase
-
 ### P5 — Twenty operational data model
 
-**STATUS: ACTIVE IMPLEMENTATION BLOCK.**
+**RESULT: REPOSITORY MODEL + VERSIONED SCHEMA COMPLETE; STAGING EXIT GATE OPEN.**
 
-P5 must define the minimum operational object graph and state machines needed for the first measurable Block-1 transaction/customer path before automations are added.
+The P5 domain/state contract was frozen through `formalife/platform` PR #13 at squash commit `f38dbea7238ffc34f7e129e02ef0d8c5b4a4d55d`.
 
-Initial scope remains limited to the current need:
+The versioned Twenty application schema was then implemented and validated through `formalife/platform` PR #14 at squash commit `6558de84321ddc9c38195945b90e7223e748c10f`.
 
-- Person;
-- Household;
-- Partner;
-- commercial/relationship state;
-- Course Edition;
-- Enrollment;
-- Order;
-- Payment Reference/payment-state mirror;
+Current implementation decisions/results:
+
+- Twenty standard `People`, `Companies`, `Tasks` and `Notes` are reused where semantics match;
+- no duplicate custom `Lead` or `Partner` object exists;
+- one human remains one Person while purchaser, participant and customer roles are represented by relations/state;
+- current custom domain objects are `Household`, `CourseEdition`, `Enrollment`, `Order`, `PaymentRecord`, `TrainingCredit`, `Entitlement` and `ConsentRecord`;
+- a 2-Caregiver Full order is represented by two Enrollment records;
+- transfer preserves audit history by linking a new Enrollment rather than destructively moving the original record;
+- edition seat consumption is derived from Enrollment state rather than a manually maintained seat counter;
+- Stripe remains payment-event/payment-status truth while Twenty holds the operational mirror and reconciliation identifiers;
+- marketing consent history is append-oriented and distinct from transactional/service communication state;
+- initial attribution remains deliberately light: Order-level source/UTM/partner/referrer plus first-acquisition summary on Person;
+- no child clinical/health profile or speculative sensitive-data object is part of the initial schema;
+- unique schema constraints cover edition code, order code, Stripe Checkout Session, Stripe provider object and one Training Credit per origin Order;
+- the Formalife Twenty application is pinned to Twenty SDK `2.41.0` and passes frozen dependency install, repository contract, TypeScript validation and `twenty dev:build` manifest generation in read-only CI;
+- the shared web regression suite also remained green after the workspace/lockfile change.
+
+Implementation documentation:
+
+- `formalife/platform/docs/operations/twenty-domain-model.md`;
+- `formalife/platform/docs/operations/twenty-state-machines.yaml`;
+- `formalife/platform/docs/operations/p5-staging-scenarios.md`;
+- `formalife/platform/packages/twenty-app/`.
+
+**P5 IS NOT COMPLETE OPERATIONALLY YET.**
+
+The remaining exit gate is to install/sync the versioned app into a real staging Twenty instance and execute the documented scenarios proving, without spreadsheet/manual side truth:
+
+- 1-Caregiver booking;
+- 2-Caregiver household booking;
+- payment reference/mirror;
+- edition capacity;
+- transfer/cancellation;
 - Training Credit;
-- Entitlement;
-- consent/permission representation;
-- Attribution Touch/source fields;
-- Referral;
-- operational Task/follow-up state.
+- refresh entitlement;
+- source/partner/referral attribution;
+- consent chronology/current eligibility;
+- duplicate/idempotency behavior relevant to the P6 integration boundary.
 
-Before automation, allowed states/transitions and system-of-record ownership must be explicit. Do not add objects merely because data could theoretically exist, and do not introduce a second operational database without an explicit architecture decision.
+P6 also retains one explicit architecture proof: do not assume Twenty alone is sufficient for atomic receipt/reordering of Stripe webhook events until the integration test proves it. If it is insufficient, make a separate explicit persistence decision rather than hiding the invariant in manual operations.
+
+## Current next execution block
+
+### P5 staging installation and acceptance proof
+
+The next move is not to add more CRM entities. It is to install the current versioned schema into staging and run the P5 scenario contract against real Twenty behavior.
+
+This operational proof is coupled to the still-open P1 real-host gate. A temporary staging instance may be used if it proves the schema/runtime behavior honestly, but local/static manifest success must not be relabeled as operational completion.
 
 ## Open parallel infrastructure gates
 
-P5 may proceed while these independent gates remain open, but neither may be silently marked complete from local simulation alone:
+The remaining independent external gates are:
 
-1. **P1 real Twenty host proof** — requires access to/provisioning of the selected real VM/host.
+1. **P1 real Twenty host proof** — requires access to/provisioning of the selected real VM/host and must prove persistence, off-host backup, restore, monitoring/failure behavior and upgrade rehearsal.
 2. **P2 real Cloudflare preview deploy** — requires Cloudflare account credentials/integration capable of creating the preview deployment.
+
+Neither gate may be silently marked complete from local simulation alone.
 
 ## Revision condition
 
