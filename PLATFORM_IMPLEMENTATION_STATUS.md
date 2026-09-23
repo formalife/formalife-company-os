@@ -98,34 +98,66 @@ After P3, the browser gate was further expanded through `formalife/platform` PR 
 
 Implementation documentation: `formalife/platform/docs/design/formalife-visual-system.md`.
 
+### P4 — Information architecture, page map and content model
+
+**RESULT: COMPLETE.**
+
+Merged through `formalife/platform` PR #11 at squash commit `67977191b61047912d3aa040da9c76e35a0824a4`.
+
+The frozen P4 implementation architecture now defines:
+
+- purpose-specific route contracts for `/`, choking education, Full, Guide, editions, experts, resources, partner and legal/policy surfaces;
+- explicit audience/state, job, CTA, proof requirement, owner, measurable outcome and fallback for every initial route;
+- direct high-intent routing to Full/edition decision surfaces without forcing Guide-first behavior;
+- the existing public Guide path `/guida-antipanico-soffocamento/` retained by default unless first-party SEO/backlink evidence justifies a later canonical-path change;
+- future Digital/Hybrid/BLSD/lifecycle destinations kept dormant until the corresponding product/job exists;
+- code-first editorial boundaries for resources, experts, proof and reusable FAQ data;
+- explicit separation between editorial content and operational truth such as edition availability, payment state and customer records;
+- versioned scientific-review metadata for medical/scientific publishing;
+- evidence-based WordPress migration dispositions and redirect policy, with no homepage catch-all redirects;
+- current legal/privacy paths preserved while final content remains contingent on the actual Release-1 processing/commerce stack and appropriate review.
+
+Implementation documentation:
+
+- `formalife/platform/docs/web/information-architecture.md`;
+- `formalife/platform/docs/web/route-contracts.yaml`;
+- `formalife/platform/docs/web/wordpress-migration-inventory.md`.
+
+P4 does not authorize a CMS or broad future-product page families. Runtime content schemas and route implementation may now be built only against the frozen route/source-of-truth contract.
+
 ## Current next phase
 
-### P4 — Information architecture, page map and content model
+### P5 — Twenty operational data model
 
 **STATUS: ACTIVE IMPLEMENTATION BLOCK.**
 
-P4 should define the public site as a commercial information system before page count expands.
+P5 must define the minimum operational object graph and state machines needed for the first measurable Block-1 transaction/customer path before automations are added.
 
-The work must start from current Formalife commercial/funnel truth and assign each initial route:
+Initial scope remains limited to the current need:
 
-- audience/state;
-- commercial/search job;
-- primary CTA;
-- proof requirement;
-- source/content owner;
-- measurable outcome;
-- routing/fallback.
+- Person;
+- Household;
+- Partner;
+- commercial/relationship state;
+- Course Edition;
+- Enrollment;
+- Order;
+- Payment Reference/payment-state mirror;
+- Training Credit;
+- Entitlement;
+- consent/permission representation;
+- Attribution Touch/source fields;
+- Referral;
+- operational Task/follow-up state.
 
-It must also define the lightest code-first content model and the WordPress URL/redirect inventory process without introducing a CMS prematurely.
+Before automation, allowed states/transitions and system-of-record ownership must be explicit. Do not add objects merely because data could theoretically exist, and do not introduce a second operational database without an explicit architecture decision.
 
 ## Open parallel infrastructure gates
 
-P4 may proceed while these independent gates remain open, because neither changes the information architecture decision:
+P5 may proceed while these independent gates remain open, but neither may be silently marked complete from local simulation alone:
 
 1. **P1 real Twenty host proof** — requires access to/provisioning of the selected real VM/host.
 2. **P2 real Cloudflare preview deploy** — requires Cloudflare account credentials/integration capable of creating the preview deployment.
-
-Neither gate may be silently marked complete from local simulation alone.
 
 ## Revision condition
 
