@@ -47,7 +47,7 @@ Current infrastructure observation: OCI Always Free/A1 remains suitable as a zer
 
 ### P2 — Public-site technical foundation
 
-**RESULT: FOUNDATION COMPLETE; CLOUDFARE PREVIEW EXIT GATE OPEN.**
+**RESULT: FOUNDATION COMPLETE; CLOUDFLARE PREVIEW EXIT GATE OPEN.**
 
 Implemented:
 
@@ -66,7 +66,7 @@ Merged foundation evidence: `formalife/platform` PR #4, merge commit lineage inc
 
 ### P3 — Formalife visual language and design system
 
-**RESULT: COMPLETE.**
+**RESULT: COMPLETE, WITH ONE OPEN NON-REPRODUCED RUNTIME OBSERVATION.**
 
 Merged through `formalife/platform` PR #7 at squash commit `16d74717079721561c9258fd70148a6a812b9e3d`.
 
@@ -82,7 +82,7 @@ Current visual-system decisions implemented and validated:
 - CSS-first motion with explicit reduced-motion handling;
 - reusable Full commercial patterns and owned controls.
 
-Validation evidence on final PR head:
+Validation evidence on the P3 final PR head:
 
 - repository contract and frozen-lockfile install passed;
 - Astro/TypeScript check passed;
@@ -91,7 +91,29 @@ Validation evidence on final PR head:
 - 5/5 passed against production/minified Wrangler preview;
 - keyboard modal/focus-return and reduced-motion behavior are explicitly tested;
 - Lighthouse thresholds pass on both `/` and `/design/full` against the production preview;
-- React runtime errors (`pageerror` / `console.error`, including the previously observed #185 class of failure) are CI-failing conditions.
+- React runtime errors (`pageerror` / `console.error`) are CI-failing conditions.
+
+#### OBSERVATION — React #185 reported after P3 merge
+
+A user/founder-observed minified React error `#185` was reported after the P3 merge. React defines this error as a maximum update-depth loop.
+
+Current evidence does **not** establish which Formalife route/action/environment produced it, and it has not been reproduced by the repository test suite.
+
+Regression response:
+
+- `formalife/platform` issue #9 remains open;
+- PR #10 expanded the existing E2E/runtime-clean gate to Chromium, Firefox and WebKit;
+- 15/15 tests passed in development across the three engines;
+- 15/15 tests passed against the production/minified Wrangler preview across the three engines;
+- Lighthouse remained green;
+- the cross-browser gate was merged to `main` at `a37f7212ef996eab634ed88a08a3357939785226`.
+
+Classification:
+
+- **OBSERVATION:** a real minified `#185` message was reported;
+- **RESULT:** current covered routes/actions do not reproduce it across Chromium/Firefox/WebKit;
+- **OPEN QUESTION:** exact route + action + browser/environment that triggered the observed error;
+- **OPERATING RULE:** do not claim the error is fixed and do not change component logic speculatively. Add a targeted reproducing test when the triggering context is known.
 
 Implementation documentation: `formalife/platform/docs/design/formalife-visual-system.md`.
 
@@ -99,7 +121,7 @@ Implementation documentation: `formalife/platform/docs/design/formalife-visual-s
 
 ### P4 — Information architecture, page map and content model
 
-**STATUS: NEXT ACTIVE IMPLEMENTATION BLOCK.**
+**STATUS: NEXT ACTIVE IMPLEMENTATION BLOCK, SUBJECT TO THE REACT #185 REGRESSION RULE ABOVE.**
 
 P4 should define the public site as a commercial information system before page count expands.
 
@@ -114,6 +136,8 @@ The work must start from current Formalife commercial/funnel truth and assign ea
 - routing/fallback.
 
 It must also define the lightest code-first content model and the WordPress URL/redirect inventory process without introducing a CMS prematurely.
+
+P4 architecture/documentation work may proceed because it does not depend on unresolved React component behavior. New interactive customer-facing React surfaces should not broaden until the #185 trigger is understood or the new surface has its own runtime-clean coverage.
 
 ## Open parallel infrastructure gates
 
