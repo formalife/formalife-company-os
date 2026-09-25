@@ -1,7 +1,7 @@
 # Formalife Platform Implementation Status
 
 Status: CURRENT
-Date: 2026-09-23
+Date: 2026-09-25
 
 Purpose: record execution reality against `PLATFORM_IMPLEMENTATION_ROADMAP.md` without rewriting the roadmap itself after every implementation step.
 
@@ -43,7 +43,11 @@ Prepared in `formalife/platform`:
 
 The production-readiness gate is **not** passed until a real host/VM proves persistence, off-host backup, restore into a separate environment, forced-failure monitoring and upgrade rehearsal.
 
-Current infrastructure observation: OCI Always Free/A1 remains suitable as a zero-cost spike candidate but is not frozen as production hosting merely because it is free; provider reclamation/inactivity risk must be included in the operational gate.
+Current infrastructure evidence:
+
+- Railway Hobby was tested as disposable external staging and rejected for reliable Twenty staging because its observed 1 GB per-replica memory limit caused a real first-boot Node/V8 heap OOM; this was classified as a host/infrastructure capacity failure, not a Formalife schema failure;
+- OCI Always Free/A1 remains a zero-cost self-hosting spike candidate in principle, but provisioning friction/availability has not produced an accepted host and it is not frozen as production hosting;
+- a Twenty Cloud trial workspace now exists and is the active P5 staging target. This removes P1 self-hosting from the critical path for P5 acceptance, but it does **not** by itself decide Formalife production hosting.
 
 ### P2 — Public-site technical foundation
 
@@ -127,7 +131,7 @@ P4 does not authorize a CMS or broad future-product page families. Runtime conte
 
 ### P5 — Twenty operational data model
 
-**RESULT: REPOSITORY MODEL + VERSIONED SCHEMA COMPLETE; STAGING EXIT GATE OPEN.**
+**RESULT: REPOSITORY MODEL + VERSIONED SCHEMA COMPLETE; CLOUD STAGING EXIT GATE OPEN.**
 
 The P5 domain/state contract was frozen through `formalife/platform` PR #13 at squash commit `f38dbea7238ffc34f7e129e02ef0d8c5b4a4d55d`.
 
@@ -147,8 +151,18 @@ Current implementation decisions/results:
 - initial attribution remains deliberately light: Order-level source/UTM/partner/referrer plus first-acquisition summary on Person;
 - no child clinical/health profile or speculative sensitive-data object is part of the initial schema;
 - unique schema constraints cover edition code, order code, Stripe Checkout Session, Stripe provider object and one Training Credit per origin Order;
-- the Formalife Twenty application is pinned to Twenty SDK `2.41.0` and passes frozen dependency install, repository contract, TypeScript validation and `twenty dev:build` manifest generation in read-only CI;
-- the shared web regression suite also remained green after the workspace/lockfile change.
+- the Formalife Twenty application retains Twenty SDK/client SDK `2.41.0`, while its declared server compatibility is now Twenty `2.42.0` following the real Cloud workspace version;
+- PR #17 (`7d4fa5ff895475b2eed0cb7db053f2ec2b1f898b`) validated that this compatibility declaration change preserves frozen install, repository contract, TypeScript validation, manifest build, additive schema apply and post-apply idempotence;
+- the shared web regression suite remained unaffected by the Twenty workspace changes.
+
+Real Cloud staging evidence on 2026-09-25:
+
+- a Twenty Cloud trial workspace exists and is configured as the P5 staging target;
+- GitHub Environment `staging` contains a staging-only Twenty URL/API key pair;
+- workflow run `36124331294` authenticated successfully to the Cloud workspace and passed frozen install, typecheck and app build;
+- the first apply stopped before metadata mutation only because the app declared server `2.41.0` while the Cloud workspace had completed upgrade to `2.42.0`;
+- that mismatch was classified as a runtime compatibility declaration mismatch, not an authentication, hosting or Formalife schema/model failure;
+- PR #17 corrected the declaration and passed repository-side compatibility proof; the real Cloud apply must now be rerun from the new `main`.
 
 Implementation documentation:
 
@@ -159,7 +173,7 @@ Implementation documentation:
 
 **P5 IS NOT COMPLETE OPERATIONALLY YET.**
 
-The remaining exit gate is to install/sync the versioned app into a real staging Twenty instance and execute the documented scenarios proving, without spreadsheet/manual side truth:
+The remaining exit gate is to complete the versioned app install/sync into the real Twenty Cloud staging workspace and execute the documented scenarios proving, without spreadsheet/manual side truth:
 
 - 1-Caregiver booking;
 - 2-Caregiver household booking;
@@ -176,17 +190,24 @@ P6 also retains one explicit architecture proof: do not assume Twenty alone is s
 
 ## Current next execution block
 
-### P5 staging installation and acceptance proof
+### P5 Twenty Cloud staging installation and acceptance proof
 
-The next move is not to add more CRM entities. It is to install the current versioned schema into staging and run the P5 scenario contract against real Twenty behavior.
+The immediate next move is to rerun the `twenty-staging` GitHub Actions workflow from current `main` with `apply=true` against the existing Twenty Cloud trial workspace.
 
-This operational proof is coupled to the still-open P1 real-host gate. A temporary staging instance may be used if it proves the schema/runtime behavior honestly, but local/static manifest success must not be relabeled as operational completion.
+If the additive apply succeeds and the post-apply plan is clean:
+
+1. verify the eight custom objects, standard-object extensions, relations and unique indexes in Cloud staging;
+2. record workspace/server/app identifiers and source commit;
+3. execute P5 scenarios S1–S11 in order;
+4. capture explicit PASS/FAIL evidence before promoting any assumption into P6.
+
+P5 staging acceptance is now operationally **decoupled from the P1 self-hosting spike**. Twenty Cloud is an active staging environment, not yet a frozen production-hosting decision.
 
 ## Open parallel infrastructure gates
 
 The remaining independent external gates are:
 
-1. **P1 real Twenty host proof** — requires access to/provisioning of the selected real VM/host and must prove persistence, off-host backup, restore, monitoring/failure behavior and upgrade rehearsal.
+1. **P1 production-hosting decision/proof** — self-hosting preparation exists but no real self-host has passed the gate. If Twenty Cloud is later approved as Formalife production hosting, revise/supersede the self-hosting gate explicitly rather than pretending it passed.
 2. **P2 real Cloudflare preview deploy** — requires Cloudflare account credentials/integration capable of creating the preview deployment.
 
 Neither gate may be silently marked complete from local simulation alone.
