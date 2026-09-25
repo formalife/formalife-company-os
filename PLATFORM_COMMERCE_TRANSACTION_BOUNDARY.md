@@ -1,13 +1,13 @@
 # Formalife Commerce Transaction Boundary
 
-Status: CURRENT DECISION
+Status: CURRENT DECISION — STAGING PROVEN
 Date: 2026-09-25
 
 ## Trigger
 
 P5 Twenty Cloud staging acceptance run `formalife/platform` GitHub Actions `36131378103` executed all scenarios S1-S11 against Twenty Cloud `v2.42.7`.
 
-Observed results:
+Observed first-run results:
 
 - S1 PASS;
 - S2 PASS;
@@ -21,18 +21,18 @@ Observed results:
 - S10 PASS;
 - S11 PASS.
 
-The failures are not missing CRM fields. They expose a missing guarded write boundary:
+The failures were not missing CRM fields. They exposed a missing guarded write boundary:
 
-- duplicate Stripe provider identity is rejected by the Twenty unique index, but exactly-once multi-record side effects under retry/partial failure/reordering are not yet proven;
-- a redeemed Training Credit can be changed back to `ACTIVE` through an ordinary Twenty API update;
-- a second refresh Entitlement can be issued from the same origin Enrollment;
-- an already redeemed Entitlement can be repointed to a second redemption through an ordinary Twenty API update.
+- duplicate Stripe provider identity was rejected by the Twenty unique index, but exactly-once multi-record side effects under retry/partial failure/reordering were not proven;
+- a redeemed Training Credit could be changed back to `ACTIVE` through an ordinary Twenty API update;
+- a second refresh Entitlement could be issued from the same origin Enrollment;
+- an already redeemed Entitlement could be repointed to a second redemption through an ordinary Twenty API update.
 
 ## Decision
 
-Formalife will introduce a **minimal Cloudflare commerce transaction boundary** before protected commerce mutations reach Twenty.
+Formalife uses a **minimal Cloudflare commerce transaction boundary** before protected commerce mutations reach Twenty.
 
-Initial implementation target: a **SQLite-backed Cloudflare Durable Object** used as the serialized command/invariant coordinator for Block 1 commerce operations.
+Current implementation: a **SQLite-backed Cloudflare Durable Object** used as the serialized command/invariant coordinator for Block 1 commerce operations.
 
 This is a transaction/process boundary, not a replacement CRM and not a new broad business-data system.
 
@@ -47,7 +47,7 @@ The boundary must not silently become a duplicate general-purpose customer datab
 
 ## Why Twenty alone is insufficient
 
-P5 proves that Twenty can represent the operational domain well, but ordinary record mutations do not enforce all cross-record/state-transition invariants required by the business.
+P5 proved that Twenty can represent the operational domain well, but ordinary record mutations do not enforce all cross-record/state-transition invariants required by the business.
 
 Adding isolated CRM workarounds would not solve the upstream problem:
 
@@ -56,11 +56,11 @@ Adding isolated CRM workarounds would not solve the upstream problem:
 - a relation does not itself guarantee single-use redemption;
 - capacity derived from Enrollments still needs serialized allocation when two valid purchases compete for the same last seat.
 
-Therefore protected commerce operations must be commands, not arbitrary field edits.
+Therefore protected commerce operations are commands, not arbitrary field edits.
 
-## Initial protected command surface
+## Protected command surface
 
-The boundary must own at least:
+The boundary owns or must own at least:
 
 1. payment application / reconciliation from Stripe;
 2. seat allocation and release;
@@ -71,19 +71,19 @@ The boundary must own at least:
 
 Ordinary Twenty users/API clients must not be the normal mutation path for fields whose correctness depends on those invariants.
 
-## Initial implementation shape
+## Implementation shape
 
-For current Formalife volume, prefer one logically global Block-1 commerce coordinator rather than premature sharding.
+For current Formalife volume, use one logically global Block-1 commerce coordinator rather than premature sharding.
 
-The SQLite-backed Durable Object should persist only the minimum required transaction/process state, for example:
+The SQLite-backed Durable Object persists only the minimum required transaction/process state, including:
 
-- command/webhook receipt identity and payload hash/reference;
+- command/event receipt identity and payload hash;
 - processing state / attempt metadata;
 - protected resource keys and transition state needed to reject invalid/replayed commands;
-- edition allocation/reservation state needed for serialized capacity decisions;
-- an outbox/reconciliation queue for Twenty mirror effects.
+- minimal allocation/invariant state where serialized decisions are required;
+- outbox/reconciliation effects for the Twenty mirror.
 
-Expected processing pattern:
+Processing pattern:
 
 1. authenticate/verify the incoming command or Stripe event;
 2. normalize it to a deterministic command/idempotency key;
@@ -95,17 +95,59 @@ Expected processing pattern:
 
 Twenty-side unique indexes remain useful defense-in-depth and reconciliation guards; they are not the transaction coordinator.
 
-## P5 remediation required before closure
+## P5 validation result
 
-P5 remains OPEN until the intended guarded write path/prototype is implemented and real staging acceptance re-proves the failing scenarios.
+**RESULT: STAGING PROVEN; P5 REMEDIATION COMPLETE.**
 
-Required remediation/proof:
+The boundary prototype and Twenty defense-in-depth constraint were implemented in `formalife/platform` and merged via PR #18 at merge commit `e18214f4d310e6b15bc811f8271370ae3bbbd5ca`, preserving tested head `580edad04ea42d5c4446cf450a5b2ef1b9f8a38a`.
 
-- S4: duplicate/replayed payment processing converges to one operational outcome and survives a simulated partial downstream failure/retry;
-- S7: redeemed Training Credit cannot be operationally reactivated through the ordinary supported path, while reversal is explicit/auditable;
-- S8: exactly one refresh Entitlement is issued per qualifying origin Enrollment and a redeemed Entitlement cannot be consumed twice through the ordinary supported path;
-- defense-in-depth schema constraints are added where semantics are unambiguous, especially exactly-one Entitlement per origin Enrollment;
-- protected Twenty mutation permissions/credentials are separated from the application command path so the admin-level staging API key is not representative of ordinary production operation.
+Focused real-staging run `36135292597` against Twenty Cloud `v2.42.7` passed all previously failing/gapped scenarios. Evidence artifact: `10863916308`; SHA-256 `3a0ac63b641318785e7e91cb5676258804d1615e539325f8e8c5d6d1477d638a`.
+
+### S4 — payment idempotency / partial failure
+
+**PASS.**
+
+- an injected downstream `PAYMENT_CREATE` failure left durable pending reconciliation work;
+- replay of the same idempotency key converged to `MIRRORED`;
+- the failed payment mirror effect required two delivery attempts;
+- repeated Stripe provider identity was deduplicated;
+- conflicting payload under the same idempotency key returned `IDEMPOTENCY_CONFLICT`;
+- final Twenty state contained exactly one PaymentRecord, exactly one Enrollment and Order `PAID`.
+
+### S7 — Training Credit protected lifecycle
+
+**PASS.**
+
+- duplicate issuance for the same origin Order was rejected;
+- a day-30 redemption used the approved EUR 29.90 Momentum value;
+- second redemption was rejected with `INVALID_TRAINING_CREDIT_TRANSITION`;
+- operational reactivation is not exposed by the supported command surface;
+- explicit reversal reached `REVERSED` and mirrored an audit reason into Twenty.
+
+### S8 — refresh Entitlement single issuance / single use
+
+**PASS.**
+
+- duplicate issuance was rejected by the transaction boundary;
+- a direct duplicate Twenty write was independently rejected by the new UNIQUE Entitlement-origin-Enrollment constraint;
+- first redemption was persisted;
+- second redemption was rejected with `INVALID_ENTITLEMENT_TRANSITION`;
+- the Twenty mirror remained attached to the first redemption target.
+
+This proof closes the P5 remediation requirement for the **supported operational path**. It does not mean unrestricted direct administrative Twenty mutation is safe or intended.
+
+## P6 integration/security boundary
+
+Before production commerce traffic depends on this architecture:
+
+- Stripe webhook signatures must be verified before commands enter the boundary;
+- duplicate/reordered real Stripe events must be mapped to deterministic idempotency keys;
+- direct protected Twenty mutation credentials must remain server-side behind the commerce boundary;
+- the application/customer-facing path must not receive the administrative staging mutation capability used for validation;
+- reconciliation/exception procedures must remain explicit and testable;
+- the boundary must prove capacity behavior under the direct Full vertical slice, including 1- and 2-Caregiver purchases and failed-payment zero-seat behavior.
+
+These are P6 production-integration requirements, not reasons to reopen P5 unless new evidence invalidates the staging proof.
 
 ## Cloudflare provider fit
 
@@ -130,16 +172,16 @@ Rejected. More fields improve representation but do not solve serialization, par
 
 ### Introduce a second general-purpose operational database/CRM now
 
-Rejected. It would create duplicate truth and unnecessary operational surface. The new persistence must stay narrow: transaction/process/invariant state only.
+Rejected. It would create duplicate truth and unnecessary operational surface. The persistence remains narrow: transaction/process/invariant state only.
 
 ## Revision conditions
 
 Revisit this decision if any of the following becomes true:
 
-- the Durable Object staging prototype cannot prove the P5 invariants;
+- later end-to-end Stripe testing contradicts the P5 staging proof;
 - Cloudflare pricing/limits materially conflict with Formalife economics;
 - throughput/availability requirements make a single coordinator inappropriate;
 - Twenty introduces a native transactional/state-machine facility that proves the same invariants with less system complexity;
 - legal/privacy requirements force a different persistence boundary.
 
-Until then, this boundary is the current architecture direction for P5 remediation and P6 commerce integration.
+Until then, this boundary is the current architecture for P6 commerce integration.
