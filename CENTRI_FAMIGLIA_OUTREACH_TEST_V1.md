@@ -100,9 +100,11 @@ Do not blast the full Lombardia list. Start with six high-fit, funded counterpar
 
 ASST Spedali Civili and other P1/P2 counterparties remain outside the first wave until this test produces better evidence on language, procurement and offer fit.
 
-## Outreach rule
+## Outreach rule — email-first
 
-The first email has one job: obtain a relevant 15–20 minute qualification conversation or routing to the correct decision/process owner.
+Founder decision: first-wave qualification should continue **asynchronously by email**. Do not propose a phone/video call in the initial outreach.
+
+The first email has one job: obtain a relevant written reply or routing to the correct decision/process owner.
 
 It should:
 
@@ -110,11 +112,14 @@ It should:
 - explain the institutional-program hypothesis briefly;
 - avoid sending a fixed quote before qualification;
 - avoid inventing budget availability or procurement eligibility;
-- ask whether the program could fit activities already planned and who should evaluate it.
+- ask one easy-to-answer question about whether the program could fit activities already planned;
+- ask for routing to the correct person if the recipient is not responsible.
 
 Founder operational note: outreach is sent manually from Formalife's professional Aruba email. Outcomes are reported manually back into the operating process; do not assume Gmail captures these sends.
 
-## Qualification — minimum evidence required
+## Qualification — email-first minimum evidence required
+
+Use the reply chain progressively. Do not send a questionnaire containing every qualification question at once.
 
 Before a commercial proposal, understand at least:
 
@@ -125,6 +130,8 @@ Before a commercial proposal, understand at least:
 5. **Procurement** — what supplier/onboarding/quotation/affidamento process applies?
 6. **Timing** — by when must the activity be approved, contracted and delivered?
 7. **Future-decision test** — if Formalife supplied a proposal matching the agreed scope and investment constraints, what would happen next internally?
+
+Qualification questions should be sequenced across the email exchange based on the buyer's actual replies. A synchronous conversation is not the default first-wave CTA.
 
 ## Proposal gate
 
@@ -140,7 +147,7 @@ A proposal becomes justified when there is sufficient clarity on:
 - procurement;
 - timing.
 
-If these remain materially opaque, the next step is qualification, stakeholder involvement, recontact at the right time or disqualification — not a speculative preventivo.
+If these remain materially opaque, the next step is further written qualification, stakeholder routing, recontact at the right time or disqualification — not a speculative preventivo.
 
 ## Test review gate
 
@@ -148,8 +155,8 @@ After the six first-wave prospects have gone through initial outreach plus a rea
 
 Review evidence:
 
-- responses and routing quality;
-- qualified conversations obtained;
+- response and routing quality;
+- qualified email exchanges obtained;
 - confirmed program/eligibility fit;
 - common objections or existing alternatives;
 - procurement patterns;
@@ -166,7 +173,7 @@ Pricing remains an **OPEN QUESTION** during first-wave discovery.
 
 Do not infer institutional pricing from current B2C Full pricing, historical B2B designs or grant amount.
 
-After sufficient qualification conversations, design pricing from:
+After sufficient qualification exchanges, design pricing from:
 
 - requested scope;
 - normalized delivery cost;
@@ -198,6 +205,7 @@ Revise this test after first-wave evidence materially changes any of the followi
 ## Provenance
 
 - Founder authorization to proceed: 2026-09-25 Project conversation.
+- Founder decision to use email-first qualification rather than proposing a call in first outreach: 2026-09-25 Project conversation.
 - Funding/prospect details: current `42_PARTNER_PIPELINE` research workstream and cited institutional-source verification embedded in the pipeline.
 - Strategic sequencing: current Layer 2 `FORMALIFE_BUILD_SEQUENCE.md`.
 - Sales/qualification discipline: current Layer 1 references listed above.
