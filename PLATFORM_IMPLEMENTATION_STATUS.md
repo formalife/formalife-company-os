@@ -179,24 +179,81 @@ Implementation documentation/evidence:
 - Layer 2 architecture decision: `PLATFORM_COMMERCE_TRANSACTION_BOUNDARY.md`;
 - `formalife/platform` issue #12 / PR #18.
 
-## Current next execution block
-
 ### P6 — First end-to-end commercial vertical slice: direct Full purchase
 
-P5 no longer blocks integration. The next sequential build target is the smallest revenue-capable direct Full path from the current roadmap.
+**RESULT: PROVIDER-INDEPENDENT CONTRACT + SERIALIZED CAPACITY PROVEN; EXTERNAL INTEGRATION GATES OPEN.**
 
-Required sequence:
+P6 remains **OPEN**. It is not yet a revenue-capable end-to-end vertical slice because Stripe, Brevo and real Cloudflare deployment have not been proven.
 
-1. expose a confirmed Full edition and verified availability to the purchase flow;
-2. implement server-side Stripe Checkout Session creation for 1-Caregiver and 2-Caregiver options;
-3. verify Stripe webhook signatures and normalize duplicate/reordered events into the guarded commerce transaction boundary;
-4. drive Twenty Order / PaymentRecord / Household / Enrollment mirror effects through that boundary rather than arbitrary protected-field edits;
-5. send the correct transactional confirmation through Brevo;
-6. record privacy-safe PostHog funnel events and preserve intended source/UTM context;
-7. make the success page depend on verified server/payment state rather than the browser redirect alone;
-8. prove successful 1- and 2-Caregiver purchases, duplicate webhook idempotency, failed-payment zero-seat behavior, refund/reconciliation understanding, correct Twenty records and correct communications.
+Implemented and merged through `formalife/platform` PR #19:
+
+- canonical direct Full purchase contracts for 1 Caregiver / one seat / EUR 80 and 2 Caregivers / two seats / EUR 120;
+- confirmed-edition-only checkout preparation for this first slice;
+- server-side availability/capacity contract;
+- explicit test-only fake payment-provider seam, never a production fallback;
+- provider-event normalization into guarded commerce commands;
+- stable provider-object payment idempotency identity;
+- amount/currency and enrollment-count fail-closed checks before `payment.apply`;
+- failed/expired provider events do not create seat-consuming payment commands;
+- verified checkout-state contract that never treats browser redirect/session parameters alone as payment truth;
+- PAID-gated transactional confirmation contract;
+- privacy-safe analytics/attribution contract that excludes arbitrary customer PII;
+- serialized Durable Object edition-capacity state and 1/2-seat reservations;
+- reservation replay/idempotency conflict handling;
+- reservation release on failed/expired checkout and TTL expiry;
+- protected-payment reservation requirement for the P6 runtime.
+
+Capacity was deliberately moved beyond a simple read-time pre-check: the same global commerce coordinator serializes last-seat allocation so two concurrent valid purchases cannot both be accepted for the same final capacity.
+
+Evidence:
+
+- PR #19 merge commit `7831e00315eae75cdc7302585e81f7c94f64fbbd`;
+- exact tested head preserved in `main`: `9dd2dbb85cc0b18ec1b8f47020de2c42e7e9c524`;
+- P6 commerce contract run `36148954303`: SUCCESS;
+- evidence artifact `10869529274`, SHA-256 `04fc7b930f6a5e280b7b3226248e7cf563e7e4261affc96ad09b2bd3e40d1cf9`;
+- web regression run `36148954543`: SUCCESS across repository contract, typecheck, production build, P6 commerce tests, browser/accessibility tests, production runtime-error tests and Lighthouse;
+- bootstrap run `36148954212`: SUCCESS.
+
+The runtime capacity smoke specifically proved:
+
+- capacity 12 with baseline occupancy 10 accepted one two-seat reservation;
+- a competing additional reservation was rejected with `INSUFFICIENT_CAPACITY`;
+- identical reservation replay was idempotent and changed replay conflicted;
+- failed-payment release restored capacity;
+- TTL expiry restored capacity;
+- protected `payment.apply` without a reservation failed closed when the P6 requirement was enabled.
+
+Important implementation boundary: repository config retains `REQUIRE_CAPACITY_RESERVATION=false` only for compatibility with prior P5 test paths. The protected P6 runtime must set it to `true`; the default false value is not evidence of production readiness.
+
+P6 still requires external proof before closure:
+
+1. real Stripe test Checkout Session creation for both caregiver options;
+2. raw-body Stripe webhook signature verification;
+3. duplicate/reordered real Stripe event handling through the guarded boundary;
+4. real successful, failed and refund/reconciliation paths with stable Stripe identifiers;
+5. real checkout/session lifecycle wired to seat reservation/expiry/release/consume behavior;
+6. real Twenty staging/application wiring for checkout-created Order state, final mirrored records and verified success-state lookup;
+7. real Brevo transactional confirmation delivery;
+8. privacy-safe PostHog event delivery on the deployed path;
+9. real Cloudflare preview/staging deployment of public web + commerce boundary;
+10. end-to-end 1-Caregiver and 2-Caregiver acceptance against the deployed system.
 
 Do not broaden into Guide/Training Credit public purchase flows, activation/pre-enrolment exceptions or unrelated site completeness before this direct Full vertical slice passes its exit gate.
+
+## Current next execution block
+
+### P6 application wiring without live Stripe
+
+Until Stripe test access is available, continue only on provider-independent work that reduces the remaining integration surface without creating a second payment architecture.
+
+Immediate sequence:
+
+1. wire a read-only Twenty edition repository adapter for confirmed-edition/capacity data;
+2. define/create the pre-checkout Order state and provider-session linkage contract without treating the fake provider as production-capable;
+3. expose server/API seams for checkout preparation and verified success-state lookup that fail closed when real payment configuration is absent outside isolated tests;
+4. add Brevo and PostHog adapters with deterministic test implementations and no silent production fallback;
+5. prove the complete provider-independent application path in CI;
+6. when Stripe becomes available, replace only the payment adapter/event-verification seam and run the real external P6 acceptance.
 
 ## Open parallel infrastructure gates
 
