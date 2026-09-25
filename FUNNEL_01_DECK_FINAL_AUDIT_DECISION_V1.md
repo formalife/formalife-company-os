@@ -1,13 +1,23 @@
 # Funnel 01 — Final Deck Audit Decision V1
 
-Status: CURRENT FOUNDER DECISION — FINAL AUDIT LOCK
+Status: CURRENT FOUNDER DECISION — FINAL AUDIT LOCK / PRODUCTION CONSOLIDATED
 Date: 2026-09-25
 
 Purpose: record the founder-approved final red-team decisions for the Funnel 01 teaching deck before clinical sign-off, PowerPoint production and full-course rehearsal.
 
-This file governs the final audit deltas. Production files must conform to it. Clinical/scientific wording and technique remain subject to Dott.ssa Mafalda Camposarcone sign-off before customer use.
+This file governs the final audit decisions. Clinical/scientific wording and technique remain subject to Dott.ssa Mafalda Camposarcone sign-off before customer use.
 
-Canonical context:
+## Current canonical production layer
+
+The final audit has now been consolidated into:
+
+- `FUNNEL_01_FULL_SLIDE_BLUEPRINT_V3_FINAL.md`
+- `FUNNEL_01_INSTRUCTOR_SLIDE_OVERLAY_V2_FINAL.md`
+- `FUNNEL_01_SLIDE_CUE_SHEET_V2_FINAL.md`
+- `FUNNEL_01_RUN_OF_SHOW_FINAL_AUDIT_OVERLAY_V1.md`
+- `FUNNEL_01_PRESENTATION_DESIGN_SYSTEM_V0_2.md`
+
+Historical/direct parents remain relevant for inherited detail:
 
 - `FUNNEL_01_COURSE_NAMING_COVER_DECISION_V1.md`
 - `FUNNEL_01_FULL_SLIDE_BLUEPRINT_V2.md`
@@ -15,6 +25,8 @@ Canonical context:
 - `FUNNEL_01_SLIDE_CUE_SHEET_V1.md`
 - `FUNNEL_01_PRESENTATION_DESIGN_SYSTEM_V0_1.md`
 - ACT-specific run-of-show files
+
+Where the final production layer conflicts with an inherited parent, the final production layer wins.
 
 ## Governing decision criterion
 
@@ -299,9 +311,9 @@ The official course target remains approximately **4h10** until full rehearsal p
 
 # 5. Physical deck consequence
 
-Pre-audit current baseline:
+Pre-audit baseline:
 
-- 69 active teaching slides using current stable IDs;
+- 69 active teaching slides using stable IDs;
 - mandatory C00 outside official teaching clock;
 - 7 hidden ACT 6 scenario-bank slides;
 - appendix/reference layer separate.
@@ -313,7 +325,7 @@ Final-audit production state:
 - `S33 = APPENDIX`;
 - `S66 = ABSORBED`;
 - `S25 = ACTIVE / OPTIONAL_REHEARSAL_CUT`;
-- IDs are not renumbered before production/rehearsal, preserving cross-file references;
+- IDs are not renumbered before production/rehearsal;
 - mandatory `C00` remains unchanged;
 - 7 hidden ACT 6 scenario-bank slides remain unchanged.
 
@@ -321,16 +333,24 @@ Final-audit production state:
 
 # 6. Audit closure and next gate
 
-The deck red-team audit is **CLOSED** with this decision record.
+The deck red-team audit is **CLOSED** and the production-control layer has been **CONSOLIDATED**.
+
+Completed:
+
+1. final decision lock;
+2. final Blueprint V3;
+3. final Instructor/Slide Overlay V2;
+4. final Cue Sheet V2;
+5. final run-of-show audit overlay;
+6. presentation-design V0.2 override.
 
 Next sequence:
 
-1. consolidate Blueprint / Overlay / Cue Sheet and relevant run-of-show language to this lock;
-2. clinical/scientific sign-off by Dott.ssa Mafalda Camposarcone on customer-facing clinical content, statistics, algorithms, escalation wording and medical visuals;
-3. produce the real PowerPoint using the current presentation design system;
-4. perform the complete timed 4h10 rehearsal;
-5. revise only from observed rehearsal/clinical evidence;
-6. freeze the production deck for first rebuilt-Full delivery.
+1. **clinical/scientific sign-off** by Dott.ssa Mafalda Camposarcone on customer-facing clinical content, statistics, algorithms, escalation wording and medical visuals;
+2. produce the real PowerPoint using `FUNNEL_01_PRESENTATION_DESIGN_SYSTEM_V0_2.md` and the final production layer above;
+3. perform the complete timed 4h10 rehearsal;
+4. revise only from observed rehearsal/clinical evidence;
+5. freeze the production deck for first rebuilt-Full delivery.
 
 ---
 
