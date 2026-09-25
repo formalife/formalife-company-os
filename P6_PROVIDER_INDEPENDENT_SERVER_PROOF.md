@@ -5,9 +5,9 @@ Date: 2026-09-25
 
 ## Scope
 
-This record captures the proven direct-Full P6 server/application slice through `formalife/platform` PR #24, including the first real Stripe Sandbox acceptance evidence.
+This record captures the proven direct-Full P6 server/application slice through `formalife/platform` PR #25, including real Stripe Sandbox Checkout acceptance and the Stripe raw-body webhook verification contract in code/CI.
 
-It does **not** claim webhook, successful/failed/refund payment processing, Brevo delivery, PostHog delivery, Cloudflare deployment or end-to-end production/revenue acceptance.
+It does **not** claim a deployed Stripe webhook, successful/failed/refund payment processing, Brevo delivery, PostHog delivery, Cloudflare deployment or end-to-end production/revenue acceptance.
 
 ## Current implementation evidence
 
@@ -71,6 +71,35 @@ The Stripe Sandbox evidence proved:
 - both sessions were explicitly expired and ended in `expired` state;
 - no real payment was executed.
 
+### PR #25 — Stripe raw-body webhook verification contract
+
+Merged implementation:
+
+- `formalife/platform` PR #25;
+- merge commit `675a79981b913694d156dc9c48225b0ea954f35d`;
+- exact tested head preserved in `main`: `326d9bdc5bf6785bf269255576506e7f9a0a6677`.
+
+CI evidence on the tested head:
+
+- bootstrap run `36163361512`: SUCCESS;
+- P6 commerce-contract run `36163361448`: SUCCESS;
+- commerce artifact `10876228838`, SHA-256 `70cd88d9a3af2797f0ce7e9646b495bca6b548b308b46dbf26bbd585ed4b5112`;
+- full web regression run `36163361416`: SUCCESS, including Astro typecheck, Cloudflare production build, browser/accessibility tests, production runtime-error tests and Lighthouse;
+- commerce unit contracts: 69 PASS / 0 FAIL.
+
+The verifier contract proves in code/CI:
+
+- verification against the exact raw request body before JSON parsing;
+- HMAC-SHA256 `Stripe-Signature` verification;
+- five-minute default timestamp tolerance and stale-signature rejection;
+- support for multiple `v1` signatures during signing-secret rotation;
+- modified-body rejection;
+- normalization of paid `checkout.session.completed` into the existing `payment.succeeded` domain contract;
+- normalization of `checkout.session.expired` into the existing non-success/capacity-release contract;
+- `checkout.session.completed` is not treated as success unless Stripe marks the session `paid`.
+
+This is **CODE/CI PROOF ONLY**. No deployed Stripe endpoint has yet presented a real `whsec_...` signing secret or received an actual Stripe webhook.
+
 ## Founder decision — direct Stripe integration path
 
 **DECISION — CURRENT, 2026-09-25:** do not make the ChatGPT Stripe plugin/OAuth connector a prerequisite for Formalife P6.
@@ -102,7 +131,15 @@ Formalife can create real Stripe-hosted Checkout Sessions for both current direc
 
 The adapter validates Stripe's returned amount and currency against the canonical offer before treating the session as usable. It uses server-side idempotency, protected non-PII metadata, and explicit session expiration.
 
-This proves Checkout Session creation/verification/expiration only. It does not yet prove webhook authenticity or payment state transitions.
+This proves Checkout Session creation/verification/expiration only. It does not yet prove real webhook receipt or payment state transitions.
+
+### Stripe webhook authenticity contract
+
+**RESULT: CODE/CI PROVEN; REAL DEPLOYED ACCEPTANCE OPEN.**
+
+The platform has a raw-body signature verifier and event normalizer matching the required Stripe boundary behavior. Invalid/stale/altered payloads fail closed before application processing.
+
+The remaining proof requires a deployed public staging endpoint, a Stripe Sandbox endpoint-specific `STRIPE_WEBHOOK_SECRET`, and actual webhook delivery from Stripe.
 
 ### Purchaser identity
 
@@ -212,7 +249,7 @@ No real deployed PostHog event delivery has been proven yet.
 
 The direct Full vertical slice is **not production/revenue accepted** until external proof covers at least:
 
-1. raw-body Stripe webhook signature verification;
+1. real deployed Stripe webhook delivery with endpoint-specific raw-body signature verification;
 2. duplicate and reordered real Stripe event handling;
 3. successful payment, failed payment and refund/reconciliation paths;
 4. real provider session lifetime wired to reservation consume/release/expiry;
