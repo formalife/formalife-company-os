@@ -1,13 +1,13 @@
-# P6 Provider-Independent Server Proof
+# P6 Server + Stripe Sandbox Proof
 
 Status: CURRENT RESULT — P6 REMAINS OPEN
 Date: 2026-09-25
 
 ## Scope
 
-This record captures the provider-independent portion of the direct Full P6 vertical slice through `formalife/platform` PR #23.
+This record captures the proven direct-Full P6 server/application slice through `formalife/platform` PR #24, including the first real Stripe Sandbox acceptance evidence.
 
-It does **not** claim Stripe, Brevo, PostHog or Cloudflare external integration acceptance.
+It does **not** claim webhook, successful/failed/refund payment processing, Brevo delivery, PostHog delivery, Cloudflare deployment or end-to-end production/revenue acceptance.
 
 ## Current implementation evidence
 
@@ -44,23 +44,65 @@ CI evidence:
 - commerce artifact `10873112089`, SHA-256 `10b65dde6fceab711e3e445cd8f87845ae9ec1d2007471ff003c519afe3607a1`;
 - full web regression `36154797400`: SUCCESS, including Astro typecheck, Cloudflare production build, commerce tests, browser/accessibility tests, production runtime-error tests and Lighthouse.
 
+### PR #24 — real Stripe Sandbox Checkout adapter
+
+Merged implementation:
+
+- `formalife/platform` PR #24;
+- merge commit `c082c2dd0f2dc7362ce85b461b47e32fc633385a`;
+- exact tested head preserved in `main`: `9fee62bf11fa9533b1b07157d6df68c988973da8`.
+
+Final-head CI / Sandbox evidence:
+
+- bootstrap run `36161338331`: SUCCESS;
+- P6 commerce-contract run `36161338310`: SUCCESS;
+- full web regression run `36161338305`: SUCCESS;
+- Stripe Sandbox workflow run `36161338284`, rerun on corrected staging variables: SUCCESS;
+- Stripe evidence artifact `10875847585`, SHA-256 `680bc95c10427f145bfadfea914ae58043b751a84578c9ccbf15ecc350aad39f`;
+- commerce unit contracts: 61 PASS / 0 FAIL.
+
+The Stripe Sandbox evidence proved:
+
+- configured SINGLE Price = EUR 80.00 one-time;
+- configured COUPLE Price = EUR 120.00 one-time;
+- real hosted Checkout Session creation for `FULL_SINGLE` and `FULL_COUPLE`;
+- created sessions were `open`, `unpaid`, and `livemode=false`;
+- session amount/currency matched the canonical Formalife offer contract;
+- both sessions were explicitly expired and ended in `expired` state;
+- no real payment was executed.
+
 ## Founder decision — direct Stripe integration path
 
 **DECISION — CURRENT, 2026-09-25:** do not make the ChatGPT Stripe plugin/OAuth connector a prerequisite for Formalife P6.
 
-The current Stripe plugin OAuth callback is unreliable in the founder environment. Formalife will therefore integrate Stripe through normal server-side Stripe credentials and webhook signing secrets stored directly in the deployment/CI secret stores, never in chat or source control.
+The current Stripe plugin OAuth callback is unreliable in the founder environment. Formalife therefore integrates Stripe through normal server-side Stripe credentials and webhook signing secrets stored directly in deployment/CI secret stores, never in chat or source control.
 
 For staging/new integration work, use a dedicated Stripe Sandbox as the payment environment. The plugin may be connected later for operational convenience, but it is not part of the runtime architecture or P6 exit gate.
 
-This decision does not authorize live-mode payment processing yet. P6 must first pass the real Sandbox acceptance path below.
+This decision does not authorize live-mode payment processing yet.
 
 ## Results now proven
 
 ### Payment configuration boundary
 
-**RESULT:** missing real payment-provider configuration fails before durable commerce or Twenty identity mutations.
+**RESULT:** missing or partial real payment-provider configuration fails before durable commerce or Twenty identity mutations.
 
 A test-only fake provider remains explicit and injected; it is not a runtime fallback.
+
+When all required Stripe settings are present, the runtime now instantiates the real Stripe Checkout adapter. Otherwise it remains fail-closed.
+
+### Real Stripe Checkout Session creation
+
+**RESULT: REAL SANDBOX PROVEN.**
+
+Formalife can create real Stripe-hosted Checkout Sessions for both current direct-Full offers using server-side credentials and configured Price IDs:
+
+- SINGLE: EUR 80.00 / 1 seat;
+- COUPLE: EUR 120.00 / 2 seats.
+
+The adapter validates Stripe's returned amount and currency against the canonical offer before treating the session as usable. It uses server-side idempotency, protected non-PII metadata, and explicit session expiration.
+
+This proves Checkout Session creation/verification/expiration only. It does not yet prove webhook authenticity or payment state transitions.
 
 ### Purchaser identity
 
@@ -93,7 +135,7 @@ Real Twenty Cloud staging proved companion creation and replay stability in the 
 
 ### Protected checkout context
 
-**RESULT:** the Durable Object seat reservation now persists the minimum protected operational context needed by later payment processing:
+**RESULT:** the Durable Object seat reservation persists the minimum protected operational context needed by later payment processing:
 
 - Household ID;
 - ordered participant Person IDs.
@@ -106,13 +148,13 @@ Payment application can validate that final Enrollment participant/Household eff
 
 ### Failure ordering / rollback
 
-**RESULT:** provider-independent checkout orchestration has explicit failure behavior.
+**RESULT:** checkout orchestration has explicit failure behavior.
 
 - reservation failure -> pre-checkout Order cancellation;
 - provider checkout creation failure -> reservation release + Order cancellation;
-- Twenty session-link failure -> first attempt to invalidate/expire provider checkout;
-- if provider invalidation is confirmed -> release reservation + cancel Order;
-- if provider invalidation cannot be confirmed -> do **not** release capacity optimistically; retain the protected reservation until expiry/reconciliation and raise an explicit reconciliation-required state.
+- Twenty session-link failure -> first attempt to expire provider checkout;
+- if provider expiration is confirmed -> release reservation + cancel Order;
+- if provider expiration cannot be confirmed -> do **not** release capacity optimistically; retain the protected reservation until expiry/reconciliation and raise an explicit reconciliation-required state.
 
 This prevents an uncertain still-payable checkout from releasing the same last seat to another buyer.
 
@@ -124,20 +166,20 @@ This prevents an uncertain still-payable checkout from releasing the same last s
 
 **RESULT: CODE/CI PROVEN; NOT EXTERNALLY DEPLOYED.**
 
-The Astro/Cloudflare application now exposes:
+The Astro/Cloudflare application exposes:
 
 - `POST /api/commerce/full/checkout`;
 - `GET /api/commerce/full/status`.
 
-The checkout endpoint requires a stable `Idempotency-Key`, accepts JSON only, emits `no-store`, sanitizes internal errors and delegates all business state to the provider-independent server/application layer.
+The checkout endpoint requires a stable `Idempotency-Key`, accepts JSON only, emits `no-store`, sanitizes internal errors and delegates all business state to the server/application layer.
 
-Current production runtime intentionally instantiates `UnavailablePaymentProvider`; therefore checkout returns HTTP 503 before Person, Household, Order or capacity mutation until a real Stripe adapter is installed and configured.
+The runtime now selects the real Stripe provider only when `STRIPE_SECRET_KEY`, `STRIPE_PRICE_FULL_SINGLE`, `STRIPE_PRICE_FULL_COUPLE` and public site URL are configured; missing/partial provider configuration remains fail-closed before commerce mutation.
 
 The status endpoint reads server-side verified operational state rather than trusting browser redirect data.
 
-Astro typecheck and the Cloudflare production build both pass with the current `cloudflare:workers` runtime environment binding pattern.
+Astro typecheck and the Cloudflare production build pass with the current `cloudflare:workers` runtime environment binding pattern.
 
-This proves the endpoint/runtime contract only. No real Cloudflare preview/staging deployment has yet been accepted.
+No real Cloudflare preview/staging deployment has yet been accepted.
 
 ### Brevo contract
 
@@ -170,16 +212,15 @@ No real deployed PostHog event delivery has been proven yet.
 
 The direct Full vertical slice is **not production/revenue accepted** until external proof covers at least:
 
-1. real Stripe Sandbox Checkout Session creation for 1-Caregiver and 2-Caregiver options;
-2. raw-body Stripe webhook signature verification;
-3. duplicate and reordered real Stripe event handling;
-4. successful payment, failed payment and refund/reconciliation paths;
-5. real provider session lifetime wired to reservation consume/release/expiry;
-6. final paid Twenty Order / PaymentRecord / Enrollment effects;
-7. real Brevo transactional confirmation delivery;
-8. real privacy-safe PostHog event delivery;
-9. real Cloudflare staging/preview deployment of the public app and commerce boundary;
-10. deployed end-to-end Single and Couple acceptance.
+1. raw-body Stripe webhook signature verification;
+2. duplicate and reordered real Stripe event handling;
+3. successful payment, failed payment and refund/reconciliation paths;
+4. real provider session lifetime wired to reservation consume/release/expiry;
+5. final paid Twenty Order / PaymentRecord / Enrollment effects;
+6. real Brevo transactional confirmation delivery;
+7. real privacy-safe PostHog event delivery;
+8. real Cloudflare staging/preview deployment of the public app and commerce boundary;
+9. deployed end-to-end Single and Couple acceptance.
 
 ## Governing boundary
 
