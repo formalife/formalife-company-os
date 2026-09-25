@@ -131,7 +131,7 @@ P4 does not authorize a CMS or broad future-product page families. Runtime conte
 
 ### P5 — Twenty operational data model
 
-**RESULT: REPOSITORY MODEL + VERSIONED SCHEMA COMPLETE; CLOUD STAGING EXIT GATE OPEN.**
+**RESULT: CLOUD SCHEMA SYNC PROVEN; REAL ACCEPTANCE EXECUTED; TRANSACTION-BOUNDARY REMEDIATION REQUIRED.**
 
 The P5 domain/state contract was frozen through `formalife/platform` PR #13 at squash commit `f38dbea7238ffc34f7e129e02ef0d8c5b4a4d55d`.
 
@@ -151,7 +151,7 @@ Current implementation decisions/results:
 - initial attribution remains deliberately light: Order-level source/UTM/partner/referrer plus first-acquisition summary on Person;
 - no child clinical/health profile or speculative sensitive-data object is part of the initial schema;
 - unique schema constraints cover edition code, order code, Stripe Checkout Session, Stripe provider object and one Training Credit per origin Order;
-- the Formalife Twenty application retains Twenty SDK/client SDK `2.41.0`, while its declared server compatibility is now Twenty `2.42.0` following the real Cloud workspace version;
+- the Formalife Twenty application retains Twenty SDK/client SDK `2.41.0`, while its declared server compatibility is Twenty `2.42.0` following the real Cloud workspace version;
 - PR #17 (`7d4fa5ff895475b2eed0cb7db053f2ec2b1f898b`) validated that this compatibility declaration change preserves frozen install, repository contract, TypeScript validation, manifest build, additive schema apply and post-apply idempotence;
 - the shared web regression suite remained unaffected by the Twenty workspace changes.
 
@@ -159,49 +159,65 @@ Real Cloud staging evidence on 2026-09-25:
 
 - a Twenty Cloud trial workspace exists and is configured as the P5 staging target;
 - GitHub Environment `staging` contains a staging-only Twenty URL/API key pair;
-- workflow run `36124331294` authenticated successfully to the Cloud workspace and passed frozen install, typecheck and app build;
-- the first apply stopped before metadata mutation only because the app declared server `2.41.0` while the Cloud workspace had completed upgrade to `2.42.0`;
-- that mismatch was classified as a runtime compatibility declaration mismatch, not an authentication, hosting or Formalife schema/model failure;
-- PR #17 corrected the declaration and passed repository-side compatibility proof; the real Cloud apply must now be rerun from the new `main`.
+- the Cloud workspace reports Twenty `v2.42.7`;
+- `twenty-staging` GitHub Actions run `36127598842` from `main` commit `7d4fa5ff895475b2eed0cb7db053f2ec2b1f898b` passed authentication, frozen install, typecheck, app build, real additive apply and post-apply plan verification;
+- the versioned Formalife app is therefore installed/synchronized against the real Cloud staging workspace;
+- acceptance runner `36131378103` then executed all S1-S11 scenarios with synthetic staging-only records and uploaded evidence artifact `10861549369` (`p5-staging-acceptance-36131378103`, SHA-256 `05580151bf4d191f71e85bcad021091e621699c924df2eaab1f6ca91dfeb2141`);
+- acceptance aggregate: **8 PASS, 1 GAP / ARCHITECTURE REVIEW REQUIRED, 2 FAIL / ARCHITECTURE REVIEW REQUIRED**.
+
+Scenario outcome:
+
+- S1 PASS — one-caregiver Full booking / paid mirror / capacity / attribution;
+- S2 PASS — two-caregiver household booking / later companion attachment / capacity;
+- S3 PASS — failed payment consumes zero confirmed seats;
+- S4 GAP — duplicate Stripe provider identity is rejected and exactly one PaymentRecord remains, but exactly-once multi-record processing under retry, partial failure and reordering is not yet proven because no guarded P6 write boundary exists;
+- S5 PASS — transfer preserves old Enrollment/history and moves capacity to a linked new Enrollment;
+- S6 PASS — cancellation releases capacity while retaining transaction/refund history;
+- S7 FAIL — Training Credit economics/windows and origin-order uniqueness work, but a redeemed credit can be changed back to `ACTIVE` through an ordinary API update;
+- S8 FAIL — refresh Entitlement is representable, but duplicate issuance from one origin Enrollment and a second redemption/repoint are currently possible through ordinary API writes;
+- S9 PASS — direct/UTM, partner and referral attribution remain distinct;
+- S10 PASS — consent grant/withdraw/regrant chronology supports deterministic current marketing eligibility without mutating history;
+- S11 PASS — relationship state remains routing state and does not erase or replace Order/Enrollment history.
+
+**P5 IS NOT COMPLETE OPERATIONALLY YET.**
+
+The first remaining blocker is no longer schema installation or basic representational fidelity. It is the protected commerce write boundary required for S4/S7/S8.
+
+Current architecture decision is recorded in `PLATFORM_COMMERCE_TRANSACTION_BOUNDARY.md`:
+
+- Stripe remains payment truth;
+- Twenty remains the operational CRM mirror;
+- a minimal SQLite-backed Cloudflare Durable Object will act as the serialized command/idempotency/state-machine boundary for protected commerce mutations and durable reconciliation state;
+- this persistence is deliberately narrow transaction/process truth, not a second CRM or general customer database;
+- Twenty-side unique indexes remain defense-in-depth rather than being treated as the transaction coordinator.
+
+P5 closes only after the guarded path/prototype is implemented and real staging re-proves S4, S7 and S8 without manual side truth.
 
 Implementation documentation:
 
 - `formalife/platform/docs/operations/twenty-domain-model.md`;
 - `formalife/platform/docs/operations/twenty-state-machines.yaml`;
 - `formalife/platform/docs/operations/p5-staging-scenarios.md`;
-- `formalife/platform/packages/twenty-app/`.
-
-**P5 IS NOT COMPLETE OPERATIONALLY YET.**
-
-The remaining exit gate is to complete the versioned app install/sync into the real Twenty Cloud staging workspace and execute the documented scenarios proving, without spreadsheet/manual side truth:
-
-- 1-Caregiver booking;
-- 2-Caregiver household booking;
-- payment reference/mirror;
-- edition capacity;
-- transfer/cancellation;
-- Training Credit;
-- refresh entitlement;
-- source/partner/referral attribution;
-- consent chronology/current eligibility;
-- duplicate/idempotency behavior relevant to the P6 integration boundary.
-
-P6 also retains one explicit architecture proof: do not assume Twenty alone is sufficient for atomic receipt/reordering of Stripe webhook events until the integration test proves it. If it is insufficient, make a separate explicit persistence decision rather than hiding the invariant in manual operations.
+- `formalife/platform/packages/twenty-app/`;
+- Layer 2 decision: `PLATFORM_COMMERCE_TRANSACTION_BOUNDARY.md`.
 
 ## Current next execution block
 
-### P5 Twenty Cloud staging installation and acceptance proof
+### P5 commerce transaction-boundary remediation
 
-The immediate next move is to rerun the `twenty-staging` GitHub Actions workflow from current `main` with `apply=true` against the existing Twenty Cloud trial workspace.
+The immediate next move is to implement and prove the smallest guarded commerce boundary that resolves the real S4/S7/S8 failures.
 
-If the additive apply succeeds and the post-apply plan is clean:
+Required sequence:
 
-1. verify the eight custom objects, standard-object extensions, relations and unique indexes in Cloud staging;
-2. record workspace/server/app identifiers and source commit;
-3. execute P5 scenarios S1–S11 in order;
-4. capture explicit PASS/FAIL evidence before promoting any assumption into P6.
+1. add unambiguous Twenty defense-in-depth constraints, especially exactly one refresh Entitlement per origin Enrollment;
+2. implement the Cloudflare SQLite-backed Durable Object coordinator and minimal command/outbox state;
+3. route/prototype protected payment, Training Credit and Entitlement transitions through that boundary rather than ordinary Twenty field edits;
+4. prove retry/idempotency and simulated downstream partial failure for S4;
+5. prove invalid Training Credit reactivation is rejected by the supported path for S7;
+6. prove duplicate Entitlement issuance and second redemption are rejected by the supported path for S8;
+7. rerun the real Twenty Cloud acceptance evidence and close P5 only if those invariants pass.
 
-P5 staging acceptance is now operationally **decoupled from the P1 self-hosting spike**. Twenty Cloud is an active staging environment, not yet a frozen production-hosting decision.
+Do not proceed to broad P6 webhook/funnel automation or scaling before this transaction-boundary prerequisite is proven.
 
 ## Open parallel infrastructure gates
 
