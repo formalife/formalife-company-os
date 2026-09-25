@@ -47,7 +47,7 @@ Current infrastructure evidence:
 
 - Railway Hobby was tested as disposable external staging and rejected for reliable Twenty staging because its observed 1 GB per-replica memory limit caused a real first-boot Node/V8 heap OOM; this was classified as a host/infrastructure capacity failure, not a Formalife schema failure;
 - OCI Always Free/A1 remains a zero-cost self-hosting spike candidate in principle, but provisioning friction/availability has not produced an accepted host and it is not frozen as production hosting;
-- a Twenty Cloud trial workspace now exists and is the active P5 staging target. This removes P1 self-hosting from the critical path for P5 acceptance, but it does **not** by itself decide Formalife production hosting.
+- a Twenty Cloud trial workspace is the proven P5 staging target. This removes P1 self-hosting from the critical path for implementation testing, but it does **not** by itself decide Formalife production hosting.
 
 ### P2 — Public-site technical foundation
 
@@ -131,93 +131,72 @@ P4 does not authorize a CMS or broad future-product page families. Runtime conte
 
 ### P5 — Twenty operational data model
 
-**RESULT: CLOUD SCHEMA SYNC PROVEN; REAL ACCEPTANCE EXECUTED; TRANSACTION-BOUNDARY REMEDIATION REQUIRED.**
+**RESULT: COMPLETE — REAL TWENTY CLOUD ACCEPTANCE AND GUARDED COMMERCE INVARIANTS PROVEN.**
 
-The P5 domain/state contract was frozen through `formalife/platform` PR #13 at squash commit `f38dbea7238ffc34f7e129e02ef0d8c5b4a4d55d`.
+The domain/state contract was frozen through `formalife/platform` PR #13 (`f38dbea7238ffc34f7e129e02ef0d8c5b4a4d55d`) and the versioned Twenty application schema through PR #14 (`6558de84321ddc9c38195945b90e7223e748c10f`). Repository/runtime proof was extended through PR #16 and Twenty Cloud 2.42 compatibility through PR #17 (`7d4fa5ff895475b2eed0cb7db053f2ec2b1f898b`).
 
-The versioned Twenty application schema was then implemented and validated through `formalife/platform` PR #14 at squash commit `6558de84321ddc9c38195945b90e7223e748c10f`.
-
-Current implementation decisions/results:
+Current model/result:
 
 - Twenty standard `People`, `Companies`, `Tasks` and `Notes` are reused where semantics match;
-- no duplicate custom `Lead` or `Partner` object exists;
-- one human remains one Person while purchaser, participant and customer roles are represented by relations/state;
-- current custom domain objects are `Household`, `CourseEdition`, `Enrollment`, `Order`, `PaymentRecord`, `TrainingCredit`, `Entitlement` and `ConsentRecord`;
-- a 2-Caregiver Full order is represented by two Enrollment records;
-- transfer preserves audit history by linking a new Enrollment rather than destructively moving the original record;
-- edition seat consumption is derived from Enrollment state rather than a manually maintained seat counter;
-- Stripe remains payment-event/payment-status truth while Twenty holds the operational mirror and reconciliation identifiers;
-- marketing consent history is append-oriented and distinct from transactional/service communication state;
-- initial attribution remains deliberately light: Order-level source/UTM/partner/referrer plus first-acquisition summary on Person;
-- no child clinical/health profile or speculative sensitive-data object is part of the initial schema;
-- unique schema constraints cover edition code, order code, Stripe Checkout Session, Stripe provider object and one Training Credit per origin Order;
-- the Formalife Twenty application retains Twenty SDK/client SDK `2.41.0`, while its declared server compatibility is Twenty `2.42.0` following the real Cloud workspace version;
-- PR #17 (`7d4fa5ff895475b2eed0cb7db053f2ec2b1f898b`) validated that this compatibility declaration change preserves frozen install, repository contract, TypeScript validation, manifest build, additive schema apply and post-apply idempotence;
-- the shared web regression suite remained unaffected by the Twenty workspace changes.
+- custom objects are `Household`, `CourseEdition`, `Enrollment`, `Order`, `PaymentRecord`, `TrainingCredit`, `Entitlement` and `ConsentRecord`;
+- one human remains one Person while purchaser/participant/customer roles are represented by relations and state;
+- two-caregiver Full purchase creates two independent Enrollment seat records;
+- transfer preserves history through linked Enrollments rather than destructive edition reassignment;
+- capacity is derived from Enrollment state, not a manually typed seat counter;
+- Stripe remains payment truth; Twenty remains the operational CRM mirror;
+- consent history is append-oriented; attribution keeps Order-level source/UTM/partner/referrer plus Person first-acquisition summary;
+- no child clinical/health profile is part of the initial CRM model;
+- defense-in-depth UNIQUE constraints include edition code, order code, Stripe Checkout Session/provider identity, one Training Credit per origin Order and one refresh Entitlement per origin Enrollment.
 
-Real Cloud staging evidence on 2026-09-25:
+Real Twenty Cloud evidence, 2026-09-25:
 
-- a Twenty Cloud trial workspace exists and is configured as the P5 staging target;
-- GitHub Environment `staging` contains a staging-only Twenty URL/API key pair;
-- the Cloud workspace reports Twenty `v2.42.7`;
-- `twenty-staging` GitHub Actions run `36127598842` from `main` commit `7d4fa5ff895475b2eed0cb7db053f2ec2b1f898b` passed authentication, frozen install, typecheck, app build, real additive apply and post-apply plan verification;
-- the versioned Formalife app is therefore installed/synchronized against the real Cloud staging workspace;
-- acceptance runner `36131378103` then executed all S1-S11 scenarios with synthetic staging-only records and uploaded evidence artifact `10861549369` (`p5-staging-acceptance-36131378103`, SHA-256 `05580151bf4d191f71e85bcad021091e621699c924df2eaab1f6ca91dfeb2141`);
-- acceptance aggregate: **8 PASS, 1 GAP / ARCHITECTURE REVIEW REQUIRED, 2 FAIL / ARCHITECTURE REVIEW REQUIRED**.
+- staging workspace reports Twenty `v2.42.7`;
+- run `36127598842` proved authentication, frozen install/build, real additive schema apply and post-apply zero drift;
+- full S1-S11 acceptance run `36131378103` executed with synthetic staging-only data; evidence artifact `10861549369`, SHA-256 `05580151bf4d191f71e85bcad021091e621699c924df2eaab1f6ca91dfeb2141`;
+- that first run correctly exposed S4 as a transaction-boundary gap and S7/S8 as unsupported direct-mutation invariant failures rather than silently weakening the test;
+- the remediation implemented a minimal SQLite-backed Cloudflare Durable Object commerce coordinator for idempotency, protected state-machine transitions and durable outbox/reconciliation, while keeping Twenty as CRM mirror;
+- direct Twenty staging proof confirms the new Entitlement-origin UNIQUE constraint rejects a duplicate write;
+- focused real-staging remediation run `36135292597` passed S4, S7 and S8 against Twenty Cloud; artifact `10863916308`, SHA-256 `3a0ac63b641318785e7e91cb5676258804d1615e539325f8e8c5d6d1477d638a`.
 
-Scenario outcome:
+Remediation results:
 
-- S1 PASS — one-caregiver Full booking / paid mirror / capacity / attribution;
-- S2 PASS — two-caregiver household booking / later companion attachment / capacity;
-- S3 PASS — failed payment consumes zero confirmed seats;
-- S4 GAP — duplicate Stripe provider identity is rejected and exactly one PaymentRecord remains, but exactly-once multi-record processing under retry, partial failure and reordering is not yet proven because no guarded P6 write boundary exists;
-- S5 PASS — transfer preserves old Enrollment/history and moves capacity to a linked new Enrollment;
-- S6 PASS — cancellation releases capacity while retaining transaction/refund history;
-- S7 FAIL — Training Credit economics/windows and origin-order uniqueness work, but a redeemed credit can be changed back to `ACTIVE` through an ordinary API update;
-- S8 FAIL — refresh Entitlement is representable, but duplicate issuance from one origin Enrollment and a second redemption/repoint are currently possible through ordinary API writes;
-- S9 PASS — direct/UTM, partner and referral attribution remain distinct;
-- S10 PASS — consent grant/withdraw/regrant chronology supports deterministic current marketing eligibility without mutating history;
-- S11 PASS — relationship state remains routing state and does not erase or replace Order/Enrollment history.
+- **S4 PASS** — a deliberately injected downstream `PAYMENT_CREATE` failure left durable pending work; replay converged to `MIRRORED`; the payment effect required two attempts; repeated provider identity deduplicated; conflicting payload under the same idempotency key returned `IDEMPOTENCY_CONFLICT`; final operational state was exactly one PaymentRecord, one Enrollment and Order `PAID`;
+- **S7 PASS** — duplicate Training Credit issuance was blocked; day-30 redemption used the EUR 29.90 Momentum value; second redemption was rejected; operational reactivation is not exposed by the supported command surface; explicit reversal produced `REVERSED` with an audit reason mirrored into Twenty;
+- **S8 PASS** — duplicate Entitlement issuance was blocked by the coordinator and independently by the Twenty UNIQUE constraint; first redemption persisted; second redemption was rejected and did not repoint the Twenty mirror.
 
-**P5 IS NOT COMPLETE OPERATIONALLY YET.**
+Implementation was merged through `formalife/platform` PR #18 using merge commit `e18214f4d310e6b15bc811f8271370ae3bbbd5ca`, preserving the exact tested head `580edad04ea42d5c4446cf450a5b2ef1b9f8a38a` in `main` history. PR regression checks were green: bootstrap, full web/browser/accessibility/runtime/Lighthouse suite, and isolated Twenty schema apply/idempotence.
 
-The first remaining blocker is no longer schema installation or basic representational fidelity. It is the protected commerce write boundary required for S4/S7/S8.
+**P5 exit gate is satisfied for the supported operational path.**
 
-Current architecture decision is recorded in `PLATFORM_COMMERCE_TRANSACTION_BOUNDARY.md`:
+Important boundary: the staging proof used an administrative Twenty API key to observe/mirror records. Production must still keep direct protected Twenty mutation credentials behind the commerce boundary rather than expose them as an ordinary application/user mutation path. That is a P6 integration/security prerequisite, not evidence that P5 failed.
 
-- Stripe remains payment truth;
-- Twenty remains the operational CRM mirror;
-- a minimal SQLite-backed Cloudflare Durable Object will act as the serialized command/idempotency/state-machine boundary for protected commerce mutations and durable reconciliation state;
-- this persistence is deliberately narrow transaction/process truth, not a second CRM or general customer database;
-- Twenty-side unique indexes remain defense-in-depth rather than being treated as the transaction coordinator.
-
-P5 closes only after the guarded path/prototype is implemented and real staging re-proves S4, S7 and S8 without manual side truth.
-
-Implementation documentation:
+Implementation documentation/evidence:
 
 - `formalife/platform/docs/operations/twenty-domain-model.md`;
 - `formalife/platform/docs/operations/twenty-state-machines.yaml`;
 - `formalife/platform/docs/operations/p5-staging-scenarios.md`;
 - `formalife/platform/packages/twenty-app/`;
-- Layer 2 decision: `PLATFORM_COMMERCE_TRANSACTION_BOUNDARY.md`.
+- Layer 2 architecture decision: `PLATFORM_COMMERCE_TRANSACTION_BOUNDARY.md`;
+- `formalife/platform` issue #12 / PR #18.
 
 ## Current next execution block
 
-### P5 commerce transaction-boundary remediation
+### P6 — First end-to-end commercial vertical slice: direct Full purchase
 
-The immediate next move is to implement and prove the smallest guarded commerce boundary that resolves the real S4/S7/S8 failures.
+P5 no longer blocks integration. The next sequential build target is the smallest revenue-capable direct Full path from the current roadmap.
 
 Required sequence:
 
-1. add unambiguous Twenty defense-in-depth constraints, especially exactly one refresh Entitlement per origin Enrollment;
-2. implement the Cloudflare SQLite-backed Durable Object coordinator and minimal command/outbox state;
-3. route/prototype protected payment, Training Credit and Entitlement transitions through that boundary rather than ordinary Twenty field edits;
-4. prove retry/idempotency and simulated downstream partial failure for S4;
-5. prove invalid Training Credit reactivation is rejected by the supported path for S7;
-6. prove duplicate Entitlement issuance and second redemption are rejected by the supported path for S8;
-7. rerun the real Twenty Cloud acceptance evidence and close P5 only if those invariants pass.
+1. expose a confirmed Full edition and verified availability to the purchase flow;
+2. implement server-side Stripe Checkout Session creation for 1-Caregiver and 2-Caregiver options;
+3. verify Stripe webhook signatures and normalize duplicate/reordered events into the guarded commerce transaction boundary;
+4. drive Twenty Order / PaymentRecord / Household / Enrollment mirror effects through that boundary rather than arbitrary protected-field edits;
+5. send the correct transactional confirmation through Brevo;
+6. record privacy-safe PostHog funnel events and preserve intended source/UTM context;
+7. make the success page depend on verified server/payment state rather than the browser redirect alone;
+8. prove successful 1- and 2-Caregiver purchases, duplicate webhook idempotency, failed-payment zero-seat behavior, refund/reconciliation understanding, correct Twenty records and correct communications.
 
-Do not proceed to broad P6 webhook/funnel automation or scaling before this transaction-boundary prerequisite is proven.
+Do not broaden into Guide/Training Credit public purchase flows, activation/pre-enrolment exceptions or unrelated site completeness before this direct Full vertical slice passes its exit gate.
 
 ## Open parallel infrastructure gates
 
