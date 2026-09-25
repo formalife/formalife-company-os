@@ -44,6 +44,16 @@ CI evidence:
 - commerce artifact `10873112089`, SHA-256 `10b65dde6fceab711e3e445cd8f87845ae9ec1d2007471ff003c519afe3607a1`;
 - full web regression `36154797400`: SUCCESS, including Astro typecheck, Cloudflare production build, commerce tests, browser/accessibility tests, production runtime-error tests and Lighthouse.
 
+## Founder decision — direct Stripe integration path
+
+**DECISION — CURRENT, 2026-09-25:** do not make the ChatGPT Stripe plugin/OAuth connector a prerequisite for Formalife P6.
+
+The current Stripe plugin OAuth callback is unreliable in the founder environment. Formalife will therefore integrate Stripe through normal server-side Stripe credentials and webhook signing secrets stored directly in the deployment/CI secret stores, never in chat or source control.
+
+For staging/new integration work, use a dedicated Stripe Sandbox as the payment environment. The plugin may be connected later for operational convenience, but it is not part of the runtime architecture or P6 exit gate.
+
+This decision does not authorize live-mode payment processing yet. P6 must first pass the real Sandbox acceptance path below.
+
 ## Results now proven
 
 ### Payment configuration boundary
@@ -160,7 +170,7 @@ No real deployed PostHog event delivery has been proven yet.
 
 The direct Full vertical slice is **not production/revenue accepted** until external proof covers at least:
 
-1. real Stripe test Checkout Session creation for 1-Caregiver and 2-Caregiver options;
+1. real Stripe Sandbox Checkout Session creation for 1-Caregiver and 2-Caregiver options;
 2. raw-body Stripe webhook signature verification;
 3. duplicate and reordered real Stripe event handling;
 4. successful payment, failed payment and refund/reconciliation paths;
