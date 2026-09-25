@@ -1,9 +1,9 @@
 # Funnel 01 — PowerPoint Production Status V0.1
 
-Status: CURRENT OPERATING STATUS — founder-directed production sequence override
+Status: COMPLETED / FOUNDER-ACCEPTED PRODUCTION MILESTONE — rehearsal and final QA deferred
 Date: 2026-09-25
 
-Purpose: record the current PowerPoint production state after the final deck audit and the founder decision to defer clinical/scientific claim review until final QA rather than treating it as a pre-build gate.
+Purpose: record the completed PowerPoint production milestone after the final deck audit, together with the founder decision to perform their own final PowerPoint edits and defer rehearsal / final clinical-scientific QA until later.
 
 Canonical parents:
 
@@ -16,116 +16,98 @@ Canonical parents:
 
 ---
 
-# 1. FOUNDER DECISION — clinical review deferred to final QA
-
-The previously stated production sequence placed Dott.ssa Mafalda Camposarcone clinical/scientific sign-off before PowerPoint production.
+# 1. FOUNDER DECISION — PowerPoint phase considered complete
 
 Founder decision on 2026-09-25:
 
-**skip that pre-build gate and proceed with the PowerPoint using the current working production copy. Review claims, thresholds, escalation wording, algorithms and medical visuals at the end, then modify them manually where necessary before customer delivery.**
+**consider the PowerPoint complete/concluded as a production phase. The founder will make the remaining manual PowerPoint edits and create the final presentation version independently, then perform the full rehearsal later.**
 
-This is a sequencing decision, not clinical approval.
+This closes PowerPoint construction as an active Company OS workstream.
 
-No medical/scientific claim becomes validated merely because it appears in the production draft.
+It does **not** mean that rehearsal evidence or final clinical/scientific QA has occurred.
 
 ---
 
-# 2. Current production artifact state
+# 2. Clinical review sequencing remains deferred
 
-A first real PowerPoint production draft has been generated from the current final-audit architecture.
+The previously stated production sequence placed Dott.ssa Mafalda Camposarcone clinical/scientific sign-off before PowerPoint production.
 
-Main-deck structure:
+Founder decision remains:
+
+**claim, threshold, escalation, algorithm and medical-visual review occurs during final QA rather than as a pre-build gate.**
+
+This is a sequencing decision, not clinical approval.
+
+No medical/scientific claim becomes validated merely because it appears in a production deck.
+
+---
+
+# 3. Completed production architecture
+
+The founder-accepted production architecture is:
 
 - mandatory `C00` cover;
 - **66 active projected teaching slides**;
 - stable IDs retained;
-- `S07` excluded from main flow;
-- `S33` excluded from main flow;
+- `S07` excluded from main flow / appendix;
+- `S33` excluded from main flow / appendix;
 - `S66` absorbed into `S67`;
-- `S25` active and marked `OPTIONAL_REHEARSAL_CUT` in production notes.
+- `S25` active and marked `OPTIONAL_REHEARSAL_CUT` in production notes;
+- separate appendix/scenario-bank architecture for `S07`, `S33`, `H01–H07`.
 
-A separate production appendix/scenario-bank deck has also been generated for:
-
-- `S07` reference evidence;
-- `S33` adult reference evidence;
-- `H01–H07` hidden ACT 6 scenario bank.
-
-The binary PowerPoint artifacts generated in the ChatGPT runtime are not themselves canonical repository files. This status file records the build state; the current Markdown production architecture remains canonical in GitHub.
+The binary PowerPoint produced during the ChatGPT runtime is not the canonical company artifact because the founder will manually create/edit the final PowerPoint version. The canonical production logic remains the Markdown architecture in GitHub until a final binary is deliberately stored elsewhere.
 
 ---
 
-# 3. Working-copy rule during production
+# 4. Deferred validation work — not blocking the next funnel phase
 
-Until final QA:
+The following remain required before first customer delivery but are deliberately deferred while other Funnel 01 operational work proceeds:
 
-- clinical/scientific copy is treated as **WORKING PRODUCTION COPY**;
-- slide architecture, hierarchy, layouts, deck flow and attention-control design may proceed;
-- claim wording, thresholds, exact technique language, escalation pathways and medical illustrations remain editable;
-- speaker notes on relevant slides should retain a `WORKING CLINICAL COPY — FINAL QA` marker;
-- no customer-facing delivery is authorized solely by this production build.
+1. complete timed rehearsal / dry run using actual equipment and room choreography;
+2. record real timing, attention, comprehension and operational failures;
+3. revise from observed rehearsal evidence where material;
+4. final clinical/scientific QA of claims, algorithms, thresholds, escalation language and medical visuals;
+5. manual corrections required by final QA;
+6. projector/back-row verification;
+7. freeze first rebuilt-Full production deck.
 
-The purpose is to avoid blocking visual/operational production while preserving a clear final quality-control boundary.
-
----
-
-# 4. V0.1 production characteristics
-
-Current build implements:
-
-- Formalife working palette from Presentation Design System V0.1/V0.2;
-- 16:9 widescreen geometry;
-- Course Rail on normal chapters;
-- ACT 5 Course Rail suppression and local six-step grammar;
-- normal technical canvas plus restrained Formalife background field;
-- dedicated narrative/scenario/final imagery;
-- main data hierarchy for S06/S08/S09/S10;
-- FVA visual system;
-- choking recognition/decision architecture;
-- pediatric CPR sequence and QCPR boundary retrieval;
-- ACT 5 repeated grammar;
-- Mirror Test observation-first close;
-- four-function S65 continuity map;
-- operational S67 handoff;
-- protected S68 final bookend.
-
-Known V0.1 limitations intentionally deferred:
-
-- final official logo asset is not embedded;
-- PowerPoint object animations/Morph remain to be added/tested where the Cue Sheet requests progressive reveal;
-- QR/access destinations remain absent until production-ready;
-- some medical/technique visuals are conceptual working diagrams rather than clinically approved illustrations;
-- selected evidence/source footers remain working copy pending final claim QA;
-- projector/back-row test has not yet occurred.
+These are now **pre-delivery gates**, not prerequisites for continuing Funnel 01 commercial/operational construction.
 
 ---
 
-# 5. Updated execution sequence
+# 5. Next active phase
 
-Current founder-directed sequence is now:
+PowerPoint construction is no longer the active bottleneck.
 
-1. **PowerPoint production draft** — CURRENT / V0.1 built;
-2. visual/operational deck QA against Blueprint + Cue Sheet;
-3. complete timed rehearsal / dry run using actual equipment and room choreography;
-4. record real timing, attention, comprehension and operational failures;
-5. revise only from observed rehearsal evidence;
-6. **final clinical/scientific QA** of claims, algorithms, thresholds, escalation language and medical visuals;
-7. manual corrections required by final QA;
-8. projector/back-row verification;
-9. freeze first rebuilt-Full production deck.
+The next active phase is:
 
-The founder accepts the potential rework created by moving clinical QA later in exchange for avoiding an upstream production stop.
+**FULL OFFER OPERATIONALIZATION — make the approved BEFORE / LIVE / AFTER offer executable without founder-side improvisation.**
+
+This includes, in causal order:
+
+- purchase/onboarding operating contract;
+- pre-course orientation;
+- Family Emergency Pack production specification;
+- second-caregiver operating rule;
+- refresh booking/capacity/no-show rules;
+- Total Protection / BTRF / activation fulfilment procedures;
+- post-course customer stream;
+- proof/data capture;
+- checkout/CRM/attribution implementation required for the first active-demand routes.
+
+Canonical execution detail begins in `FUNNEL_01_FULL_OPERATIONALIZATION_PLAN_V1.md`.
 
 ---
 
-# 6. Revision / stop conditions
+# 6. Revision condition
 
-Do not freeze the deck for customer delivery until all of the following are closed:
+Reopen the PowerPoint construction phase only if one of these later produces concrete evidence that the architecture must change materially:
 
+- founder final edit reveals an unresolved structural defect;
+- full timed rehearsal;
 - final clinical/scientific QA;
-- rehearsal-critical timing/flow defects;
-- unsafe or ambiguous technique wording;
-- missing/incorrect escalation paths;
-- material projector/readability defects;
-- broken operational access/QR elements that the final deck actually promises.
+- actual equipment limitation;
+- projector/back-row readability test;
+- first rebuilt-Full delivery evidence.
 
-Aesthetic polish alone is not a reason to delay rehearsal once V0.1 is operationally usable.
+Do not reopen it for aesthetic alternatives alone.
