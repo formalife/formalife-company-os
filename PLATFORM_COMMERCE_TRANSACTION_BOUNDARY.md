@@ -1,6 +1,6 @@
 # Formalife Commerce Transaction Boundary
 
-Status: CURRENT DECISION — STAGING PROVEN
+Status: CURRENT DECISION — STAGING PROVEN; P6 CAPACITY CONTRACT PROVEN LOCALLY
 Date: 2026-09-25
 
 ## Trigger
@@ -136,18 +136,57 @@ Focused real-staging run `36135292597` against Twenty Cloud `v2.42.7` passed all
 
 This proof closes the P5 remediation requirement for the **supported operational path**. It does not mean unrestricted direct administrative Twenty mutation is safe or intended.
 
+## P6 provider-independent capacity proof
+
+**RESULT: LOCAL/CI PROVEN; EXTERNAL PROVIDER PROOF STILL OPEN.**
+
+`formalife/platform` PR #19 extends the same Durable Object boundary with serialized direct-Full seat reservations rather than relying only on a read-time availability check.
+
+Merged implementation evidence:
+
+- PR #19 merge commit `7831e00315eae75cdc7302585e81f7c94f64fbbd`;
+- exact tested head preserved in `main`: `9dd2dbb85cc0b18ec1b8f47020de2c42e7e9c524`;
+- P6 commerce-contract run `36148954303`: SUCCESS;
+- evidence artifact `10869529274`, SHA-256 `04fc7b930f6a5e280b7b3226248e7cf563e7e4261affc96ad09b2bd3e40d1cf9`;
+- full web regression run `36148954543`: SUCCESS;
+- bootstrap run `36148954212`: SUCCESS.
+
+The provider-independent P6 contract now proves in CI:
+
+- canonical direct-Full options remain 1 Caregiver / one seat / EUR 80 and 2 Caregivers / two seats / EUR 120;
+- only confirmed editions with sufficient observed capacity can enter checkout preparation;
+- the Durable Object serializes the authoritative last-seat reservation decision;
+- with edition capacity 12 and baseline occupancy 10, one two-seat reservation consumes the remaining capacity and a competing additional reservation is rejected with `INSUFFICIENT_CAPACITY`;
+- identical reservation replay is idempotent while changed content under the same reservation identity is rejected;
+- failed or expired checkout reservations release capacity;
+- protected `payment.apply` can be configured to fail closed when no active reservation is supplied;
+- successful payment commands carry the reservation identity and expected seat count into the guarded boundary;
+- provider-object identity remains the payment idempotency key;
+- browser redirect/session parameters alone never prove payment success;
+- transactional confirmation requires verified `PAID` state;
+- analytics contract excludes arbitrary customer PII.
+
+Implementation note: `REQUIRE_CAPACITY_RESERVATION=false` remains the repository config default only to preserve P5/backward test compatibility. The P6 protected commerce runtime must set this requirement to `true`; the false default is **not** production acceptance evidence.
+
+This local/CI proof resolves the known last-seat race at the application contract level. It does **not** prove real Cloudflare deployment, real Stripe behavior or production synchronization with Twenty.
+
 ## P6 integration/security boundary
 
-Before production commerce traffic depends on this architecture:
+Before P6 can close and before production commerce traffic depends on this architecture:
 
-- Stripe webhook signatures must be verified before commands enter the boundary;
-- duplicate/reordered real Stripe events must be mapped to deterministic idempotency keys;
+- a real Stripe test/sandbox account must create Checkout Sessions for both direct Full options;
+- Stripe webhook signatures must be verified from the real raw request body before commands enter the boundary;
+- duplicate/reordered real Stripe events must be mapped to deterministic idempotency keys and proven against the boundary;
+- successful, failed and refund/reconciliation paths must be proven with real Stripe identifiers;
+- the reservation lifecycle must be wired to the real checkout/session lifecycle with `REQUIRE_CAPACITY_RESERVATION=true`;
 - direct protected Twenty mutation credentials must remain server-side behind the commerce boundary;
-- the application/customer-facing path must not receive the administrative staging mutation capability used for validation;
-- reconciliation/exception procedures must remain explicit and testable;
-- the boundary must prove capacity behavior under the direct Full vertical slice, including 1- and 2-Caregiver purchases and failed-payment zero-seat behavior.
+- the public application path must not receive the administrative staging mutation capability used for validation;
+- Brevo transactional confirmation must be proven with a real staging/test delivery path;
+- the commerce Worker and public web path must be deployed to real Cloudflare staging/preview infrastructure;
+- success-state lookup must rely on verified server/payment/operational state, not the browser redirect;
+- reconciliation/exception procedures must remain explicit and testable.
 
-These are P6 production-integration requirements, not reasons to reopen P5 unless new evidence invalidates the staging proof.
+These are P6 integration requirements, not reasons to reopen P5 unless new evidence invalidates the staging proof.
 
 ## Cloudflare provider fit
 
@@ -178,7 +217,7 @@ Rejected. It would create duplicate truth and unnecessary operational surface. T
 
 Revisit this decision if any of the following becomes true:
 
-- later end-to-end Stripe testing contradicts the P5 staging proof;
+- later end-to-end Stripe testing contradicts the P5/P6 contract proof;
 - Cloudflare pricing/limits materially conflict with Formalife economics;
 - throughput/availability requirements make a single coordinator inappropriate;
 - Twenty introduces a native transactional/state-machine facility that proves the same invariants with less system complexity;
