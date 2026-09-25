@@ -47,7 +47,7 @@ Current infrastructure evidence:
 
 - Railway Hobby was tested as disposable external staging and rejected for reliable Twenty staging because its observed 1 GB per-replica memory limit caused a real first-boot Node/V8 heap OOM; this was classified as a host/infrastructure capacity failure, not a Formalife schema failure;
 - OCI Always Free/A1 remains a zero-cost self-hosting spike candidate in principle, but provisioning friction/availability has not produced an accepted host and it is not frozen as production hosting;
-- a Twenty Cloud trial workspace is the proven P5 staging target. This removes P1 self-hosting from the critical path for implementation testing, but it does **not** by itself decide Formalife production hosting.
+- a Twenty Cloud trial workspace is the proven P5/P6 staging target. This removes P1 self-hosting from the critical path for implementation testing, but it does **not** by itself decide Formalife production hosting.
 
 ### P2 — Public-site technical foundation
 
@@ -160,7 +160,7 @@ Real Twenty Cloud evidence, 2026-09-25:
 
 Remediation results:
 
-- **S4 PASS** — a deliberately injected downstream `PAYMENT_CREATE` failure left durable pending work; replay converged to `MIRRORED`; the payment effect required two attempts; repeated provider identity deduplicated; conflicting payload under the same idempotency key returned `IDEMPOTENCY_CONFLICT`; final operational state was exactly one PaymentRecord, one Enrollment and Order `PAID`;
+- **S4 PASS** — a deliberately injected downstream `PAYMENT_CREATE` failure left durable pending reconciliation work; replay converged to `MIRRORED`; the payment effect required two attempts; repeated provider identity deduplicated; conflicting payload under the same idempotency key returned `IDEMPOTENCY_CONFLICT`; final operational state was exactly one PaymentRecord, one Enrollment and Order `PAID`;
 - **S7 PASS** — duplicate Training Credit issuance was blocked; day-30 redemption used the EUR 29.90 Momentum value; second redemption was rejected; operational reactivation is not exposed by the supported command surface; explicit reversal produced `REVERSED` with an audit reason mirrored into Twenty;
 - **S8 PASS** — duplicate Entitlement issuance was blocked by the coordinator and independently by the Twenty UNIQUE constraint; first redemption persisted; second redemption was rejected and did not repoint the Twenty mirror.
 
@@ -181,11 +181,11 @@ Implementation documentation/evidence:
 
 ### P6 — First end-to-end commercial vertical slice: direct Full purchase
 
-**RESULT: PROVIDER-INDEPENDENT CONTRACT + SERIALIZED CAPACITY PROVEN; EXTERNAL INTEGRATION GATES OPEN.**
+**RESULT: PROVIDER-INDEPENDENT CONTRACT, SERIALIZED CAPACITY AND REAL TWENTY APPLICATION WIRING PROVEN; EXTERNAL INTEGRATION GATES OPEN.**
 
-P6 remains **OPEN**. It is not yet a revenue-capable end-to-end vertical slice because Stripe, Brevo and real Cloudflare deployment have not been proven.
+P6 remains **OPEN**. It is not yet a revenue-capable end-to-end vertical slice because Stripe, Brevo/PostHog delivery and real Cloudflare deployment have not been proven.
 
-Implemented and merged through `formalife/platform` PR #19:
+Provider-independent commerce foundation merged through `formalife/platform` PR #19:
 
 - canonical direct Full purchase contracts for 1 Caregiver / one seat / EUR 80 and 2 Caregivers / two seats / EUR 120;
 - confirmed-edition-only checkout preparation for this first slice;
@@ -205,13 +205,13 @@ Implemented and merged through `formalife/platform` PR #19:
 
 Capacity was deliberately moved beyond a simple read-time pre-check: the same global commerce coordinator serializes last-seat allocation so two concurrent valid purchases cannot both be accepted for the same final capacity.
 
-Evidence:
+PR #19 evidence:
 
-- PR #19 merge commit `7831e00315eae75cdc7302585e81f7c94f64fbbd`;
+- merge commit `7831e00315eae75cdc7302585e81f7c94f64fbbd`;
 - exact tested head preserved in `main`: `9dd2dbb85cc0b18ec1b8f47020de2c42e7e9c524`;
 - P6 commerce contract run `36148954303`: SUCCESS;
 - evidence artifact `10869529274`, SHA-256 `04fc7b930f6a5e280b7b3226248e7cf563e7e4261affc96ad09b2bd3e40d1cf9`;
-- web regression run `36148954543`: SUCCESS across repository contract, typecheck, production build, P6 commerce tests, browser/accessibility tests, production runtime-error tests and Lighthouse;
+- web regression run `36148954543`: SUCCESS;
 - bootstrap run `36148954212`: SUCCESS.
 
 The runtime capacity smoke specifically proved:
@@ -225,6 +225,26 @@ The runtime capacity smoke specifically proved:
 
 Important implementation boundary: repository config retains `REQUIRE_CAPACITY_RESERVATION=false` only for compatibility with prior P5 test paths. The protected P6 runtime must set it to `true`; the default false value is not evidence of production readiness.
 
+Real Twenty application wiring was then implemented and merged through `formalife/platform` PR #21:
+
+- a Twenty adapter reads a real CourseEdition plus committed `CONFIRMED`/`ATTENDED` Enrollment count into the direct-Full availability contract;
+- pre-checkout Orders use the actual Twenty schema/enums, including `CHECKOUT_CREATED`, `WEBSITE`, `ONE_CAREGIVER`/`TWO_CAREGIVERS`, canonical seat quantity, gross amount and offer code;
+- source/UTM mapping is bounded and arbitrary customer PII is not copied by the attribution contract;
+- checkout session identity can be linked to an Order and resolved server-side for verified-state lookup;
+- GraphQL/HTTP errors fail closed rather than returning partial commerce state.
+
+PR #21 real staging evidence:
+
+- merge commit `e43aeec20fd8bb8cd12c00938b751903575456ac`;
+- exact tested head preserved in `main`: `9c10151f96901f68ce801d3dec847473989d772f`;
+- real Twenty Cloud run `36150444901`: SUCCESS against `v2.42.7`;
+- fresh synthetic confirmed edition read as capacity 12 / confirmed seats 0;
+- SINGLE persisted as Order `CHECKOUT_CREATED`, `ONE_CAREGIVER`, one seat, `FULL_SINGLE`;
+- COUPLE persisted as Order `CHECKOUT_CREATED`, `TWO_CAREGIVERS`, two seats, `FULL_COUPLE`;
+- synthetic `cs_testonly_*` identifiers were persisted and resolved server-side only to prove linkage; they were **not** treated as payments and created no Enrollment;
+- evidence artifact `10871107382`, SHA-256 `903c126941e2a690b6ad929479817d229ebb83554149e05a776b91573607f8ad`;
+- bootstrap `36150445006`, P6 commerce contract `36150445013` and web regression `36150445040` all passed on the tested head.
+
 P6 still requires external proof before closure:
 
 1. real Stripe test Checkout Session creation for both caregiver options;
@@ -232,7 +252,7 @@ P6 still requires external proof before closure:
 3. duplicate/reordered real Stripe event handling through the guarded boundary;
 4. real successful, failed and refund/reconciliation paths with stable Stripe identifiers;
 5. real checkout/session lifecycle wired to seat reservation/expiry/release/consume behavior;
-6. real Twenty staging/application wiring for checkout-created Order state, final mirrored records and verified success-state lookup;
+6. final paid Order / PaymentRecord / Household / Enrollment mirror effects and verified success-state lookup proven on the real payment path;
 7. real Brevo transactional confirmation delivery;
 8. privacy-safe PostHog event delivery on the deployed path;
 9. real Cloudflare preview/staging deployment of public web + commerce boundary;
@@ -240,20 +260,19 @@ P6 still requires external proof before closure:
 
 Do not broaden into Guide/Training Credit public purchase flows, activation/pre-enrolment exceptions or unrelated site completeness before this direct Full vertical slice passes its exit gate.
 
+Implementation tracking: `formalife/platform` issue #20.
+
 ## Current next execution block
 
-### P6 application wiring without live Stripe
+### P6 server/API and communication seams without live Stripe
 
-Until Stripe test access is available, continue only on provider-independent work that reduces the remaining integration surface without creating a second payment architecture.
+Provider-independent Twenty edition/pre-checkout/session-lookup wiring is now proven. Until Stripe test access is available, the remaining useful no-Stripe work is narrower:
 
-Immediate sequence:
-
-1. wire a read-only Twenty edition repository adapter for confirmed-edition/capacity data;
-2. define/create the pre-checkout Order state and provider-session linkage contract without treating the fake provider as production-capable;
-3. expose server/API seams for checkout preparation and verified success-state lookup that fail closed when real payment configuration is absent outside isolated tests;
-4. add Brevo and PostHog adapters with deterministic test implementations and no silent production fallback;
-5. prove the complete provider-independent application path in CI;
-6. when Stripe becomes available, replace only the payment adapter/event-verification seam and run the real external P6 acceptance.
+1. expose server/API seams for checkout preparation and verified success-state lookup that fail closed when real payment configuration is absent outside isolated tests;
+2. add Brevo and PostHog adapters with deterministic test implementations and no silent production fallback;
+3. prove the provider-independent application path in CI, including error/rollback behavior around reservation and provider setup;
+4. prepare Cloudflare staging bindings/secrets contract without claiming the external deploy gate has passed;
+5. when Stripe becomes available, implement only the Stripe adapter/raw-webhook verification seam and execute the real P6 external acceptance.
 
 ## Open parallel infrastructure gates
 
