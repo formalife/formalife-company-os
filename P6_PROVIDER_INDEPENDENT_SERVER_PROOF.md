@@ -5,11 +5,13 @@ Date: 2026-09-25
 
 ## Scope
 
-This record captures the provider-independent portion of the direct Full P6 vertical slice after `formalife/platform` PR #22.
+This record captures the provider-independent portion of the direct Full P6 vertical slice through `formalife/platform` PR #23.
 
 It does **not** claim Stripe, Brevo, PostHog or Cloudflare external integration acceptance.
 
 ## Current implementation evidence
+
+### PR #22 — server/application seams
 
 Merged implementation:
 
@@ -26,6 +28,21 @@ CI / staging evidence on the tested head:
 - Twenty artifact `10873130747`, SHA-256 `25c64d5755dc8d7ebb002d173d07e3034e5f42c7f56389e7ca719ceb9a6e503a`;
 - full web regression `36153779029`: SUCCESS, including typecheck, production build, browser/accessibility tests, production runtime-error tests and Lighthouse;
 - commerce unit contracts: 50 PASS / 0 FAIL.
+
+### PR #23 — HTTP endpoint surface
+
+Merged implementation:
+
+- `formalife/platform` PR #23;
+- merge commit `7c81bc40dd087355af19ecf12474eb24b0fafa8f`;
+- exact tested head preserved in `main`: `764c833b9976c3ecf1c9d1cbfd8503ef786a00a0`.
+
+CI evidence:
+
+- bootstrap run `36154797392`: SUCCESS;
+- P6 commerce-contract run `36154797505`: SUCCESS;
+- commerce artifact `10873112089`, SHA-256 `10b65dde6fceab711e3e445cd8f87845ae9ec1d2007471ff003c519afe3607a1`;
+- full web regression `36154797400`: SUCCESS, including Astro typecheck, Cloudflare production build, commerce tests, browser/accessibility tests, production runtime-error tests and Lighthouse.
 
 ## Results now proven
 
@@ -92,6 +109,25 @@ This prevents an uncertain still-payable checkout from releasing the same last s
 ### Verified success state
 
 **RESULT:** customer-facing success state is derived from server-side Twenty Order state linked to the checkout session. Browser redirect parameters do not establish payment success.
+
+### HTTP application surface
+
+**RESULT: CODE/CI PROVEN; NOT EXTERNALLY DEPLOYED.**
+
+The Astro/Cloudflare application now exposes:
+
+- `POST /api/commerce/full/checkout`;
+- `GET /api/commerce/full/status`.
+
+The checkout endpoint requires a stable `Idempotency-Key`, accepts JSON only, emits `no-store`, sanitizes internal errors and delegates all business state to the provider-independent server/application layer.
+
+Current production runtime intentionally instantiates `UnavailablePaymentProvider`; therefore checkout returns HTTP 503 before Person, Household, Order or capacity mutation until a real Stripe adapter is installed and configured.
+
+The status endpoint reads server-side verified operational state rather than trusting browser redirect data.
+
+Astro typecheck and the Cloudflare production build both pass with the current `cloudflare:workers` runtime environment binding pattern.
+
+This proves the endpoint/runtime contract only. No real Cloudflare preview/staging deployment has yet been accepted.
 
 ### Brevo contract
 
