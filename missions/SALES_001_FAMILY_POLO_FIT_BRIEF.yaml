@@ -1,0 +1,122 @@
+mission_id: SALES-001
+version: v1
+status: READY
+risk_tier: T1
+title: Family Polo pre-qualification Fit Brief
+
+business_objective: >-
+  Test whether a prospect-specific, evidence-backed pre-qualification asset can make
+  Formalife materially easier to evaluate without prematurely generating a commercial proposal.
+
+expected_outcome: >-
+  Produce a validated internal Fit Brief for Family Polo that is specific enough to support
+  the first-wave email qualification while preserving all current proposal and procurement gates.
+
+scope:
+  in_scope:
+    - Research current public information about Family Polo and Elefanti Volanti from reliable sources.
+    - Use current Formalife canonical assets and the Programma Sicurezza Pediatrica per le Famiglie hypothesis.
+    - Build an evidence ledger separating prospect facts, Formalife facts, fit hypotheses and unknowns.
+    - Draft one concise P0 Fit Brief suitable for later rendering as a private prospect-specific page.
+    - Validate factual claims and current Centri-per-la-Famiglia sales rules.
+  non_goals:
+    - Produce a final quote or institutional price.
+    - Assert that funding remains available or that Formalife is rendicontabile/eligible.
+    - Infer an agreed buyer problem that Family Polo has not stated.
+    - Publish the page or send it to the prospect.
+    - Replace the current email-first qualification process.
+
+source_of_truth:
+  - formalife/formalife-company-os:CENTRI_FAMIGLIA_OUTREACH_TEST_V1.md
+  - formalife/formalife-company-os:PERSONALIZED_SALES_ASSET_V1.md
+  - formalife/formalife-company-os:MISSION_CONTROL_V1.md
+  - formalife/formalife-company-os:CURRENT_STATE.md
+  - formalife/merenda-business-core:REASONING_KERNEL.md
+  - formalife/merenda-business-core:merenda/06_vendita/prequalifica-e-handoff-marketing-vendita.md
+  - formalife/merenda-business-core:merenda/06_vendita/processo-decisionale-e-stakeholder.md
+  - https://www.elefantivolanti.it/familypolo/
+  - Regione Lombardia current Centro-per-la-Famiglia registry/list when material
+
+authorized_tools:
+  - Web research
+  - GitHub read
+  - Draft artifact generation
+
+authorized_actions:
+  - Read public and canonical sources.
+  - Classify claims and unknowns.
+  - Generate internal draft copy and evidence ledger.
+  - Create or update reversible branch-only artifacts for this mission.
+
+forbidden_actions:
+  - Send email or other external communication.
+  - Publish a customer-facing page.
+  - Modify live pricing or offer terms.
+  - State procurement, budget or funding eligibility as fact without explicit evidence.
+  - Merge mission output into production without human approval.
+
+required_outputs:
+  - sales_assets/family-polo/FIT_BRIEF_V1.md
+  - sales_assets/family-polo/EVIDENCE_LEDGER_V1.md
+  - Validator result recorded in the Fit Brief footer or mission follow-up record.
+
+evidence_requirements:
+  - Every Family-Polo-specific factual claim has a current public source.
+  - Every Formalife-specific factual claim used commercially is current in Layer 2.
+  - Fit interpretations are labeled as hypotheses rather than prospect statements.
+  - Unknown budget, procurement and decision facts remain explicit unknowns.
+
+invariants:
+  - P0 asset only; no proposal language that implies agreed scope or price.
+  - Email-first qualification remains the operating process.
+  - Programma Sicurezza Pediatrica per le Famiglie is presented as a modular institutional-program hypothesis, not a generic course/book pitch.
+  - Formalife consumer education is not represented as certification or medical advice.
+  - Scientific/customer-facing claims remain subject to the current scientific review rule.
+
+validators:
+  - id: V-STRUCTURE
+    class: structural
+    rule: Fit Brief contains context, fit hypothesis, possible components, relevant Formalife assets, unknowns and one next-action question.
+    pass_condition: All required sections exist and contain substantive content.
+  - id: V-EVIDENCE
+    class: evidence
+    rule: Each prospect-specific factual claim maps to an evidence-ledger entry.
+    pass_condition: No unsupported prospect-specific material claim remains.
+  - id: V-STAGE
+    class: business
+    rule: Draft respects P0 and Centri first-wave qualification/proposal gates.
+    pass_condition: No fixed price, procurement assertion, invented need or default call CTA.
+  - id: V-REDTEAM
+    class: independent_review
+    rule: Review the draft as a skeptical buyer and search for artificial personalization, overclaiming and hidden assumptions.
+    pass_condition: No material issue remains unresolved.
+
+stop_conditions:
+  - Reliable prospect evidence is insufficient to support meaningful personalization.
+  - A material contradiction exists between current public prospect information and the Company OS targeting hypothesis.
+  - The asset would require a commercial term or scientific claim not currently authorized.
+  - Research uncovers that the contact/program is no longer current.
+
+human_gates:
+  - Founder approval before any customer-facing publication.
+  - Founder approval before any email contains or links the asset.
+  - Scientific review before any new medical/scientific customer-facing claim not already validated.
+
+resource_ceiling:
+  max_external_spend_eur: 0
+  max_paid_model_cost_eur: 5
+  notes: Initial benchmark should be cheap enough to repeat across the six first-wave prospects.
+
+retry_policy: >-
+  One autonomous repair pass is allowed after validator failure. If the same material class
+  of error remains, stop NEEDS_HUMAN rather than repeatedly rewriting around the validator.
+
+acceptance_criteria:
+  - Draft is clearly specific to Family Polo without merely inserting its name into generic copy.
+  - All prospect-specific material claims are traceable.
+  - No P0/proposal-gate violation remains.
+  - The primary CTA is an easy written qualification/routing question, not a meeting request.
+  - Founder could review the artifact without first re-researching the prospect from scratch.
+
+next_decision: >-
+  Founder decides whether the Fit Brief deserves rendering on the Formalife platform and use in the first-wave outreach/follow-up process.

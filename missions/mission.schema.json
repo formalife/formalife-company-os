@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://formalife.it/schemas/mission-control-v1.json",
+  "title": "Formalife Mission Contract v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "mission_id",
+    "version",
+    "title",
+    "status",
+    "business_objective",
+    "scope",
+    "source_of_truth",
+    "authorized_actions",
+    "forbidden_actions",
+    "required_outputs",
+    "evidence_requirements",
+    "invariants",
+    "validators",
+    "stop_conditions",
+    "human_gates",
+    "acceptance_criteria"
+  ],
+  "properties": {
+    "mission_id": {"type": "string", "minLength": 1},
+    "version": {"type": "string", "pattern": "^v[0-9]+(\\.[0-9]+){0,2}$"},
+    "title": {"type": "string", "minLength": 1},
+    "status": {
+      "enum": ["DRAFT", "READY", "RUNNING", "VERIFYING", "PASS", "PARTIAL", "FAIL", "NEEDS_HUMAN", "PROMOTED", "CLOSED"]
+    },
+    "risk_tier": {"enum": ["T0", "T1", "T2", "T3"]},
+    "business_objective": {"type": "string", "minLength": 1},
+    "expected_outcome": {"type": "string"},
+    "scope": {
+      "type": "object",
+      "required": ["in_scope", "non_goals"],
+      "properties": {
+        "in_scope": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+        "non_goals": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    },
+    "source_of_truth": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "authorized_tools": {"type": "array", "items": {"type": "string"}},
+    "authorized_actions": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "forbidden_actions": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "required_outputs": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "evidence_requirements": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "invariants": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "validators": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "class", "rule"],
+        "properties": {
+          "id": {"type": "string"},
+          "class": {"enum": ["structural", "deterministic", "evidence", "business", "independent_review"]},
+          "rule": {"type": "string"},
+          "pass_condition": {"type": "string"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "stop_conditions": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "human_gates": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "resource_ceiling": {
+      "type": "object",
+      "properties": {
+        "max_external_spend_eur": {"type": "number", "minimum": 0},
+        "max_paid_model_cost_eur": {"type": "number", "minimum": 0},
+        "notes": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "retry_policy": {"type": "string"},
+    "acceptance_criteria": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "next_decision": {"type": "string"}
+  }
+}
