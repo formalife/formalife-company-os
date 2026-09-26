@@ -1,6 +1,6 @@
 # P6 Stripe Paid Acceptance
 
-Status: CURRENT TEST — PAID ACCEPTANCE HARNESS READY; FRESH SINGLE RUN REQUIRED AFTER READINESS REMEDIATION
+Status: CURRENT TEST — REAL SINGLE STRIPE PAYMENT CONFIRMED; FINAL OPERATIONAL RECOVERY PROOF PENDING
 Date: 2026-09-26
 
 ## Context
@@ -77,11 +77,11 @@ The final run artifact showed `paidAcceptanceRequested: none`, but that field wa
 
 ## Readiness remediation — PR #38
 
-**REMEDIATION — MERGED; FRESH STAGING PROOF PENDING.**
+**REMEDIATION — MERGED AND PROVEN SUFFICIENT TO REACH PAID CHECKOUT.**
 
 - PR #38 — `Gate Stripe staging acceptance on web-commerce readiness`;
 - tested head: `c53d4d74931d96bdcf775374246c84eff2eb67df`;
-- merge commit / current platform main at write-back: `eed488e409960c96be287c811cbc33b40de7f971`.
+- merge commit: `eed488e409960c96be287c811cbc33b40de7f971`.
 
 PR #38 adds a staging-only, non-mutating web-side readiness route:
 
@@ -93,7 +93,7 @@ The route traverses the actual deployed path:
 
 and returns ready only after that path can execute the commerce contract with the propagated runtime token. Outside `APP_ENV=staging` it returns `404`.
 
-The signed-expiry acceptance now waits up to 60 seconds for this web-to-commerce readiness proof before creating any Twenty edition, purchaser identity, Order, reservation or Stripe Checkout Session.
+The signed-expiry acceptance waits for this web-to-commerce readiness proof before creating commerce state.
 
 PR #38 validation:
 
@@ -107,38 +107,131 @@ PR #38 validation:
 - production/minified runtime-error suite: PASS;
 - Lighthouse baseline: PASS.
 
+## Run #14 — real SINGLE payment
+
+**RESULT — STRIPE PAYMENT CONFIRMED; FINAL OPERATIONAL ACCEPTANCE NOT YET PROMOTED TO PASS.**
+
+Fresh paid SINGLE staging run:
+
+- workflow: `cloudflare-staging`;
+- run: `36237175160`;
+- run number: `14`;
+- attempt: `1`;
+- deployed commit: `eed488e409960c96be287c811cbc33b40de7f971`;
+- job: `108390960373`;
+- conclusion: `FAILURE` after payment during verification;
+- evidence artifact: `10904760565`;
+- artifact digest: `sha256:7cbc48761a2ee536d580e1d532ebf527068493d41c6373867614a81f1b0ec50f`.
+
+Pre-payment evidence:
+
+- option: `SINGLE`;
+- synthetic confirmed edition: `253cd608-a72d-463b-ad99-cb522ea2347c`;
+- Twenty Order code: `WEB-20260926105500-969AD706`;
+- Twenty Order id: `757235e4-f225-44f8-a058-e77b969ad706`;
+- protected reservation active before payment;
+- active reserved seats: `1`;
+- consumed reserved seats: `0`;
+- available seats: `11`.
+
+Real Stripe evidence:
+
+- Checkout Session: `cs_test_a19sAzGT729OJnl1Sfgrq8lpqVsJxCGbJlb4OodKutLkc3Mx0W2i7nRMll`;
+- Session status: `complete`;
+- payment status: `paid`;
+- amount: `8000` minor units / EUR 80;
+- currency: `eur`;
+- real PaymentIntent: `pi_3UJtGy620hE08wgd0M1xzPp0`.
+
+This proves that the real hosted Stripe Sandbox SINGLE payment completed. It does **not** by itself close the successful-payment acceptance gate, because the harness failed while verifying downstream operational effects.
+
+The failure was Twenty API rate limiting during the post-payment polling loop:
+
+`Rate limit exceeded for apiKey: 100 requests per 60s.`
+
+The original verifier queried Order, PaymentRecord/Enrollment and capacity every 1.5 seconds, which could itself exceed the Twenty API allowance. Therefore this failure is classified as a **TEST HARNESS RATE-LIMIT FAILURE AFTER CONFIRMED PAYMENT**, not as evidence that Stripe payment or webhook processing failed.
+
+### Browser redirect defect exposed by the same payment
+
+After payment Stripe redirected the browser to:
+
+`/corso-sicurezza-pediatrica/`
+
+That route did not exist in the deployed staging application and returned `404`.
+
+This redirect defect is separate from payment truth. The authoritative payment state remains the signed webhook plus server-side Formalife state. The redirect path nevertheless constituted a real product defect and required remediation before subsequent paid acceptance.
+
+## Post-payment / recovery remediation — PR #39
+
+**REMEDIATION — MERGED; RECOVERY PROOF PENDING.**
+
+- PR #39 — `Fix post-checkout redirect and recover paid Stripe acceptance`;
+- tested head: `eef87ab1dcb053612f8ed497280c689de0a8850c`;
+- merge commit / current platform main at write-back: `873d6c787584efa98400cb8aa0e486a63729ca9b`.
+
+PR #39 changes only the acceptance/return mechanics, not the commercial truth model:
+
+1. Stripe `success_url` now returns to `/checkout/?session_id={CHECKOUT_SESSION_ID}`;
+2. Stripe `cancel_url` now returns to `/checkout/?checkout=cancelled`;
+3. `/checkout/` is a real page that polls the existing server-side checkout-status endpoint and only renders payment confirmation when Formalife reports `PAID`, `verified: true`;
+4. browser redirect/query parameters remain non-authoritative;
+5. the paid verifier post-webhook polling interval is reduced from 1.5s to 5s, keeping its normal request rate below the observed Twenty limit;
+6. paid runs no longer re-run the already-closed signed-expiry acceptance before the money-path test;
+7. `cloudflare-staging` now supports `paid_recovery_session_id` for an already-paid Checkout Session;
+8. recovery verifies Stripe payment, linked Twenty Order, PaymentRecord, Enrollment count, consumed reservation/capacity and public verified state without creating or charging a second Checkout Session.
+
+PR #39 CI on tested head:
+
+- bootstrap run `36238086349`: SUCCESS;
+- P6 commerce-contract run `36238086234`: SUCCESS;
+- Stripe sandbox run `36238086235`: SUCCESS;
+- web run `36238086193`: SUCCESS;
+- Astro type-check: PASS;
+- Cloudflare production build/config: PASS;
+- direct Full commerce contract: PASS;
+- browser/accessibility development suite: PASS;
+- production/minified runtime-error suite: PASS;
+- Lighthouse baseline: PASS.
+
 ## Current acceptance gate
 
-Run a fresh `cloudflare-staging` workflow from `formalife/platform/main` at `eed488e409960c96be287c811cbc33b40de7f971` or later with:
+Do **not** create another SINGLE payment yet.
 
-`paid_acceptance = single`
+Run a fresh `cloudflare-staging` workflow from `formalife/platform/main` at `873d6c787584efa98400cb8aa0e486a63729ca9b` or later with:
 
-The run must first prove web-to-commerce readiness, then reach the paid acceptance step and emit a live hosted Stripe Sandbox Checkout URL.
+- `paid_acceptance = none`
+- `paid_recovery_session_id = cs_test_a19sAzGT729OJnl1Sfgrq8lpqVsJxCGbJlb4OodKutLkc3Mx0W2i7nRMll`
 
-After the founder completes that Sandbox Checkout, the run must prove:
+The recovery must prove from the already-paid session:
 
-1. Stripe Session `complete` / `payment_status=paid`;
-2. canonical SINGLE amount EUR 80 / 8000 minor units;
-3. genuine signed `checkout.session.completed` delivery to the public Formalife webhook;
-4. correct linked Order/reservation;
-5. reservation consumed rather than released;
-6. Order `PAID`;
-7. exactly one PaymentRecord;
-8. exactly one Enrollment for SINGLE;
-9. capacity 12 -> 11 consumed correctly;
-10. public server-side state `PAID`, `verified: true`.
+1. Stripe Session remains `complete` / `payment_status=paid`;
+2. amount is EUR 80 / 8000 minor units;
+3. Stripe metadata resolves to the correct Twenty Order;
+4. the linked Order is `PAID`;
+5. exactly one PaymentRecord exists;
+6. exactly one Enrollment exists for SINGLE;
+7. the protected reservation is consumed, not released;
+8. capacity is `11` available after the consumed SINGLE seat;
+9. public server-side checkout state is `PAID`, `verified: true`.
 
-Only then may SINGLE successful payment be promoted to RESULT/PASS.
+Only after this recovery passes may the SINGLE successful-payment gate be promoted to **RESULT / PASS**.
 
-After SINGLE passes, repeat the same gate for `paid_acceptance = couple` and require EUR 120 / two Enrollments / two consumed seats.
+After SINGLE passes, run the same corrected acceptance for `paid_acceptance = couple` and require EUR 120, two Enrollments and two consumed seats.
 
 ## P6 status
 
 P6 remains **OPEN**.
 
-Still open after this write-back:
+Closed / proven:
 
-- real successful-payment SINGLE acceptance;
+- real signed expiry delivery and cancellation/release path;
+- real hosted Stripe Sandbox SINGLE payment completion itself;
+- redirect defect identified and remediated in PR #39;
+- paid validator rate-limit defect identified and remediated in PR #39.
+
+Still open at minimum:
+
+- final operational recovery proof for the already-paid SINGLE session;
 - real successful-payment COUPLE acceptance;
 - duplicate/reordered real delivery acceptance;
 - refund/reconciliation;
