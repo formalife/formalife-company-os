@@ -1,7 +1,7 @@
 # Formalife Platform Implementation Status
 
 Status: CURRENT
-Date: 2026-09-25
+Date: 2026-09-26
 
 Purpose: record execution reality against `PLATFORM_IMPLEMENTATION_ROADMAP.md` without rewriting the roadmap itself after every implementation step.
 
@@ -51,7 +51,7 @@ Current infrastructure evidence:
 
 ### P2 — Public-site technical foundation
 
-**RESULT: FOUNDATION COMPLETE; CLOUDFLARE PREVIEW EXIT GATE OPEN.**
+**RESULT: COMPLETE — REAL GITHUB-DRIVEN CLOUDFLARE STAGING DEPLOYMENT PROVEN.**
 
 Implemented:
 
@@ -64,9 +64,9 @@ Implemented:
 - frozen lockfile and reproducible install;
 - Playwright, axe/runtime-error and Lighthouse CI.
 
-The remaining P2 exit condition is a **real GitHub-driven Cloudflare preview deployment** with actual Cloudflare credentials/environment wiring. Local/CI Wrangler production preview does not substitute for this external deployment proof.
+The former P2 external exit condition is now satisfied by the real GitHub Actions `cloudflare-staging` deployment used for P6. Run `36231789069` deployed the Astro web Worker and commerce Worker with actual Cloudflare credentials/environment wiring, installed runtime secrets, configured the native commerce Service Binding, passed deployed service smoke and completed the signed Stripe expiry acceptance on commit `4b3fced69b58a9050d93f8e95f30fb6aa896c819`.
 
-Merged foundation evidence: `formalife/platform` PR #4, merge commit lineage including `72ebda2`.
+Merged foundation evidence: `formalife/platform` PR #4, merge commit lineage including `72ebda2`. External deployment evidence: P6 `cloudflare-staging` run `36231789069`.
 
 ### P3 — Formalife visual language and design system
 
@@ -181,9 +181,9 @@ Implementation documentation/evidence:
 
 ### P6 — First end-to-end commercial vertical slice: direct Full purchase
 
-**RESULT: PROVIDER-INDEPENDENT CONTRACT, SERIALIZED CAPACITY AND REAL TWENTY APPLICATION WIRING PROVEN; EXTERNAL INTEGRATION GATES OPEN.**
+**RESULT: REAL CLOUDFLARE STAGING + STRIPE SANDBOX CHECKOUT + SIGNED EXPIRY PATH PROVEN; MONEY-SUCCESS AND REMAINING EXTERNAL GATES OPEN.**
 
-P6 remains **OPEN**. It is not yet a revenue-capable end-to-end vertical slice because Stripe, Brevo/PostHog delivery and real Cloudflare deployment have not been proven.
+P6 remains **OPEN**. The deployed non-success payment lifecycle is now proven end to end; the successful-money path and remaining communications/reconciliation/final-option gates are not yet closed.
 
 Provider-independent commerce foundation merged through `formalife/platform` PR #19:
 
@@ -245,18 +245,30 @@ PR #21 real staging evidence:
 - evidence artifact `10871107382`, SHA-256 `903c126941e2a690b6ad929479817d229ebb83554149e05a776b91573607f8ad`;
 - bootstrap `36150445006`, P6 commerce contract `36150445013` and web regression `36150445040` all passed on the tested head.
 
+Real deployed Stripe/Cloudflare evidence, 2026-09-26:
+
+- Stripe Sandbox endpoint-specific signing secret is installed in GitHub Environment `staging` and deployed only as a Worker secret;
+- PR #36 (`4b3fced69b58a9050d93f8e95f30fb6aa896c819`) replaced the invalid same-zone public `workers.dev` web→commerce subrequest with a native Cloudflare Service Binding;
+- `cloudflare-staging` run `36231789069` / job `108376201500` completed `SUCCESS` on PR #36 main;
+- Wrangler reported `env.COMMERCE_BOUNDARY (formalife-commerce-staging) Worker` on the deployed web Worker;
+- generic coordinator and full deployed serialized-capacity probes passed;
+- a real public SINGLE checkout created a real Stripe Sandbox Checkout Session for EUR 80 and one protected seat, reducing availability 12→11;
+- the Session was expired through Stripe's API and the genuine signed `checkout.session.expired` event was accepted by the public webhook;
+- Twenty Order became `CANCELLED`, reservation released, capacity returned 11→12, and zero PaymentRecord / zero Enrollment remained;
+- public server-side verified status returned `CANCELLED`;
+- run evidence artifact `10903060489`, SHA-256 `1b21ec4858163ccdabe276c93d1d0d24e1583a3efb9c472c0a65b556409e6ff4`.
+
+**P6 signed-expiry gate: PASS.**
+
 P6 still requires external proof before closure:
 
-1. real Stripe test Checkout Session creation for both caregiver options;
-2. raw-body Stripe webhook signature verification;
-3. duplicate/reordered real Stripe event handling through the guarded boundary;
-4. real successful, failed and refund/reconciliation paths with stable Stripe identifiers;
-5. real checkout/session lifecycle wired to seat reservation/expiry/release/consume behavior;
-6. final paid Order / PaymentRecord / Household / Enrollment mirror effects and verified success-state lookup proven on the real payment path;
-7. real Brevo transactional confirmation delivery;
-8. privacy-safe PostHog event delivery on the deployed path;
-9. real Cloudflare preview/staging deployment of public web + commerce boundary;
-10. end-to-end 1-Caregiver and 2-Caregiver acceptance against the deployed system.
+1. real successful Stripe Sandbox payment producing genuine signed `checkout.session.completed` and the expected operational effects;
+2. duplicate/reordered real Stripe event handling through the guarded boundary;
+3. final paid Order / PaymentRecord / Household / Enrollment mirror effects and verified success-state lookup for both SINGLE and COUPLE;
+4. refund/reconciliation path with stable Stripe identifiers;
+5. real Brevo transactional confirmation delivery;
+6. privacy-safe PostHog event delivery on the deployed path;
+7. final end-to-end 1-Caregiver and 2-Caregiver acceptance against the deployed system.
 
 Do not broaden into Guide/Training Credit public purchase flows, activation/pre-enrolment exceptions or unrelated site completeness before this direct Full vertical slice passes its exit gate.
 
@@ -264,24 +276,30 @@ Implementation tracking: `formalife/platform` issue #20.
 
 ## Current next execution block
 
-### P6 server/API and communication seams without live Stripe
+### P6 real successful-payment acceptance
 
-Provider-independent Twenty edition/pre-checkout/session-lookup wiring is now proven. Until Stripe test access is available, the remaining useful no-Stripe work is narrower:
+The first remaining money-path bottleneck is now a genuine paid Stripe Checkout lifecycle on the deployed public path.
 
-1. expose server/API seams for checkout preparation and verified success-state lookup that fail closed when real payment configuration is absent outside isolated tests;
-2. add Brevo and PostHog adapters with deterministic test implementations and no silent production fallback;
-3. prove the provider-independent application path in CI, including error/rollback behavior around reservation and provider setup;
-4. prepare Cloudflare staging bindings/secrets contract without claiming the external deploy gate has passed;
-5. when Stripe becomes available, implement only the Stripe adapter/raw-webhook verification seam and execute the real P6 external acceptance.
+Required next proof:
+
+1. create a fresh confirmed synthetic edition;
+2. start checkout through the deployed public Formalife API;
+3. complete the resulting real Stripe Sandbox Checkout Session with a successful Stripe test payment;
+4. require genuine signed `checkout.session.completed` delivery to the deployed webhook;
+5. prove correct Order/reservation resolution, amount/currency checks and stable payment idempotency;
+6. prove reservation consumption, Order `PAID`, exactly one PaymentRecord and the correct Enrollment count;
+7. prove correct post-payment capacity and server-side verified public `PAID` state;
+8. make the sandbox acceptance as repeatable as Stripe Checkout's supported testing surface allows, without committing credentials or real card data.
+
+Stripe's current official testing guidance distinguishes interactive Checkout testing from server-side test-code PaymentMethods, and its automated-testing guidance states that hosted Checkout has security measures that prevent automated frontend testing. Do not bypass Stripe's hosted Checkout security model with undocumented internal APIs. If full non-interactive completion of an existing Checkout Session is not supported by Stripe, isolate the unavoidable manual sandbox interaction while automating setup, observation and assertions around it.
 
 ## Open parallel infrastructure gates
 
-The remaining independent external gates are:
+The remaining independent external infrastructure gate is:
 
 1. **P1 production-hosting decision/proof** — self-hosting preparation exists but no real self-host has passed the gate. If Twenty Cloud is later approved as Formalife production hosting, revise/supersede the self-hosting gate explicitly rather than pretending it passed.
-2. **P2 real Cloudflare preview deploy** — requires Cloudflare account credentials/integration capable of creating the preview deployment.
 
-Neither gate may be silently marked complete from local simulation alone.
+P2's former Cloudflare deployment gate is closed by the real GitHub-driven staging deployment evidence above.
 
 ## Revision condition
 
