@@ -1,165 +1,104 @@
 # P6 Stripe Paid Acceptance
 
-Status: CURRENT TEST — SINGLE ROOT CAUSE PROVEN; UUID RECONCILIATION REMEDIATION MERGED; DEPLOYED RECOVERY PROOF PENDING
+Status: CURRENT RESULT — REAL SINGLE SUCCESSFUL-PAYMENT ACCEPTANCE PASS; COUPLE NEXT
 Date: 2026-09-26
 
 ## Context
 
 The signed-expiry gate is already closed / PASS in `P6_STRIPE_WEBHOOK_STAGING_DEPLOYMENT_2026-09-25.md` from Cloudflare staging run `36231789069` (#11), proving a genuine signed `checkout.session.expired` path with Order cancellation, reservation release, restored capacity, zero PaymentRecord, zero Enrollment and verified public `CANCELLED` state.
 
-The first remaining money-path bottleneck is a genuine Stripe Sandbox successful payment producing a signed `checkout.session.completed` delivery linked to the real Formalife Order and protected reservation.
+This record covers the next money-path gate: a genuine Stripe Sandbox `checkout.session.completed` linked to a real Formalife Order and protected capacity reservation, followed by correct downstream operational effects.
 
-## Paid acceptance harness — PR #37
+## Acceptance contract
+
+The successful-payment gate requires all of the following together:
+
+1. a real hosted Stripe Sandbox Checkout Session;
+2. canonical amount/currency for the selected offer;
+3. signed `checkout.session.completed` processing, with browser redirect non-authoritative;
+4. linked Order resolved and `PAID`;
+5. protected reservation consumed, not released;
+6. exactly one PaymentRecord;
+7. exactly one Enrollment for SINGLE, two for COUPLE;
+8. correct capacity consumption;
+9. public server-side checkout status `PAID`, `verified: true`;
+10. idempotent/replay-safe commerce command state.
+
+## Harness — PR #37
 
 **TEST — IMPLEMENTED AND MERGED.**
 
-Implementation repository: `formalife/platform`.
-
 - PR #37 — `Add real paid Stripe staging acceptance`;
 - merge commit: `5ca6e6dde73c289ed271b3d501b5f20d4ca9fca0`;
-- new script: `scripts/p6-stripe-paid-webhook-acceptance.mjs`;
-- `cloudflare-staging` accepts `paid_acceptance = none | single | couple`;
-- PR bootstrap run `36232644170`: PASS;
-- PR P6 commerce-contract run `36232644167`: PASS.
+- script: `scripts/p6-stripe-paid-webhook-acceptance.mjs`;
+- `cloudflare-staging` input: `paid_acceptance = none | single | couple`;
+- bootstrap run `36232644170`: PASS;
+- P6 commerce-contract run `36232644167`: PASS.
 
-The paid acceptance:
+The harness creates a fresh synthetic confirmed Twenty edition, starts checkout through the deployed public Formalife endpoint, requires a real Stripe Sandbox Checkout Session, exposes the hosted Checkout URL for the one interactive sandbox payment, then verifies Stripe and downstream Formalife state.
 
-1. creates a fresh synthetic confirmed Twenty edition;
-2. starts checkout through the deployed public Formalife endpoint;
-3. requires a real Stripe Sandbox Checkout Session with the canonical offer amount/currency/seat count;
-4. verifies the linked Twenty Order and protected reservation before payment;
-5. exposes the hosted Stripe Sandbox Checkout URL for the one required interactive sandbox payment;
-6. polls Stripe until the Session is `complete` and `payment_status=paid`;
-7. then verifies the genuine signed webhook operational effects;
-8. requires Order `PAID`, one PaymentRecord, exact Enrollment count, consumed reservation/capacity and public verified `PAID` state.
-
-No production payment credentials or card data are committed. Hosted Checkout is not bypassed with detached synthetic events.
-
-## Run #12 — first requested SINGLE attempt
+## Run #12 — deployment readiness failure
 
 **RESULT — FAILED BEFORE PAID ACCEPTANCE; NO SUCCESSFUL-PAYMENT CLAIM.**
 
-- workflow: `cloudflare-staging`;
-- run: `36233877518`;
-- run number: `12`;
-- attempt: `1`;
+- run: `36233877518` (#12);
 - commit: `5ca6e6dde73c289ed271b3d501b5f20d4ca9fca0`;
 - job: `108381999964`;
 - conclusion: `FAILURE`.
 
-Passed before the failure:
-
-- runner/repository/bootstrap;
-- Astro production build;
-- commerce Worker deploy;
-- `COMMERCE_BOUNDARY` Service Binding configuration;
-- web Worker deploy and runtime-secret installation;
-- direct deployed commerce coordinator probe;
-- complete deployed serialized-capacity probe.
-
-The failure occurred in the already-existing signed-expiry step before the new paid step could execute:
+The existing signed-expiry step failed before the paid step with:
 
 `Public checkout failed (401): {"error":"UNAUTHORIZED","message":"Commerce boundary HTTP 401"}`
 
-The direct authenticated commerce probe immediately before that public checkout passed with the newly generated boundary token. Therefore the commerce Worker itself accepted the current token while the web Worker path still reached it with a non-matching token value.
+The direct commerce probe accepted the newly generated boundary token immediately before the public checkout. Diagnosis: a deployment readiness / secret-propagation race between web and commerce Workers, not a Stripe-payment failure.
 
-**DIAGNOSIS — DEPLOYMENT READINESS / SECRET-PROPAGATION RACE.**
-
-The staging workflow rotates `FORMALIFE_BOUNDARY_TOKEN` on each run, redeploys both Workers and begins the public commerce acceptance almost immediately. Run #12 exposed that direct commerce readiness did not prove that the web Worker's runtime secret had converged to the same token yet.
-
-This is not evidence that the signed-expiry logic regressed: run #11 remains the accepted signed-expiry PASS. It is also not a successful-payment failure because the paid step was skipped after the upstream expiry-step failure and no paid Checkout Session was created by that step.
-
-### Provenance correction
-
-The founder explicitly launched this attempt intending `paid_acceptance=single`.
-
-The final run artifact showed `paidAcceptanceRequested: none`, but that field was populated from `P6_PAID_OPTION`, which existed only in the paid step's local environment. Because the paid step was skipped after the upstream failure, the later evidence-writing step could not see that variable. Therefore `paidAcceptanceRequested: none` does **not** prove that the workflow-dispatch input was `none` and must not be used to contradict the founder's reported selection.
+The founder explicitly launched this attempt intending `paid_acceptance=single`. A later artifact field showing `paidAcceptanceRequested: none` was step-scope fallout because the paid step never ran; it is not evidence that the dispatch input was `none`.
 
 ## Readiness remediation — PR #38
 
-**REMEDIATION — MERGED AND PROVEN SUFFICIENT TO REACH PAID CHECKOUT.**
+**REMEDIATION — MERGED AND PROVEN SUFFICIENT.**
 
 - PR #38 — `Gate Stripe staging acceptance on web-commerce readiness`;
 - tested head: `c53d4d74931d96bdcf775374246c84eff2eb67df`;
 - merge commit: `eed488e409960c96be287c811cbc33b40de7f971`.
 
-PR #38 adds a staging-only, non-mutating web-side readiness route:
+PR #38 added staging-only `GET /api/commerce/health`, traversing the real deployed path:
 
-`GET /api/commerce/health`
+**web Worker -> native `COMMERCE_BOUNDARY` Service Binding -> authenticated commerce Worker -> Durable Object coordinator**.
 
-The route traverses the actual deployed path:
+CI: repository contract, Astro type-check, Cloudflare build/config, commerce tests, browser/accessibility, production runtime and Lighthouse all PASS.
 
-**web Worker -> native `COMMERCE_BOUNDARY` Service Binding -> authenticated commerce Worker -> Durable Object coordinator**
+## Run #14 — real SINGLE payment completed
 
-and returns ready only after that path can execute the commerce contract with the propagated runtime token. Outside `APP_ENV=staging` it returns `404`.
+**RESULT — STRIPE PAYMENT CONFIRMED; DOWNSTREAM VERIFICATION FAILED.**
 
-The signed-expiry acceptance waits for this web-to-commerce readiness proof before creating commerce state.
-
-PR #38 validation:
-
-- bootstrap run `36236239647`: SUCCESS;
-- full web run `36236239621`: SUCCESS;
-- repository contract: PASS;
-- Astro type-check: PASS;
-- Cloudflare production build/config: PASS;
-- direct Full commerce contract: PASS;
-- browser/accessibility development suite: PASS;
-- production/minified runtime-error suite: PASS;
-- Lighthouse baseline: PASS.
-
-## Run #14 — real SINGLE payment
-
-**RESULT — STRIPE PAYMENT CONFIRMED; FINAL OPERATIONAL ACCEPTANCE NOT YET PROMOTED TO PASS.**
-
-Fresh paid SINGLE staging run:
-
-- workflow: `cloudflare-staging`;
-- run: `36237175160`;
-- run number: `14`;
-- attempt: `1`;
+- run: `36237175160` (#14);
 - deployed commit: `eed488e409960c96be287c811cbc33b40de7f971`;
 - job: `108390960373`;
-- conclusion: `FAILURE` after payment during verification;
+- conclusion: `FAILURE` after payment;
 - evidence artifact: `10904760565`;
-- artifact digest: `sha256:7cbc48761a2ee536d580e1d532ebf527068493d41c6373867614a81f1b0ec50f`.
+- digest: `sha256:7cbc48761a2ee536d580e1d532ebf527068493d41c6373867614a81f1b0ec50f`.
 
 Pre-payment evidence:
 
 - option: `SINGLE`;
-- synthetic confirmed edition: `253cd608-a72d-463b-ad99-cb522ea2347c`;
-- Twenty Order code: `WEB-20260926105500-969AD706`;
-- Twenty Order id: `757235e4-f225-44f8-a058-e77b969ad706`;
-- protected reservation active before payment;
-- active reserved seats: `1`;
-- consumed reserved seats: `0`;
+- edition: `253cd608-a72d-463b-ad99-cb522ea2347c`;
+- Order code: `WEB-20260926105500-969AD706`;
+- Order id: `757235e4-f225-44f8-a058-e77b969ad706`;
+- protected reservation active;
 - available seats: `11`.
 
-Real Stripe evidence:
+Stripe evidence:
 
 - Checkout Session: `cs_test_a19sAzGT729OJnl1Sfgrq8lpqVsJxCGbJlb4OodKutLkc3Mx0W2i7nRMll`;
-- Session status: `complete`;
+- Session: `complete`;
 - payment status: `paid`;
 - amount: `8000` minor units / EUR 80;
-- currency: `eur`;
-- real PaymentIntent: `pi_3UJtGy620hE08wgd0M1xzPp0`.
+- PaymentIntent: `pi_3UJtGy620hE08wgd0M1xzPp0`.
 
-This proves that the real hosted Stripe Sandbox SINGLE payment completed. It does **not** by itself close the successful-payment acceptance gate, because the harness failed while verifying downstream operational effects.
+This proved the real hosted Stripe Sandbox SINGLE payment itself. The verifier then hit Twenty's `100 requests / 60s` API limit, so run #14 was not promoted to final operational PASS.
 
-The failure was Twenty API rate limiting during the post-payment polling loop:
-
-`Rate limit exceeded for apiKey: 100 requests per 60s.`
-
-The original verifier queried Order, PaymentRecord/Enrollment and capacity every 1.5 seconds, which could itself exceed the Twenty API allowance. Therefore run #14 alone was classified as a **TEST HARNESS RATE-LIMIT FAILURE AFTER CONFIRMED PAYMENT** rather than evidence of the final downstream state.
-
-### Browser redirect defect exposed by the same payment
-
-After payment Stripe redirected the browser to:
-
-`/corso-sicurezza-pediatrica/`
-
-That route did not exist in the deployed staging application and returned `404`.
-
-This redirect defect is separate from payment truth. The authoritative payment state remains the signed webhook plus server-side Formalife state. The redirect path nevertheless constituted a real product defect and required remediation before subsequent paid acceptance.
+The same payment exposed a separate product defect: Stripe redirected to nonexistent `/corso-sicurezza-pediatrica/`, producing 404. Redirect state remained non-authoritative.
 
 ## Post-payment / recovery remediation — PR #39
 
@@ -169,200 +108,168 @@ This redirect defect is separate from payment truth. The authoritative payment s
 - tested head: `eef87ab1dcb053612f8ed497280c689de0a8850c`;
 - merge commit: `873d6c787584efa98400cb8aa0e486a63729ca9b`.
 
-PR #39 changes only the acceptance/return mechanics, not the commercial truth model:
+Changes:
 
-1. Stripe `success_url` now returns to `/checkout/?session_id={CHECKOUT_SESSION_ID}`;
-2. Stripe `cancel_url` now returns to `/checkout/?checkout=cancelled`;
-3. `/checkout/` is a real page that polls the existing server-side checkout-status endpoint and only renders payment confirmation when Formalife reports `PAID`, `verified: true`;
-4. browser redirect/query parameters remain non-authoritative;
-5. the paid verifier post-webhook polling interval is reduced from 1.5s to 5s;
-6. paid runs no longer re-run the already-closed signed-expiry acceptance before the money-path test;
-7. `cloudflare-staging` supports `paid_recovery_session_id` for an already-paid Checkout Session;
-8. recovery verifies the already-paid session without creating or charging a second Checkout Session.
+- Stripe success -> `/checkout/?session_id={CHECKOUT_SESSION_ID}`;
+- Stripe cancel -> `/checkout/?checkout=cancelled`;
+- `/checkout/` verifies state server-side and only confirms payment when Formalife reports `PAID`, `verified: true`;
+- paid verifier polling reduced;
+- paid runs no longer repeat the already-closed expiry gate;
+- `paid_recovery_session_id` can verify an already-paid Session without creating a second payment.
 
-PR #39 CI on tested head:
+PR #39 CI: bootstrap, P6 commerce-contract, Stripe sandbox, full web, browser/runtime and Lighthouse PASS.
 
-- bootstrap run `36238086349`: SUCCESS;
-- P6 commerce-contract run `36238086234`: SUCCESS;
-- Stripe sandbox run `36238086235`: SUCCESS;
-- web run `36238086193`: SUCCESS;
-- Astro type-check: PASS;
-- Cloudflare production build/config: PASS;
-- direct Full commerce contract: PASS;
-- browser/accessibility development suite: PASS;
-- production/minified runtime-error suite: PASS;
-- Lighthouse baseline: PASS.
+## Run #15 — partial downstream payment application
 
-## Run #15 — recovery of the already-paid SINGLE session
+**RESULT — FAILED; REAL PARTIAL APPLICATION CONFIRMED.**
 
-**RESULT — FAILED; REAL PARTIAL PAYMENT APPLICATION CONFIRMED.**
-
-- workflow: `cloudflare-staging`;
-- run: `36244785337`;
-- run number: `15`;
-- attempt: `1`;
-- deployed commit: `873d6c787584efa98400cb8aa0e486a63729ca9b`;
+- run: `36244785337` (#15);
+- commit: `873d6c787584efa98400cb8aa0e486a63729ca9b`;
 - job: `108411869916`;
 - conclusion: `FAILURE`;
-- evidence artifact: `10907296023`;
-- artifact digest: `sha256:1e8d28bf23ea04620824bf674ce10b39d55625ca6823883aeef70f917041c2a9`;
-- recovery Session: `cs_test_a19sAzGT729OJnl1Sfgrq8lpqVsJxCGbJlb4OodKutLkc3Mx0W2i7nRMll`.
+- artifact: `10907296023`;
+- digest: `sha256:1e8d28bf23ea04620824bf674ce10b39d55625ca6823883aeef70f917041c2a9`.
 
-Deployment/build/readiness/capacity probes all passed. The expiry and new paid-checkout steps were correctly skipped; the recovery step alone evaluated the existing paid Session.
+Recovery of the same paid Session proved before failure:
 
-The recovery failed with:
+- Stripe `complete` / `paid` / EUR 80;
+- real PaymentIntent;
+- linked Order exists and is `PAID`;
+- Stripe metadata matches the Order.
 
-`Paid checkout does not have exactly one PaymentRecord`
+It then found:
 
-and evidence:
+- PaymentRecord: `0`;
+- Enrollment: `0`.
 
-- `paymentRecords: 0`;
-- `enrollments: 0`.
+The commerce outbox order is `ORDER_UPDATE -> PAYMENT_CREATE -> ENROLLMENT_CREATE`. Since Order was already `PAID`, the evidence established a real partial downstream application rather than a Stripe failure.
 
-The recovery assertion order is material evidence. Before reaching the failing PaymentRecord assertion it had already required and passed:
-
-1. Stripe Session `complete`;
-2. Stripe `payment_status=paid`;
-3. EUR canonical amount;
-4. real PaymentIntent;
-5. linked Formalife Order exists;
-6. Stripe amount matches Order seat quantity;
-7. **linked Order state is `PAID`**;
-8. Stripe metadata `orderId` matches that Order.
-
-Therefore the current classification is not a Stripe failure and not merely a validator-rate issue. It is a **REAL PARTIAL DOWNSTREAM PAYMENT APPLICATION**: the signed payment path advanced the Order to `PAID`, while the expected PaymentRecord and Enrollment mirror effects were not materialized in Twenty.
-
-The commerce coordinator architecture explains the partial state. `payment.apply` commits an outbox in this order:
-
-1. `ORDER_UPDATE`;
-2. `PAYMENT_CREATE`;
-3. `ENROLLMENT_CREATE` for each seat.
-
-Since the Order is `PAID` but both downstream record counts are zero, `ORDER_UPDATE` was delivered while one or more later outbox effects remain pending/failing. The canonical persisted command key is:
+Canonical command key:
 
 `payment:pi_3UJtGy620hE08wgd0M1xzPp0`
 
-The exact downstream `last_error` was not included in run #15 evidence, so the specific schema/transport cause must **not** be guessed or silently repaired.
+## Outbox diagnostics — PR #40
 
-## Outbox diagnostic remediation — PR #40
-
-**REMEDIATION — MERGED; DIAGNOSTIC RECOVERY COMPLETE.**
+**REMEDIATION — MERGED.**
 
 - PR #40 — `Expose paid recovery outbox diagnostics`;
 - tested head: `a76019b864100798a5aa7e3d0a7385507aa8cff4`;
 - merge commit: `d50e430bebe197e803dd1648584c90df4bcd9d3c`;
-- bootstrap run `36245383187`: SUCCESS;
-- P6 commerce-contract run `36245383182`: SUCCESS.
+- bootstrap run `36245383187`: PASS;
+- P6 commerce-contract run `36245383182`: PASS.
 
-PR #40 does **not** synthesize or repair financial records. It adds observability only:
+The recovery was extended to persist command/outbox status, attempts and `last_error`, plus Order, effect counts, capacity and public status. It did not synthesize financial records.
 
-- derives `payment:<PaymentIntent>` from the existing real Stripe Session;
-- inspects the authenticated persisted commerce command/outbox before repeated Twenty reads;
-- persists each outbox effect `status`, `attempts` and `last_error` in the recovery artifact;
-- persists Order, PaymentRecord/Enrollment counts and capacity snapshots before final assertions;
-- captures a best-effort public checkout-status probe even when the recovery fails.
-
-## Run #16 — diagnostic recovery
+## Run #16 — root cause proven
 
 **RESULT — FAILED; FIRST UPSTREAM DOWNSTREAM-EFFECT DEFECT PROVEN.**
 
-- workflow: `cloudflare-staging`;
-- run: `36245617200`;
-- run number: `16`;
-- attempt: `1`;
-- deployed commit: `d50e430bebe197e803dd1648584c90df4bcd9d3c`;
+- run: `36245617200` (#16);
+- commit: `d50e430bebe197e803dd1648584c90df4bcd9d3c`;
 - job: `108414146930`;
 - conclusion: `FAILURE`;
-- evidence artifact: `10906419824`;
-- artifact digest: `sha256:51f49e0d213065f744727ca8685b767e754c576bb07a664b65f29bb9eb18a439`;
-- recovery Session: `cs_test_a19sAzGT729OJnl1Sfgrq8lpqVsJxCGbJlb4OodKutLkc3Mx0W2i7nRMll`.
+- artifact: `10906419824`;
+- digest: `sha256:51f49e0d213065f744727ca8685b767e754c576bb07a664b65f29bb9eb18a439`.
 
-The deployed build, commerce coordinator probe and serialized-capacity probe all passed. The recovery reconfirmed:
+Run #16 reconfirmed:
 
-- Stripe Session `complete` / `payment_status=paid`;
-- EUR 80 / `8000` minor units;
+- Stripe Session `complete` / `paid` / EUR 80;
 - PaymentIntent `pi_3UJtGy620hE08wgd0M1xzPp0`;
-- linked Order `757235e4-f225-44f8-a058-e77b969ad706` remains `PAID`;
-- protected reservation is no longer active;
-- `consumedReservedSeats = 1`;
-- `availableSeats = 11` of 12;
-- public checkout status returns HTTP 200, `PAID`, `verified: true`;
-- PaymentRecord count remains `0`;
-- Enrollment count remains `0`.
+- Order `757235e4-f225-44f8-a058-e77b969ad706` = `PAID`;
+- consumed reservation = `1`;
+- available seats = `11`;
+- public status = HTTP 200 / `PAID` / `verified: true`;
+- PaymentRecord = `0`;
+- Enrollment = `0`.
 
-Persisted command state:
+Persisted command:
 
-- command key: `payment:pi_3UJtGy620hE08wgd0M1xzPp0`;
-- command type: `payment.apply`;
-- command status: `COMMITTED`;
-- internal payment id: `c933cbec-a1f1-88e8-9249-5c2b66aa313d`;
-- internal enrollment id: `f31dba2d-b10b-86d5-849b-befe2d1ade9d`.
+- key: `payment:pi_3UJtGy620hE08wgd0M1xzPp0`;
+- type: `payment.apply`;
+- status: `COMMITTED`;
+- payment id: `c933cbec-a1f1-88e8-9249-5c2b66aa313d`;
+- enrollment id: `f31dba2d-b10b-86d5-849b-befe2d1ade9d`.
 
-Persisted outbox evidence:
+Outbox:
 
-1. `ORDER_UPDATE`: `DELIVERED`, 2 attempts, no error;
-2. `PAYMENT_CREATE`: `PENDING`, 2580 attempts, exact `last_error`: `Value "c933cbec-a1f1-88e8-9249-5c2b66aa313d" is not a valid UUID`;
-3. `ENROLLMENT_CREATE`: `PENDING`, 2580 attempts, latest `last_error`: `Rate limit exceeded for apiKey: 100 requests per 60s.`
+1. `ORDER_UPDATE`: `DELIVERED`, 2 attempts;
+2. `PAYMENT_CREATE`: `PENDING`, 2580 attempts, `Value "c933cbec-a1f1-88e8-9249-5c2b66aa313d" is not a valid UUID`;
+3. `ENROLLMENT_CREATE`: `PENDING`, 2580 attempts, latest error rate-limited by Twenty.
 
-**FACT / ROOT CAUSE:** the persisted internal deterministic UUIDv8-style PaymentRecord id is rejected by the deployed Twenty API as an invalid UUID. This is the first upstream defect preventing the paid mirror from materializing.
+**FACT / ROOT CAUSE:** the deterministic internal UUIDv8-style PaymentRecord id was rejected by the deployed Twenty API as an invalid UUID. The Enrollment rate-limit error was downstream retry churn, not promoted to a separate root cause.
 
-The Enrollment rate-limit error is not promoted to an independent root cause. It is downstream of the still-pending outbox and amplified by the existing two-second reconciliation/alarm retry loop. Its own payload validity remains to be proven after the first defect is removed.
+## Twenty UUID reconciliation — PR #41
 
-## Twenty UUID reconciliation remediation — PR #41
-
-**REMEDIATION — MERGED; DEPLOYED RECOVERY PROOF PENDING.**
+**REMEDIATION — MERGED AND DEPLOYED PROOF PASS.**
 
 - PR #41 — `Recover P6 paid outbox with Twenty-compatible IDs`;
 - tested head: `c90014f6a8dec335ef6cbd3a4f16fd68522c9779`;
-- merge commit / platform main at write-back: `7a324e7ba6ea03c6719ab53477b62e16f6b0f72e`;
-- bootstrap run `36246027993`: SUCCESS;
-- P6 commerce-contract run `36246027970`: SUCCESS;
-- web run `36246028073`: SUCCESS.
+- merge commit: `7a324e7ba6ea03c6719ab53477b62e16f6b0f72e`;
+- bootstrap run `36246027993`: PASS;
+- P6 commerce-contract run `36246027970`: PASS;
+- web run `36246028073`: PASS.
 
-The remediation deliberately does **not** change the already-committed `payment.apply` command payload or its deterministic internal IDs. Changing the webhook generator now would alter the payload hash for the existing idempotency key and risk an `IDEMPOTENCY_CONFLICT` instead of repairing the paid transaction.
+The remediation does not mutate the already-committed `payment.apply` payload, provider identity, idempotency key or internal effect identities. Legacy internal UUIDv8 IDs are deterministically normalized to UUIDv5 only at the outbound Twenty create boundary:
 
-Instead, the deployed P6 commerce boundary now normalizes only record IDs at the outbound Twenty create boundary:
+- payment `c933cbec-a1f1-88e8-9249-5c2b66aa313d` -> `280a9983-3ce9-5a18-b7fe-4189b6f9a625`;
+- enrollment `f31dba2d-b10b-86d5-849b-befe2d1ade9d` -> `be8f181d-c883-57b0-8a66-8861ecd37a10`.
 
-- legacy internal UUIDv8 payment id `c933cbec-a1f1-88e8-9249-5c2b66aa313d` -> deterministic Twenty UUIDv5 `280a9983-3ce9-5a18-b7fe-4189b6f9a625`;
-- legacy internal UUIDv8 enrollment id `f31dba2d-b10b-86d5-849b-befe2d1ade9d` -> deterministic Twenty UUIDv5 `be8f181d-c883-57b0-8a66-8861ecd37a10`.
+This preserves replay/idempotency semantics while making the Twenty records creatable.
 
-The adapter is deterministic and leaves ordinary non-v8 IDs unchanged. The persisted command key, payload, provider identity, Order relation and effect identities remain unchanged inside the commerce coordinator. This preserves replay semantics while making the Twenty records creatable.
+## Run #17 — recovered SINGLE acceptance
 
-Validation on the PR head passed:
+**RESULT — PASS. SINGLE SUCCESSFUL-PAYMENT GATE CLOSED.**
 
-- exact regression tests for the persisted payment and enrollment IDs;
-- direct Full commerce tests;
-- Worker bundle validation;
-- serialized capacity invariants;
-- Astro type-check/build;
-- development browser/accessibility suite;
-- production runtime/browser suite;
-- Lighthouse baseline.
+- workflow: `cloudflare-staging`;
+- run: `36246709032`;
+- run number: `17`;
+- attempt: `1`;
+- deployed commit: `7a324e7ba6ea03c6719ab53477b62e16f6b0f72e`;
+- job: `108417133830`;
+- conclusion: `SUCCESS`;
+- evidence artifact: `10907318816`;
+- artifact digest: `sha256:0d23d8f90a2d6339759e4245f088618298668fc8de2b19f354860b13c80affcd`;
+- recovered Checkout Session: `cs_test_a19sAzGT729OJnl1Sfgrq8lpqVsJxCGbJlb4OodKutLkc3Mx0W2i7nRMll`.
+
+Deployed evidence proves together:
+
+- Stripe Session: `complete`;
+- Stripe payment status: `paid`;
+- amount: EUR 80 / `8000`;
+- PaymentIntent: `pi_3UJtGy620hE08wgd0M1xzPp0`;
+- canonical commerce command: `payment:pi_3UJtGy620hE08wgd0M1xzPp0`;
+- command status: `MIRRORED`;
+- `ORDER_UPDATE`: `DELIVERED`;
+- `PAYMENT_CREATE`: `DELIVERED`, `last_error = null`;
+- `ENROLLMENT_CREATE`: `DELIVERED`, `last_error = null`;
+- linked Order: `PAID`;
+- exactly `1` PaymentRecord;
+- exactly `1` Enrollment;
+- active reserved seats: `0`;
+- consumed reserved seats: `1`;
+- available seats: `11` of `12`;
+- public checkout endpoint: HTTP `200`, `PAID`, `verified: true`.
+
+This is the same original real payment. No second SINGLE payment was created to close the gate.
+
+The high retry counts on the two previously blocked effects (`2875` attempts each) are historical incident evidence. They no longer block the command: both effects are delivered and `last_error` is cleared. Retry/backoff hardening remains a separate resilience concern and does not invalidate the accepted SINGLE result.
 
 ## Current acceptance gate
 
-Do **not** create another SINGLE payment.
+SINGLE is **CLOSED / PASS**.
 
-Run a fresh `cloudflare-staging` workflow from `formalife/platform/main` at `7a324e7ba6ea03c6719ab53477b62e16f6b0f72e` or later with:
+The next successful-payment acceptance is **COUPLE**. Run the corrected real paid acceptance with `paid_acceptance = couple` and require:
 
-- `paid_acceptance = none`
-- `paid_recovery_session_id = cs_test_a19sAzGT729OJnl1Sfgrq8lpqVsJxCGbJlb4OodKutLkc3Mx0W2i7nRMll`
+1. Stripe Sandbox EUR 120;
+2. linked COUPLE Order `PAID`;
+3. exactly one PaymentRecord;
+4. exactly two Enrollments;
+5. two consumed reserved seats;
+6. correct post-payment capacity;
+7. public server-side `PAID`, `verified: true`;
+8. idempotent/replay-safe command state.
 
-This run must deploy the UUID boundary adapter and reconcile the same already-paid command. SINGLE is promoted to **RESULT / PASS** only if the deployed evidence proves all of the following together:
-
-1. Stripe remains `complete` / paid for EUR 80;
-2. the same canonical command `payment:pi_3UJtGy620hE08wgd0M1xzPp0` remains the transaction identity;
-3. exactly one PaymentRecord exists;
-4. exactly one Enrollment exists;
-5. pending `PAYMENT_CREATE` and `ENROLLMENT_CREATE` effects are delivered / no longer blocking reconciliation;
-6. Order remains `PAID`;
-7. reservation remains consumed, not released;
-8. capacity remains `11` available;
-9. public checkout state is `PAID`, `verified: true`.
-
-If the UUID defect clears but the existing retry churn still causes a Twenty rate-limit failure, treat rate limiting as the next bottleneck and remediate retry/backoff before any new payment. Do not bypass or synthesize the missing records.
-
-After SINGLE passes, run the corrected acceptance for `paid_acceptance = couple` and require EUR 120, two Enrollments and two consumed seats.
+After COUPLE, P6 still requires duplicate/reordered delivery acceptance, refund/reconciliation, real Brevo transactional delivery, real privacy-safe PostHog delivery and final deployed Cloudflare verification for those paths.
 
 ## P6 status
 
@@ -371,21 +278,23 @@ P6 remains **OPEN**.
 Closed / proven:
 
 - real signed expiry delivery and cancellation/release path;
-- real hosted Stripe Sandbox SINGLE payment completion itself;
-- linked SINGLE Order advanced to `PAID`;
-- SINGLE protected reservation consumed and capacity reduced to 11;
-- public SINGLE server-side status is verified `PAID`;
-- redirect defect identified and remediated in PR #39;
-- paid validator rate-limit defect identified and remediated in PR #39;
-- exact missing-record root cause isolated by run #16;
-- UUID compatibility remediation merged in PR #41 with full CI PASS.
+- real hosted Stripe Sandbox SINGLE payment;
+- signed successful-payment processing linked to the real Order/reservation;
+- SINGLE Order `PAID`;
+- exactly one PaymentRecord;
+- exactly one Enrollment;
+- reservation consumed and capacity `12 -> 11`;
+- public SINGLE server-side state `PAID`, `verified: true`;
+- redirect remediation;
+- staging readiness remediation;
+- Twenty UUID compatibility remediation;
+- recovered outbox is fully `MIRRORED`.
 
 Still open at minimum:
 
-- deployed reconciliation proof for the already-paid SINGLE PaymentRecord / Enrollment;
-- final operational SINGLE successful-payment acceptance;
 - real successful-payment COUPLE acceptance;
 - duplicate/reordered real delivery acceptance;
 - refund/reconciliation;
 - real Brevo transactional delivery;
-- real privacy-safe PostHog delivery.
+- real privacy-safe PostHog delivery;
+- retry/backoff hardening for persistent downstream failures.
