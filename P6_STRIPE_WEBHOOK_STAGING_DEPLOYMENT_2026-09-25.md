@@ -1,6 +1,6 @@
 # P6 Stripe Webhook Staging Deployment
 
-Status: CURRENT RESULT — RPC HYPOTHESIS REJECTED; REMOTE COMMERCE COORDINATOR FAILURE PENDING DIAGNOSTIC DEPLOY
+Status: CURRENT RESULT — GENERIC COORDINATOR PROBE PASSES; DEPLOYED CAPACITY PATH PENDING DIRECT PROBE
 Date: 2026-09-26
 
 ## Scope
@@ -28,7 +28,10 @@ Implementation repository: `formalife/platform`.
 - PR #33 merge commit: `012df300717f1e2299c937dc4d5ba9fa343678cf`;
 - PR #34 — `Add deployed P6 coordinator diagnostics`;
 - PR #34 tested head: `683a46b7f040833fc7aac8251d461f155d6dcb92`;
-- PR #34 merge commit: `341cf7c1d45350eef22c265258336c6e9e3e09e7`.
+- PR #34 merge commit: `341cf7c1d45350eef22c265258336c6e9e3e09e7`;
+- PR #35 — `Probe deployed P6 capacity boundary before Stripe`;
+- PR #35 tested head: `f06ab2c78160d1e2cc51a73e8be037b051cdfe16`;
+- PR #35 merge commit: `cab92eaff713c9017459447305559a8b3477eb27`.
 
 PR #31 corrected the default public-checkout persisted IDs from prefixed strings to UUIDs and added a staging acceptance gate that creates a real Stripe Checkout Session, expires it through Stripe, and requires the signed `checkout.session.expired` delivery to cancel the Order and release capacity without creating financial or seat effects.
 
@@ -36,7 +39,9 @@ PR #32 corrected a Cloudflare Worker runtime defect exposed by the first real ex
 
 PR #33 removed Durable Object RPC from the P6 commerce-boundary request/response hop and routed the same protected command contract through Durable Object `fetch()`. It preserved the Durable Object class name, SQLite storage, command/state logic, capacity rules and secrets. Run #8 later showed that this transport substitution did not resolve the deployed failure, so RPC is no longer the current root-cause hypothesis.
 
-PR #34 adds evidence-producing diagnostics rather than asserting another root cause: authenticated coordinator transport/initialization exceptions are converted into a bounded structured diagnostic response, and staging now probes the deployed Durable Object command path before attempting public checkout. It also closes a CI coverage gap by adding the P6 HTTP entrypoint to the commerce-contract workflow path triggers.
+PR #34 added evidence-producing diagnostics rather than asserting another root cause: authenticated coordinator transport/initialization exceptions are converted into a bounded structured diagnostic response, and staging probes the deployed Durable Object command path before attempting public checkout. It also closed a CI coverage gap by adding the P6 HTTP entrypoint to the commerce-contract workflow path triggers.
+
+PR #35 reuses the existing serialized P6 capacity contract as a direct deployed staging probe before Stripe acceptance. The smoke test now generates unique UUID-backed identities so it is repeatable against persistent staging storage. This is a diagnostic test, not a commerce-semantic change.
 
 ## Initial public-route deployment evidence
 
@@ -154,7 +159,7 @@ The public checkout no longer returned the generic native-runtime `INTERNAL_ERRO
 
 This is positive localization evidence: PR #32 corrected or bypassed the earlier fetch-receiver failure sufficiently for the request to reach the next dependency. The current first observed bottleneck is the protected commerce boundary `/commands` hop to the Durable Object.
 
-All ordinary `FormalifeCommerceCoordinator.execute()` application errors are converted into structured serializable error results. Therefore a non-JSON boundary response is evidence of failure outside the normal command-error contract, plausibly Durable Object initialization/transport/serialization. It is **not** evidence of a Stripe failure and the acceptance still did not reach Stripe Checkout Session expiry or signed webhook delivery.
+All ordinary `FormalifeCommerceCoordinator.execute()` application errors are converted into structured serializable error results. Therefore a non-JSON boundary response is evidence of failure outside the normal command-error contract. It is **not** evidence of a Stripe failure and the acceptance still did not reach Stripe Checkout Session expiry or signed webhook delivery.
 
 The deployed `/health` smoke did not detect this because `/health` does not exercise the Durable Object command path.
 
@@ -199,7 +204,7 @@ The failure persisted after the internal hop changed from Durable Object RPC to 
 
 **RESULT — RPC ROOT-CAUSE HYPOTHESIS REJECTED AT THIS TEST RESOLUTION.**
 
-The current evidence does not support further RPC-specific remediation. The earliest unresolved bottleneck remains the deployed Durable Object command path outside the normal structured application-error contract. Candidate classes include remote coordinator construction/initialization, persistent storage/schema interaction, stub/request transport failure not specific to RPC, or another deployed-only platform/runtime condition. None is yet promoted to FACT.
+The current evidence does not support further RPC-specific remediation. The earliest unresolved bottleneck remains the deployed Durable Object command path outside the normal structured application-error contract. Candidate classes include command-specific storage/schema interaction, command/payload-specific serialization, or another deployed-only platform/runtime condition. None is yet promoted to FACT.
 
 The run still did not reach Stripe Checkout Session expiry or signed webhook delivery.
 
@@ -210,8 +215,8 @@ The run still did not reach Stripe Checkout Session expiry or signed webhook del
 PR #34 adds three narrow diagnostics without changing commerce semantics:
 
 1. authenticated coordinator transport/initialization exceptions are caught at the outer commerce Worker and returned as bounded JSON `COMMERCE_COORDINATOR_TRANSPORT_ERROR` diagnostics rather than an opaque non-JSON response;
-2. `cloudflare-staging` now performs a deployed `/commands` probe immediately after ordinary service smoke, sending a deliberately unsupported command and requiring the normal structured `400 UNSUPPORTED_COMMAND` result; this forces real remote coordinator instantiation/request handling before the public checkout acceptance;
-3. `commerce-worker-p6-http.mjs` is added to the `p6-commerce-contract` workflow path triggers, closing the CI coverage gap discovered while diagnosing run #8.
+2. `cloudflare-staging` performs a deployed `/commands` probe immediately after ordinary service smoke, sending a deliberately unsupported command and requiring the normal structured `400 UNSUPPORTED_COMMAND` result;
+3. `commerce-worker-p6-http.mjs` is covered by the `p6-commerce-contract` workflow path triggers.
 
 PR #34 validation on tested head `683a46b7f040833fc7aac8251d461f155d6dcb92`:
 
@@ -224,19 +229,64 @@ PR #34 validation on tested head `683a46b7f040833fc7aac8251d461f155d6dcb92`:
 
 PR #34 was merged to `main` as `341cf7c1d45350eef22c265258336c6e9e3e09e7`.
 
-PR #34 is an evidence-producing test, not proof that any specific remote coordinator cause has been fixed.
+## 2026-09-26 run #9 — generic coordinator path proven healthy
+
+**RESULT — DEPLOYED COORDINATOR CONSTRUCTION AND GENERIC COMMAND HANDLING PASS; CHECKOUT-SPECIFIC BOUNDARY FAILURE REMAINS.**
+
+Fresh workflow dispatch:
+
+- workflow: `cloudflare-staging`;
+- run: `36230106062`;
+- run number: `9`;
+- deployed commit: `341cf7c1d45350eef22c265258336c6e9e3e09e7`;
+- job: `108371521145`;
+- conclusion: `FAILURE`;
+- runner/build/deploy/secret-install/redeploy/service-smoke steps: `SUCCESS`;
+- deployed generic coordinator probe: `SUCCESS`;
+- signed-expiry acceptance: `FAILURE` before Stripe expiry.
+
+The authenticated probe reached the real deployed Durable Object and returned exactly the expected structured response:
+
+`{"error":"UNSUPPORTED_COMMAND","message":"Unsupported commerce command: staging.probe.unsupported"}`
+
+This proves at the resolution of the probe that the Durable Object binding resolves, the coordinator can instantiate, base SQLite initialization is sufficient for the generic command path, the outer Worker can call the coordinator, and a structured JSON application error can return through the deployed transport.
+
+Immediately afterward, the public checkout still failed with HTTP `502` / `COMMERCE_BOUNDARY_NON_JSON`.
+
+**RESULT — GENERIC COORDINATOR INITIALIZATION/TRANSPORT IS NO LONGER THE FIRST ROOT-CAUSE CANDIDATE.**
+
+The remaining failure is command/payload-specific. The public checkout's first commerce dependency is capacity initialization/inspection, so the next cheapest discriminating test is the existing serialized capacity contract executed directly against the deployed authenticated boundary. Stripe remains downstream and untested by this run.
+
+## Diagnostic test — PR #35
+
+**TEST — RUN THE EXISTING SERIALIZED CAPACITY CONTRACT AGAINST THE REAL DEPLOYED BOUNDARY.**
+
+PR #35 makes `scripts/p6-capacity-smoke.mjs` replay-safe for persistent staging storage by generating unique UUID-backed identities per invocation, then adds it to `cloudflare-staging` immediately after the generic coordinator probe and before the public Stripe acceptance.
+
+The deployed probe exercises, in order, real capacity configuration, seat reservation, reservation inspection, edition inspection, overflow rejection, idempotent replay/conflict handling, release, TTL expiry, and the fail-closed payment-without-reservation rule. If a deployed command returns non-JSON, the probe fails directly on that command and prints the raw boundary response instead of losing it behind the public checkout error wrapper.
+
+PR #35 validation on tested head `f06ab2c78160d1e2cc51a73e8be037b051cdfe16`:
+
+- bootstrap run `36230670899`: `SUCCESS`;
+- P6 commerce-contract run `36230670869`: `SUCCESS`;
+- configured local Worker startup: PASS;
+- serialized capacity invariants using unique IDs: PASS.
+
+PR #35 was merged to `main` as `cab92eaff713c9017459447305559a8b3477eb27`.
+
+PR #35 is an evidence-producing test. It does not yet claim a root cause or remediation.
 
 ## Current next acceptance step
 
-Launch a **new** `cloudflare-staging` workflow on current `formalife/platform/main` at `341cf7c1d45350eef22c265258336c6e9e3e09e7` or a later main containing PR #34.
+Launch a **new** `cloudflare-staging` workflow on current `formalife/platform/main` at `cab92eaff713c9017459447305559a8b3477eb27` or a later main containing PR #35.
 
-The new deployed coordinator probe is now the first discriminating gate:
+The new deployed capacity probe is the first discriminating gate:
 
-- expected healthy result: authenticated `/commands` probe returns structured HTTP `400` with `UNSUPPORTED_COMMAND`, proving remote coordinator construction and request handling work;
-- if transport/initialization fails: the workflow should stop before checkout and emit the bounded `COMMERCE_COORDINATOR_TRANSPORT_ERROR` message needed to identify the next root-cause candidate;
-- only if the coordinator probe passes should the workflow continue to public checkout and then the real Stripe expiry scenario.
+- if it fails, the first failing capacity command and raw authenticated boundary response become the next root-cause evidence;
+- if it passes, the generic Durable Object and serialized capacity subsystem are both proven on Cloudflare staging, shifting diagnosis to the differences in the real public checkout payload/sequence or its other dependencies;
+- only after that gate passes should the workflow continue to the real public checkout and Stripe expiry scenario.
 
-If the coordinator probe passes, the intended expiry acceptance remains:
+The intended expiry acceptance remains:
 
 1. create a synthetic CONFIRMED Twenty edition;
 2. create a real public Formalife SINGLE checkout through Cloudflare;
@@ -262,15 +312,15 @@ Current closed prerequisites / resolved findings:
 - public runtime UUID defect corrected and merged in PR #31;
 - GitHub Actions billing/spending runner block resolved;
 - deployed public-checkout fetch-receiver defect remediated in merged PR #32 with full CI regression proof;
-- deployed commerce-boundary failure localized to the Durable Object command hop;
 - Durable Object RPC root-cause hypothesis tested and rejected by run #8;
-- deployed coordinator diagnostic gate merged in PR #34;
-- P6 HTTP entrypoint now covered by the commerce-contract CI trigger.
+- generic deployed coordinator construction/request handling proven by run #9;
+- P6 HTTP entrypoint covered by the commerce-contract CI trigger;
+- repeatable deployed serialized-capacity diagnostic merged in PR #35.
 
 Still open at minimum:
 
-- deployed coordinator diagnostic run including PR #34;
-- exact root cause of the remote Durable Object command-path failure;
+- deployed serialized-capacity probe including PR #35;
+- exact root cause of the checkout-specific non-JSON boundary response;
 - real signed-expiry acceptance;
 - real successful-payment `checkout.session.completed` operational effects;
 - duplicate/reordered delivery acceptance under real Stripe delivery;
