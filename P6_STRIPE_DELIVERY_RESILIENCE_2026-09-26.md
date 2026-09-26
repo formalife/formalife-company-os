@@ -1,6 +1,6 @@
 # P6 Stripe Delivery Resilience
 
-Status: CURRENT TEST — DUPLICATE / REORDERED DELIVERY HARNESS MERGED; DEPLOYED PROOF PENDING
+Status: CURRENT RESULT — DUPLICATE / REORDERED DELIVERY ACCEPTANCE PASS; REFUND / RECONCILIATION NEXT
 Date: 2026-09-26
 
 ## Context
@@ -10,77 +10,74 @@ The successful-payment acceptance is already closed / PASS for both Direct Full 
 - SINGLE: real Stripe Sandbox EUR 80, one PaymentRecord, one Enrollment, one consumed seat, verified public `PAID`;
 - COUPLE: Cloudflare staging run `36248322670` (#18), real Stripe Sandbox EUR 120, one PaymentRecord, two Enrollments, two consumed seats, verified public `PAID`.
 
-The next P6 gate is delivery resilience: duplicate and out-of-order Stripe webhook deliveries must not duplicate financial/seat effects or reverse an already-paid transaction.
+This record covers the next P6 gate: duplicate and out-of-order Stripe webhook deliveries must not duplicate financial/seat effects or reverse an already-paid transaction.
 
 ## Governing evidence
 
-Current production behavior already has pure contract coverage:
+Pure contract coverage already proved:
 
 - repeated `checkout.session.completed` normalizes to the same `payment:<PaymentIntent>` idempotency key and deterministic `payment.apply` payload;
 - a stale `checkout.session.expired` received after the linked Order is already `PAID` returns `ORDER_ALREADY_PAID` and does not release capacity or cancel the Order.
 
-That pure coverage is necessary but not sufficient for the P6 deployed gate. The missing proof is the public Cloudflare staging path with real persisted Twenty/commerce state.
+PR #42 added deployed staging acceptance without changing production commerce transitions.
 
 ## PR #42 — deployed delivery-resilience acceptance harness
 
-**TEST — IMPLEMENTED, CI PASS, MERGED. NOT YET A RESULT.**
-
-Implementation repository: `formalife/platform`.
+**TEST — IMPLEMENTED, CI PASS, MERGED.**
 
 - PR #42 — `Prove duplicate and reordered Stripe delivery resilience`;
 - tested head: `f8c8e699f078875f1039c9a8523f8e4b40bac157`;
 - merge commit / platform main: `114ea45147037af3a04229094b15fd3e72694eec`;
 - bootstrap run `36249121802`: PASS;
-- P6 commerce-contract run `36249121810`: PASS;
-- syntax validation: PASS;
-- direct Full pure contract tests: PASS;
-- commerce Worker bundle: PASS;
-- local serialized capacity invariants: PASS.
+- P6 commerce-contract run `36249121810`: PASS.
 
-PR #42 changes the recovery acceptance harness only. It does not change production commerce transitions, Stripe processing rules, capacity behavior or Twenty schema.
-
-The extended recovery test, when pointed at an already-paid real Checkout Session, now:
-
-1. retrieves the real Stripe Checkout Session from the Sandbox API;
-2. resolves the original real `checkout.session.completed` Event for that Session from the Stripe Events API;
-3. posts that exact Event payload twice through the deployed public Formalife webhook with a fresh valid signature generated using the configured endpoint signing secret;
-4. requires both completed deliveries to resolve to the same canonical `payment:<PaymentIntent>` command as replays;
-5. verifies after replay that the Order remains `PAID`, PaymentRecord count remains one, Enrollment count remains unchanged, consumed capacity remains unchanged, command remains `MIRRORED`, and public state remains `PAID`, `verified: true`;
-6. sends an intentionally stale signed `checkout.session.expired` payload derived from the same paid real Session;
-7. requires the stale expiry to be ignored as `ORDER_ALREADY_PAID`;
-8. verifies again that no Order, payment, enrollment or capacity state changed.
+The recovery harness retrieves the original real `checkout.session.completed` Event for an already-paid Session, replays that exact event payload through the public deployed webhook with a fresh valid endpoint signature, then submits a deliberately stale signed `checkout.session.expired` payload derived from the same paid Session.
 
 ### Provenance boundary
 
-The duplicate-completed portion uses the **actual Stripe Sandbox Event payload** resolved from the account, but the replay request is submitted by the acceptance harness with a fresh valid endpoint signature. It is therefore a public-webhook replay test, not a claim that Stripe itself retransmitted the event during the test.
+The duplicate-completed portion uses the **actual Stripe Sandbox Event payload**, but retransmission is performed by the Formalife acceptance harness. It is a public-webhook replay test, not a claim that Stripe itself retransmitted the event during this run.
 
-The stale-expiry portion is explicitly **synthetic/adversarial**: it is a correctly signed out-of-order payload derived from the real paid Session. It must never be described as a genuine Stripe-emitted expiry event. The genuine signed expiry path is already independently proven by run #11.
+The stale-expiry portion is explicitly **synthetic/adversarial** and correctly signed. It is not a Stripe-emitted expiry event. The genuine signed expiry path is independently proven by run #11.
+
+## Run #19 — deployed duplicate / reordered delivery acceptance
+
+**RESULT — PASS. DUPLICATE / REORDERED DELIVERY GATE CLOSED.**
+
+- workflow: `cloudflare-staging`;
+- run: `36249376747`;
+- run number: `19`;
+- attempt: `1`;
+- deployed commit: `114ea45147037af3a04229094b15fd3e72694eec`;
+- job: `108424420676`;
+- conclusion: `SUCCESS`;
+- evidence artifact: `10908557725`;
+- artifact digest: `sha256:c1238d2f33117d072216e7aa28a2e1e149603fadbe869c555e7d7d90d7749de5`;
+- tested real COUPLE Checkout Session: `cs_test_a1RI6WlAB7PpAkqsqGMM0rYmOW1wF8m5eVzIQwj7SVFDZWLN5nlpStBFKP`;
+- source real completed Event: `evt_1UJwa7620hE08wgdmEoKcnnQ`;
+- PaymentIntent / canonical command: `pi_3UJwa6620hE08wgd1wqZOsXI` / `payment:pi_3UJwa6620hE08wgd1wqZOsXI`.
+
+Deployed evidence proves together:
+
+1. the real completed Event payload was replayed twice through the public webhook;
+2. both deliveries returned replay semantics (`firstReplay = true`, `secondReplay = true`);
+3. both resolved to the same canonical payment command;
+4. command remained `MIRRORED`;
+5. exactly `1` PaymentRecord remained;
+6. exactly `2` Enrollments remained;
+7. active reserved seats remained `0`;
+8. consumed reserved seats remained `2`;
+9. available seats remained `10` of `12`;
+10. the signed stale-expiry adversarial event returned `ORDER_ALREADY_PAID`;
+11. Order remained `PAID`;
+12. public state remained `PAID`, `verified: true`.
+
+No duplicate financial record, duplicate enrollment, release, cancellation or capacity mutation occurred.
 
 ## Current acceptance gate
 
-Use the real already-paid COUPLE transaction from run #18 so no additional payment is created:
+Duplicate / reordered delivery is **CLOSED / PASS**.
 
-- Checkout Session: `cs_test_a1RI6WlAB7PpAkqsqGMM0rYmOW1wF8m5eVzIQwj7SVFDZWLN5nlpStBFKP`;
-- PaymentIntent: `pi_3UJwa6620hE08wgd1wqZOsXI`;
-- Order: `e616c4a0-5608-4d73-ac81-5edc2c072df3`;
-- baseline expected state: Order `PAID`, one PaymentRecord, two Enrollments, zero active reserved seats, two consumed reserved seats, ten available seats, public `PAID` / `verified: true`.
-
-Run `cloudflare-staging` from `formalife/platform/main` at `114ea45147037af3a04229094b15fd3e72694eec` or later with:
-
-- `paid_acceptance = none`
-- `paid_recovery_session_id = cs_test_a1RI6WlAB7PpAkqsqGMM0rYmOW1wF8m5eVzIQwj7SVFDZWLN5nlpStBFKP`
-
-Promote duplicate/reordered to **RESULT / PASS** only if deployed evidence proves:
-
-1. two completed-event replays both return replay semantics against the same canonical payment command;
-2. exactly one PaymentRecord remains;
-3. exactly two Enrollments remain;
-4. reservation remains consumed, not released;
-5. available capacity remains 10 of 12;
-6. stale expiry returns `ORDER_ALREADY_PAID`;
-7. Order remains `PAID`;
-8. canonical payment command remains `MIRRORED`;
-9. public state remains `PAID`, `verified: true`.
+The next P6 gate is **refund / reconciliation**. It must prove against a real paid Stripe Sandbox transaction that the refund is represented exactly once, financial and Order state reconcile correctly, downstream operational policy is explicit, and replay / duplicate refund delivery is idempotent.
 
 ## P6 status
 
@@ -91,13 +88,14 @@ Closed / proven:
 - genuine signed expiry cancellation/release path;
 - real SINGLE successful-payment acceptance;
 - real COUPLE successful-payment acceptance;
+- duplicate completed-event delivery resilience;
+- stale out-of-order expiry after payment is safely ignored;
 - deployed Cloudflare web/commerce Service Binding path;
 - verified Twenty payment/enrollment mirror for SINGLE and COUPLE.
 
-Open after this TEST at minimum:
+Still open at minimum:
 
-- deployed duplicate/reordered delivery RESULT;
-- refund/reconciliation;
+- refund / reconciliation;
 - real Brevo transactional delivery;
 - real privacy-safe PostHog delivery;
 - retry/backoff hardening for persistent downstream failures.
