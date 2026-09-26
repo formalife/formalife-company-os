@@ -1,6 +1,6 @@
 # P6 Stripe Webhook Staging Deployment
 
-Status: CURRENT RESULT — DEPLOYED, SIGNING SECRET INSTALLED; REAL SIGNED DELIVERY ACCEPTANCE BLOCKED BEFORE GITHUB ACTIONS RUNNER START
+Status: CURRENT RESULT — DEPLOYED, SIGNING SECRET INSTALLED; REAL SIGNED DELIVERY ACCEPTANCE BLOCKED BY GITHUB ACTIONS BILLING/SPENDING CONTROL
 Date: 2026-09-26
 
 ## Scope
@@ -101,9 +101,13 @@ GitHub public status reported Actions operational and no incident for 2026-09-26
 
 **Failure classification:** host/infrastructure / CI execution-plane failure before runner provisioning. It is upstream of repository checkout, Cloudflare deployment, Stripe Session creation, webhook delivery and Twenty effects.
 
-**HYPOTHESIS — NOT YET FACT:** the leading account-level cause is GitHub Actions usage/billing/budget or another repository-owner runner-eligibility restriction. The connector cannot read the private billing/control-plane message required to distinguish those causes, so this must not be promoted to FACT until the GitHub UI/account state confirms it.
+**FACT — GITHUB CONTROL-PLANE MESSAGE:** the founder inspected the failed Actions job and GitHub explicitly reported that the job was not started because recent account payments had failed **or** the spending limit needed to be increased, directing the account owner to `Billing & plans`.
 
-**Next action:** inspect the GitHub Actions run/account billing message, restore GitHub-hosted runner eligibility if required, then rerun `36225365356` (or launch a fresh `cloudflare-staging` on the same/current `main`). No application-code workaround is justified before that upstream block is resolved.
+Therefore the previous broad runner-eligibility hypothesis is narrowed to a confirmed **GitHub billing/spending control block**. The remaining ambiguity is only which billing condition applies: failed/rejected account payment versus an exhausted/insufficient Actions spending budget/limit.
+
+No application-code, Cloudflare, Stripe, Twenty or webhook workaround is justified while this upstream control-plane block remains active.
+
+**Next action:** in the GitHub account/organization billing settings that own `formalife/platform`, inspect payment status and Actions budgets/spending limits, restore GitHub-hosted runner eligibility, then rerun `36225365356` or launch a fresh `cloudflare-staging` on the same/current `main`.
 
 ## Next acceptance step
 
@@ -134,7 +138,7 @@ Current closed prerequisites:
 
 Still open at minimum:
 
-- GitHub Actions runner eligibility / pre-run execution block;
+- GitHub Actions billing/spending control block;
 - real signed expiry delivery acceptance on PR #31 deployment;
 - real successful-payment `checkout.session.completed` operational effects;
 - duplicate/reordered delivery acceptance under real Stripe delivery;
