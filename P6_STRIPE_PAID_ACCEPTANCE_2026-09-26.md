@@ -1,13 +1,13 @@
 # P6 Stripe Paid Acceptance
 
-Status: CURRENT RESULT — REAL SINGLE SUCCESSFUL-PAYMENT ACCEPTANCE PASS; COUPLE NEXT
+Status: CURRENT RESULT — REAL SINGLE + COUPLE SUCCESSFUL-PAYMENT ACCEPTANCE PASS; DUPLICATE/REORDERED NEXT
 Date: 2026-09-26
 
 ## Context
 
 The signed-expiry gate is already closed / PASS in `P6_STRIPE_WEBHOOK_STAGING_DEPLOYMENT_2026-09-25.md` from Cloudflare staging run `36231789069` (#11), proving a genuine signed `checkout.session.expired` path with Order cancellation, reservation release, restored capacity, zero PaymentRecord, zero Enrollment and verified public `CANCELLED` state.
 
-This record covers the next money-path gate: a genuine Stripe Sandbox `checkout.session.completed` linked to a real Formalife Order and protected capacity reservation, followed by correct downstream operational effects.
+This record covers the successful-payment money path: genuine Stripe Sandbox `checkout.session.completed` deliveries linked to real Formalife Orders and protected capacity reservations, followed by correct downstream operational effects.
 
 ## Acceptance contract
 
@@ -254,22 +254,50 @@ This is the same original real payment. No second SINGLE payment was created to 
 
 The high retry counts on the two previously blocked effects (`2875` attempts each) are historical incident evidence. They no longer block the command: both effects are delivered and `last_error` is cleared. Retry/backoff hardening remains a separate resilience concern and does not invalidate the accepted SINGLE result.
 
+## Run #18 — real COUPLE acceptance
+
+**RESULT — PASS. COUPLE SUCCESSFUL-PAYMENT GATE CLOSED.**
+
+- workflow: `cloudflare-staging`;
+- run: `36248322670`;
+- run number: `18`;
+- attempt: `1`;
+- deployed commit: `7a324e7ba6ea03c6719ab53477b62e16f6b0f72e`;
+- job: `108421548950`;
+- conclusion: `SUCCESS`;
+- evidence artifact: `10907897999`;
+- artifact digest: `sha256:32e6f012f4514a5662c99a1d242278992a74fee8e42241127a1d2e01f263653e`.
+
+Deployed evidence proves together:
+
+- option: `COUPLE`;
+- Checkout Session: `cs_test_a1RI6WlAB7PpAkqsqGMM0rYmOW1wF8m5eVzIQwj7SVFDZWLN5nlpStBFKP`;
+- Stripe Session: `complete`;
+- Stripe payment status: `paid`;
+- amount: EUR 120 / `12000`;
+- currency: `eur`;
+- PaymentIntent: `pi_3UJwa6620hE08wgd1wqZOsXI`;
+- linked Order: `e616c4a0-5608-4d73-ac81-5edc2c072df3` / `WEB-20260926142405-2C072DF3` / `PAID`;
+- protected reservation before payment: `2` active reserved seats;
+- exactly `1` PaymentRecord;
+- exactly `2` Enrollments;
+- active reserved seats after payment: `0`;
+- consumed reserved seats: `2`;
+- available seats: `10` of `12`;
+- public checkout state: `PAID`, `verified: true`;
+- workflow's real signed `checkout.session.completed` acceptance: `PASS`.
+
+The COUPLE path therefore proves the two-seat commercial variant end-to-end on deployed Cloudflare staging and real Stripe Sandbox payment infrastructure.
+
 ## Current acceptance gate
 
 SINGLE is **CLOSED / PASS**.
 
-The next successful-payment acceptance is **COUPLE**. Run the corrected real paid acceptance with `paid_acceptance = couple` and require:
+COUPLE is **CLOSED / PASS**.
 
-1. Stripe Sandbox EUR 120;
-2. linked COUPLE Order `PAID`;
-3. exactly one PaymentRecord;
-4. exactly two Enrollments;
-5. two consumed reserved seats;
-6. correct post-payment capacity;
-7. public server-side `PAID`, `verified: true`;
-8. idempotent/replay-safe command state.
+The next P6 gate is **duplicate/reordered delivery acceptance**. It must prove that repeated or out-of-order Stripe deliveries cannot create duplicate PaymentRecords/Enrollments, cannot release already-consumed capacity, and leave the canonical paid Order/reservation state unchanged.
 
-After COUPLE, P6 still requires duplicate/reordered delivery acceptance, refund/reconciliation, real Brevo transactional delivery, real privacy-safe PostHog delivery and final deployed Cloudflare verification for those paths.
+After duplicate/reordered delivery, P6 still requires refund/reconciliation, real Brevo transactional delivery, real privacy-safe PostHog delivery and final deployed verification for those paths.
 
 ## P6 status
 
@@ -279,20 +307,21 @@ Closed / proven:
 
 - real signed expiry delivery and cancellation/release path;
 - real hosted Stripe Sandbox SINGLE payment;
-- signed successful-payment processing linked to the real Order/reservation;
-- SINGLE Order `PAID`;
-- exactly one PaymentRecord;
-- exactly one Enrollment;
-- reservation consumed and capacity `12 -> 11`;
+- SINGLE signed successful-payment processing linked to the real Order/reservation;
+- SINGLE Order `PAID`, exactly one PaymentRecord and exactly one Enrollment;
+- SINGLE reservation consumed and capacity `12 -> 11`;
 - public SINGLE server-side state `PAID`, `verified: true`;
+- real hosted Stripe Sandbox COUPLE payment at EUR 120;
+- COUPLE Order `PAID`, exactly one PaymentRecord and exactly two Enrollments;
+- COUPLE reservation consumed and capacity `12 -> 10`;
+- public COUPLE server-side state `PAID`, `verified: true`;
 - redirect remediation;
 - staging readiness remediation;
 - Twenty UUID compatibility remediation;
-- recovered outbox is fully `MIRRORED`.
+- recovered SINGLE outbox fully `MIRRORED`.
 
 Still open at minimum:
 
-- real successful-payment COUPLE acceptance;
 - duplicate/reordered real delivery acceptance;
 - refund/reconciliation;
 - real Brevo transactional delivery;
