@@ -1,6 +1,6 @@
 # P6 Stripe Paid Acceptance
 
-Status: CURRENT INCIDENT — REAL SINGLE STRIPE PAYMENT AND ORDER PAID CONFIRMED; PAYMENT/ENROLLMENT OUTBOX FAILURE UNDER DIAGNOSIS
+Status: CURRENT TEST — SINGLE ROOT CAUSE PROVEN; UUID RECONCILIATION REMEDIATION MERGED; DEPLOYED RECOVERY PROOF PENDING
 Date: 2026-09-26
 
 ## Context
@@ -246,11 +246,11 @@ The exact downstream `last_error` was not included in run #15 evidence, so the s
 
 ## Outbox diagnostic remediation — PR #40
 
-**REMEDIATION — MERGED; DIAGNOSTIC RECOVERY REQUIRED.**
+**REMEDIATION — MERGED; DIAGNOSTIC RECOVERY COMPLETE.**
 
 - PR #40 — `Expose paid recovery outbox diagnostics`;
 - tested head: `a76019b864100798a5aa7e3d0a7385507aa8cff4`;
-- merge commit / current platform main at write-back: `d50e430bebe197e803dd1648584c90df4bcd9d3c`;
+- merge commit: `d50e430bebe197e803dd1648584c90df4bcd9d3c`;
 - bootstrap run `36245383187`: SUCCESS;
 - P6 commerce-contract run `36245383182`: SUCCESS.
 
@@ -262,27 +262,105 @@ PR #40 does **not** synthesize or repair financial records. It adds observabilit
 - persists Order, PaymentRecord/Enrollment counts and capacity snapshots before final assertions;
 - captures a best-effort public checkout-status probe even when the recovery fails.
 
-The PaymentRecord and Enrollment payloads were compared with the current Twenty custom-object declarations and no deterministic contract mismatch was established from static inspection alone. The next decision therefore depends on the actual persisted outbox error.
+## Run #16 — diagnostic recovery
+
+**RESULT — FAILED; FIRST UPSTREAM DOWNSTREAM-EFFECT DEFECT PROVEN.**
+
+- workflow: `cloudflare-staging`;
+- run: `36245617200`;
+- run number: `16`;
+- attempt: `1`;
+- deployed commit: `d50e430bebe197e803dd1648584c90df4bcd9d3c`;
+- job: `108414146930`;
+- conclusion: `FAILURE`;
+- evidence artifact: `10906419824`;
+- artifact digest: `sha256:51f49e0d213065f744727ca8685b767e754c576bb07a664b65f29bb9eb18a439`;
+- recovery Session: `cs_test_a19sAzGT729OJnl1Sfgrq8lpqVsJxCGbJlb4OodKutLkc3Mx0W2i7nRMll`.
+
+The deployed build, commerce coordinator probe and serialized-capacity probe all passed. The recovery reconfirmed:
+
+- Stripe Session `complete` / `payment_status=paid`;
+- EUR 80 / `8000` minor units;
+- PaymentIntent `pi_3UJtGy620hE08wgd0M1xzPp0`;
+- linked Order `757235e4-f225-44f8-a058-e77b969ad706` remains `PAID`;
+- protected reservation is no longer active;
+- `consumedReservedSeats = 1`;
+- `availableSeats = 11` of 12;
+- public checkout status returns HTTP 200, `PAID`, `verified: true`;
+- PaymentRecord count remains `0`;
+- Enrollment count remains `0`.
+
+Persisted command state:
+
+- command key: `payment:pi_3UJtGy620hE08wgd0M1xzPp0`;
+- command type: `payment.apply`;
+- command status: `COMMITTED`;
+- internal payment id: `c933cbec-a1f1-88e8-9249-5c2b66aa313d`;
+- internal enrollment id: `f31dba2d-b10b-86d5-849b-befe2d1ade9d`.
+
+Persisted outbox evidence:
+
+1. `ORDER_UPDATE`: `DELIVERED`, 2 attempts, no error;
+2. `PAYMENT_CREATE`: `PENDING`, 2580 attempts, exact `last_error`: `Value "c933cbec-a1f1-88e8-9249-5c2b66aa313d" is not a valid UUID`;
+3. `ENROLLMENT_CREATE`: `PENDING`, 2580 attempts, latest `last_error`: `Rate limit exceeded for apiKey: 100 requests per 60s.`
+
+**FACT / ROOT CAUSE:** the persisted internal deterministic UUIDv8-style PaymentRecord id is rejected by the deployed Twenty API as an invalid UUID. This is the first upstream defect preventing the paid mirror from materializing.
+
+The Enrollment rate-limit error is not promoted to an independent root cause. It is downstream of the still-pending outbox and amplified by the existing two-second reconciliation/alarm retry loop. Its own payload validity remains to be proven after the first defect is removed.
+
+## Twenty UUID reconciliation remediation — PR #41
+
+**REMEDIATION — MERGED; DEPLOYED RECOVERY PROOF PENDING.**
+
+- PR #41 — `Recover P6 paid outbox with Twenty-compatible IDs`;
+- tested head: `c90014f6a8dec335ef6cbd3a4f16fd68522c9779`;
+- merge commit / platform main at write-back: `7a324e7ba6ea03c6719ab53477b62e16f6b0f72e`;
+- bootstrap run `36246027993`: SUCCESS;
+- P6 commerce-contract run `36246027970`: SUCCESS;
+- web run `36246028073`: SUCCESS.
+
+The remediation deliberately does **not** change the already-committed `payment.apply` command payload or its deterministic internal IDs. Changing the webhook generator now would alter the payload hash for the existing idempotency key and risk an `IDEMPOTENCY_CONFLICT` instead of repairing the paid transaction.
+
+Instead, the deployed P6 commerce boundary now normalizes only record IDs at the outbound Twenty create boundary:
+
+- legacy internal UUIDv8 payment id `c933cbec-a1f1-88e8-9249-5c2b66aa313d` -> deterministic Twenty UUIDv5 `280a9983-3ce9-5a18-b7fe-4189b6f9a625`;
+- legacy internal UUIDv8 enrollment id `f31dba2d-b10b-86d5-849b-befe2d1ade9d` -> deterministic Twenty UUIDv5 `be8f181d-c883-57b0-8a66-8861ecd37a10`.
+
+The adapter is deterministic and leaves ordinary non-v8 IDs unchanged. The persisted command key, payload, provider identity, Order relation and effect identities remain unchanged inside the commerce coordinator. This preserves replay semantics while making the Twenty records creatable.
+
+Validation on the PR head passed:
+
+- exact regression tests for the persisted payment and enrollment IDs;
+- direct Full commerce tests;
+- Worker bundle validation;
+- serialized capacity invariants;
+- Astro type-check/build;
+- development browser/accessibility suite;
+- production runtime/browser suite;
+- Lighthouse baseline.
 
 ## Current acceptance gate
 
 Do **not** create another SINGLE payment.
 
-Run `cloudflare-staging` from `formalife/platform/main` at `d50e430bebe197e803dd1648584c90df4bcd9d3c` or later with the same recovery inputs:
+Run a fresh `cloudflare-staging` workflow from `formalife/platform/main` at `7a324e7ba6ea03c6719ab53477b62e16f6b0f72e` or later with:
 
 - `paid_acceptance = none`
 - `paid_recovery_session_id = cs_test_a19sAzGT729OJnl1Sfgrq8lpqVsJxCGbJlb4OodKutLkc3Mx0W2i7nRMll`
 
-The immediate purpose is diagnostic: capture the persisted outbox state and exact `last_error` for `PAYMENT_CREATE` / `ENROLLMENT_CREATE` under command `payment:pi_3UJtGy620hE08wgd0M1xzPp0`.
+This run must deploy the UUID boundary adapter and reconcile the same already-paid command. SINGLE is promoted to **RESULT / PASS** only if the deployed evidence proves all of the following together:
 
-After that evidence exists:
+1. Stripe remains `complete` / paid for EUR 80;
+2. the same canonical command `payment:pi_3UJtGy620hE08wgd0M1xzPp0` remains the transaction identity;
+3. exactly one PaymentRecord exists;
+4. exactly one Enrollment exists;
+5. pending `PAYMENT_CREATE` and `ENROLLMENT_CREATE` effects are delivered / no longer blocking reconciliation;
+6. Order remains `PAID`;
+7. reservation remains consumed, not released;
+8. capacity remains `11` available;
+9. public checkout state is `PAID`, `verified: true`.
 
-1. fix only the first upstream downstream-effect defect;
-2. reconcile/replay the same canonical already-paid transaction without a second payment;
-3. require exactly one PaymentRecord and one Enrollment;
-4. require consumed reservation and correct capacity;
-5. require public server-side `PAID`, `verified: true`;
-6. only then promote SINGLE to **RESULT / PASS**.
+If the UUID defect clears but the existing retry churn still causes a Twenty rate-limit failure, treat rate limiting as the next bottleneck and remediate retry/backoff before any new payment. Do not bypass or synthesize the missing records.
 
 After SINGLE passes, run the corrected acceptance for `paid_acceptance = couple` and require EUR 120, two Enrollments and two consumed seats.
 
@@ -295,13 +373,16 @@ Closed / proven:
 - real signed expiry delivery and cancellation/release path;
 - real hosted Stripe Sandbox SINGLE payment completion itself;
 - linked SINGLE Order advanced to `PAID`;
+- SINGLE protected reservation consumed and capacity reduced to 11;
+- public SINGLE server-side status is verified `PAID`;
 - redirect defect identified and remediated in PR #39;
 - paid validator rate-limit defect identified and remediated in PR #39;
-- recovery now exposes persisted outbox diagnostics via PR #40.
+- exact missing-record root cause isolated by run #16;
+- UUID compatibility remediation merged in PR #41 with full CI PASS.
 
 Still open at minimum:
 
-- root cause and reconciliation of missing SINGLE PaymentRecord / Enrollment;
+- deployed reconciliation proof for the already-paid SINGLE PaymentRecord / Enrollment;
 - final operational SINGLE successful-payment acceptance;
 - real successful-payment COUPLE acceptance;
 - duplicate/reordered real delivery acceptance;
