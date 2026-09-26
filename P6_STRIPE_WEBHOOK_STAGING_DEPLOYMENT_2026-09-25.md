@@ -1,6 +1,6 @@
 # P6 Stripe Webhook Staging Deployment
 
-Status: CURRENT RESULT — BILLING BLOCK RESOLVED; PR #32 AND PR #33 RUNTIME REMEDIATIONS MERGED; FRESH SIGNED-EXPIRY ACCEPTANCE PENDING
+Status: CURRENT RESULT — RPC HYPOTHESIS REJECTED; REMOTE COMMERCE COORDINATOR FAILURE PENDING DIAGNOSTIC DEPLOY
 Date: 2026-09-26
 
 ## Scope
@@ -25,13 +25,18 @@ Implementation repository: `formalife/platform`.
 - PR #32 merge commit: `57a219d66521cb58569f758cfa8a3b2d0b6e546e`;
 - PR #33 — `Route P6 Durable Object boundary over HTTP`;
 - PR #33 tested head: `d1dfa1cc666c57667c46a2738471c577837c3f14`;
-- PR #33 merge commit: `012df300717f1e2299c937dc4d5ba9fa343678cf`.
+- PR #33 merge commit: `012df300717f1e2299c937dc4d5ba9fa343678cf`;
+- PR #34 — `Add deployed P6 coordinator diagnostics`;
+- PR #34 tested head: `683a46b7f040833fc7aac8251d461f155d6dcb92`;
+- PR #34 merge commit: `341cf7c1d45350eef22c265258336c6e9e3e09e7`.
 
 PR #31 corrected the default public-checkout persisted IDs from prefixed strings to UUIDs and added a staging acceptance gate that creates a real Stripe Checkout Session, expires it through Stripe, and requires the signed `checkout.session.expired` delivery to cancel the Order and release capacity without creating financial or seat effects.
 
 PR #32 corrected a Cloudflare Worker runtime defect exposed by the first real execution of that acceptance: the raw global `fetch` had been injected into adapter instances which later invoked it as `this.fetchImpl(...)`. In Cloudflare `workerd` this can violate the receiver/brand check and throw a native `TypeError`, while Node-based tests can remain green. The runtime now wraps the injected fetch once as a detached function before passing it to Twenty, commerce-boundary, Stripe and analytics adapters. A receiver-sensitive regression test was added.
 
-PR #33 removes Durable Object RPC from the P6 commerce-boundary request/response hop and routes the same protected command contract through Durable Object `fetch()`. It preserves the Durable Object class name, SQLite storage, command/state logic, capacity rules and secrets. This is a transport remediation for the deployed-only boundary failure described below; it does not change the commercial contract.
+PR #33 removed Durable Object RPC from the P6 commerce-boundary request/response hop and routed the same protected command contract through Durable Object `fetch()`. It preserved the Durable Object class name, SQLite storage, command/state logic, capacity rules and secrets. Run #8 later showed that this transport substitution did not resolve the deployed failure, so RPC is no longer the current root-cause hypothesis.
+
+PR #34 adds evidence-producing diagnostics rather than asserting another root cause: authenticated coordinator transport/initialization exceptions are converted into a bounded structured diagnostic response, and staging now probes the deployed Durable Object command path before attempting public checkout. It also closes a CI coverage gap by adding the P6 HTTP entrypoint to the commerce-contract workflow path triggers.
 
 ## Initial public-route deployment evidence
 
@@ -153,13 +158,11 @@ All ordinary `FormalifeCommerceCoordinator.execute()` application errors are con
 
 The deployed `/health` smoke did not detect this because `/health` does not exercise the Durable Object command path.
 
-## Hypothesis and remediation — PR #33
+## Hypothesis and test — PR #33
 
 **HYPOTHESIS — deployed Durable Object RPC is the failing transport layer.**
 
-The outer commerce Worker used Durable Object RPC (`stub.execute()` / `stub.inspect()`) while the same command contract passed locally through Wrangler. Cloudflare continues to support Durable Object HTTP `fetch()` request/response flows, and current workerd has documented RPC-specific failure cases. This makes RPC a concrete cause candidate, but run #7 alone does not prove it; remote Durable Object initialization/storage remains an alternative if HTTP transport also fails.
-
-**TEST / REMEDIATION:** PR #33 removes RPC from the P6 internal request/response hop and routes the protected `/commands` contract through Durable Object `stub.fetch()` / coordinator `fetch()` while preserving the existing class name, SQLite storage and commerce logic.
+The outer commerce Worker used Durable Object RPC (`stub.execute()` / `stub.inspect()`) while the same command contract passed locally through Wrangler. Cloudflare supports Durable Object HTTP `fetch()` request/response flows, so replacing the RPC hop with `stub.fetch()` was a clean discriminating test that did not require changing commerce semantics.
 
 PR #33 validation on tested head `d1dfa1cc666c57667c46a2738471c577837c3f14`:
 
@@ -173,13 +176,67 @@ PR #33 validation on tested head `d1dfa1cc666c57667c46a2738471c577837c3f14`:
 
 PR #33 was merged to `main` as `012df300717f1e2299c937dc4d5ba9fa343678cf`.
 
-**Important:** this CI proves the new transport works in the configured local Worker and preserves regressions. It does not prove that RPC was the deployed root cause. A fresh deployed run is the discriminating test.
+## 2026-09-26 run #8 — RPC hypothesis rejected
+
+**RESULT — REPLACING RPC WITH DURABLE OBJECT HTTP FETCH DID NOT CHANGE THE DEPLOYED FAILURE.**
+
+Fresh workflow dispatch:
+
+- workflow: `cloudflare-staging`;
+- run: `36229376954`;
+- run number: `8`;
+- deployed commit: `012df300717f1e2299c937dc4d5ba9fa343678cf`;
+- job: `108369492920`;
+- conclusion: `FAILURE`;
+- runner/build/deploy/secret-install/redeploy/service-smoke steps: `SUCCESS`;
+- signed-expiry acceptance step: `FAILURE`.
+
+The public checkout again failed with the same HTTP `502` response:
+
+`{"error":"COMMERCE_BOUNDARY_NON_JSON","message":"The commerce service could not complete the request"}`
+
+The failure persisted after the internal hop changed from Durable Object RPC to the officially supported `stub.fetch(Request)` request/response path, while the equivalent local configured Worker `/commands` contract remained green.
+
+**RESULT — RPC ROOT-CAUSE HYPOTHESIS REJECTED AT THIS TEST RESOLUTION.**
+
+The current evidence does not support further RPC-specific remediation. The earliest unresolved bottleneck remains the deployed Durable Object command path outside the normal structured application-error contract. Candidate classes include remote coordinator construction/initialization, persistent storage/schema interaction, stub/request transport failure not specific to RPC, or another deployed-only platform/runtime condition. None is yet promoted to FACT.
+
+The run still did not reach Stripe Checkout Session expiry or signed webhook delivery.
+
+## Diagnostic test — PR #34
+
+**TEST — MAKE THE REMOTE COORDINATOR FAILURE OBSERVABLE BEFORE PUBLIC CHECKOUT.**
+
+PR #34 adds three narrow diagnostics without changing commerce semantics:
+
+1. authenticated coordinator transport/initialization exceptions are caught at the outer commerce Worker and returned as bounded JSON `COMMERCE_COORDINATOR_TRANSPORT_ERROR` diagnostics rather than an opaque non-JSON response;
+2. `cloudflare-staging` now performs a deployed `/commands` probe immediately after ordinary service smoke, sending a deliberately unsupported command and requiring the normal structured `400 UNSUPPORTED_COMMAND` result; this forces real remote coordinator instantiation/request handling before the public checkout acceptance;
+3. `commerce-worker-p6-http.mjs` is added to the `p6-commerce-contract` workflow path triggers, closing the CI coverage gap discovered while diagnosing run #8.
+
+PR #34 validation on tested head `683a46b7f040833fc7aac8251d461f155d6dcb92`:
+
+- bootstrap run `36229762551`: `SUCCESS`;
+- P6 commerce-contract run `36229762454`: `SUCCESS`;
+- configured local Worker startup: PASS;
+- local `/commands` traversal and serialized capacity invariants: PASS;
+- full web run `36229762466`: `SUCCESS`;
+- type-check/build, commerce tests, browser/accessibility, production runtime-error suite and Lighthouse baseline: PASS.
+
+PR #34 was merged to `main` as `341cf7c1d45350eef22c265258336c6e9e3e09e7`.
+
+PR #34 is an evidence-producing test, not proof that any specific remote coordinator cause has been fixed.
 
 ## Current next acceptance step
 
-Launch a **new** `cloudflare-staging` workflow on current `formalife/platform/main` at `012df300717f1e2299c937dc4d5ba9fa343678cf` or a later main containing PR #33. Do not rerun run `36228409250` as proof of PR #33 because it is anchored to pre-fix commit `57a219d`.
+Launch a **new** `cloudflare-staging` workflow on current `formalife/platform/main` at `341cf7c1d45350eef22c265258336c6e9e3e09e7` or a later main containing PR #34.
 
-The fresh workflow must first prove that the public checkout can traverse the deployed commerce boundary, then continue the intended real expiry scenario:
+The new deployed coordinator probe is now the first discriminating gate:
+
+- expected healthy result: authenticated `/commands` probe returns structured HTTP `400` with `UNSUPPORTED_COMMAND`, proving remote coordinator construction and request handling work;
+- if transport/initialization fails: the workflow should stop before checkout and emit the bounded `COMMERCE_COORDINATOR_TRANSPORT_ERROR` message needed to identify the next root-cause candidate;
+- only if the coordinator probe passes should the workflow continue to public checkout and then the real Stripe expiry scenario.
+
+If the coordinator probe passes, the intended expiry acceptance remains:
 
 1. create a synthetic CONFIRMED Twenty edition;
 2. create a real public Formalife SINGLE checkout through Cloudflare;
@@ -197,7 +254,7 @@ Only an actual PASS of this gate should promote signed-expiry handling from code
 
 P6 remains **OPEN**.
 
-Current closed prerequisites:
+Current closed prerequisites / resolved findings:
 
 - public webhook route deployed;
 - endpoint-specific Stripe Sandbox signing secret installed;
@@ -206,12 +263,15 @@ Current closed prerequisites:
 - GitHub Actions billing/spending runner block resolved;
 - deployed public-checkout fetch-receiver defect remediated in merged PR #32 with full CI regression proof;
 - deployed commerce-boundary failure localized to the Durable Object command hop;
-- HTTP Durable Object transport remediation merged in PR #33 with local `/commands` contract proof.
+- Durable Object RPC root-cause hypothesis tested and rejected by run #8;
+- deployed coordinator diagnostic gate merged in PR #34;
+- P6 HTTP entrypoint now covered by the commerce-contract CI trigger.
 
 Still open at minimum:
 
-- fresh deployed signed-expiry acceptance including PR #33;
-- confirmation or rejection of the Durable Object RPC root-cause hypothesis;
+- deployed coordinator diagnostic run including PR #34;
+- exact root cause of the remote Durable Object command-path failure;
+- real signed-expiry acceptance;
 - real successful-payment `checkout.session.completed` operational effects;
 - duplicate/reordered delivery acceptance under real Stripe delivery;
 - refund/reconciliation;
