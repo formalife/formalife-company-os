@@ -1,13 +1,13 @@
 # P6 Stripe Webhook Staging Deployment
 
-Status: CURRENT RESULT — SAME-ZONE WORKER FETCH ROOT CAUSE IDENTIFIED; SERVICE-BINDING REMEDIATION MERGED; FRESH SIGNED-EXPIRY ACCEPTANCE PENDING
+Status: CURRENT RESULT — REAL SIGNED STRIPE EXPIRY ACCEPTANCE PASS; SUCCESSFUL-PAYMENT ACCEPTANCE NEXT
 Date: 2026-09-26
 
 ## Scope
 
 This record captures the Cloudflare staging deployment of the public Formalife Stripe webhook route, the endpoint-specific signing-secret installation, the real signed-expiry acceptance attempts, and the boundary between implementation/configuration proof and real signed-event acceptance.
 
-It does **not** yet claim that a real Stripe webhook delivery has completed the Formalife operational path. That requires an actual Stripe Sandbox event linked to a real Formalife checkout/reservation and a passing deployed acceptance.
+The real signed `checkout.session.expired` path has now passed on deployed Cloudflare staging with a real Stripe Sandbox Checkout Session linked to a Formalife Order and protected reservation. This does **not** yet prove the successful-payment `checkout.session.completed` path, duplicate/reordered real delivery, refund/reconciliation, Brevo/PostHog delivery or final SINGLE/COUPLE closure.
 
 ## Implementation lineage
 
@@ -83,7 +83,7 @@ The deployment logs explicitly showed Wrangler installing `STRIPE_WEBHOOK_SECRET
 - commerce boundary: `https://formalife-commerce-staging.formalife-preview.workers.dev`;
 - Stripe webhook: `https://formalife-web-staging.formalife-preview.workers.dev/api/commerce/stripe/webhook`.
 
-The public commerce URL remains useful for external staging probes. Web-to-commerce runtime traffic is now designed to use the Cloudflare Service Binding rather than the public `workers.dev` URL.
+The public commerce URL remains useful for external staging probes. Web-to-commerce runtime traffic now uses the Cloudflare Service Binding rather than the public `workers.dev` URL.
 
 ## What is proven before signed delivery
 
@@ -92,8 +92,6 @@ The public commerce URL remains useful for external staging probes. Web-to-comme
 The route verifies the exact raw request body against `Stripe-Signature` before JSON interpretation, resolves the linked Twenty Order and protected reservation context, derives deterministic payment/enrollment identities for replay stability, and routes paid events through the guarded/idempotent commerce boundary.
 
 `checkout.session.expired` is designed as a non-success capacity release path and cannot cancel an already-PAID Order.
-
-The presence of the signing secret proves configuration, not delivery. A generic Stripe Dashboard test event is not sufficient because the processor correctly requires a Checkout Session already linked to a real Formalife Order and protected reservation.
 
 ## 2026-09-26 GitHub Actions billing block
 
@@ -296,28 +294,70 @@ PR #36 validation on tested head `964b409f8f716243db6712e5000c982d0754c062`:
 
 PR #36 was merged to `main` as `4b3fced69b58a9050d93f8e95f30fb6aa896c819`.
 
-**Important:** the root cause is supported by the deployed differential evidence plus Cloudflare's documented same-zone routing restriction. The remediation is merged and CI-proven, but the actual Cloudflare staging acceptance on the merge commit is still pending and must not be promoted to RESULT/PASS before a fresh deploy.
+## 2026-09-26 run #11 — real signed Stripe expiry acceptance PASS
+
+**RESULT — REAL DEPLOYED `checkout.session.expired` PATH PASSED END TO END.**
+
+Fresh workflow dispatch on the PR #36 merge commit:
+
+- workflow: `cloudflare-staging`;
+- run: `36231789069`;
+- run number: `11`;
+- attempt: `1`;
+- deployed commit: `4b3fced69b58a9050d93f8e95f30fb6aa896c819`;
+- job: `108376201500`;
+- conclusion: `SUCCESS`;
+- Cloudflare service binding configured and reported by Wrangler: `env.COMMERCE_BOUNDARY (formalife-commerce-staging) Worker`;
+- generic coordinator probe: PASS;
+- deployed serialized-capacity probe: PASS;
+- signed-expiry acceptance: PASS;
+- deployment evidence artifact: `10903060489`;
+- artifact digest: `sha256:1b21ec4858163ccdabe276c93d1d0d24e1583a3efb9c472c0a65b556409e6ff4`.
+
+Acceptance evidence from the run:
+
+- scenario prefix: `P6EXP-36231789069-1`;
+- Stripe mode: sandbox;
+- synthetic confirmed edition: `cb13853d-6161-4f99-8d8a-c9dd7a307cb6`;
+- real Stripe Checkout Session: `cs_test_a1gvZ6u6LlOhsLyBEIA6L5sXe7hwiyrv0jrzxNnqsiTZWProMCvhbjPwxN`;
+- Twenty Order code: `WEB-20260926090744-2B38248B`;
+- Twenty Order id: `c2694c63-c5a6-480c-b6e3-31862b38248b`;
+- before expiry: one active protected reservation, available seats `11`;
+- Stripe API expiry confirmed: `stripeSessionExpired: true`;
+- genuine signed `checkout.session.expired` delivery was accepted by the public Formalife webhook under the configured endpoint signing secret;
+- Order state after processing: `CANCELLED`;
+- after processing: active reserved seats `0`, available seats restored to `12`;
+- PaymentRecord count: `0`;
+- Enrollment count: `0`;
+- public checkout state: `CANCELLED`, `verified: true`;
+- acceptance completed at `2026-09-26T09:07:48.489Z`.
+
+This is the first real external-delivery proof of the deployed Stripe webhook operational path. The earlier same-zone transport defect is therefore not only diagnosed and CI-remediated; the Service Binding fix is proven on Cloudflare staging by the real commerce flow.
+
+**RESULT — SIGNED EXPIRY GATE CLOSED / PASS.**
 
 ## Current next acceptance step
 
-Launch a **new** `cloudflare-staging` workflow on current `formalife/platform/main` at `4b3fced69b58a9050d93f8e95f30fb6aa896c819` or a later main containing PR #36. Do not rerun run `36230897496` as proof of the fix because it is anchored to pre-fix commit `cab92eaf`.
+The first remaining money-path bottleneck is the real successful-payment path. Implement and execute a repeatable Stripe Sandbox acceptance that starts from the same public Formalife checkout and proves a genuine successful payment / `checkout.session.completed` delivery linked to the real Order and protected reservation.
 
-The workflow must now prove, in order:
+The success gate must prove at minimum:
 
-1. commerce Worker deploy succeeds;
-2. generated web Worker config contains the `COMMERCE_BOUNDARY` Service Binding to `formalife-commerce-staging` and Wrangler reports it on deploy;
-3. generic coordinator probe passes;
-4. deployed serialized capacity probe passes;
-5. public Formalife SINGLE checkout traverses web → commerce through the Service Binding and creates a real Stripe Sandbox Checkout Session;
-6. one protected seat is active and capacity moves 12 → 11;
-7. the real Stripe Checkout Session is expired through Stripe API;
-8. a genuine signed `checkout.session.expired` delivery reaches the public webhook and signature verification passes;
-9. Order becomes `CANCELLED`;
-10. reservation releases and capacity returns 11 → 12;
-11. zero PaymentRecord and zero Enrollment remain;
-12. public server-side verified checkout state is `CANCELLED`.
+1. public Formalife checkout creates a real Stripe Sandbox Checkout Session for the intended caregiver option;
+2. the Session is actually paid in Stripe Sandbox rather than simulated by a generic detached test event;
+3. the genuine signed `checkout.session.completed` event reaches the deployed webhook and raw-body signature verification passes;
+4. the event resolves the correct Twenty Order and protected reservation;
+5. expected amount and currency match before financial/seat mutation;
+6. replay/idempotency identity is stable;
+7. reservation is consumed rather than released;
+8. Order becomes `PAID`;
+9. exactly one PaymentRecord is mirrored;
+10. SINGLE creates exactly one Enrollment and COUPLE exactly two;
+11. capacity reflects the consumed seat count correctly;
+12. public server-side verified checkout state is `PAID` and browser redirect/session parameters are not treated as truth.
 
-Only an actual PASS of this gate promotes signed-expiry handling from code/configuration proof to real external-delivery proof.
+The acceptance must remain repeatable/automatable in sandbox and must not commit payment credentials or card data to the repository.
+
+After successful-payment proof, continue with duplicate/reordered real delivery, final SINGLE/COUPLE acceptance, refund/reconciliation, Brevo transactional delivery and privacy-safe PostHog delivery.
 
 ## P6 status
 
@@ -335,14 +375,15 @@ Current closed prerequisites / resolved findings:
 - generic deployed coordinator construction/request handling proven by run #9;
 - complete deployed serialized-capacity subsystem proven by run #10;
 - web-to-commerce same-zone public `workers.dev` fetch identified as the actual `COMMERCE_BOUNDARY_NON_JSON` root cause;
-- Cloudflare Service Binding remediation merged in PR #36 with full CI regression proof.
+- Cloudflare Service Binding remediation merged in PR #36 with full CI regression proof;
+- Service Binding remediation proven on deployed Cloudflare staging;
+- real Stripe Sandbox `checkout.session.expired` delivery and full cancellation/release/no-financial-effects path proven end to end in run #11.
 
 Still open at minimum:
 
-- fresh deployed signed-expiry acceptance including PR #36;
 - real successful-payment `checkout.session.completed` operational effects;
 - duplicate/reordered delivery acceptance under real Stripe delivery;
+- final SINGLE and COUPLE end-to-end acceptance;
 - refund/reconciliation;
 - real Brevo transactional delivery;
-- real privacy-safe PostHog delivery;
-- full SINGLE and COUPLE end-to-end acceptance.
+- real privacy-safe PostHog delivery.
