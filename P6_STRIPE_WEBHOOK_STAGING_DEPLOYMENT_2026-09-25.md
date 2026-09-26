@@ -1,7 +1,7 @@
 # P6 Stripe Webhook Staging Deployment
 
-Status: CURRENT RESULT — DEPLOYED, SIGNING SECRET INSTALLED; REAL SIGNED DELIVERY ACCEPTANCE PENDING
-Date: 2026-09-25
+Status: CURRENT RESULT — DEPLOYED, SIGNING SECRET INSTALLED; REAL SIGNED DELIVERY ACCEPTANCE BLOCKED BEFORE GITHUB ACTIONS RUNNER START
+Date: 2026-09-26
 
 ## Scope
 
@@ -68,9 +68,46 @@ The route verifies the exact raw request body against `Stripe-Signature` before 
 
 The presence of the signing secret proves configuration, not delivery. A generic Stripe Dashboard test event is not sufficient because the processor correctly requires a Checkout Session already linked to a real Formalife Order and protected reservation.
 
+## 2026-09-26 real signed-expiry execution attempt
+
+**RESULT — BLOCKED BEFORE GITHUB ACTIONS RUNNER START; STRIPE/CLOUDFLARE ACCEPTANCE DID NOT EXECUTE.**
+
+A new `workflow_dispatch` was launched on the correct current `main`:
+
+- workflow: `cloudflare-staging`;
+- run: `36225365356`;
+- run number: `5`;
+- commit: `9da8497502b672e5b07005376a1d2d161557302f`;
+- event: `workflow_dispatch`;
+- attempt 1 job: `108358235428`;
+- attempt 1 conclusion: `FAILURE`;
+- attempt 1 observable execution: zero workflow steps started; no downloadable job log; zero artifacts;
+- attempt 2 job, triggered as a direct rerun of the same correct run: `108361292919`;
+- attempt 2 conclusion: `FAILURE`;
+- attempt 2 observable execution: again zero workflow steps started and no runner log was produced.
+
+Because neither attempt entered `Set up job` or any repository/application step, this does **not** constitute a failed Stripe webhook acceptance and does not provide evidence against the PR #31 application path.
+
+A control rerun of the small `bootstrap` workflow on the same commit was then used to distinguish workflow-specific failure from account/runner failure:
+
+- control workflow run: `36178300902`;
+- original attempt on 2026-09-25: `SUCCESS` with normal runner steps;
+- control rerun attempt 2 on 2026-09-26;
+- control rerun job: `108361467625`;
+- control rerun conclusion: `FAILURE`;
+- control rerun observable execution: zero workflow steps started.
+
+GitHub public status reported Actions operational and no incident for 2026-09-26 at the time of diagnosis.
+
+**Failure classification:** host/infrastructure / CI execution-plane failure before runner provisioning. It is upstream of repository checkout, Cloudflare deployment, Stripe Session creation, webhook delivery and Twenty effects.
+
+**HYPOTHESIS — NOT YET FACT:** the leading account-level cause is GitHub Actions usage/billing/budget or another repository-owner runner-eligibility restriction. The connector cannot read the private billing/control-plane message required to distinguish those causes, so this must not be promoted to FACT until the GitHub UI/account state confirms it.
+
+**Next action:** inspect the GitHub Actions run/account billing message, restore GitHub-hosted runner eligibility if required, then rerun `36225365356` (or launch a fresh `cloudflare-staging` on the same/current `main`). No application-code workaround is justified before that upstream block is resolved.
+
 ## Next acceptance step
 
-Deploy PR #31 through `cloudflare-staging` on `main`. Because `STRIPE_WEBHOOK_SECRET` is present, that workflow must automatically execute the real expiry acceptance scenario:
+Once GitHub Actions can start a runner, execute PR #31 through `cloudflare-staging` on `main`. Because `STRIPE_WEBHOOK_SECRET` is present, that workflow must automatically execute the real expiry acceptance scenario:
 
 1. create a synthetic CONFIRMED Twenty edition;
 2. create a real public Formalife SINGLE checkout through Cloudflare;
@@ -97,6 +134,7 @@ Current closed prerequisites:
 
 Still open at minimum:
 
+- GitHub Actions runner eligibility / pre-run execution block;
 - real signed expiry delivery acceptance on PR #31 deployment;
 - real successful-payment `checkout.session.completed` operational effects;
 - duplicate/reordered delivery acceptance under real Stripe delivery;
