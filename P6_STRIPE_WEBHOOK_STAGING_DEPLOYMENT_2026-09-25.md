@@ -1,6 +1,6 @@
 # P6 Stripe Webhook Staging Deployment
 
-Status: CURRENT RESULT — GENERIC COORDINATOR PROBE PASSES; DEPLOYED CAPACITY PATH PENDING DIRECT PROBE
+Status: CURRENT RESULT — SAME-ZONE WORKER FETCH ROOT CAUSE IDENTIFIED; SERVICE-BINDING REMEDIATION MERGED; FRESH SIGNED-EXPIRY ACCEPTANCE PENDING
 Date: 2026-09-26
 
 ## Scope
@@ -31,7 +31,10 @@ Implementation repository: `formalife/platform`.
 - PR #34 merge commit: `341cf7c1d45350eef22c265258336c6e9e3e09e7`;
 - PR #35 — `Probe deployed P6 capacity boundary before Stripe`;
 - PR #35 tested head: `f06ab2c78160d1e2cc51a73e8be037b051cdfe16`;
-- PR #35 merge commit: `cab92eaff713c9017459447305559a8b3477eb27`.
+- PR #35 merge commit: `cab92eaff713c9017459447305559a8b3477eb27`;
+- PR #36 — `Use Cloudflare service binding for commerce boundary`;
+- PR #36 tested head: `964b409f8f716243db6712e5000c982d0754c062`;
+- PR #36 merge commit: `4b3fced69b58a9050d93f8e95f30fb6aa896c819`.
 
 PR #31 corrected the default public-checkout persisted IDs from prefixed strings to UUIDs and added a staging acceptance gate that creates a real Stripe Checkout Session, expires it through Stripe, and requires the signed `checkout.session.expired` delivery to cancel the Order and release capacity without creating financial or seat effects.
 
@@ -41,7 +44,9 @@ PR #33 removed Durable Object RPC from the P6 commerce-boundary request/response
 
 PR #34 added evidence-producing diagnostics rather than asserting another root cause: authenticated coordinator transport/initialization exceptions are converted into a bounded structured diagnostic response, and staging probes the deployed Durable Object command path before attempting public checkout. It also closed a CI coverage gap by adding the P6 HTTP entrypoint to the commerce-contract workflow path triggers.
 
-PR #35 reuses the existing serialized P6 capacity contract as a direct deployed staging probe before Stripe acceptance. The smoke test now generates unique UUID-backed identities so it is repeatable against persistent staging storage. This is a diagnostic test, not a commerce-semantic change.
+PR #35 reuses the existing serialized P6 capacity contract as a direct deployed staging probe before Stripe acceptance. The smoke test generates unique UUID-backed identities so it is repeatable against persistent staging storage. This is a diagnostic test, not a commerce-semantic change.
+
+PR #36 fixes the actual deployed web-to-commerce transport defect identified by run #10: the public web Worker was using global HTTP `fetch()` against the commerce Worker's `workers.dev` URL. Cloudflare does not allow same-zone Worker-to-Worker fetches to a `workers.dev`/route target through the public URL path; that platform response is not the commerce Worker's JSON contract and was surfaced by the application as `COMMERCE_BOUNDARY_NON_JSON`. The staging web Worker now receives a native `COMMERCE_BOUNDARY` Service Binding to `formalife-commerce-staging`; `createCommerceRuntime` prefers that binding and retains the URL transport only as local/test fallback. The authenticated boundary token remains in use.
 
 ## Initial public-route deployment evidence
 
@@ -77,6 +82,8 @@ The deployment logs explicitly showed Wrangler installing `STRIPE_WEBHOOK_SECRET
 - web: `https://formalife-web-staging.formalife-preview.workers.dev`;
 - commerce boundary: `https://formalife-commerce-staging.formalife-preview.workers.dev`;
 - Stripe webhook: `https://formalife-web-staging.formalife-preview.workers.dev/api/commerce/stripe/webhook`.
+
+The public commerce URL remains useful for external staging probes. Web-to-commerce runtime traffic is now designed to use the Cloudflare Service Binding rather than the public `workers.dev` URL.
 
 ## What is proven before signed delivery
 
@@ -157,17 +164,15 @@ The public checkout no longer returned the generic native-runtime `INTERNAL_ERRO
 
 `{"error":"COMMERCE_BOUNDARY_NON_JSON","message":"The commerce service could not complete the request"}`
 
-This is positive localization evidence: PR #32 corrected or bypassed the earlier fetch-receiver failure sufficiently for the request to reach the next dependency. The current first observed bottleneck is the protected commerce boundary `/commands` hop to the Durable Object.
+This was initially localized to the protected commerce dependency. Later runs showed that the commerce Worker and Durable Object themselves were healthy when called externally; the remaining transport difference was the web Worker's same-zone `workers.dev` subrequest.
 
-All ordinary `FormalifeCommerceCoordinator.execute()` application errors are converted into structured serializable error results. Therefore a non-JSON boundary response is evidence of failure outside the normal command-error contract. It is **not** evidence of a Stripe failure and the acceptance still did not reach Stripe Checkout Session expiry or signed webhook delivery.
-
-The deployed `/health` smoke did not detect this because `/health` does not exercise the Durable Object command path.
+The run still did not reach Stripe Checkout Session expiry or signed webhook delivery.
 
 ## Hypothesis and test — PR #33
 
 **HYPOTHESIS — deployed Durable Object RPC is the failing transport layer.**
 
-The outer commerce Worker used Durable Object RPC (`stub.execute()` / `stub.inspect()`) while the same command contract passed locally through Wrangler. Cloudflare supports Durable Object HTTP `fetch()` request/response flows, so replacing the RPC hop with `stub.fetch()` was a clean discriminating test that did not require changing commerce semantics.
+The outer commerce Worker used Durable Object RPC (`stub.execute()` / `stub.inspect()`) while the same command contract passed locally through Wrangler. Replacing the RPC hop with `stub.fetch()` was a clean discriminating test that did not require changing commerce semantics.
 
 PR #33 validation on tested head `d1dfa1cc666c57667c46a2738471c577837c3f14`:
 
@@ -185,87 +190,52 @@ PR #33 was merged to `main` as `012df300717f1e2299c937dc4d5ba9fa343678cf`.
 
 **RESULT — REPLACING RPC WITH DURABLE OBJECT HTTP FETCH DID NOT CHANGE THE DEPLOYED FAILURE.**
 
-Fresh workflow dispatch:
-
-- workflow: `cloudflare-staging`;
-- run: `36229376954`;
+- workflow run: `36229376954`;
 - run number: `8`;
 - deployed commit: `012df300717f1e2299c937dc4d5ba9fa343678cf`;
 - job: `108369492920`;
 - conclusion: `FAILURE`;
-- runner/build/deploy/secret-install/redeploy/service-smoke steps: `SUCCESS`;
-- signed-expiry acceptance step: `FAILURE`.
+- deploy/smoke: `SUCCESS`;
+- signed-expiry acceptance: `FAILURE` before Stripe expiry.
 
-The public checkout again failed with the same HTTP `502` response:
+The public checkout again failed with HTTP `502` / `COMMERCE_BOUNDARY_NON_JSON` after RPC was removed.
 
-`{"error":"COMMERCE_BOUNDARY_NON_JSON","message":"The commerce service could not complete the request"}`
-
-The failure persisted after the internal hop changed from Durable Object RPC to the officially supported `stub.fetch(Request)` request/response path, while the equivalent local configured Worker `/commands` contract remained green.
-
-**RESULT — RPC ROOT-CAUSE HYPOTHESIS REJECTED AT THIS TEST RESOLUTION.**
-
-The current evidence does not support further RPC-specific remediation. The earliest unresolved bottleneck remains the deployed Durable Object command path outside the normal structured application-error contract. Candidate classes include command-specific storage/schema interaction, command/payload-specific serialization, or another deployed-only platform/runtime condition. None is yet promoted to FACT.
-
-The run still did not reach Stripe Checkout Session expiry or signed webhook delivery.
+**RESULT — RPC ROOT-CAUSE HYPOTHESIS REJECTED.**
 
 ## Diagnostic test — PR #34
 
-**TEST — MAKE THE REMOTE COORDINATOR FAILURE OBSERVABLE BEFORE PUBLIC CHECKOUT.**
+PR #34 added a generic authenticated deployed `/commands` probe and structured transport diagnostics without changing commerce semantics.
 
-PR #34 adds three narrow diagnostics without changing commerce semantics:
-
-1. authenticated coordinator transport/initialization exceptions are caught at the outer commerce Worker and returned as bounded JSON `COMMERCE_COORDINATOR_TRANSPORT_ERROR` diagnostics rather than an opaque non-JSON response;
-2. `cloudflare-staging` performs a deployed `/commands` probe immediately after ordinary service smoke, sending a deliberately unsupported command and requiring the normal structured `400 UNSUPPORTED_COMMAND` result;
-3. `commerce-worker-p6-http.mjs` is covered by the `p6-commerce-contract` workflow path triggers.
-
-PR #34 validation on tested head `683a46b7f040833fc7aac8251d461f155d6dcb92`:
+Validation on tested head `683a46b7f040833fc7aac8251d461f155d6dcb92`:
 
 - bootstrap run `36229762551`: `SUCCESS`;
 - P6 commerce-contract run `36229762454`: `SUCCESS`;
 - configured local Worker startup: PASS;
 - local `/commands` traversal and serialized capacity invariants: PASS;
-- full web run `36229762466`: `SUCCESS`;
-- type-check/build, commerce tests, browser/accessibility, production runtime-error suite and Lighthouse baseline: PASS.
+- full web run `36229762466`: `SUCCESS`.
 
 PR #34 was merged to `main` as `341cf7c1d45350eef22c265258336c6e9e3e09e7`.
 
 ## 2026-09-26 run #9 — generic coordinator path proven healthy
 
-**RESULT — DEPLOYED COORDINATOR CONSTRUCTION AND GENERIC COMMAND HANDLING PASS; CHECKOUT-SPECIFIC BOUNDARY FAILURE REMAINS.**
+**RESULT — DEPLOYED COORDINATOR CONSTRUCTION AND GENERIC COMMAND HANDLING PASS; CHECKOUT-SPECIFIC FAILURE REMAINS.**
 
-Fresh workflow dispatch:
-
-- workflow: `cloudflare-staging`;
-- run: `36230106062`;
+- workflow run: `36230106062`;
 - run number: `9`;
 - deployed commit: `341cf7c1d45350eef22c265258336c6e9e3e09e7`;
 - job: `108371521145`;
 - conclusion: `FAILURE`;
-- runner/build/deploy/secret-install/redeploy/service-smoke steps: `SUCCESS`;
+- deploy/smoke: `SUCCESS`;
 - deployed generic coordinator probe: `SUCCESS`;
 - signed-expiry acceptance: `FAILURE` before Stripe expiry.
 
-The authenticated probe reached the real deployed Durable Object and returned exactly the expected structured response:
-
-`{"error":"UNSUPPORTED_COMMAND","message":"Unsupported commerce command: staging.probe.unsupported"}`
-
-This proves at the resolution of the probe that the Durable Object binding resolves, the coordinator can instantiate, base SQLite initialization is sufficient for the generic command path, the outer Worker can call the coordinator, and a structured JSON application error can return through the deployed transport.
-
-Immediately afterward, the public checkout still failed with HTTP `502` / `COMMERCE_BOUNDARY_NON_JSON`.
-
-**RESULT — GENERIC COORDINATOR INITIALIZATION/TRANSPORT IS NO LONGER THE FIRST ROOT-CAUSE CANDIDATE.**
-
-The remaining failure is command/payload-specific. The public checkout's first commerce dependency is capacity initialization/inspection, so the next cheapest discriminating test is the existing serialized capacity contract executed directly against the deployed authenticated boundary. Stripe remains downstream and untested by this run.
+The authenticated probe returned the expected structured `400 UNSUPPORTED_COMMAND`. This proved that the deployed binding resolves, coordinator construction works, the outer commerce Worker can call the Durable Object, and structured JSON can return through that deployed transport.
 
 ## Diagnostic test — PR #35
 
-**TEST — RUN THE EXISTING SERIALIZED CAPACITY CONTRACT AGAINST THE REAL DEPLOYED BOUNDARY.**
+PR #35 made the existing serialized P6 capacity smoke replay-safe for persistent staging storage and added it before the Stripe acceptance.
 
-PR #35 makes `scripts/p6-capacity-smoke.mjs` replay-safe for persistent staging storage by generating unique UUID-backed identities per invocation, then adds it to `cloudflare-staging` immediately after the generic coordinator probe and before the public Stripe acceptance.
-
-The deployed probe exercises, in order, real capacity configuration, seat reservation, reservation inspection, edition inspection, overflow rejection, idempotent replay/conflict handling, release, TTL expiry, and the fail-closed payment-without-reservation rule. If a deployed command returns non-JSON, the probe fails directly on that command and prints the raw boundary response instead of losing it behind the public checkout error wrapper.
-
-PR #35 validation on tested head `f06ab2c78160d1e2cc51a73e8be037b051cdfe16`:
+Validation on tested head `f06ab2c78160d1e2cc51a73e8be037b051cdfe16`:
 
 - bootstrap run `36230670899`: `SUCCESS`;
 - P6 commerce-contract run `36230670869`: `SUCCESS`;
@@ -274,31 +244,80 @@ PR #35 validation on tested head `f06ab2c78160d1e2cc51a73e8be037b051cdfe16`:
 
 PR #35 was merged to `main` as `cab92eaff713c9017459447305559a8b3477eb27`.
 
-PR #35 is an evidence-producing test. It does not yet claim a root cause or remediation.
+## 2026-09-26 run #10 — deployed commerce subsystem proven; root cause localized to web-to-commerce same-zone fetch
+
+**RESULT — GENERIC COORDINATOR AND FULL DEPLOYED SERIALIZED CAPACITY PATH PASS; PUBLIC WEB CHECKOUT ALONE FAILS.**
+
+Fresh workflow dispatch:
+
+- workflow: `cloudflare-staging`;
+- run: `36230897496`;
+- run number: `10`;
+- deployed commit: `cab92eaff713c9017459447305559a8b3477eb27`;
+- job: `108373731398`;
+- conclusion: `FAILURE`;
+- build/deploy/secrets/redeploy/service smoke: `SUCCESS`;
+- generic coordinator probe: `SUCCESS`;
+- deployed serialized capacity path: `SUCCESS`;
+- public signed-expiry acceptance: `FAILURE` on public checkout before Stripe expiry.
+
+The deployed capacity probe exercised configuration, reserve, inspect, overflow rejection, replay/conflict, release, TTL expiry and fail-closed payment behavior through the real external commerce Worker URL. Every check passed, including SQLite-backed Durable Object state and protected participant context.
+
+Immediately afterward, the public web Worker still returned `502 COMMERCE_BOUNDARY_NON_JSON` while trying to use the same commerce subsystem.
+
+This comparison isolates the relevant difference: GitHub runner → commerce Worker public URL succeeds, while web Worker → commerce Worker `workers.dev` URL fails. Cloudflare's documented routing model explains this exact split: same-zone Worker-to-Worker fetches targeting a `workers.dev`/Worker route are not supported through ordinary global `fetch()` and must use a Service Binding (or a different explicitly supported routing mode). The non-JSON payload is the Cloudflare platform error response, not the commerce application's JSON contract.
+
+**RESULT — ROOT CAUSE IDENTIFIED: INVALID SAME-ZONE PUBLIC WORKER-TO-WORKER FETCH ARCHITECTURE.**
+
+Stripe still was not reached in run #10.
+
+## Root-cause remediation — PR #36
+
+**REMEDIATION — USE A CLOUDFLARE SERVICE BINDING FOR WEB → COMMERCE TRAFFIC.**
+
+PR #36:
+
+1. makes `createCommerceRuntime` prefer `env.COMMERCE_BOUNDARY.fetch()` when the native service binding is available;
+2. sends the existing authenticated commerce request through that binding using an internal synthetic URL, preserving the boundary token and HTTP contract;
+3. retains `COMMERCE_BOUNDARY_URL` only as local/test fallback;
+4. configures the generated staging Astro Wrangler deployment with `COMMERCE_BOUNDARY -> formalife-commerce-staging` before web deploy;
+5. fails the staging deploy if Wrangler does not report the service binding;
+6. adds a regression test proving that commerce calls use the Service Binding rather than public fetch when the binding exists;
+7. records `commerceServiceBindingConfigured` in successful deployment evidence.
+
+PR #36 validation on tested head `964b409f8f716243db6712e5000c982d0754c062`:
+
+- bootstrap run `36231178534`: `SUCCESS`;
+- P6 commerce-contract run `36231178545`: `SUCCESS`;
+- Stripe Sandbox run `36231178550`: `SUCCESS`;
+- full web run `36231178552`: `SUCCESS`;
+- runtime Service Binding regression: PASS;
+- Astro type-check/build, direct Full commerce tests, browser/accessibility, production runtime-error suite and Lighthouse baseline: PASS.
+
+PR #36 was merged to `main` as `4b3fced69b58a9050d93f8e95f30fb6aa896c819`.
+
+**Important:** the root cause is supported by the deployed differential evidence plus Cloudflare's documented same-zone routing restriction. The remediation is merged and CI-proven, but the actual Cloudflare staging acceptance on the merge commit is still pending and must not be promoted to RESULT/PASS before a fresh deploy.
 
 ## Current next acceptance step
 
-Launch a **new** `cloudflare-staging` workflow on current `formalife/platform/main` at `cab92eaff713c9017459447305559a8b3477eb27` or a later main containing PR #35.
+Launch a **new** `cloudflare-staging` workflow on current `formalife/platform/main` at `4b3fced69b58a9050d93f8e95f30fb6aa896c819` or a later main containing PR #36. Do not rerun run `36230897496` as proof of the fix because it is anchored to pre-fix commit `cab92eaf`.
 
-The new deployed capacity probe is the first discriminating gate:
+The workflow must now prove, in order:
 
-- if it fails, the first failing capacity command and raw authenticated boundary response become the next root-cause evidence;
-- if it passes, the generic Durable Object and serialized capacity subsystem are both proven on Cloudflare staging, shifting diagnosis to the differences in the real public checkout payload/sequence or its other dependencies;
-- only after that gate passes should the workflow continue to the real public checkout and Stripe expiry scenario.
+1. commerce Worker deploy succeeds;
+2. generated web Worker config contains the `COMMERCE_BOUNDARY` Service Binding to `formalife-commerce-staging` and Wrangler reports it on deploy;
+3. generic coordinator probe passes;
+4. deployed serialized capacity probe passes;
+5. public Formalife SINGLE checkout traverses web → commerce through the Service Binding and creates a real Stripe Sandbox Checkout Session;
+6. one protected seat is active and capacity moves 12 → 11;
+7. the real Stripe Checkout Session is expired through Stripe API;
+8. a genuine signed `checkout.session.expired` delivery reaches the public webhook and signature verification passes;
+9. Order becomes `CANCELLED`;
+10. reservation releases and capacity returns 11 → 12;
+11. zero PaymentRecord and zero Enrollment remain;
+12. public server-side verified checkout state is `CANCELLED`.
 
-The intended expiry acceptance remains:
-
-1. create a synthetic CONFIRMED Twenty edition;
-2. create a real public Formalife SINGLE checkout through Cloudflare;
-3. verify one active reserved seat;
-4. expire the real Stripe Sandbox Checkout Session through Stripe API;
-5. receive the genuine signed `checkout.session.expired` delivery at the public webhook;
-6. require Twenty Order `CANCELLED`;
-7. require reservation release / capacity restored;
-8. require zero PaymentRecord and zero Enrollment;
-9. require public checkout status `CANCELLED`, verified server-side.
-
-Only an actual PASS of this gate should promote signed-expiry handling from code/configuration proof to real external-delivery proof.
+Only an actual PASS of this gate promotes signed-expiry handling from code/configuration proof to real external-delivery proof.
 
 ## P6 status
 
@@ -311,17 +330,16 @@ Current closed prerequisites / resolved findings:
 - raw-body verifier and processor code proven in CI;
 - public runtime UUID defect corrected and merged in PR #31;
 - GitHub Actions billing/spending runner block resolved;
-- deployed public-checkout fetch-receiver defect remediated in merged PR #32 with full CI regression proof;
+- deployed public-checkout fetch-receiver defect remediated in PR #32;
 - Durable Object RPC root-cause hypothesis tested and rejected by run #8;
 - generic deployed coordinator construction/request handling proven by run #9;
-- P6 HTTP entrypoint covered by the commerce-contract CI trigger;
-- repeatable deployed serialized-capacity diagnostic merged in PR #35.
+- complete deployed serialized-capacity subsystem proven by run #10;
+- web-to-commerce same-zone public `workers.dev` fetch identified as the actual `COMMERCE_BOUNDARY_NON_JSON` root cause;
+- Cloudflare Service Binding remediation merged in PR #36 with full CI regression proof.
 
 Still open at minimum:
 
-- deployed serialized-capacity probe including PR #35;
-- exact root cause of the checkout-specific non-JSON boundary response;
-- real signed-expiry acceptance;
+- fresh deployed signed-expiry acceptance including PR #36;
 - real successful-payment `checkout.session.completed` operational effects;
 - duplicate/reordered delivery acceptance under real Stripe delivery;
 - refund/reconciliation;
